@@ -19,4 +19,9 @@ class PagesController extends Controller
         );
         return view('pages.contato')->with($data);
     }
+    public function criarcontato(){
+        $title = 'Criar contato';
+        return view('pages.criarcontato')->with('variavel', $title);
+    }
+
 }
