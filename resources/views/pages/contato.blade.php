@@ -2,39 +2,35 @@
 
 @section('content')
 
-<style>
-    table,tr, th {
-        border: 1px solid black;
-    }
-
-    table,tr,td {
-        border: 1px solid black;
-    }
-</style>
 <h1 style="color: #FFFFFF;">{{$title}}</h1>
 <!--<p style="color: #FFFFFF;">{{$desc}}</p>-->
-<table style="color: #FFFFFF;">
-    <tr>
-        <th>Contatos</th>
-    </tr>
-    
-    
-    
-    <tr>
-        <td>
+<table class="table table-striped table-hover table-bordered border-dark caption-top " >
+    <thead>
+        <tr class="table-dark">
+            <th scope="col" style="text-align: left;">Contatos</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        
+        <ul style="list-style-type: none;">
+            <td>
             @if(count($contatos) > 0)
-            <ul style="list-style-type: circle;">
-                @foreach($contatos as $o)
-                <li style="color: #FFFFFF;">{{$o}}</li>
-                @endforeach
-        </td>
+            @foreach($contatos as $o)
+            <li style="color: #FFFFFF; list-style-type: none;">{{$o}}</li>
+            @endforeach
+            </td>
+            @endif
         </ul>
-    </tr>
+        
+        </tr>
+    </tbody>
 
 </table>
-<a href="/criarcontato" style="color: white;">
-    <input type="submit" value="{{$desc}}">
+<a href="/criarcontato" >
+    <input type="submit" value="{{$desc}}" class="btn btn-outline-dark" style="color: #FFFFFF;">
+
     <!--https://stackoverflow.com/questions/2150238/php-variable-in-html-no-other-way-than-php-echo-var-->
-    </a> <br>
-@endif
+</a> <br>
+
 @endsection('content')
