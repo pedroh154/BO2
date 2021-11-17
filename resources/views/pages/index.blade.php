@@ -9,4 +9,7 @@
         </div>
 <h1 style="color: #FFFFFF;">{{$variavel}}</h1>
 <p style="color: #FFFFFF;">Projeto BO2 - Página principal</p>
+<footer class="container">
+    <a href="https://sistema.ssw.inf.br/bin/ssw0422" target="_blank" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">SSW</button></a>
+</footer>
 @endsection('content')

@@ -29,4 +29,10 @@ class PagesController extends Controller
         return view('pages.login')->with('variavel', $title);
     }
 
+
+    public function register(){
+        $title = 'Register';
+        return view('pages.register')->with('variavel', $title);
+    }
+    
 }

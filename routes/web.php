@@ -25,3 +25,5 @@ Route::get('/contato', 'App\Http\Controllers\PagesController@contato');
 Route::get('/criarcontato', 'App\Http\Controllers\PagesController@criarcontato');
 
 Route::get('/login', 'App\Http\Controllers\PagesController@login');
+
+Route::get('/register', 'App\Http\Controllers\PagesController@register');

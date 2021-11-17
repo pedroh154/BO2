@@ -38,5 +38,7 @@
 
     <!--https://stackoverflow.com/questions/2150238/php-variable-in-html-no-other-way-than-php-echo-var-->
 </a> <br>
-
+<footer class="container">
+    <a href="https://sistema.ssw.inf.br/bin/ssw0422" target="_blank" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">SSW</button></a>
+</footer>
 @endsection('content')
