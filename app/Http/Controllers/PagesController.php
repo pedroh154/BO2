@@ -24,4 +24,9 @@ class PagesController extends Controller
         return view('pages.criarcontato')->with('variavel', $title);
     }
 
+    public function login(){
+        $title = 'Login';
+        return view('pages.login')->with('variavel', $title);
+    }
+
 }
