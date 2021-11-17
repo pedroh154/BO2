@@ -34,5 +34,10 @@ class PagesController extends Controller
         $title = 'Register';
         return view('pages.register')->with('variavel', $title);
     }
+
+    public function forgotpassword(){
+        $title = 'forgotpassword';
+        return view('pages.forgotpassword')->with('variavel', $title);
+    }
     
 }

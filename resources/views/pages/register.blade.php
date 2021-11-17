@@ -80,7 +80,7 @@
                         </form>
                         
                         <hr>
-                        <br>
+                        
                         
                         <div class="text-center">
                             <a class="small" href="/login">Já possui uma conta? Login!</a>
