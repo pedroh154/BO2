@@ -25,9 +25,10 @@
                     <div class="col-lg-7">
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Crie uma conta!</h1>
+                                <h1 class="h4 text-gray-900 mb-4">{{ __('Register') }}</h1>
                             </div>
                             <form method="POST" action="{{ route('register') }}">
+                            @csrf
                                 <div class="form-group row">
                                     <div class="col-sm-12">
                                         <input type="text" class="form-control @error('name') is-invalid @enderror form-control-user " value="{{ old('name') }}" name="name" id="name" placeholder="Nome completo" required autocomplete="name" autofocus>
