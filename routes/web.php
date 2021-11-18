@@ -31,3 +31,7 @@ Route::get('/register', 'App\Http\Controllers\PagesController@register');
 Route::get('/forgotpassword', 'App\Http\Controllers\PagesController@forgotpassword');
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
