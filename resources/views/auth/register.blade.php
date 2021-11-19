@@ -32,7 +32,7 @@
                             @csrf
                                 <div class="form-group row">
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control @error('name') is-invalid @enderror form-control-user " value="{{ old('name') }}" name="name" id="name" placeholder="Nome completo" required autocomplete="name" autofocus>
+                                        <input type="text" class="form-control @error('name') is-invalid @enderror form-control-user " value="{{ old('name') }}" name="nome" id="nome" placeholder="Nome completo" required autocomplete="name" autofocus>
                                         @error('name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -51,15 +51,15 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user @error('password') is-invalid @enderror" id="password" name="password" required autocomplete="new-password" placeholder="Senha">
+                                        <input type="password" class="form-control form-control-user @error('password') is-invalid @enderror" id="senha" name="senha" required autocomplete="new-password" placeholder="Senha">
                                         @error('password')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                         @enderror
                                     </div>
-                                    <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user" id="password-confirm" name="password_confirmation" placeholder="Confirmar senha" required autocomplete="new-password">
+                                    //<div class="col-sm-6">
+                                     //   <input type="password" class="form-control form-control-user" id="password-confirm" name="password_confirmation" placeholder="Confirmar senha" required autocomplete="new-password">
                                     </div>
                                 </div>
                                 <hr> 
@@ -70,18 +70,18 @@
                                     <div class="col-sm-5 mb-3 mb-sm-0"> 
 
                                         <!--     REVER IDS DE SENHA         -->
-                                        <input type="text" class="form-control form-control-user" id="exampleInputPassword" placeholder="SSW Domínio">
+                                        <input type="text" class="form-control form-control-user" id="ssw_dom" placeholder="SSW Domínio" name="ssw_dom">
                                     </div>
                                     <div class="col-sm-7">
-                                        <input type="text" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="SSW CPF">
+                                        <input type="text" class="form-control form-control-user" id="ssw_cpf" placeholder="SSW CPF" name="ssw_cpf">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-5 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="exampleInputPassword" placeholder="SSW Usuário">
+                                        <input type="text" class="form-control form-control-user" id="ssw_usuario" placeholder="SSW Usuário" name="ssw_usuario">
                                     </div>
                                     <div class="col-sm-7">
-                                        <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="SSW Senha">
+                                        <input type="password" class="form-control form-control-user" id="ssw_senha" placeholder="SSW Senha" name="ssw_senha">
                                     </div>
                                 </div>
                                 
