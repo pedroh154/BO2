@@ -67,20 +67,20 @@
                                     <h2 class="h4 text-gray-900 mb-4">Credenciais SSW</h2>
                                 </div>
                                 <div class="form-group row">
-                                    <div class="col-sm-4 mb-3 mb-sm-0"> 
+                                    <div class="col-sm-5 mb-3 mb-sm-0"> 
 
                                         <!--     REVER IDS DE SENHA         -->
                                         <input type="text" class="form-control form-control-user" id="exampleInputPassword" placeholder="SSW Domínio">
                                     </div>
-                                    <div class="col-sm-8">
+                                    <div class="col-sm-7">
                                         <input type="text" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="SSW CPF">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <div class="col-sm-4 mb-3 mb-sm-0">
+                                    <div class="col-sm-5 mb-3 mb-sm-0">
                                         <input type="text" class="form-control form-control-user" id="exampleInputPassword" placeholder="SSW Usuário">
                                     </div>
-                                    <div class="col-sm-8">
+                                    <div class="col-sm-7">
                                         <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="SSW Senha">
                                     </div>
                                 </div>
@@ -95,7 +95,7 @@
 
 
                             <div class="text-center">
-                                <a class="small" href="/login">Já possui uma conta? Login!</a>
+                                <a  href="/login">Já possui uma conta? Login!</a>
                             </div>
                         </div>
                     </div>
