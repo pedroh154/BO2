@@ -52,11 +52,11 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'nome' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'senha' => ['required', 'string', 'min:8', 'confirmed'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
             'ssw_usuario' => ['string'],
-            'ssw_dom' => ['string'],
             'ssw_senha' => ['string'],
             'ssw_cpf' => ['string', 'numeric'],
+            'ssw_dom' => ['string'],
         ]);
     }
 
@@ -71,11 +71,11 @@ class RegisterController extends Controller
         return User::create([
             'nome' => $data['nome'],
             'email' => $data['email'],
-            'senha' => Hash::make($data['senha']),
+            'password' => Hash::make($data['password']),
             'ssw_usuario' => $data['ssw_usuario'],
-            'ssw_dom' => $data['ssw_dom'],
             'ssw_senha' => Hash::make($data['ssw_senha']),
             'ssw_cpf' => $data['ssw_cpf'],
+            'ssw_dom' => $data['ssw_dom'],
         ]);
     }
 }

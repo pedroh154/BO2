@@ -51,15 +51,15 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user @error('password') is-invalid @enderror" id="senha" name="senha" required autocomplete="new-password" placeholder="Senha">
+                                        <input type="password" class="form-control form-control-user @error('password') is-invalid @enderror" id="password" name="password" required autocomplete="new-password" placeholder="Senha">
                                         @error('password')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                         @enderror
                                     </div>
-                                    //<div class="col-sm-6">
-                                     //   <input type="password" class="form-control form-control-user" id="password-confirm" name="password_confirmation" placeholder="Confirmar senha" required autocomplete="new-password">
+                                    <div class="col-sm-6">
+                                        <input type="password" class="form-control form-control-user" id="password-confirm" name="password_confirmation" placeholder="Confirmar senha" required autocomplete="new-password">
                                     </div>
                                 </div>
                                 <hr> 

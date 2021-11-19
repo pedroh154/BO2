@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('nome');
             $table->string('email')->unique();
-            $table->string('senha');
+            $table->string('password');
             $table->string('ssw_usuario')->nullable();
             $table->string('ssw_senha')->nullable();
             $table->string('ssw_cpf')->nullable();
