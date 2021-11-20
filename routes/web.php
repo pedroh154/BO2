@@ -18,7 +18,11 @@ use Illuminate\Support\Facades\Route;
 });
 */
 
+/* PRINCIPAL */
 Route::get('/', 'App\Http\Controllers\PagesController@index');
+
+/* CTE's */
+Route::get('/ctes', 'App\Http\Controllers\CtesController@index');
 
 Route::get('/contato', 'App\Http\Controllers\PagesController@contato');
 
@@ -29,6 +33,8 @@ Route::get('/login', 'App\Http\Controllers\PagesController@login');
 Route::get('/register', 'App\Http\Controllers\PagesController@register');
 
 Route::get('/forgotpassword', 'App\Http\Controllers\PagesController@forgotpassword');
+
+
 
 
 
