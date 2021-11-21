@@ -40,9 +40,18 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-   // public function logout(Request $request) {
-   //     Auth::logout();
-   //     return redirect('/login');
-   //   }
-      //return redirect('login')->with(Auth::logout());
+    public function login(){
+        $title = 'Login';
+        return view('auth.login')->with('variavel', $title);
+    }
+
+    public function registrar(){
+        $title = 'Register';
+        return view('auth.register')->with('variavel', $title);
+    }
+
+    public function forgotpassword(){
+        $title = 'forgotpassword';
+        return view('auth.passwords.reset')->with('variavel', $title);
+    }
 }

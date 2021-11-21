@@ -78,4 +78,5 @@ class RegisterController extends Controller
             'ssw_dom' => $data['ssw_dom'],
         ]);
     }
+    
 }

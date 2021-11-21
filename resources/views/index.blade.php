@@ -7,7 +7,7 @@
             <a href="/" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Página Inicial</button></a>
             <a href="/contato" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Contatos</button></a>
         </div>
-<h1 style="color: #FFFFFF;">{{$variavel}}</h1>
+<h1 style="color: #FFFFFF;"></h1>
 <p style="color: #FFFFFF;">Projeto BO2 - Página principal</p>
 <footer class="container">
     <a href="https://sistema.ssw.inf.br/bin/ssw0422" target="_blank" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">SSW</button></a>

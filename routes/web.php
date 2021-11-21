@@ -18,30 +18,24 @@ use Illuminate\Support\Facades\Route;
 });
 */
 
-/* PRINCIPAL */
-Route::get('/', 'App\Http\Controllers\PagesController@index');
+
 
 /* CTE's */
 Route::get('/ctes', 'App\Http\Controllers\CtesController@index');
 
-Route::get('/contato', 'App\Http\Controllers\PagesController@contato');
-
-Route::get('/criarcontato', 'App\Http\Controllers\PagesController@criarcontato');
-
-Route::get('/login', 'App\Http\Controllers\PagesController@login');
-
-Route::get('/register', 'App\Http\Controllers\PagesController@register');
-
-Route::get('/forgotpassword', 'App\Http\Controllers\PagesController@forgotpassword');
-
-
-
-
+/* CONTATOS */
+Route::get('/contatos', 'App\Http\Controllers\ContatosController@index');
+Route::get('/novocontato', 'App\Http\Controllers\ContatosController@novoContato');
 
 Auth::routes();
-Route::get('/home', [App\Http\Controllers\PagesController::class, 'index'])->name('home');
 
-//Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+/* PRINCIPAL */
+Route::get('/', 'App\Http\Controllers\auth\LoginController@login');
+Route::get('/registrar', 'App\Http\Controllers\auth\LoginController@registrar');
+Route::get('/home', 'App\Http\Controllers\HomeController@index');
+
+//Route::get('/forgotpassword', 'App\Http\Controllers\ForgotPasswordController@forgotpassword');
+
 Route::group(['middleware' => ['auth']], function() {
     /**
     * Logout Route
