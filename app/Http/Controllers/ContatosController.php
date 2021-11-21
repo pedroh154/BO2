@@ -15,7 +15,8 @@ class ContatosController extends Controller
         return view('contatos.index')->with($data);
     }
 
-   // public function NovoContato(){
-    //    return view()
-   // }
+    public function NovoContato(){
+        $title = 'Criar contato';
+        return view('contatos.criarcontato')->with('variavel', $title);
+    }
 }

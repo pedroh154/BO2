@@ -5,7 +5,7 @@
 
 <div class="btn-group" role="group" aria-label="Basic example">
             <a href="/" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Página Inicial</button></a>
-            <a href="/contato" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Contatos</button></a>
+            <a href="/contatos" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Contatos</button></a>
         </div>
 <h1 style="color: #FFFFFF;">{{$title}}</h1>
 <!--<p style="color: #FFFFFF;">{{$desc}}</p>-->
@@ -33,7 +33,7 @@
     </tbody>
 
 </table>
-<a href="/criarcontato" >
+<a href="/novocontato" >
     <input type="submit" value="{{$desc}}" class="btn btn-outline-dark" style="color: #FFFFFF;">
 
     <!--https://stackoverflow.com/questions/2150238/php-variable-in-html-no-other-way-than-php-echo-var-->

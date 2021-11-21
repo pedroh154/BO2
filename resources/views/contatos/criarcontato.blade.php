@@ -5,7 +5,7 @@
 
 <div class="btn-group" role="group" aria-label="Basic example">
             <a href="/" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Página Inicial</button></a>
-            <a href="/contato" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Contatos</button></a>
+            <a href="/contatos" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Contatos</button></a>
         </div>
 <h1 style="color: #FFFFFF;">{{$variavel}}</h1>
 <p style="color: #FFFFFF;">Projeto BO2 - Criar contato</p>
