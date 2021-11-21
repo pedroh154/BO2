@@ -39,4 +39,12 @@ Route::get('/forgotpassword', 'App\Http\Controllers\PagesController@forgotpasswo
 
 
 Auth::routes();
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\PagesController::class, 'index'])->name('home');
+
+//Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::group(['middleware' => ['auth']], function() {
+    /**
+    * Logout Route
+    */
+    Route::get('/logout', 'App\Http\Controllers\LogoutController@perform')->name('logout.perform');
+ }); 

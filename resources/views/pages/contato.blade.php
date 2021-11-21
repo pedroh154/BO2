@@ -40,5 +40,6 @@
 </a> <br>
 <footer class="container">
     <a href="https://sistema.ssw.inf.br/bin/ssw0422" target="_blank" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">SSW</button></a>
+    <a href="/logout" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Logout</button></a>
 </footer>
 @endsection('content')
