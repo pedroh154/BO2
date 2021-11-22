@@ -18,6 +18,8 @@
 
 <body id="page-top">
 
+<div id="wrapper" >
+
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
@@ -35,7 +37,7 @@
         <li class="nav-item active">
             <a class="nav-link" href="/home">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard</span></a>
+                <span>Principal</span></a>
         </li>
 
         <!-- Divider -->
@@ -50,7 +52,7 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                 <i class="fas fa-fw fa-cog"></i>
-                <span>Contatos:</span>
+                <span>Contatos</span>
             </a>
             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
@@ -108,16 +110,16 @@
 
         <!-- Nav Item - Charts -->
         <li class="nav-item">
-            <a class="nav-link" href="charts.html">
+            <a class="nav-link" href="https://sistema.ssw.inf.br/bin/ssw0422" target="_blank">
                 <i class="fas fa-fw fa-chart-area"></i>
-                <span>Charts</span></a>
+                <span>SSW</span></a>
         </li>
 
-        <!-- Nav Item - Tables -->
+
         <li class="nav-item">
-            <a class="nav-link" href="tables.html">
+            <a class="nav-link" href="/logout">
                 <i class="fas fa-fw fa-table"></i>
-                <span>Tables</span></a>
+                <span>Logout</span></a>
         </li>
 
         <!-- Divider -->
@@ -132,11 +134,12 @@
        
 
     </ul>
-    <div id="content-wrapper" class="d-flex flex-column">
+
+    <div id="content-wrapper" class="d-flex flex-column" style="background-color: #FFFFFF;">
     @yield('content')
 
     </div>
-
+</div>
 
 
 

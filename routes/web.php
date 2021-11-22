@@ -41,5 +41,6 @@ Route::get('/novocontato', 'App\Http\Controllers\ContatosController@novoContato'
 /* DESPESAS */
 Route::get('/despesas', 'App\Http\Controllers\DespesasController@index');
 
+Route::get('/', 'App\Http\Controllers\HomeController@index');
 
 
