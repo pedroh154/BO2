@@ -25,6 +25,7 @@
             </tr>
         </thead>
         <tbody>
+            <!--CHECKBOX BUGADO-->
             <tr>
                 <td style="text-align: left;">São Paulo</td>
                 <td style="text-align: right;">123457</td>
@@ -69,7 +70,7 @@
                     </div>
                 </td>
             </tr>
-            
+
         </tbody>
     </table>
 </div>
