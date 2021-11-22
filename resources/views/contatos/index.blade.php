@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
 
 <div class="btn-group" role="group" aria-label="Basic example">
-            <a href="/" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Página Inicial</button></a>
+            <a href="/home" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Página Inicial</button></a>
             <a href="/contatos" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Contatos</button></a>
         </div>
 <h1 style="color: #FFFFFF;">{{$title}}</h1>
