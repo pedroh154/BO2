@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">-->
-    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <link rel="stylesheet" href="{{ URL::asset('css/all.min.css') }}">
+    <link rel="stylesheet" href="">
     <link rel="stylesheet" href="{{ URL::asset('css/sb-admin-2.min.css') }}">
-
+    <link href="{{ URL::asset('css/all.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ URL::asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+    
     <title>Projeto BO2</title>
 
 </head>
@@ -25,7 +27,8 @@
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/home">
                 <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <i class="fas fa-bus"></i>
+                    
                 </div>
                 <div class="sidebar-brand-text mx-3">Projeto BO2</div>
             </a>
@@ -36,7 +39,7 @@
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
                 <a class="nav-link" href="/home">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <i class="fas fa-table"></i>
                     <span>Principal</span></a>
             </li>
 
@@ -51,7 +54,7 @@
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-cog"></i>
+                <i class="fas fa-address-book"></i>
                     <span>Contatos</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
@@ -66,7 +69,7 @@
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                    <i class="fas fa-fw fa-wrench"></i>
+                <i class="fas fa-cash-register"></i>
                     <span>Despesas</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
@@ -111,14 +114,14 @@
             <!-- Nav Item - Charts -->
             <li class="nav-item">
                 <a class="nav-link" href="https://sistema.ssw.inf.br/bin/ssw0422" target="_blank">
-                    <i class="fas fa-fw fa-chart-area"></i>
+                <i class="fas fa-globe"></i>
                     <span>SSW</span></a>
             </li>
 
 
             <li class="nav-item">
                 <a class="nav-link" href="/logout">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class="fas fa-sign-out-alt"></i></i>
                     <span>Logout</span></a>
             </li>
 
