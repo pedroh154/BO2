@@ -18,12 +18,13 @@
         </div>
 
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Importar XML</a>
+            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Importar XML</a>
 
     
+
         </div>
         <div>
-        <br>
+            <br>
 
             <table class="table table-striped table-hover table-bordered table-sm">
                 <thead>
@@ -38,7 +39,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!--CHECKBOX BUGADO-->
+
                     <tr>
                         <td style="text-align: left;">São Paulo</td>
                         <td style="text-align: right;">123457</td>
