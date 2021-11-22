@@ -18,7 +18,18 @@ use Illuminate\Support\Facades\Route;
 });
 */
 
+/* login/registro */
+Auth::routes();
 
+Route::group(['middleware' => ['auth']], function() {
+    /**
+    * Logout Route
+    */
+    Route::get('/logout', 'App\Http\Controllers\LogoutController@perform')->name('logout.perform');
+ }); 
+
+/* home (auth) */
+Route::get('/home', 'App\Http\Controllers\HomeController@index');
 
 /* CTE's */
 Route::get('/ctes', 'App\Http\Controllers\CtesController@index');
@@ -27,18 +38,5 @@ Route::get('/ctes', 'App\Http\Controllers\CtesController@index');
 Route::get('/contatos', 'App\Http\Controllers\ContatosController@index');
 Route::get('/novocontato', 'App\Http\Controllers\ContatosController@novoContato');
 
-Auth::routes();
 
-/* PRINCIPAL */
-Route::get('/', 'App\Http\Controllers\auth\LoginController@login');
-Route::get('/registrar', 'App\Http\Controllers\auth\LoginController@registrar');
-Route::get('/home', 'App\Http\Controllers\HomeController@index');
 
-//Route::get('/forgotpassword', 'App\Http\Controllers\ForgotPasswordController@forgotpassword');
-
-Route::group(['middleware' => ['auth']], function() {
-    /**
-    * Logout Route
-    */
-    Route::get('/logout', 'App\Http\Controllers\LogoutController@perform')->name('logout.perform');
- }); 
