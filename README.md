@@ -23,6 +23,7 @@ Controle pessoal - AP Sistemas
 - gerar relatorios
 - fazer download pdf cte (api receita)
 - gerar comprovante de entrega
+- validação de campos no front
 
 ## CONSIDERAR:
  

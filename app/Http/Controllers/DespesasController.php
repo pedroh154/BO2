@@ -3,18 +3,27 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Despesa;
+use Illuminate\Support\Facades\Auth;
 
 class DespesasController extends Controller
 {
+    protected $listDespesas;
+
+    /* buscar dados pra tabela no view */
+    public function getDespesasList(){
+		return $tableContent = Despesa::where('user_id', Auth::id())->orderBy('value')->get();
+    }
+
     /* VIEWS */
     public function index(){
-        return view('despesas.index');
+        $listDespesas = $this->getDespesasList();
+        return view('despesas.index')->with('listDespesas', $listDespesas);
     }
 
     public function novaDespesa(){
         return view('despesas.criardespesa');
     }
-    
+
     /* CRUD */
     public function manter(Request $request)
     {
