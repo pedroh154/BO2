@@ -27,7 +27,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($contato as $contato)
+                @foreach ($listContatos as $contato)
                 @if($contato->type == 'Nome')
                 <tr>
                     <td style="text-align: left;">{{ $contato->nome }}</td>

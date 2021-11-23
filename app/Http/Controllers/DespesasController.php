@@ -7,11 +7,9 @@ use Illuminate\Support\Facades\Auth;
 
 class DespesasController extends Controller
 {
-    protected $listDespesas;
-
     /* buscar dados pra tabela no view */
     public function getDespesasList(){
-		return $tableContent = Despesa::where('user_id', Auth::id())->orderBy('value')->get();
+		return $tableContent = Despesa::where('user_id', Auth::id())->orderBy('valor')->get();
     }
 
     /* VIEWS */

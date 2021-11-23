@@ -3,13 +3,21 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Contato;
+use Illuminate\Support\Facades\Auth;
 
 class ContatosController extends Controller
 {
+    protected $listContatos;
+
+    /* buscar dados pra tabela no view */
+    public function getContatosList(){
+        return $tableContent = Contato::where('user_id', Auth::id())->orderBy('nome')->get();
+    }
+
     /* views */
     public function index(){
-        $data = ['jeferso maguila', 'joao marcos', 'faustao', 'casimiro twitch', 'cellbit'];
-        return view('contatos.index')->with('data', $data);
+        $listContatos = $this->getContatosList();
+        return view('contatos.index')->with('listContatos', $listContatos);
     }
 
     public function novoContato(){
