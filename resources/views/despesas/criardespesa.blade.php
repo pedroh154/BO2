@@ -8,18 +8,18 @@
             <a href="/contatos" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Contatos</button></a>
         </div>-->
 
-<!--{{$variavel}}-->
+<!---->
 
 <div id="content-wrapper" class="d-flex flex-column" style="background-color: #f4f5f8;">
     <h1 class="container-fluid">Cadastrar despesa</h1>
 
     <h4 class="container-fluid">Forneça os dados abaixo:</h4> <br>
-    <form class="container-fluid" action="/contato-enviar" method="POST">
+    <form class="container-fluid" action="/despesa-enviar" method="POST">
         @csrf
         <div class="input-group mb-3">
             <!--VER IDS-->
             <label class="input-group-text" for="inputGroupSelect01">Categoria</label>
-            <select class="form-select" id="inputGroupSelect01">
+            <select class="form-select" id="categoria" name="categoria">
                 <option value="1" selected>Aluguel</option>
                 <option value="2">Luz</option>
                 <option value="3">Água</option>
@@ -28,15 +28,15 @@
             </select>
         </div>
         <div class="mb-3">
-            <label for="valordespesa" class="form-label">Data</label>
-            <input type="date" class="form-control" id="valordespesa" name="fone">
+            <label for="data" class="form-label">Data</label>
+            <input type="date" class="form-control" id="data" name="data">
         </div>
         <div class="mb-3">
-            <label for="valordespesa" class="form-label">Valor</label>
-            <input type="number" class="form-control" id="valordespesa" placeholder="R$" name="fone">
+            <label for="valor" class="form-label">Valor</label>
+            <input type="number" class="form-control" id="valor" placeholder="R$" name="valor">
         </div>
         <div class="mb-3">
-            <label for="descricaocontato" class="form-label">Descrição</label>
+            <label for="desc" class="form-label">Descrição</label>
             <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
         </div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">

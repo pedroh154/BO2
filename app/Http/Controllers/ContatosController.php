@@ -8,10 +8,12 @@ class ContatosController extends Controller
 {
     /* views */
     public function index(){
-        return view('contatos.index');
+        $data = ['jeferso maguila', 'joao marcos', 'faustao', 'casimiro twitch', 'cellbit'];
+        return view('contatos.index')->with('data', $data);
     }
 
     public function novoContato(){
+       
         return view('contatos.criarcontato');
     }
 
@@ -23,6 +25,7 @@ class ContatosController extends Controller
         $contato->nome = $request->nome;
         $contato->desc = $request->desc;
         $contato->endereco = $request->endereco;
+        $contato->user_id = auth()->id();
         $contato->save();
         return redirect()->back();
     }

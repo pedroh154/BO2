@@ -43,8 +43,12 @@ Route::get('/contatos/novocontato', 'App\Http\Controllers\ContatosController@nov
 Route::post('/contato-enviar', 'App\Http\Controllers\ContatosController@manter');
 
 /* DESPESAS */
+//get
 Route::get('/despesas', 'App\Http\Controllers\DespesasController@index');
 Route::get('/despesas/novadespesa', 'App\Http\Controllers\DespesasController@novaDespesa');
+
+//post
+Route::post('/despesa-enviar', 'App\Http\Controllers\DespesasController@manter');
 
 Route::get('/', 'App\Http\Controllers\HomeController@index');
 

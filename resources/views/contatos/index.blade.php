@@ -7,8 +7,8 @@
             <a href="/home" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Página Inicial</button></a>
             <a href="/contatos" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Contatos</button></a>
         </div>-->
-<h1>{{$title}}</h1>
-<!--<p style="color: #FFFFFF;">{{$desc}}</p>-->
+<!--<h1></h1>-->
+<!--<p style="color: #FFFFFF;"></p>-->
 
 <!--<table class="table table-striped table-hover table-bordered caption-top" >-->
 <table class="table table-striped table-hover ">
@@ -22,8 +22,8 @@
 
             <ul style="list-style-type: none;">
                 <td>
-                    @if(count($contatos) > 0)
-                    @foreach($contatos as $o)
+                    @if(count($data) > 0)
+                    @foreach($data as $o)
                     <li style="list-style-type: none;">{{$o}}</li>
                     @endforeach
                 </td>
@@ -35,7 +35,7 @@
 
 </table>
 <!--<a href="/novocontato" >
-    <input type="submit" value="{{$desc}}" class="btn btn-outline-dark" style="color: #FFFFFF;">-->
+    <input type="submit" value="" class="btn btn-outline-dark" style="color: #FFFFFF;">-->
 
 <!--https://stackoverflow.com/questions/2150238/php-variable-in-html-no-other-way-than-php-echo-var-->
 </a> <br>

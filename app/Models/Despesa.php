@@ -15,9 +15,11 @@ class Despesa extends Model
      * @var string[]
      */
     protected $fillable = [
-        'nome',
+        'categoria',
         'data',
         'valor',
+        'desc',
+        'user_id',
     ];
 
     /**

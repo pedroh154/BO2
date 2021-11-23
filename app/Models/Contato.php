@@ -19,6 +19,7 @@ class Contato extends Model
         'nome',
         'desc',
         'endereco',
+        'user_id',
     ];
 
     /**

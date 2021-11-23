@@ -16,10 +16,12 @@ class CreateDespesasTable extends Migration
         Schema::create('despesas', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('nome');
+            $table->date('data');
+            $table->string('categoria');
             $table->float('valor')->unsigned();
+            $table->string('desc')->nullable();
             $table->foreignId('user_id');
-            $table->foreign('user_id')->references('id') ->on('users')->onDelete('CASCADE');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
         });
     }
 
