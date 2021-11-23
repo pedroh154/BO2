@@ -8,8 +8,6 @@
             <a href="/contatos" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Contatos</button></a>
         </div>-->
 
-<!--{{$variavel}}-->
-
 <div id="content-wrapper" class="d-flex flex-column" style="background-color: #f4f5f8;">
     <h1 class="container-fluid">Cadastrar contato</h1>
 

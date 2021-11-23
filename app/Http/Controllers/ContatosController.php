@@ -6,20 +6,16 @@ use App\Models\Contato;
 
 class ContatosController extends Controller
 {
+    /* views */
     public function index(){
-        $data = array(
-            'title' => 'contato',
-            'desc' => 'crie aqui um contato',
-            'contatos' => ['pedro', 'iperdedo', 'lionalius', 'joao predus']
-        );
-        return view('contatos.index')->with($data);
+        return view('contatos.index');
     }
 
-    public function NovoContato(){
-        $title = 'Criar contato';
-        return view('contatos.criarcontato')->with('variavel', $title);
+    public function novoContato(){
+        return view('contatos.criarcontato');
     }
 
+    /* CRUD */
     public function manter(Request $request)
     {
         $contato = new Contato;
@@ -28,5 +24,14 @@ class ContatosController extends Controller
         $contato->desc = $request->desc;
         $contato->endereco = $request->endereco;
         $contato->save();
+        return redirect()->back();
     }
+
+    /*public function alterar(Request $request)
+    {
+    }*/
+
+    /*public function excluir(Request $request)
+    {
+    }*/
 }
