@@ -10,7 +10,7 @@
 
 <!--{{$variavel}}-->
 
-<div id="content-wrapper" class="d-flex flex-column">
+<div id="content-wrapper" class="d-flex flex-column" style="background-color: #f4f5f8;">
     <h1 class="container-fluid">Cadastrar contato</h1>
 
     <h4 class="container-fluid">Forneça os dados abaixo:</h4>     <br>
@@ -32,8 +32,9 @@
             <label for="descricaocontato" class="form-label">Descrição</label>
             <textarea class="form-control" id="descricaocontato" rows="3"></textarea>
         </div>
-
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <button type="submit" class="btn btn-primary" id="" href="/contatos" >Cadastrar</button>
+        </div>
     </form>
 </div>
 

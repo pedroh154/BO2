@@ -11,7 +11,7 @@
 
 
 
-<div id="content-wrapper" class="d-flex flex-column">
+<div id="content-wrapper" class="d-flex flex-column" style="background-color: #f4f5f8;">
     <div class="container-fluid">
         <div class="row">
             <p class="h3 mb-0 text-gray-800">Projeto BO2 - Página principal</p>
