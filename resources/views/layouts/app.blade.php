@@ -61,7 +61,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Opções:</h6>
                         <a class="collapse-item" href="/contatos">Visualizar contatos</a>
-                        <a class="collapse-item" href="/novocontato">Cadastrar contato</a>
+                        <a class="collapse-item" href="/contatos/novocontato">Cadastrar contato</a>
                     </div>
                 </div>
             </li>

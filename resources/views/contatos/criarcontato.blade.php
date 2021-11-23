@@ -14,7 +14,7 @@
     <h1 class="container-fluid">Cadastrar contato</h1>
 
     <h4 class="container-fluid">Forneça os dados abaixo:</h4>     <br>
-    <form class="container-fluid" action="/contatos">
+    <form class="container-fluid" action="/contatos" method="POST">
         <div class="mb-3">
             <!--VER IDS-->
             <label for="nomecontato" class="form-label">Nome Completo</label>

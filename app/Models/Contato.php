@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Despesa extends Model
+class Contato extends Model
 {
     use HasFactory;
 
@@ -15,9 +15,10 @@ class Despesa extends Model
      * @var string[]
      */
     protected $fillable = [
+        'fone',
         'nome',
-        'data',
-        'valor',
+        'desc',
+        'endereco',
     ];
 
     /**

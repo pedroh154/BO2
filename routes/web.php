@@ -36,7 +36,7 @@ Route::get('/ctes', 'App\Http\Controllers\CtesController@index');
 
 /* CONTATOS */
 Route::get('/contatos', 'App\Http\Controllers\ContatosController@index');
-Route::get('/novocontato', 'App\Http\Controllers\ContatosController@novoContato');
+Route::get('/contatos/novocontato', 'App\Http\Controllers\ContatosController@novoContato');
 
 /* DESPESAS */
 Route::get('/despesas', 'App\Http\Controllers\DespesasController@index');
