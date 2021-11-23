@@ -44,6 +44,7 @@ Route::post('/contato-enviar', 'App\Http\Controllers\ContatosController@manter')
 
 /* DESPESAS */
 Route::get('/despesas', 'App\Http\Controllers\DespesasController@index');
+Route::get('/despesas/novadespesa', 'App\Http\Controllers\DespesasController@novaDespesa');
 
 Route::get('/', 'App\Http\Controllers\HomeController@index');
 

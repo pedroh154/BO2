@@ -76,7 +76,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Opções:</h6>
                         <a class="collapse-item" href="/despesas">Visualizar Despesas</a>
-                        <a class="collapse-item" href="">Cadastrar despesa</a>
+                        <a class="collapse-item" href="/despesas/novadespesa">Cadastrar despesa</a>
                         <a class="collapse-item" href="">Animations</a>
                         <a class="collapse-item" href="">Other</a>
                     </div>
