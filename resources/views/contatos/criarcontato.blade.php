@@ -14,26 +14,27 @@
     <h1 class="container-fluid">Cadastrar contato</h1>
 
     <h4 class="container-fluid">Forneça os dados abaixo:</h4>     <br>
-    <form class="container-fluid" action="/contatos" method="POST">
+    <form class="container-fluid" action="/contato-enviar" method="POST">
+        @csrf
         <div class="mb-3">
             <!--VER IDS-->
             <label for="nomecontato" class="form-label">Nome Completo</label>
-            <input type="text" class="form-control" id="nomecontato" aria-describedby="emailHelp">
+            <input type="text" class="form-control" id="nome" name="nome" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
             <label for="telefonecontato" class="form-label">Telefone</label>
-            <input type="number" class="form-control" id="telefonecontato">
+            <input type="number" class="form-control" id="fone" name="fone">
         </div>
         <div class="mb-3">
             <label for="enderecocontato" class="form-label">Endereço</label>
-            <input type="text" class="form-control" id="enderecocontato" aria-describedby="emailHelp">
+            <input type="text" class="form-control" id="endereco" name="endereco" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
             <label for="descricaocontato" class="form-label">Descrição</label>
-            <textarea class="form-control" id="descricaocontato" rows="3"></textarea>
+            <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
         </div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button type="submit" class="btn btn-primary" id="" href="/contatos" >Cadastrar</button>
+        <button type="submit" class="btn btn-primary">Cadastrar</button>
         </div>
     </form>
 </div>

@@ -35,8 +35,12 @@ Route::get('/home', 'App\Http\Controllers\HomeController@index');
 Route::get('/ctes', 'App\Http\Controllers\CtesController@index');
 
 /* CONTATOS */
+//get
 Route::get('/contatos', 'App\Http\Controllers\ContatosController@index');
 Route::get('/contatos/novocontato', 'App\Http\Controllers\ContatosController@novoContato');
+
+//post
+Route::post('/contato-enviar', 'App\Http\Controllers\ContatosController@manter');
 
 /* DESPESAS */
 Route::get('/despesas', 'App\Http\Controllers\DespesasController@index');

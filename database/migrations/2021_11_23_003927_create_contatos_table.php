@@ -17,8 +17,8 @@ class CreateContatosTable extends Migration
             $table->id();
             $table->string('fone');
             $table->string('nome');
-            $table->string('desc');
-            $table->string('endereco');
+            $table->string('desc')->nullable();
+            $table->string('endereco')->nullable();
 
             //TODO: Link to cliente table
             /* $table->foreign('user_id')->references('id') ->on('')->onDelete('CASCADE'); */
