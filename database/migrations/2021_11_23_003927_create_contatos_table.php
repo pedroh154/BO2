@@ -21,8 +21,6 @@ class CreateContatosTable extends Migration
             $table->string('endereco')->nullable();
             $table->foreignId('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
-            //TODO: Link to cliente table
-            /* $table->foreign('user_id')->references('id') ->on('')->onDelete('CASCADE'); */
             $table->timestamps();
         });
     }

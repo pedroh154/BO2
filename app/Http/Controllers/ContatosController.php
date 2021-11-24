@@ -21,7 +21,6 @@ class ContatosController extends Controller
     }
 
     public function novoContato(){
-       
         return view('contatos.criarcontato');
     }
 

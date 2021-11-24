@@ -33,6 +33,10 @@ Route::get('/home', 'App\Http\Controllers\HomeController@index');
 
 /* CTE's */
 Route::get('/ctes', 'App\Http\Controllers\CtesController@index');
+Route::get('/ctes/novocte', 'App\Http\Controllers\CtesController@novoCte');
+
+/* Clientes */
+Route::get('/novocliente', 'App\Http\Controllers\ClientesController@novoCliente');
 
 /* CONTATOS */
 //get
