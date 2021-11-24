@@ -3,6 +3,9 @@
 @section('content')
 <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 <!--<div class="btn-group" role="group" aria-label="Basic example">
             <a href="/home" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Página Inicial</button></a>
             <a href="/contatos" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Contatos</button></a>
@@ -71,8 +74,15 @@
                     <option value="2">Two</option>
                     <option value="3">Three</option>
                 </select>
-                <a href="/novocliente">
+                <a href="/novoclientepop" data-target="#criarcliente" data-toggle="modal">
                     <button class="btn btn-outline-secondary" type="button">+</button></a>
+                <!--<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">-->
+                <div class="modal fade text-center" id="criarcliente">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="input-group">
                 <label for="inputZip" class="col-12">Cliente destinatário:</label>
@@ -82,8 +92,14 @@
                     <option value="2">Two</option>
                     <option value="3">Three</option>
                 </select>
-                <a href="/novocliente">
-                    <button class="btn btn-outline-secondary" type="button">+</button></a>
+                <a href="/novoclientepop" data-target="#criarcliente" data-toggle="modal">
+                <button class="btn btn-outline-secondary" type="button">+</button></a>
+                <div class="modal fade text-center" id="criarcliente">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <button type="submit" class="btn btn-primary">Cadastrar</button>

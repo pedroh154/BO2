@@ -37,6 +37,7 @@ Route::get('/ctes/novocte', 'App\Http\Controllers\CtesController@novoCte');
 
 /* Clientes */
 Route::get('/novocliente', 'App\Http\Controllers\ClientesController@novoCliente');
+Route::get('/novoclientepop', 'App\Http\Controllers\ClientesController@novoClientePop');
 
 /* CONTATOS */
 //get

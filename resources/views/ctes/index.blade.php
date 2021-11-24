@@ -18,9 +18,12 @@
         </div>
 
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <a class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" type="file"><i class="fas fa-upload fa-sm text-white-50" type="file"></i> Importar XML</a>
-
-    
+           <!-- <input type="file" class="form-control">-->
+            <label class="btn btn-default">
+            <a class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" type="file"><i class="fas fa-upload fa-sm text-white-50"></i> Importar XML</a> <input type="file" hidden>
+            </label>
+            
+            <!--<a class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" type="file"><i class="fas fa-upload fa-sm text-white-50"></i> Importar XML</a>-->
 
         </div>
         <div>
