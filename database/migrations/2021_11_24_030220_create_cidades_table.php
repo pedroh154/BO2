@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTableCidades extends Migration
+class CreateCidadesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTableCidades extends Migration
      */
     public function up()
     {
-        Schema::create('table_cidades', function (Blueprint $table) {
+        Schema::create('cidades', function (Blueprint $table) {
             $table->id();
             $table->string('estado');
             $table->string('nome');
@@ -32,3 +32,5 @@ class CreateTableCidades extends Migration
         Schema::dropIfExists('table_cidades');
     }
 }
+
+    

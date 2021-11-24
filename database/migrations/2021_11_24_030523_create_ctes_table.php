@@ -18,7 +18,7 @@ class CreateCtesTable extends Migration
             $table->string('numero_nf');
             $table->boolean('pode_alterar');
             $table->float('valor_cte');
-            $table->int('volume');
+            $table->integer('volume');
             $table->string('obs')->nullable();
             $table->date('data_chegada');
             $table->string('numero_cte');
