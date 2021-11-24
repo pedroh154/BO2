@@ -20,11 +20,11 @@
             <!--VER IDS-->
             <label class="input-group-text" for="inputGroupSelect01">Categoria</label>
             <select class="form-select" id="categoria" name="categoria">
-                <option value="1" selected>Aluguel</option>
-                <option value="2">Luz</option>
-                <option value="3">Água</option>
-                <option value="3">Manutenção</option>
-                <option value="3" >Outros</option>
+                <option value="Aluguel" selected>Aluguel</option>
+                <option value="Luz">Luz</option>
+                <option value="Água">Água</option>
+                <option value="Manutenção">Manutenção</option>
+                <option value="Outros" >Outros</option>
             </select>
         </div>
         <div class="mb-3">

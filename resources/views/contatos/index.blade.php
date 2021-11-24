@@ -17,6 +17,9 @@
         <h1>Contatos</h1>
         @csrf
         @method('DELETE')
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <a class="btn btn-primary" href="/contatos/novocontato" role="button">Cadastrar contato</a>
+        </div> <br>
         <table class="table table-striped table-hover table-bordered table-sm">
             <thead>
                 <tr style="text-align: center;">

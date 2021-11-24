@@ -77,8 +77,8 @@
                         <h6 class="collapse-header">Opções:</h6>
                         <a class="collapse-item" href="/despesas">Visualizar Despesas</a>
                         <a class="collapse-item" href="/despesas/novadespesa">Cadastrar despesa</a>
-                        <a class="collapse-item" href="">Animations</a>
-                        <a class="collapse-item" href="">Other</a>
+                      <!--  <a class="collapse-item" href="">Animations</a>
+                        <a class="collapse-item" href="">Other</a>-->
                     </div>
                 </div>
             </li>
@@ -88,11 +88,11 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Addons
+                Adicionais
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+        <!--    <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Pages</span>
@@ -109,7 +109,7 @@
                         <a class="collapse-item" href="blank.html">Blank Page</a>
                     </div>
                 </div>
-            </li>
+            </li>-->
 
             <!-- Nav Item - Charts -->
             <li class="nav-item">
@@ -118,6 +118,7 @@
                     <span>SSW</span></a>
             </li>
 
+            
 
             <li class="nav-item">
                 <a class="nav-link" href="/logout">
@@ -152,16 +153,8 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                             <a class="dropdown-item" href="#">
-                                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Profile
-                            </a>
-                            <a class="dropdown-item" href="#">
                                 <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Settings
-                            </a>
-                            <a class="dropdown-item" href="#">
-                                <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                Activity Log
                             </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="/logout">
