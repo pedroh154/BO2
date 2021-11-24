@@ -22,7 +22,7 @@ class CreateClientesTable extends Migration
             $table->string('obs')->nullable();
             $table->string('fone')->nullable();
 
-            $table->foreignId('cidade_id');
+            $table->integer('cidade_id')->unsigned();
             $table->foreign('cidade_id')->references('id')->on('cidades')->onDelete('CASCADE');
 
             $table->timestamps();

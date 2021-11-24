@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateCidadesTable extends Migration
 {
+
     /**
      * Run the migrations.
      *
@@ -13,13 +14,18 @@ class CreateCidadesTable extends Migration
      */
     public function up()
     {
+
         Schema::create('cidades', function (Blueprint $table) {
-            $table->id();
-            $table->string('estado')->unique();
-            $table->string('nome');
-            $table->string('sigla')->unique();
+
+            $table->increments('id');
+            $table->integer('estado_id')->unsigned();
+            $table->foreign('estado_id')->references('id')->on('estados');
+            $table->string('name', 64);
             $table->timestamps();
+            $table->softDeletes();
+
         });
+
     }
 
     /**
@@ -29,8 +35,9 @@ class CreateCidadesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('table_cidades');
-    }
-}
 
-    
+        Schema::drop('cidades');
+
+    }
+
+}
