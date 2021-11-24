@@ -20,7 +20,7 @@ class CreateClientesTable extends Migration
             $table->string('cadastro_nacional');
             $table->string('cep');
             $table->string('obs')->nullable();
-            $table->string('fone');
+            $table->string('fone')->nullable();
 
             $table->foreignId('cidade_id');
             $table->foreign('cidade_id')->references('id')->on('cidades');
