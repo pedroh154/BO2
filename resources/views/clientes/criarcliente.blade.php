@@ -11,31 +11,42 @@
 <div id="content-wrapper" class="d-flex flex-column" style="background-color: #f4f5f8;">
     <h1 class="container-fluid">Cadastrar cliente</h1>
 
-    <h4 class="container-fluid">Forneça os dados abaixo:</h4>     <br>
-    <form class="container-fluid" action="/cliente-enviar" method="POST">
-        @csrf
-        <div class="mb-3">
-            <!--VER IDS-->
-            <label for="nomecontato" class="form-label">Nome Completo</label>
-            <input type="text" class="form-control" id="nome" required name="nome" aria-describedby="emailHelp">
-        </div>
-        <div class="mb-3">
-            <label for="telefonecontato" class="form-label">Telefone</label>
-            <input type="number" class="form-control" id="fone" required name="fone">
-        </div>
-        <div class="mb-3">
-            <label for="enderecocontato" class="form-label">Endereço</label>
-            <input type="text" class="form-control" id="endereco" name="endereco" aria-describedby="emailHelp">
-        </div>
-        <div class="mb-3">
-            <label for="descricaocontato" class="form-label">Descrição</label>
-            <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
-        </div>
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-        <button type="submit" class="btn btn-primary">Cadastrar</button>
-        </div>
-    </form>
+    <h4 class="container-fluid">Forneça os dados abaixo:</h4> <br>
+    <div class="container-fluid">
+        <form class="row g-3" action="/cliente-enviar" method="POST">
+            @csrf
+            <div class="col-md-8">
+                <!--VER IDS-->
+                <label for="nomecliente" class="form-label">Nome Completo</label>
+                <input type="text" class="form-control" id="nomecliente" required name="nomecliente" >
+            </div>
+            <div class="col-md-4">
+                <label for="fonecliente" class="form-label">Telefone</label>
+                <input type="number" class="form-control" id="fonecliente" required name="fonecliente">
+            </div>
+            <div class="col-md-2">
+                <label for="cepcliente" class="form-label">CEP</label>
+                <input type="number" class="form-control" id="cepcliente" required name="cepcliente">
+            </div>
+            <div class="col-md-6">
+                <label for="enderecocliente" class="form-label">Endereço</label>
+                <input type="text" class="form-control" id="enderecocliente" name="enderecocliente" >
+            </div>
+            <div class="col-md-4">
+                <label for="cadastronacionalcliente" class="form-label">CPF/CNPJ</label>
+                <input type="text" class="form-control" id="cadastronacionalcliente" name="cadastronacionalcliente" >
+            </div>
+            <div class="mb-3">
+                <label for="obscliente" class="form-label">Descrição</label>
+                <textarea class="form-control" id="obscliente" name="obscliente" rows="2"></textarea>
+            </div>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </div>
+        </form>
+    </div>
 </div>
+
 
 
 

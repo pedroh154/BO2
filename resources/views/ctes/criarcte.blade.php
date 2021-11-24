@@ -21,27 +21,27 @@
             @csrf
             <!--REVER FOR e ID-->
             <div class="col-md-4">
-                <label for="numcte" class="form-label">Número CT-e:</label>
-                <input type="number" class="form-control" id="numcte">
+                <label for="numcte" class="form-label">Número CT-e</label>
+                <input type="number" class="form-control" id="numcte" required>
             </div>
             <div class="col-md-4">
                 <label for="valorcte" class="form-label">Valor CT-e</label>
-                <input type="number" class="form-control" id="valorcte" placeholder="R$">
+                <input type="number" class="form-control" id="valorcte" placeholder="R$" required>
             </div>
             <div class="col-md-4">
-                <label for="qtdevol" class="form-label">Quantidade de volumes:</label>
-                <input type="number" class="form-control" id="qtdevol">
+                <label for="qtdevol" class="form-label">Quantidade de volumes</label>
+                <input type="number" class="form-control" id="qtdevol" required>
             </div>
             <div class="col-md-4">
-                <label for="numnf" class="form-label">Número NF:</label>
-                <input type="number" class="form-control" id="numnf">
+                <label for="numnf" class="form-label">Número NF</label>
+                <input type="number" class="form-control" id="numnf" required>
             </div>
             <div class="col-md-4">
-                <label for="valornf" class="form-label">Valor NF:</label>
-                <input type="number" class="form-control" id="valornf" placeholder="R$">
+                <label for="valornf" class="form-label">Valor NF</label>
+                <input type="number" class="form-control" id="valornf" placeholder="R$" required>
             </div>
             <div class="col-md-4">
-                <label for="data" class="form-label">Data de chegada:</label>
+                <label for="data" class="form-label">Data de chegada</label>
                 <input type="date" class="form-control" id="data">
             </div>
             <div class="col-md-4">
@@ -52,22 +52,26 @@
                 </select>
             </div>
             <div class="col-md-4">
-                <label for="cidadesr" class="form-label">Cidade remetente:</label>
+                <label for="cidadesr" class="form-label">Cidade remetente</label>
                 <select id="cidadesr" class="form-select">
                     <option selected></option>
                 </select>
             </div>
             <div class="col-md-4">
-                <label for="cidadesd" class="form-label">Cidade destinatária:</label>
+                <label for="cidadesd" class="form-label">Cidade destinatária</label>
                 <select id="cidadesd" class="form-select">
                     <option selected></option>
                 </select>
+            </div>
+            <div class="mb-2">
+                <label for="obscte" class="form-label">Observação</label>
+                <textarea class="form-control" id="obscte" name="obscte" rows="2"></textarea>
             </div>
             <BR>
             <hr class="sidebar-divider">
             <h5> Definir cliente</h5>
             <div class="input-group">
-                <label for="inputZip" class="col-12">Cliente remetente:</label>
+                <label for="inputZip" class="col-12">Cliente remetente</label>
                 <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
                     <option selected></option>
                     <option value=""></option>
@@ -84,8 +88,8 @@
                     </div>
                 </div>
             </div>
-            <div class="input-group">
-                <label for="inputZip" class="col-12">Cliente destinatário:</label>
+            <div class="input-group ">
+                <label for="inputZip" class="col-12">Cliente destinatário</label>
                 <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
                     <option selected></option>
                     <option value=""></option>

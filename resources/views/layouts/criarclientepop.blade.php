@@ -19,39 +19,45 @@
 </head>
 
 <body>
-    <div class="modal-header" >
+    <div class="modal-header">
         <h5 class="modal-title">Criar cliente</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
     <div class="modal-body">
-        <div id="content-wrapper" class="d-flex flex-column" style="background-color: #FFFFFF;">
+        <div id="content-wrapper" class="d-flex flex-column " style="background-color: #FFFFFF;">
             <h1 class="container-fluid" style="text-align: left;">Cadastrar cliente</h1>
 
             <h4 class="container-fluid" style="text-align: left;">Forneça os dados abaixo:</h4> <br>
-            <form class="container-fluid" action="/cliente-enviar" method="POST">
+            <form class="row g-3" action="/cliente-enviar" method="POST">
                 @csrf
-                <div class="mb-3">
+                <div class="col-md-8">
                     <!--VER IDS-->
-                    <label for="nomecontato" class="form-label">Nome Completo</label>
-                    <input type="text" class="form-control" id="nome" required name="nome" aria-describedby="emailHelp">
+                    <label for="nomecliente" class="form-label">Nome Completo</label>
+                    <input type="text" class="form-control" id="nomecliente" required name="nomecliente">
                 </div>
-                <div class="mb-3">
-                    <label for="telefonecontato" class="form-label">Telefone</label>
-                    <input type="number" class="form-control" id="fone" required name="fone">
+                <div class="col-md-4">
+                    <label for="fonecliente" class="form-label">Telefone</label>
+                    <input type="number" class="form-control" id="fonecliente" required name="fonecliente">
                 </div>
-                <div class="mb-3">
-                    <label for="enderecocontato" class="form-label">Endereço</label>
-                    <input type="text" class="form-control" id="endereco" name="endereco" aria-describedby="emailHelp">
+                <div class="col-md-4">
+                    <label for="cepcliente" class="form-label">CEP</label>
+                    <input type="number" class="form-control" id="cepcliente" required name="cepcliente">
                 </div>
-                <div class="mb-3">
-                    <label for="descricaocontato" class="form-label">Descrição</label>
-                    <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
+                <div class="col-md-8">
+                    <label for="enderecocliente" class="form-label">Endereço</label>
+                    <input type="text" class="form-control" id="enderecocliente" name="enderecocliente">
                 </div>
-
-                <div class="modal-footer justify-content-md-end">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <div class="col-md-12">
+                    <label for="cadastronacionalcliente" class="form-label">CPF/CNPJ</label>
+                    <input type="text" class="form-control" id="cadastronacionalcliente" name="cadastronacionalcliente">
+                </div>
+                <div class="col-md-12">
+                    <label for="obscliente" class="form-label">Descrição</label>
+                    <textarea class="form-control" id="obscliente" name="obscliente" rows="2"></textarea>
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                     <button type="submit" class="btn btn-primary">Cadastrar</button>
                 </div>
             </form>
