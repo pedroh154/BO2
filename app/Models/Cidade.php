@@ -34,7 +34,7 @@ class Cidade extends Model
      * @var array
      */
     protected $casts = [
-        'state_id' => 'integer',
+        'estado_id' => 'integer',
     ];
 
     /**
@@ -52,7 +52,7 @@ class Cidade extends Model
     public function state()
     {
 
-        return $this->belongsTo(State::class, 'state_id');
+        return $this->belongsTo(Estado::class, 'estado_id');
 
     }
 
