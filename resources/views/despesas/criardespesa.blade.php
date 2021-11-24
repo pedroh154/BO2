@@ -19,7 +19,7 @@
         <div class="input-group mb-3">
             <!--VER IDS-->
             <label class="input-group-text" for="inputGroupSelect01">Categoria</label>
-            <select class="form-select" id="categoria" name="categoria">
+            <select class="form-select" id="categoria" name="categoria" required>
                 <option value="Aluguel" selected>Aluguel</option>
                 <option value="Luz">Luz</option>
                 <option value="Água">Água</option>
@@ -29,11 +29,11 @@
         </div>
         <div class="mb-3">
             <label for="data" class="form-label">Data</label>
-            <input type="date" class="form-control" id="data" name="data">
+            <input type="date" class="form-control" id="data" name="data" required>
         </div>
         <div class="mb-3">
             <label for="valor" class="form-label">Valor</label>
-            <input type="number" class="form-control" id="valor" placeholder="R$" name="valor">
+            <input type="number" step="0.01"  class="form-control" id="valor" required placeholder="R$" name="valor">
         </div>
         <div class="mb-3">
             <label for="desc" class="form-label">Descrição</label>

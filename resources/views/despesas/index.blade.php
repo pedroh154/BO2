@@ -5,6 +5,14 @@
 
 
 <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
+<script>
+    var valor = $despesa.valor;
+    var valorformatado = valor.toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+    });
+    document.getElementById('valorformatado').innerHTML = number_format;
+</script>
 
 <!--<div class="btn-group" role="group" aria-label="Basic example">
             <a href="/home" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Página Inicial</button></a>
@@ -28,6 +36,7 @@
                     <th style="width: 75px;" scope="col">Descrição</th>
                 </tr>
             </thead>
+
             <tbody>
                 @foreach ($listDespesas as $despesa)
                 <tr>
@@ -36,14 +45,14 @@
 
                     <td style="text-align: left;">{{ $despesa->data }}</td>
                     </td>
-                
 
-                <td style="text-align: left;">{{ $despesa->valor }}</td>
-                </td>
-                
 
-                <td style="text-align: left;">{{ $despesa->desc }}</td>
-                </td>
+                    <td style="text-align: left;">R$ {{ number_format($despesa->valor, 2)}}</td>
+                    </td>
+
+
+                    <td style="text-align: left;">{{ $despesa->desc }}</td>
+                    </td>
                 </tr>
 
                 @endforeach
