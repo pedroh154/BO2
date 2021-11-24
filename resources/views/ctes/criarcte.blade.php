@@ -5,6 +5,10 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <!--<div class="btn-group" role="group" aria-label="Basic example">
             <a href="/home" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Página Inicial</button></a>
@@ -53,16 +57,28 @@
             </div>
             <div class="col-md-4">
                 <label for="cidadesr" class="form-label">Cidade remetente</label>
-                <select id="cidadesr" class="form-select">
-                    <option selected></option>
-                </select>
+                <input id="cidadesr" class="form-control" list="listcidadesr" placeholder="Digite para pesquisar...">
+                <datalist id="listcidadesr">
+                @foreach ($listCidades as $cidade)
+                    <option value="{{ $cidade->nome }} - {{ $cidade->estado }}">
+                    <option value="New York">
+                    <option value="Seattle">
+                    <option value="Los Angeles">
+                    <option value="Chicago">
+                </datalist>
             </div>
             <div class="col-md-4">
                 <label for="cidadesd" class="form-label">Cidade destinatária</label>
-                <select id="cidadesd" class="form-select">
-                    <option selected></option>
-                </select>
+                <input id="cidadesd" class="form-control" list="listcidadesd" placeholder="Digite para pesquisar...">
+                <datalist id="listcidadesd">
+                    <option value="San Francisco">
+                    <option value="New York">
+                    <option value="Seattle">
+                    <option value="Los Angeles">
+                    <option value="Chicago">
+                </datalist>
             </div>
+
             <div class="mb-2">
                 <label for="obscte" class="form-label">Observação</label>
                 <textarea class="form-control" id="obscte" name="obscte" rows="2"></textarea>
@@ -78,6 +94,7 @@
                     <option value=""></option>
                     <option value=""></option>
                 </select>
+
                 <a href="/novoclientepop" data-target="#criarcliente" data-toggle="modal">
                     <button class="btn btn-outline-secondary" type="button">+</button></a>
                 <!--<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">-->
