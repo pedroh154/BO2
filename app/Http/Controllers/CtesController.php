@@ -13,4 +13,7 @@ class CtesController extends Controller
     public function detalhesCte(){
         return view('ctes.detalhesCte')/*->with($data)*/;
     }
+    public function novoCte(){
+        return view('ctes.criarcte')/*->with($data)*/;
+    }
 }

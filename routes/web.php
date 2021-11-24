@@ -29,7 +29,7 @@ Route::group(['middleware' => ['auth']], function() {
  }); 
 
 /* home (auth) */
-Route::get('/home', 'App\Http\Controllers\HomeController@index');
+Route::get('/home', 'App\Http\Controllers\CtesController@index');
 
 /* CTE's */
 Route::get('/ctes', 'App\Http\Controllers\CtesController@index');

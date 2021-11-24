@@ -51,6 +51,23 @@
                 Interface
             </div>
 
+           <!-- Nav Item - Utilities Collapse Menu -->
+           <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseUtilities">
+                <i class="fas fa-book"></i>
+                    <span>CT-es</span>
+                </a>
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Opções:</h6>
+                        <a class="collapse-item" href="/ctes">Visualizar CT-es</a>
+                        <a class="collapse-item" href="/ctes/novocte">Cadastrar CT-e</a>
+                      <!--  <a class="collapse-item" href="">Animations</a>
+                        <a class="collapse-item" href="">Other</a>-->
+                    </div>
+                </div>
+            </li>
+
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
@@ -75,13 +92,15 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Opções:</h6>
-                        <a class="collapse-item" href="/despesas">Visualizar Despesas</a>
+                        <a class="collapse-item" href="/despesas">Visualizar despesas</a>
                         <a class="collapse-item" href="/despesas/novadespesa">Cadastrar despesa</a>
                       <!--  <a class="collapse-item" href="">Animations</a>
                         <a class="collapse-item" href="">Other</a>-->
                     </div>
                 </div>
             </li>
+
+ 
 
             <!-- Divider -->
             <hr class="sidebar-divider">
