@@ -21,45 +21,45 @@
             @csrf
             <!--REVER FOR e ID-->
             <div class="col-md-4">
-                <label for="inputEmail4" class="form-label">Número CT-e:</label>
-                <input type="email" class="form-control" id="inputEmail4">
+                <label for="numcte" class="form-label">Número CT-e:</label>
+                <input type="number" class="form-control" id="numcte">
             </div>
             <div class="col-md-4">
-                <label for="inputPassword4" class="form-label">Valor CT-e</label>
-                <input type="password" class="form-control" id="inputPassword4" placeholder="R$">
+                <label for="valorcte" class="form-label">Valor CT-e</label>
+                <input type="number" class="form-control" id="valorcte" placeholder="R$">
             </div>
             <div class="col-md-4">
-                <label for="inputAddress" class="form-label">Quantidade de volumes:</label>
-                <input type="text" class="form-control" id="inputAddress">
+                <label for="qtdevol" class="form-label">Quantidade de volumes:</label>
+                <input type="number" class="form-control" id="qtdevol">
             </div>
             <div class="col-md-4">
-                <label for="inputAddress2" class="form-label">Número NF:</label>
-                <input type="text" class="form-control" id="inputAddress2">
+                <label for="numnf" class="form-label">Número NF:</label>
+                <input type="number" class="form-control" id="numnf">
             </div>
             <div class="col-md-4">
-                <label for="inputCity" class="form-label">Valor NF:</label>
-                <input type="text" class="form-control" id="inputCity" placeholder="R$">
+                <label for="valornf" class="form-label">Valor NF:</label>
+                <input type="number" class="form-control" id="valornf" placeholder="R$">
             </div>
             <div class="col-md-4">
-                <label for="inputState" class="form-label">Data de chegada:</label>
-                <input type="date" class="form-control" id="inputState">
+                <label for="data" class="form-label">Data de chegada:</label>
+                <input type="date" class="form-control" id="data">
             </div>
             <div class="col-md-4">
-                <label for="inputZip" class="form-label">Método de pagamento</label>
-                <select id="inputState" class="form-select">
+                <label for="metodo" class="form-label">Método de pagamento</label>
+                <select id="metodo" class="form-select">
                     <option selected>CIF</option>
                     <option>FOB</option>
                 </select>
             </div>
             <div class="col-md-4">
-                <label for="inputZip" class="form-label">Cidade remetente:</label>
-                <select id="inputState" class="form-select">
+                <label for="cidadesr" class="form-label">Cidade remetente:</label>
+                <select id="cidadesr" class="form-select">
                     <option selected></option>
                 </select>
             </div>
             <div class="col-md-4">
-                <label for="inputZip" class="form-label">Cidade destinatária:</label>
-                <select id="inputState" class="form-select">
+                <label for="cidadesd" class="form-label">Cidade destinatária:</label>
+                <select id="cidadesd" class="form-select">
                     <option selected></option>
                 </select>
             </div>
@@ -69,10 +69,10 @@
             <div class="input-group">
                 <label for="inputZip" class="col-12">Cliente remetente:</label>
                 <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                    <option selected>Choose...</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <option selected></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
                 </select>
                 <a href="/novoclientepop" data-target="#criarcliente" data-toggle="modal">
                     <button class="btn btn-outline-secondary" type="button">+</button></a>
@@ -87,13 +87,13 @@
             <div class="input-group">
                 <label for="inputZip" class="col-12">Cliente destinatário:</label>
                 <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                    <option selected>Choose...</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <option selected></option>
+                    <option value=""></option>
+                    <option value=""></option>
+                    <option value=""></option>
                 </select>
                 <a href="/novoclientepop" data-target="#criarcliente" data-toggle="modal">
-                <button class="btn btn-outline-secondary" type="button">+</button></a>
+                    <button class="btn btn-outline-secondary" type="button">+</button></a>
                 <div class="modal fade text-center" id="criarcliente">
                     <div class="modal-dialog">
                         <div class="modal-content">
