@@ -37,7 +37,7 @@
             <div class="col-md-4">
                 <label for="cidadesr" class="form-label">Cidade</label>
                 <input id="cidade" name="cidade" class="form-control" list="listcidadesr" placeholder="Digite para pesquisar...">
-                <datalist id="cidade">
+                <datalist id="listcidades">
                 @foreach ($listCidades as $cidade)
                     <option value="{{ $cidade->name }}">
                 @endforeach

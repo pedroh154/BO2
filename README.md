@@ -24,7 +24,8 @@ Controle pessoal - AP Sistemas
 - fazer download pdf cte (api receita)
 - gerar comprovante de entrega
 - validação de campos no front
-- revisar tamanho de campos
+- revisar largura/altura texfields
+- revisar tamanho de campos db
 
 ## CONSIDERAR:
  

@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Http\Request;
+
+use App\Http\Requests\DespesasRequest;
 use App\Models\Despesa;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,7 +24,7 @@ class DespesasController extends Controller
     }
 
     /* CRUD */
-    public function manter(Request $request)
+    public function manter(DespesasRequest $request)
     {
         $despesa = new Despesa();
         $despesa->categoria = $request->categoria;

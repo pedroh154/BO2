@@ -56,9 +56,9 @@
                 </select>
             </div>
             <div class="col-md-4">
-                <label for="cidade" class="form-label">Cidade remetente</label>
-                <input id="cidade" class="form-control" list="cidade" placeholder="Digite para pesquisar...">
-                <datalist id="cidade">
+                <label for="cidadesr" class="form-label">Cidade remetente</label>
+                <input id="cidadesr" class="form-control" list="listcidadesr" placeholder="Digite para pesquisar...">
+                <datalist id="listcidadesr">
                 @foreach ($listCidades as $cidade)
                     <option value="{{ $cidade->name }}">
                 @endforeach
