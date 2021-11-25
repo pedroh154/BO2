@@ -16,13 +16,13 @@ class CreateCtesTable extends Migration
         Schema::create('ctes', function (Blueprint $table) {
             $table->id();
             $table->string('numero_nf')->unique();
-            $table->boolean('pode_alterar');
+            $table->boolean('pode_alterar')->default(true);
             $table->unsignedFloat('valor_cte');
             $table->unsignedInteger('volume');
             $table->string('obs')->nullable();
             $table->date('data_chegada');
             $table->string('numero_cte')->unique();
-            $table->boolean('finalizado');
+            $table->boolean('finalizado')->default(false);
             $table->date('data_entrega')->nullable();
             $table->integer('tipo_pagamento');
             $table->unsignedFloat('valor_nf');

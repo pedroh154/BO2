@@ -36,10 +36,12 @@ Route::get('/home', 'App\Http\Controllers\CtesController@index');
 Route::get('/ctes', 'App\Http\Controllers\CtesController@index');
 Route::get('/ctes/novocte', 'App\Http\Controllers\CtesController@novoCte');
 Route::get('/ctes/detalhescte', 'App\Http\Controllers\CtesController@detalhesCte');
+Route::post('/cte-enviar', 'App\Http\Controllers\CtesController@manter');
 
 /* Clientes */
 Route::get('/novocliente', 'App\Http\Controllers\ClientesController@novoCliente');
 Route::get('/novoclientepop', 'App\Http\Controllers\ClientesController@novoClientePop');
+Route::post('/cliente-enviar', 'App\Http\Controllers\ClientesController@manter');
 
 /* CONTATOS */
 //get

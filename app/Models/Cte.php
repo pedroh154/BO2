@@ -11,7 +11,6 @@ class Cte extends Model
 
     protected $fillable = [
         'numero_nf',
-        'pode_alterar',
         'valor_cte',
         'volume',
         'obs',

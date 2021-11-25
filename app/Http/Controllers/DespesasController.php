@@ -32,5 +32,6 @@ class DespesasController extends Controller
         $despesa->desc = $request->desc;
         $despesa->user_id = auth()->id();
         $despesa->save();
+        return redirect()->back();
     }
 }
