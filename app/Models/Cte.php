@@ -25,6 +25,14 @@ class Cte extends Model
         'user_id',
     ];
 
+    public function users(){
+        return $this->belongsTo(User::class);
+    }
+
+    public function clientes(){
+        return $this->hasMany(Cliente::class);
+    }
+
     /**
      * The attributes that should be hidden for serialization.
      *

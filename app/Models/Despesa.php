@@ -30,4 +30,8 @@ class Despesa extends Model
     protected $hidden = [
         'remember_token',
     ];
+
+    public function users(){
+        return $this->belongsTo(User::class);
+    }
 }
