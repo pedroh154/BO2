@@ -26,6 +26,7 @@ class DespesasRequest extends FormRequest
         return [
             'data' => 'required|Date',
             'valor' => 'required|numeric',
+            'user_id' => 'required|numeric',
         ];
     }
 }
