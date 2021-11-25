@@ -27,4 +27,8 @@ class Cliente extends Model
     protected $hidden = [
         'remember_token',
     ];
+
+    public function clientes(){
+        return $this->belongsToMany(Cte::class);
+    }
 }
