@@ -31,14 +31,22 @@
             </thead>
             <tbody>
                 @foreach ($listContatos as $contato)
-                @if($contato->type == 'Nome')
                 <tr>
                     <td style="text-align: left;">{{ $contato->nome }}</td>
                     </td>
 
+                    <td style="text-align: left;">{{ $contato->fone }}</td>
+                    </td>
 
+
+                    <td style="text-align: left;">{{$contato->endereco}}</td>
+                    </td>
+
+
+                    <td style="text-align: left;">{{ $contato->desc }}</td>
+                    </td>
                 </tr>
-                @endif
+
                 @endforeach
 
 

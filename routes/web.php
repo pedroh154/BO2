@@ -29,6 +29,7 @@ Route::group(['middleware' => ['auth']], function() {
  }); 
 
 /* home (auth) */
+Route::get('/', 'App\Http\Controllers\CtesController@index');
 Route::get('/home', 'App\Http\Controllers\CtesController@index');
 
 /* CTE's */
@@ -56,6 +57,6 @@ Route::get('/despesas/novadespesa', 'App\Http\Controllers\DespesasController@nov
 //post
 Route::post('/despesa-enviar', 'App\Http\Controllers\DespesasController@manter');
 
-Route::get('/', 'App\Http\Controllers\HomeController@index');
+
 
 
