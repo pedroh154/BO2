@@ -16,8 +16,8 @@ class CreateDespesasTable extends Migration
         Schema::create('despesas', function (Blueprint $table) {
             $table->id();
 
-            $table->date('data');
             $table->string('categoria');
+            $table->date('data');
             $table->float('valor')->unsigned();
             $table->string('desc')->nullable();
 

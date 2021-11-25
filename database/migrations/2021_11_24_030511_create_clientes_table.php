@@ -16,12 +16,12 @@ class CreateClientesTable extends Migration
         Schema::create('clientes', function (Blueprint $table) {
             $table->id();
             $table->string('nome');
+            $table->string('cep');
             $table->string('endereco');
             $table->string('cadastro_nacional');
-            $table->string('cep');
-            $table->text('obs')->nullable();
             $table->string('fone')->nullable();
-
+            $table->text('obs')->nullable();
+            
             $table->integer('cidade_id')->unsigned();
             $table->foreign('cidade_id')->references('id')->on('cidades')->onDelete('CASCADE');
 

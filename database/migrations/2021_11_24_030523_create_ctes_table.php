@@ -16,16 +16,16 @@ class CreateCtesTable extends Migration
         Schema::create('ctes', function (Blueprint $table) {
             $table->id();
             $table->string('numero_nf')->unique();
-            $table->boolean('pode_alterar')->default(true);
-            $table->double('valor_cte', 10, 2)->total;
-            $table->unsignedInteger('volume');
-            $table->string('obs')->nullable();
-            $table->date('data_chegada');
+            $table->double('valor_nf', 10, 2);
             $table->string('numero_cte')->unique();
-            $table->boolean('finalizado')->default(false);
+            $table->double('valor_cte', 10, 2);
+            $table->date('data_chegada');
             $table->date('data_entrega')->nullable();
             $table->integer('tipo_pagamento');
-            $table->double('valor_nf', 10, 2);
+            $table->unsignedInteger('volume');
+            $table->string('obs')->nullable();
+            $table->boolean('pode_alterar')->default(true);
+            $table->boolean('finalizado')->default(false);
 
             $table->foreignId('remetente_id');
             $table->foreign('remetente_id')->references('id')->on('clientes')->onDelete('CASCADE');

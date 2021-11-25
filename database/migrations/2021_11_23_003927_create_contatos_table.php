@@ -15,12 +15,14 @@ class CreateContatosTable extends Migration
     {
         Schema::create('contatos', function (Blueprint $table) {
             $table->id();
-            $table->string('fone');
             $table->string('nome');
-            $table->string('desc')->nullable();
             $table->string('endereco')->nullable();
+            $table->string('fone');
+            $table->string('desc')->nullable();
+
             $table->foreignId('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE');
+            
             $table->timestamps();
         });
     }
