@@ -34,6 +34,7 @@ Route::get('/home', 'App\Http\Controllers\CtesController@index');
 /* CTE's */
 Route::get('/ctes', 'App\Http\Controllers\CtesController@index');
 Route::get('/ctes/novocte', 'App\Http\Controllers\CtesController@novoCte');
+Route::get('/ctes/detalhescte', 'App\Http\Controllers\CtesController@detalhesCte');
 
 /* Clientes */
 Route::get('/novocliente', 'App\Http\Controllers\ClientesController@novoCliente');

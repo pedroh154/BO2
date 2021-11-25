@@ -17,7 +17,7 @@ class CtesController extends Controller
     }
 
     public function detalhesCte(){
-        return view('ctes.detalhesCte')/*->with($data)*/;
+        return view('ctes.detalhescte')/*->with($data)*/;
     }
     public function novoCte(){
         $listCidades = $this->getCidadesList();
