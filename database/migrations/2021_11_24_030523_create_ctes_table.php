@@ -17,7 +17,7 @@ class CreateCtesTable extends Migration
             $table->id();
             $table->string('numero_nf')->unique();
             $table->boolean('pode_alterar')->default(true);
-            $table->unsignedFloat('valor_cte');
+            $table->double('valor_cte', 10, 2)->total;
             $table->unsignedInteger('volume');
             $table->string('obs')->nullable();
             $table->date('data_chegada');
@@ -25,7 +25,7 @@ class CreateCtesTable extends Migration
             $table->boolean('finalizado')->default(false);
             $table->date('data_entrega')->nullable();
             $table->integer('tipo_pagamento');
-            $table->unsignedFloat('valor_nf');
+            $table->double('valor_nf', 10, 2);
 
             $table->foreignId('remetente_id');
             $table->foreign('remetente_id')->references('id')->on('clientes')->onDelete('CASCADE');

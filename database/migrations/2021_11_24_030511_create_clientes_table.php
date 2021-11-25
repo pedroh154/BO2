@@ -19,7 +19,7 @@ class CreateClientesTable extends Migration
             $table->string('endereco');
             $table->string('cadastro_nacional');
             $table->string('cep');
-            $table->string('obs')->nullable();
+            $table->text('obs')->nullable();
             $table->string('fone')->nullable();
 
             $table->integer('cidade_id')->unsigned();
