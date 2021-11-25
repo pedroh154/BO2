@@ -10,7 +10,7 @@ Controle pessoal - AP Sistemas
 
 ## TODO:
 
-- view Cadastrar CTE manualmente
+- view Cadastrar CTE manualmente - feito
 - view Alterar CTE cadastrado manualmente
 - view alterar contato
 - view alterar despesa
@@ -24,6 +24,7 @@ Controle pessoal - AP Sistemas
 - fazer download pdf cte (api receita)
 - gerar comprovante de entrega
 - validação de campos no front
+- revisar tamanho de campos
 
 ## CONSIDERAR:
  
