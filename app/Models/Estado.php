@@ -42,7 +42,7 @@ class State extends Model
     /**
      * Get all of the cities for the state.
      */
-    public function city()
+    public function cidade()
     {
 
         return $this->hasMany(Cidade::class);

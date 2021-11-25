@@ -9,7 +9,7 @@ class DespesasController extends Controller
 {
     /* buscar dados pra tabela no view */
     public function getDespesasList(){
-		return $tableContent = Despesa::where('user_id', Auth::id())->orderBy('valor')->get();
+		return Despesa::where('user_id', Auth::id())->orderBy('valor')->get();
     }
 
     /* VIEWS */

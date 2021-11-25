@@ -49,11 +49,15 @@ class Cidade extends Model
     /**
      * Get the state that owns the city.
      */
-    public function state()
+    public function estado()
     {
-
         return $this->belongsTo(Estado::class, 'estado_id');
-
     }
+
+    public function getFullNome()
+    {
+        return $this->estado()->name;
+    }
+
 
 }

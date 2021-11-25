@@ -1,11 +1,17 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
+use App\Models\Cidade;
+use Illuminate\Support\Facades\Auth;
 
 class CtesController extends Controller
 {
+    /* buscar dados pra tabela no view */
+    public function getCidadesList(){
+        $cidades = Cidade::orderBy('name')->get();
+        return $cidades;
+    }
+
     public function index(){
         return view('ctes.index');
     }
@@ -14,6 +20,7 @@ class CtesController extends Controller
         return view('ctes.detalhesCte')/*->with($data)*/;
     }
     public function novoCte(){
-        return view('ctes.criarcte')/*->with($data)*/;
+        $listCidades = $this->getCidadesList();
+        return view('ctes.criarcte')->with('listCidades', $listCidades);
     }
 }

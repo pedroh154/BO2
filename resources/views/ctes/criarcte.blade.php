@@ -60,23 +60,18 @@
                 <input id="cidadesr" class="form-control" list="listcidadesr" placeholder="Digite para pesquisar...">
                 <datalist id="listcidadesr">
                 @foreach ($listCidades as $cidade)
-                    <option value="{{ $cidade->nome }} - {{ $cidade->estado }}">
-                    <option value="New York">
-                    <option value="Seattle">
-                    <option value="Los Angeles">
-                    <option value="Chicago">
+                    <option value="{{ $cidade->name }}">
+                @endforeach
                 </datalist>
             </div>
             <div class="col-md-4">
                 <label for="cidadesd" class="form-label">Cidade destinatária</label>
                 <input id="cidadesd" class="form-control" list="listcidadesd" placeholder="Digite para pesquisar...">
                 <datalist id="listcidadesd">
-                    <option value="San Francisco">
-                    <option value="New York">
-                    <option value="Seattle">
-                    <option value="Los Angeles">
-                    <option value="Chicago">
-                </datalist>
+                    @foreach ($listCidades as $cidade)
+                        <option value="{{ $cidade->name }}">
+                    @endforeach
+                    </datalist>
             </div>
 
             <div class="mb-2">
