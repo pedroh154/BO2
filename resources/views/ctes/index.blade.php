@@ -47,7 +47,7 @@
                     <a class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" type="file"><i class="fas fa-upload"></i> Importar XML</a> <input type="file" hidden>
                 </label>
                 <label class="btn btn-default">
-                    <a class="btn btn-sm btn-primary shadow-sm" href="/ctes/novocte" type="button"><i class="fas fa-pen-square"></i> Incluir CT-e manualmente</a>
+                    <a class="btn btn-sm btn-primary shadow-sm" href="/ctes/novocte" type="button"><i class="fas fa-pen-square"></i> Cadastrar CT-e manualmente</a>
                 </label>
             </div>
 
