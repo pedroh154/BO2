@@ -16,15 +16,75 @@
         <div class="row">
             <p class="h3 mb-0 text-gray-800">Projeto BO2 - Página principal</p>
         </div>
+        <div class="d-flex flex-column">
+            <hr class="sidebar-divider">
+            <h5>Incluir CT-e</h5>
+        </div>
+        <div class="d-sm-flex align-items-center justify-content-between mb-4 container-fluid">
 
-        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-           <!-- <input type="file" class="form-control">-->
-            <label class="btn btn-default">
-            <a class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" type="file"><i class="fas fa-upload fa-sm text-white-50"></i> Importar XML</a> <input type="file" hidden>
-            </label>
-            
+            <!-- <input type="file" class="form-control">-->
+            <div class="col-md-2">
+                <label for="filtroempresa" class="form-label">Empresa</label>
+                <select id="filtroempresa" class="form-select">
+                    <option selected value="UNIAO">União</option>
+                    <option value="TEX">TEX</option>
+                </select>
+            </div>
+            <div class="container-fluid">
+                <div class="btn-group col-md-2" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                    <label class="btn btn-outline-primary" for="btnradio1">SSW</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                    <label class="btn btn-outline-primary" for="btnradio2">RF</label>
+                </div>
+                <div class="col-md-12">
+                    <input type="number" class="form-control" id="chavecte" placeholder="Insira a chave do CT-e">
+                </div>
+            </div>
+            <div class="container">
+                <label class="btn btn-default">
+                    <a class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" type="file"><i class="fas fa-upload"></i> Importar XML</a> <input type="file" hidden>
+                </label>
+                <label class="btn btn-default">
+                    <a class="btn btn-sm btn-primary shadow-sm" href="/ctes/novocte" type="button"><i class="fas fa-pen-square"></i> Incluir CT-e manualmente</a>
+                </label>
+            </div>
+
             <!--<a class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" type="file"><i class="fas fa-upload fa-sm text-white-50"></i> Importar XML</a>-->
 
+        </div>
+
+        <div class="d-flex flex-column">
+            <hr class="sidebar-divider">
+            <h5>Filtros</h5>
+        </div>
+        <div class="d-sm-flex align-items-center justify-content-between mb-4 container-fluid">
+            <div class="col-md-2">
+                <a class="btn btn-sm btn-primary shadow-sm" href="" type="button"><i class="fas fa-sync"></i></a>
+            </div>
+            <div class="input-group col-md-3">
+                <input id="search-input" type="search" class="form-control" placeholder="Digite aqui...">
+                <button id="search-button" type="button" class="btn btn-primary">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+            <div class="col-md-2">
+                <label for="datainicial" class="form-label">Data inicial</label>
+                <input type="date" class="form-control" id="datainicial">
+            </div>
+            <div class="col-md-2">
+                <!--deixar dia de hoje como padrao-->
+                <label for="datafinal" class="form-label">Data final</label>
+                <input type="date" class="form-control" id="datafinal">
+            </div>
+            <div class="col-md-2">
+                <label for="filtropagamento" class="form-label">Método de pagamento</label>
+                <select id="filtropagamento" class="form-select">
+                    <option selected>CIF</option>
+                    <option>FOB</option>
+                </select>
+            </div>
         </div>
         <div>
             <br>
