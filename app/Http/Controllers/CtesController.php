@@ -42,6 +42,8 @@ class CtesController extends Controller
         $this->objCte->data_entrega = $request->data_entrega;
         $this->objCte->tipo_pagamento = $request->tipo_pagamento;
         $this->objCte->valor_nf = $request->valor_nf;
+        $this->objCte->remetente_id = $request->remetente_id;
+        $this->objCte->destinatario_id = $request->destinatario_id;
         $this->objCte->user_id = auth()->id();
 
         $this->objCte->save();

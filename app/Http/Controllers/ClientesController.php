@@ -36,7 +36,7 @@ class ClientesController extends Controller
         $this->objCliente->endereco = $request->endereco;
         $this->objCliente->cep = $request->cep;
         $this->objCliente->cadastro_nacional = $request->cadastro_nacional;
-        $this->objCliente->cidade = $request->cidade;
+        $this->objCliente->cidade_id = $request->cidade_id;
 
         $this->objCliente->save();
 
