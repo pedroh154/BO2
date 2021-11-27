@@ -26,7 +26,6 @@ class ContatosRequest extends FormRequest
         return [
             'nome' => 'required',
             'fone' => 'required',
-            'user_id' => 'required|numeric',
         ];
     }
 }

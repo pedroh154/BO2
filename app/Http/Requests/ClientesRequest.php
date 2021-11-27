@@ -24,11 +24,10 @@ class ClientesRequest extends FormRequest
     public function rules()
     {
         return [
-            'nome' => 'required',
-            'cep' => 'required',
-            'endereco' => 'required',
-            'cadastro_nacional' => 'required',
-            'cidade_id' => 'required|numeric',
+            'nome' => 'required|string',
+            'cep' => 'required|string',
+            'endereco' => 'required|string',
+            'cadastro_nacional' => 'required|string',
         ];
     }
 }

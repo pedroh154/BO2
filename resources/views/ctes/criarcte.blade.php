@@ -57,7 +57,7 @@
             </div>
             <div class="col-md-4">
                 <label for="cidadesr" class="form-label">Cidade remetente</label>
-                <input id="cidadesr" class="form-control" list="listcidadesr" placeholder="Digite para pesquisar...">
+                <input id="cidadesr" class="form-control" list="listcidadesr" placeholder="Digite para pesquisar..." required>
                 <datalist id="listcidadesr">
                 @foreach ($listCidades as $cidade)
                     <option value="{{ $cidade->name }}">
@@ -66,7 +66,7 @@
             </div>
             <div class="col-md-4">
                 <label for="cidadesd" class="form-label">Cidade destinatária</label>
-                <input id="cidadesd" class="form-control" list="listcidadesd" placeholder="Digite para pesquisar...">
+                <input id="cidadesd" class="form-control" list="listcidadesd" placeholder="Digite para pesquisar..." required>
                 <datalist id="listcidadesd">
                     @foreach ($listCidades as $cidade)
                         <option value="{{ $cidade->name }}">
@@ -83,7 +83,7 @@
             <h5> Definir cliente</h5>
             <div class="input-group">
                 <label for="inputZip" class="col-12">Cliente remetente</label>
-                <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon" required>
                     <option selected></option>
                     <option value=""></option>
                     <option value=""></option>
@@ -102,7 +102,7 @@
             </div>
             <div class="input-group ">
                 <label for="inputZip" class="col-12">Cliente destinatário</label>
-                <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon" required>
                     <option selected></option>
                     <option value=""></option>
                     <option value=""></option>

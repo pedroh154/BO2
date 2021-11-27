@@ -53,11 +53,4 @@ class Cidade extends Model
     {
         return $this->belongsTo(Estado::class, 'estado_id');
     }
-
-    public function getFullNome()
-    {
-        return $this->estado()->name;
-    }
-
-
 }

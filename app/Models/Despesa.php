@@ -31,6 +31,7 @@ class Despesa extends Model
         'remember_token',
     ];
 
+    /* RELAÇÕES */
     public function users(){
         return $this->belongsTo(User::class);
     }

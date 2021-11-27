@@ -4,19 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\DespesasRequest;
 use App\Models\Despesa;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 class DespesasController extends Controller
 {
-    /* buscar dados pra tabela no view */
-    public function getDespesasList(){
-		return Despesa::where('user_id', Auth::id())->orderBy('valor')->get();
+    private $objDespesa;
+
+    public function __construct()
+    {
+        $this->objDespesa = new Despesa();
     }
 
     /* VIEWS */
     public function index(){
-        $listDespesas = $this->getDespesasList();
-        return view('despesas.index')->with('listDespesas', $listDespesas);
+        $listDespesas = Despesa::where('user_id', auth()->id())->orderBy('categoria')->get();
+        return view('despesas.index', compact('listDespesas'));
     }
 
     public function novaDespesa(){
@@ -26,13 +29,16 @@ class DespesasController extends Controller
     /* CRUD */
     public function manter(DespesasRequest $request)
     {
-        $despesa = new Despesa();
-        $despesa->categoria = $request->categoria;
-        $despesa->data = $request->data;
-        $despesa->valor = $request->valor;
-        $despesa->desc = $request->desc;
-        $despesa->user_id = auth()->id();
-        $despesa->save();
+        $this->objDespesa->categoria = $request->categoria;
+        $this->objDespesa->data = $request->data;
+        $this->objDespesa->valor = $request->valor;
+        $this->objDespesa->desc = $request->desc;
+        $this->objDespesa->user_id = auth()->id();
+
+        $this->objDespesa->save();
+
         return redirect()->back();
     }
+
+
 }

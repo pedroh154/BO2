@@ -32,9 +32,6 @@ class CtesRequest extends FormRequest
             'data_entrega' => 'date',
             'tipo_pagamento' => 'required|numeric',
             'volume' => 'required|numeric',
-            'remetente_id' => 'required|numeric',
-            'destinatario_id' => 'required|numeric',
-            'user_id' => 'required|numeric',
         ];
     }
 }

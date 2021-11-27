@@ -7,17 +7,17 @@ use Illuminate\Support\Facades\Auth;
 
 class ContatosController extends Controller
 {
-    protected $listContatos;
+    private $objContato;
 
-    /* buscar dados pra tabela no view */
-    public function getContatosList(){
-        return $tableContent = Contato::where('user_id', Auth::id())->orderBy('nome')->get();
+    public function __construct()
+    {
+        $this->objContato = new Contato();
     }
 
     /* views */
     public function index(){
-        $listContatos = $this->getContatosList();
-        return view('contatos.index')->with('listContatos', $listContatos);
+        $listContatos = Contato::where('user_id', auth()->id())->orderBy('nome')->get();
+        return view('contatos.index', compact('listContatos'));
     }
 
     public function novoContato(){
@@ -27,21 +27,14 @@ class ContatosController extends Controller
     /* CRUD */
     public function manter(Request $request)
     {
-        $contato = new Contato;
-        $contato->fone = $request->fone;
-        $contato->nome = $request->nome;
-        $contato->desc = $request->desc;
-        $contato->endereco = $request->endereco;
-        $contato->user_id = auth()->id();
-        $contato->save();
+        $this->objContato->fone = $request->fone;
+        $this->objContato->nome = $request->nome;
+        $this->objContato->desc = $request->desc;
+        $this->objContato->endereco = $request->endereco;
+        $this->objContato->user_id = auth()->id();
+
+        $this->objContato->save();
+        
         return redirect()->back();
     }
-
-    /*public function alterar(Request $request)
-    {
-    }*/
-
-    /*public function excluir(Request $request)
-    {
-    }*/
 }
