@@ -1,33 +1,34 @@
-
 # BO2
-
 Controle pessoal - AP Sistemas
 
-
-
-
-
-
 ## TODO:
+- janela para quando clicar no CTE na tabela - ANDRÉ
+- janela para quando clicar no contato na tabela - ANDRÉ
+- janela para quando clicar na despesa na tabela - ANDRÉ
+- botaozinho pra excluir/alterar item da tabela CTE - ANDRÉ
+- botaozinho pra excluir/alterar item da tabela DESPESA - ANDRÉ
+- botaozinho pra excluir/alterar item da tabela CONTATO - ANDRÉ
+- rever validaçao de campos nos views - ANDRÉ
+- máscara para CPF, real, telefone, etc - ANDRÉ
+- revisar largura/altura texfields - ANDRÉ
+- update CTE - PEDRO
+- delete CTE - PEDRO
+- update DESPESA - PEDRO
+- delete DESPESA - PEDRO
+- update CONTATO - PEDRO
+- delete CONTATO - PEDRO
+- update CLIENTE - PEDRO
+- delete CLIENTE - PEDRO
+- revisar tamanho de campos db - PEDRO
 
-- view Cadastrar CTE manualmente - feito
-- view Alterar CTE cadastrado manualmente
-- view alterar contato
-- view alterar despesa
-- terminar crud despesas
-- terminar crud contatos
-- terminar crud ctes
 - ligar com api receita
-- validaçao de campos nos views
 - regras de negócio banco
 - gerar relatorios
 - fazer download pdf cte (api receita)
 - gerar comprovante de entrega
-- validação de campos no front
-- revisar largura/altura texfields
-- revisar tamanho de campos db
+
+
 
 ## CONSIDERAR:
- 
 - página principal
 - página com resumo de despesas
