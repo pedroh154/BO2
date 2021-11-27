@@ -32,12 +32,12 @@
             <h4 class="container-fluid" style="text-align: left;">Forneça os dados abaixo:</h4> <br>
             <form class="row g-3" action="/cliente-enviar" method="POST">
                 @csrf
-                <div class="col-md-8">
+                <div class="col-md-7">
                     <!--VER IDS-->
                     <label for="nomecliente" class="form-label">Nome Completo</label>
                     <input type="text" class="form-control" id="nomecliente" required name="nomecliente">
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-5">
                     <label for="fonecliente" class="form-label">Telefone</label>
                     <input type="number" class="form-control" id="fonecliente" required name="fonecliente">
                 </div>
@@ -49,12 +49,21 @@
                     <label for="enderecocliente" class="form-label">Endereço</label>
                     <input type="text" class="form-control" id="enderecocliente" name="enderecocliente">
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-7">
                     <label for="cadastronacionalcliente" class="form-label">CPF/CNPJ</label>
                     <input type="text" class="form-control" id="cadastronacionalcliente" name="cadastronacionalcliente">
                 </div>
+                <div class="col-md-5">
+                    <label for="cidadesr" class="form-label">Cidade</label>
+                    <input id="cidade" name="cidade" class="form-control" list="listcidades" placeholder="Pesquisar...">
+                    <datalist id="listcidades">
+                        @foreach ($listCidades as $cidade)
+                        <option value="{{ $cidade->name }}">
+                            @endforeach
+                    </datalist>
+                </div>
                 <div class="col-md-12">
-                    <label for="obscliente" class="form-label">Descrição</label>
+                    <label for="obscliente" class="form-label">Observações</label>
                     <textarea class="form-control" id="obscliente" name="obscliente" rows="2"></textarea>
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">

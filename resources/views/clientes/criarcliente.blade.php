@@ -17,12 +17,12 @@
     <div class="container-fluid">
         <form class="row g-3" action="/cliente-enviar" method="POST">
             @csrf
-            <div class="col-md-8">
+            <div class="col-md-7">
                 <!--VER IDS-->
                 <label for="nomecliente" class="form-label">Nome Completo</label>
-                <input type="text" class="form-control" id="nome" required name="nome" >
+                <input type="text" class="form-control" id="nome" required name="nome">
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <label for="fonecliente" class="form-label">Telefone</label>
                 <input type="number" class="form-control" id="fone" required name="fone">
             </div>
@@ -30,23 +30,24 @@
                 <label for="cepcliente" class="form-label">CEP</label>
                 <input type="number" class="form-control" id="cep" required name="cep">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-5">
                 <label for="enderecocliente" class="form-label">Endereço</label>
-                <input type="text" class="form-control" id="endereco" name="endereco" >
+                <input type="text" class="form-control" id="endereco" name="endereco">
+            </div>
+            <div class="col-md-3">
+                <label for="cadastronacionalcliente" class="form-label">CPF/CNPJ</label>
+                <input type="text" class="form-control" id="cadastro_nacional" name="cadastro_nacional">
             </div>
             <div class="col-md-4">
                 <label for="cidadesr" class="form-label">Cidade</label>
-                <input id="cidade" name="cidade" class="form-control" list="listcidadesr" placeholder="Digite para pesquisar...">
+                <input id="cidade" name="cidade" class="form-control" list="listcidades" placeholder="Digite para pesquisar...">
                 <datalist id="listcidades">
-                @foreach ($listCidades as $cidade)
+                    @foreach ($listCidades as $cidade)
                     <option value="{{ $cidade->name }}">
-                @endforeach
+                        @endforeach
                 </datalist>
             </div>
-            <div class="col-md-4">
-                <label for="cadastronacionalcliente" class="form-label">CPF/CNPJ</label>
-                <input type="text" class="form-control" id="cadastro_nacional" name="cadastro_nacional" >
-            </div>
+
             <div class="mb-3">
                 <label for="obscliente" class="form-label">Observações</label>
                 <textarea class="form-control" id="obs" name="obs" rows="2"></textarea>
