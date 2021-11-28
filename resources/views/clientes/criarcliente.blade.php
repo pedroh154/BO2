@@ -36,7 +36,7 @@
             </div>
             <div class="col-md-3">
                 <label for="cadastronacionalcliente" class="form-label">CPF/CNPJ</label>
-                <input type="text" class="form-control" id="cadastro_nacional" name="cadastro_nacional">
+                <input type="number" class="form-control" id="cadastro_nacional" name="cadastro_nacional">
             </div>
             <div class="col-md-4">
                 <label for="cidadesr" class="form-label">Cidade</label>

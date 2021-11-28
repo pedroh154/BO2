@@ -35,36 +35,36 @@
                 <div class="col-md-7">
                     <!--VER IDS-->
                     <label for="nomecliente" class="form-label">Nome Completo</label>
-                    <input type="text" class="form-control" id="nomecliente" required name="nomecliente">
+                    <input type="text" class="form-control" id="nome" required name="nome">
                 </div>
                 <div class="col-md-5">
                     <label for="fonecliente" class="form-label">Telefone</label>
-                    <input type="number" class="form-control" id="fonecliente" required name="fonecliente">
+                    <input type="number" class="form-control" id="fone" required name="fone">
                 </div>
                 <div class="col-md-4">
                     <label for="cepcliente" class="form-label">CEP</label>
-                    <input type="number" class="form-control" id="cepcliente" required name="cepcliente">
+                    <input type="number" class="form-control" id="cep" required name="cep">
                 </div>
                 <div class="col-md-8">
                     <label for="enderecocliente" class="form-label">Endereço</label>
-                    <input type="text" class="form-control" id="enderecocliente" name="enderecocliente">
+                    <input type="text" class="form-control" id="endereco" name="endereco">
                 </div>
                 <div class="col-md-7">
                     <label for="cadastronacionalcliente" class="form-label">CPF/CNPJ</label>
-                    <input type="text" class="form-control" id="cadastronacionalcliente" name="cadastronacionalcliente">
+                    <input type="number" class="form-control" id="cadastro_nacional" name="cadastro_nacional">
                 </div>
                 <div class="col-md-5">
                     <label for="cidadesr" class="form-label">Cidade</label>
-                    <input id="cidade" name="cidade" class="form-control" list="listcidades" placeholder="Pesquisar...">
+                    <input id="cidade_id" name="cidade_id" class="form-control" list="listcidades" placeholder="Pesquisar...">
                     <datalist id="listcidades">
                         @foreach ($listCidades as $cidade)
-                        <option value="{{ $cidade->name }}">
-                            @endforeach
+                        <option value="{{ $cidade->id }}" hidden> {!! $cidade->name !!} </option>
+                        @endforeach
                     </datalist>
                 </div>
                 <div class="col-md-12">
                     <label for="obscliente" class="form-label">Observações</label>
-                    <textarea class="form-control" id="obscliente" name="obscliente" rows="2"></textarea>
+                    <textarea class="form-control" id="obs" name="obs" rows="2"></textarea>
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                     <button type="submit" class="btn btn-primary">Cadastrar</button>

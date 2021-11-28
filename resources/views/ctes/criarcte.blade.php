@@ -85,9 +85,6 @@
                 <label for="inputZip" class="col-12">Cliente remetente</label>
                 <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon" required>
                     <option selected></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
                 </select>
 
                 <a href="/novoclientepop" data-target="#criarcliente" data-toggle="modal">
@@ -104,9 +101,6 @@
                 <label for="inputZip" class="col-12">Cliente destinatário</label>
                 <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon" required>
                     <option selected></option>
-                    <option value=""></option>
-                    <option value=""></option>
-                    <option value=""></option>
                 </select>
                 <a href="/novoclientepop" data-target="#criarcliente" data-toggle="modal">
                     <button class="btn btn-outline-secondary" type="button">+</button></a>

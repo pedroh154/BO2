@@ -63,17 +63,17 @@
             <div class="col-md-2">
                 <a class="btn btn-sm btn-primary shadow-sm" href="" type="button"><i class="fas fa-sync"></i></a>
             </div>
-            <div class="input-group col-md-3">
+            <div class="input-group col-md-2">
                 <input id="search-input" type="search" class="form-control" placeholder="Digite aqui...">
                 <button id="search-button" type="button" class="btn btn-primary">
                     <i class="fa fa-search"></i>
                 </button>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <label for="datainicial" class="form-label">Data inicial</label>
                 <input type="date" class="form-control" id="datainicial">
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <!--deixar dia de hoje como padrao-->
                 <label for="datafinal" class="form-label">Data final</label>
                 <input type="date" class="form-control" id="datafinal">
