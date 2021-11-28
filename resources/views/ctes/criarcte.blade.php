@@ -18,6 +18,14 @@
 <div id="content-wrapper" class="d-flex flex-column" style="background-color: #f4f5f8;">
     <h1 class="container-fluid">Cadastrar CT-e</h1>
 
+    @if(isset($errors) && count($errors)>0)
+    <div class="text-center mt-4 mb-4 p-2 alert-danger">
+        @foreach($errors->all() as $erro)
+        {{$erro}}<br>
+        @endforeach
+    </div>
+    @endif
+
     <h4 class="container-fluid">Forneça os dados abaixo:</h4> <br>
     <!--REVER ACTION-->
     <div class="container-fluid">
@@ -49,19 +57,19 @@
                 <input type="date" class="form-control" name="data_chegada" id="data_chegada">
             </div>
             <div class="col-md-4">
-                <label for="metodo" class="form-label">Método de pagamento</label>
-                <select id="metodo" class="form-select">
-                    <option selected>CIF</option>
-                    <option>FOB</option>
+                <label for="tipo_pagamento" class="form-label">Método de pagamento</label>
+                <select id="tipo_pagamento" name="tipo_pagamento" class="form-select">
+                    <option selected value="0">CIF</option>
+                    <option value="1">FOB</option>
                 </select>
             </div>
             <div class="col-md-4">
                 <label for="cidadesr" class="form-label">Cidade remetente</label>
                 <input id="cidadesr" class="form-control" list="listcidadesr" placeholder="Digite para pesquisar..." required>
                 <datalist id="listcidadesr">
-                @foreach ($listCidades as $cidade)
-                    <option value="{{ $cidade->name }}">
-                @endforeach
+                    @foreach ($listCidades as $cidade)
+                    <option value="{{ $cidade->id }}" hidden> {!! $cidade->name !!} </option>
+                    @endforeach
                 </datalist>
             </div>
             <div class="col-md-4">
@@ -69,13 +77,13 @@
                 <input id="cidadesd" class="form-control" list="listcidadesd" placeholder="Digite para pesquisar..." required>
                 <datalist id="listcidadesd">
                     @foreach ($listCidades as $cidade)
-                        <option value="{{ $cidade->name }}">
+                    <option value="{{ $cidade->id }}" hidden> {!! $cidade->name !!} </option>
                     @endforeach
-                    </datalist>
+                </datalist>
             </div>
 
             <div class="mb-2">
-                <label for="obscte" class="form-label">Observação</label>
+                <label for="obs" class="form-label">Observação</label>
                 <textarea class="form-control" id="obs" name="obs" rows="2"></textarea>
             </div>
             <BR>
@@ -83,9 +91,12 @@
             <h5> Definir cliente</h5>
             <div class="input-group">
                 <label for="inputZip" class="col-12">Cliente remetente</label>
-                <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon" required>
-                    <option selected></option>
-                </select>
+                <input id="remetente_id" name="remetente_id" class="form-control" list="listclientes" placeholder="Digite para pesquisar...">
+                <datalist id="listclientes">
+                    @foreach ($listClientes as $cliente)
+                    <option value="{{ $cliente->id }}" hidden> {!! $cliente->nome !!} </option>
+                    @endforeach
+                </datalist>
 
                 <a href="/novoclientepop" data-target="#criarcliente" data-toggle="modal">
                     <button class="btn btn-outline-secondary" type="button">+</button></a>
@@ -99,9 +110,12 @@
             </div>
             <div class="input-group ">
                 <label for="inputZip" class="col-12">Cliente destinatário</label>
-                <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon" required>
-                    <option selected></option>
-                </select>
+                <input id="destinatario_id" name="destinatario_id" class="form-control" list="listclientes" placeholder="Digite para pesquisar...">
+                <datalist id="listclientes">
+                    @foreach ($listCidades as $cidade)
+                    <option value="{{ $cidade->id }}" hidden> {!! $cidade->nome !!} </option>
+                    @endforeach
+                </datalist>
                 <a href="/novoclientepop" data-target="#criarcliente" data-toggle="modal">
                     <button class="btn btn-outline-secondary" type="button">+</button></a>
                 <div class="modal fade text-center" id="criarcliente">

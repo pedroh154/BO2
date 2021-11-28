@@ -21,6 +21,14 @@
 <body>
     <div class="modal-header">
         <h5 class="modal-title">Criar cliente</h5>
+        @if(isset($errors) && count($errors)>0)
+        <div class="text-center mt-4 mb-4 p-2 alert-danger">
+            @foreach($errors->all() as $erro)
+            {{$erro}}<br>
+            @endforeach
+        </div>
+        @endif
+
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
