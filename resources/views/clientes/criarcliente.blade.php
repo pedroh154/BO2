@@ -2,7 +2,7 @@
 
 @section('content')
 <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 
 <!--<div class="btn-group" role="group" aria-label="Basic example">
@@ -40,11 +40,11 @@
             </div>
             <div class="col-md-4">
                 <label for="cidadesr" class="form-label">Cidade</label>
-                <input id="cidade" name="cidade" class="form-control" list="listcidades" placeholder="Digite para pesquisar...">
+                <input id="cidade_id" name="cidade_id" class="form-control" list="listcidades" placeholder="Digite para pesquisar...">
                 <datalist id="listcidades">
                     @foreach ($listCidades as $cidade)
-                    <option value="{{ $cidade->name }}">
-                        @endforeach
+                    <option value="{{ $cidade->id }}" hidden> {!! $cidade->name !!} </option>
+                    @endforeach
                 </datalist>
             </div>
 
