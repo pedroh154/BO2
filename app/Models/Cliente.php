@@ -17,6 +17,7 @@ class Cliente extends Model
         'fone',
         'obs',
         'cidade_id',
+        'user_id',
     ];
 
     /**
@@ -30,5 +31,9 @@ class Cliente extends Model
 
     public function clientes(){
         return $this->belongsToMany(Cte::class);
+    }
+
+    public function users(){
+        return $this->belongsTo(User::class);
     }
 }

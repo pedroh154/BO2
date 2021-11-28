@@ -37,6 +37,7 @@ class ClientesController extends Controller
         $this->objCliente->cep = $request->cep;
         $this->objCliente->cadastro_nacional = $request->cadastro_nacional;
         $this->objCliente->cidade_id = $request->cidade_id;
+        $this->objCliente->user_id = auth()->id();
 
         $this->objCliente->save();
 

@@ -25,6 +25,9 @@ class CreateClientesTable extends Migration
             $table->integer('cidade_id')->unsigned();
             $table->foreign('cidade_id')->references('id')->on('cidades')->onDelete('CASCADE');
 
+            $table->foreignId('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
+
             $table->timestamps();
         });
     }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Cte;
+use App\Models\Cliente;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Cidade;
@@ -23,7 +24,10 @@ class CtesController extends Controller
     public function novoCte(){
         $cidade = new Cidade();
         $listCidades = $cidade->all();
-        return view('ctes.criarcte')->with('listCidades', $listCidades);
+
+        $listClientes = Cliente::where('user_id', auth()->id())->orderBy('nome')->get();
+
+        return view('ctes.criarcte', compact('listCidades', 'listClientes'));
     }
 
     public function detalhesCte(){
