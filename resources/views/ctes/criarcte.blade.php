@@ -64,8 +64,8 @@
                 </select>
             </div>
             <div class="col-md-4">
-                <label for="cidadesr" class="form-label">Cidade remetente</label>
-                <input id="cidadesr" class="form-control" list="listcidadesr" placeholder="Digite para pesquisar..." required>
+                <label for="cidade_remetente_id" class="form-label">Cidade remetente</label>
+                <input id="cidade_remetente_id" class="form-control" name="cidade_remetente_id" list="listcidadesr" placeholder="Digite para pesquisar..." required>
                 <datalist id="listcidadesr">
                     @foreach ($listCidades as $cidade)
                     <option value="{{ $cidade->id }}" hidden> {!! $cidade->name !!} </option>
@@ -73,8 +73,8 @@
                 </datalist>
             </div>
             <div class="col-md-4">
-                <label for="cidadesd" class="form-label">Cidade destinatária</label>
-                <input id="cidadesd" class="form-control" list="listcidadesd" placeholder="Digite para pesquisar..." required>
+                <label for="cidade_destinataria_id" class="form-label">Cidade destinatária</label>
+                <input id="cidade_destinataria_id" class="form-control" name="cidade_destinataria_id" list="listcidadesd" placeholder="Digite para pesquisar..." required>
                 <datalist id="listcidadesd">
                     @foreach ($listCidades as $cidade)
                     <option value="{{ $cidade->id }}" hidden> {!! $cidade->name !!} </option>

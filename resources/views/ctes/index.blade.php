@@ -102,13 +102,19 @@
                     </tr>
                 </thead>
                 <tbody>
-
+                    @foreach ($listCtes as $cte)
                     <tr>
-                        <td style="text-align: left;">São Paulo</td>
-                        <td style="text-align: right;">123457</td>
-                        <td style="text-align: right;">R$ 57,21</td>
+                        <td style="text-align: left;">{{ $cte->cidade_remetente_id }}</td>
+                        <td style="text-align: right;">{{ $cte->numero_cte }}</td>
+                        <td style="text-align: right;">{{ $cte->valor_cte }}</td>
+                        @if ($cte->tipo_pagamento == "0")
+                        <td style="text-align: center;">CIF</td>
+                        
+                        @else
                         <td style="text-align: center;">FOB</td>
-                        <td style="text-align: right;">21</td>
+                        
+                        @endif
+                        <td style="text-align: right;">{{ $cte->volume }}</td>
                         <td style="text-align: center;">Nicolas Luis Artino de Aguiar</td>
                         <td>
                             <div class="custom-control custom-checkbox" style="text-align: center;">
@@ -117,8 +123,8 @@
                             </div>
                         </td>
                     </tr>
-
-                    <tr>
+                    @endforeach
+                    <!-- <tr>
                         <td style="text-align: left;">Canoas</td>
                         <td style="text-align: right;">4322236</td>
                         <td style="text-align: right;">R$ 42,36</td>
@@ -147,7 +153,7 @@
                             </div>
                         </td>
                     </tr>
-
+-->
                 </tbody>
             </table>
         </div>

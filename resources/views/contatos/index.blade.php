@@ -45,6 +45,7 @@
 
                     <td style="text-align: left;">{{ $contato->desc }}</td>
                     </td>
+                    
                 </tr>
 
                 @endforeach
