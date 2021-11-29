@@ -122,7 +122,7 @@
                                 <label class="custom-control-label" for="{{ $cte->id }}"></label>
                             </div>
                         </td>
-                        <td>
+                        <td class="col-md-2" style="text-align: center;">
                             <div class="action-buttons">
                                 <!--PDF-->
                                 <a href="" class="" data-rel="" title="" data-original-title="">

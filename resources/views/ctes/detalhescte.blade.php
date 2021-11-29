@@ -11,9 +11,9 @@
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 <div id="content-wrapper" class="d-flex flex-column" style="background-color: #f4f5f8;">
-    <h1 class="container-fluid">Detalhes CT-e</h1>
+    <h1 class="container-fluid">Detalhes do CT-e</h1>
 
- <br>
+
     <!--REVER ACTION-->
     <div class="container-fluid">
         <form class="row g-3" action="/ctes">
@@ -25,7 +25,7 @@
             </div>
             <div class="col-md-4">
                 <label for="valorcte" class="form-label">Valor CT-e</label>
-                <input type="number" class="form-control" id="valorcte" placeholder="R$" disabled value="{{$cte->valor_cte}}">
+                <input type="number" class="form-control" id="valorcte" placeholder="R$" disabled value="{{number_format($cte->valor_cte, 2)}}">
             </div>
             <div class="col-md-4">
                 <label for="qtdevol" class="form-label">Quantidade de volumes</label>
@@ -37,7 +37,7 @@
             </div>
             <div class="col-md-4">
                 <label for="valornf" class="form-label">Valor NF</label>
-                <input type="number" class="form-control" id="valornf" placeholder="R$" disabled value="{{$cte->valor_nf}}">
+                <input type="number" class="form-control" id="valornf" disabled value="{{number_format($cte->valor_nf, 2)}}">
             </div>
             <div class="col-md-4">
                 <label for="data" class="form-label">Data de chegada</label>
@@ -72,7 +72,7 @@
             </div>
             <BR>
             <hr class="sidebar-divider">
-            <h5> Definir cliente</h5>
+            <h5> Clientes</h5>
             <div class="input-group">
                 <label for="inputZip" class="col-12">Cliente remetente</label>
                 <select class="form-select" id="inputGroupSelect04" aria-label="Example select with button addon" disabled>

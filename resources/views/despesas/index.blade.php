@@ -41,20 +41,20 @@
             <tbody>
                 @foreach ($listDespesas as $despesa)
                 <tr>
-                    <td style="text-align: left;">{{ $despesa->categoria }}</td>
+                    <td style="text-align: left;" class="col-md-3">{{ $despesa->categoria }}</td>
                     </td>
 
-                    <td style="text-align: left;">{{ $despesa->data }}</td>
-                    </td>
-
-
-                    <td style="text-align: left;">R$ {{ number_format($despesa->valor, 2)}}</td>
+                    <td style="text-align: center;" class="col-md-2">{{ $despesa->data }}</td>
                     </td>
 
 
-                    <td style="text-align: left;">{{ $despesa->desc }}</td>
+                    <td style="text-align: right;" class="col-md-2">R$ {{ number_format($despesa->valor, 2)}}</td>
+                    </td>
 
-                    <td>
+
+                    <td style="text-align: left;" class="col-md-4">{{ $despesa->desc }}</td>
+
+                    <td class="col-md-1" style="text-align: center;">
                         <div class="action-buttons">
                             <!--detalhes-->
                             <a href="{{url("despesas/$despesa->id")}}" class="" data-rel="" title="" data-original-title="">

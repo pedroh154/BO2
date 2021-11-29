@@ -46,7 +46,7 @@
 
                     <td style="text-align: left;">{{ $contato->desc }}</td>
                     </td>
-                    <td>
+                    <td class="col-md-1" style="text-align: center;">
                         <div class="action-buttons">
                             <!--detalhes-->
                             <a href="{{url("contatos/$contato->id")}}" class="" data-rel="" title="" data-original-title="">

@@ -9,7 +9,7 @@
         </div>-->
 
 <div id="content-wrapper" class="d-flex flex-column" style="background-color: #f4f5f8;">
-    <h1 class="container-fluid">Detalhes contato</h1>
+    <h1 class="container-fluid">Detalhes do contato</h1>
     @if(isset($errors) && count($errors)>0)
     <div class="text-center mt-4 mb-4 p-2 alert-danger">
         @foreach($errors->all() as $erro)
@@ -18,7 +18,7 @@
     </div>
     @endif
 
-    <h4 class="container-fluid">Detalhes do contato</h4> <br>
+
     <form class="container-fluid" action="/contatos">
         @csrf
         <div class="mb-3">
