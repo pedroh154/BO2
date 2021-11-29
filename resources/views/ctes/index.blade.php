@@ -133,7 +133,7 @@
                                     <i class="fas fa-file-alt"></i>
                                 </a>
                                 <!--editar-->
-                                <a href="" data-toggle="" class="" style="" data-original-title="" title="">
+                                <a href="ctes/editarcte" data-toggle="" class="" style="" data-original-title="" title="">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <!--apagar-->

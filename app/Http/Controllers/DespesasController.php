@@ -17,13 +17,25 @@ class DespesasController extends Controller
     }
 
     /* VIEWS */
-    public function index(){
+    public function index()
+    {
         $listDespesas = Despesa::where('user_id', auth()->id())->orderBy('categoria')->get();
         return view('despesas.index', compact('listDespesas'));
     }
 
-    public function novaDespesa(){
+    public function novaDespesa()
+    {
         return view('despesas.criardespesa');
+    }
+
+    public function editarDespesa()
+    {
+        return view('despesas.editardespesa');
+    }
+
+    public function detalhesDespesa()
+    {
+        return view('despesas.detalhesdespesa');
     }
 
     /* CRUD */
@@ -39,6 +51,4 @@ class DespesasController extends Controller
 
         return redirect()->back();
     }
-
-
 }

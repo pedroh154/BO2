@@ -57,11 +57,11 @@
                     <td>
                         <div class="action-buttons">
                             <!--detalhes-->
-                            <a href="" class="" data-rel="" title="" data-original-title="">
+                            <a href="/despesas/detalhesdespesa" class="" data-rel="" title="" data-original-title="">
                                 <i class="fas fa-file-alt"> </i>
                             </a>
                             <!--editar-->
-                            <a data-toggle="" class="" style="" data-original-title="" title="">
+                            <a href="/despesas/editardespesa" data-toggle="" class="" style="" data-original-title="" title="">
                                 <i class="fas fa-edit"> </i>
                             </a>
                             <!--apagar-->

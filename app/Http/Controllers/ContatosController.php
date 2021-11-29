@@ -27,6 +27,11 @@ class ContatosController extends Controller
         return view('contatos.criarcontato');
     }
 
+    public function detalhesContato()
+    {
+        return view('contatos.detalhescontato');
+    }
+
     public function editarContato()
     {
         return view('contatos.editarcontato');
