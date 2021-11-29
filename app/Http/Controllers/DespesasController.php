@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\DespesasRequest;
 use App\Models\Despesa;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
 
 class DespesasController extends Controller
 {
@@ -28,14 +26,21 @@ class DespesasController extends Controller
         return view('despesas.criardespesa');
     }
 
+    public function detalhesDespesa($despesa)
+    {
+        return view('despesas.detalhesdespesa', compact('despesa'));
+    }
+
     public function editarDespesa()
     {
         return view('despesas.editardespesa');
     }
 
-    public function detalhesDespesa()
+    /* CRUD */
+    //visualizar
+    public function show($id)
     {
-        return view('despesas.detalhesdespesa');
+        return $this->detalhesDespesa($this->objDespesa->find($id));
     }
 
     /* CRUD */

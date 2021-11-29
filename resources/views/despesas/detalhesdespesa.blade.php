@@ -27,24 +27,20 @@
             <!--VER IDS-->
             <label class="input-group-text" for="inputGroupSelect01">Categoria</label>
             <select disabled class="form-select" id="categoria" name="categoria" required>
-                <option value="Aluguel" selected>Aluguel</option>
-                <option value="Luz">Luz</option>
-                <option value="Água">Água</option>
-                <option value="Manutenção">Manutenção</option>
-                <option value="Outros" >Outros</option>
+                <option value="{{$despesa->categoria}}" selected>{{$despesa->categoria}}</option>
             </select>
         </div>
         <div class="mb-3">
             <label for="data" class="form-label">Data</label>
-            <input disabled type="date" class="form-control" id="data" name="data" required>
+            <input disabled type="date" class="form-control" id="data" name="data" required value="{{$despesa->data}}"">
         </div>
         <div class="mb-3">
             <label for="valor" class="form-label">Valor</label>
-            <input disabled type="number" step="0.01"  class="form-control" id="valor" required placeholder="R$" name="valor">
+            <input disabled type="number" step="0.01"  class="form-control" id="valor" required placeholder="R$" name="valor" value="{{$despesa->valor}}"">
         </div>
         <div class="mb-3">
             <label for="desc" class="form-label">Descrição</label>
-            <textarea disabled class="form-control" id="desc" name="desc" rows="3"></textarea>
+            <textarea disabled class="form-control" id="desc" name="desc" rows="3" value="{{$despesa->desc}}""></textarea>
         </div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <button type="submit" class="btn btn-primary">Fechar</button>

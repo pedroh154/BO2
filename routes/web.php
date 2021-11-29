@@ -48,10 +48,9 @@ Route::post('/cliente-enviar', 'App\Http\Controllers\ClientesController@manter')
 /* CONTATOS */
 //get
 Route::get('/contatos', 'App\Http\Controllers\ContatosController@index');
-Route::get('/contatos/{id}', 'App\Http\Controllers\ContatosController@show');
 Route::get('/contatos/novocontato', 'App\Http\Controllers\ContatosController@novoContato');
-Route::get('/contatos/detalhescontato', 'App\Http\Controllers\ContatosController@detalhesContato');
 Route::get('/contatos/editarcontato', 'App\Http\Controllers\ContatosController@editarContato');
+Route::get('/contatos/{id}', 'App\Http\Controllers\ContatosController@show');
 
 //post
 Route::post('/contato-enviar', 'App\Http\Controllers\ContatosController@manter');
@@ -59,9 +58,10 @@ Route::post('/contato-enviar', 'App\Http\Controllers\ContatosController@manter')
 /* DESPESAS */
 //get
 Route::get('/despesas', 'App\Http\Controllers\DespesasController@index');
+
 Route::get('/despesas/novadespesa', 'App\Http\Controllers\DespesasController@novaDespesa');
 Route::get('/despesas/editardespesa', 'App\Http\Controllers\DespesasController@editarDespesa');
-Route::get('/despesas/detalhesdespesa', 'App\Http\Controllers\DespesasController@detalhesDespesa');
+Route::get('/despesas/{id}', 'App\Http\Controllers\DespesasController@show');
 
 //post
 Route::post('/despesa-enviar', 'App\Http\Controllers\DespesasController@manter');

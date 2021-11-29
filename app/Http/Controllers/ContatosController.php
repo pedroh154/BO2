@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Contato;
-use Illuminate\Support\Facades\Auth;
 
 class ContatosController extends Controller
 {
@@ -15,7 +14,7 @@ class ContatosController extends Controller
         $this->objContato = new Contato();
     }
 
-    /* views */
+    /* VIEWS */
     public function index()
     {
         $listContatos = Contato::where('user_id', auth()->id())->orderBy('nome')->get();

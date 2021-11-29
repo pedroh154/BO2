@@ -57,7 +57,7 @@
                     <td>
                         <div class="action-buttons">
                             <!--detalhes-->
-                            <a href="/despesas/detalhesdespesa" class="" data-rel="" title="" data-original-title="">
+                            <a href="{{url("despesas/$despesa->id")}}" class="" data-rel="" title="" data-original-title="">
                                 <i class="fas fa-file-alt"> </i>
                             </a>
                             <!--editar-->
