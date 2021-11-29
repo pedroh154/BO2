@@ -40,7 +40,7 @@
         </div>
         <div class="mb-3">
             <label for="desc" class="form-label">Descrição</label>
-            <textarea disabled class="form-control" id="desc" name="desc" rows="3" value="{{$despesa->desc}}""></textarea>
+            <textarea disabled class="form-control" id="desc" name="desc" rows="3">{{$despesa->desc}}</textarea>
         </div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <button type="submit" class="btn btn-primary">Fechar</button>

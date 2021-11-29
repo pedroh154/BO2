@@ -36,7 +36,7 @@
         </div>
         <div class="mb-3">
             <label for="descricaocontato" class="form-label">Descrição</label>
-            <textarea disabled class="form-control" id="desc" name="desc" rows="3" value="{{$contato->desc}}"></textarea>
+            <textarea disabled class="form-control" id="desc" name="desc" rows="3">{{$contato->desc}}</textarea>
         </div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <button type="submit" class="btn btn-primary">Fechar</button>
