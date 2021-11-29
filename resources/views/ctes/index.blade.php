@@ -129,7 +129,7 @@
                                     <i class="fas fa-file-pdf"></i>
                                 </a>
                                 <!--detalhes-->
-                                <a href="/ctes/detalhescte" class="" data-rel="" title="" data-original-title="">
+                                <a href="{{url("ctes/$cte->id")}}" class="" data-rel="" title="" data-original-title="">
                                     <i class="fas fa-file-alt"></i>
                                 </a>
                                 <!--editar-->

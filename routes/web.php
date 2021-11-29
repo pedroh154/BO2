@@ -38,6 +38,7 @@ Route::get('/ctes/novocte', 'App\Http\Controllers\CtesController@novoCte');
 Route::get('/ctes/detalhescte', 'App\Http\Controllers\CtesController@detalhesCte');
 Route::post('/cte-enviar', 'App\Http\Controllers\CtesController@manter');
 Route::get('/ctes/editarcte', 'App\Http\Controllers\CtesController@editarCte');
+Route::get('/ctes/{id}', 'App\Http\Controllers\CtesController@show');
 
 
 /* Clientes */
@@ -58,7 +59,6 @@ Route::post('/contato-enviar', 'App\Http\Controllers\ContatosController@manter')
 /* DESPESAS */
 //get
 Route::get('/despesas', 'App\Http\Controllers\DespesasController@index');
-
 Route::get('/despesas/novadespesa', 'App\Http\Controllers\DespesasController@novaDespesa');
 Route::get('/despesas/editardespesa', 'App\Http\Controllers\DespesasController@editarDespesa');
 Route::get('/despesas/{id}', 'App\Http\Controllers\DespesasController@show');

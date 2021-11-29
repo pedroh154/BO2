@@ -47,4 +47,9 @@ class Cte extends Model
     protected $hidden = [
         'remember_token',
     ];
+
+    protected $casts = [
+        'cidade_destinataria_id' => 'integer',
+        'cidade_remetente_id' => 'integer',
+    ];
 }

@@ -34,10 +34,11 @@ class CtesController extends Controller
         return view('ctes.criarcte', compact('listCidades', 'listClientes'));
     }
 
-    public function detalhesCte()
+    public function detalhesCte($cte)
     {
-        return view('ctes.detalhescte');
+        return view('ctes.detalhescte', compact('cte'));
     }
+
     public function editarCte()
     {
         $cidade = new Cidade();
@@ -50,6 +51,12 @@ class CtesController extends Controller
 
 
     /* CRUD */
+    //visualizar
+    public function show($id)
+    {
+        return $this->detalhesCte($this->objCte->find($id));
+    }
+
     public function manter(Request $request)
     {
         $this->objCte->numero_nf = $request->numero_nf;
