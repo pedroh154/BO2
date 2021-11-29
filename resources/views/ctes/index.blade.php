@@ -75,7 +75,7 @@
             <div class="col-md-3">
                 <!--deixar dia de hoje como padrao-->
                 <label for="datafinal" class="form-label">Data final</label>
-                <input type="date" class="form-control" id="datafinal">
+                <input type="date" class="form-control" id="datafinal" value="<?php echo date('Y-m-d'); ?>">
             </div>
             <div class="col-md-2">
                 <label for="filtropagamento" class="form-label">Método de pagamento</label>
@@ -182,6 +182,11 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.getElementById('datafinal').value = new Date().toDateInputValue();
+</script>
+
 
 <script>
     function trclick() {
