@@ -34,6 +34,7 @@
                     <th style="width: 70px;" scope="col">Data</th>
                     <th style="width: 100px;" scope="col">Valor</th>
                     <th style="width: 75px;" scope="col">Descrição</th>
+                    <th></th>
                 </tr>
             </thead>
 
@@ -52,6 +53,23 @@
 
 
                     <td style="text-align: left;">{{ $despesa->desc }}</td>
+
+                    <td>
+                        <div class="action-buttons">
+                            <!--detalhes-->
+                            <a href="" class="" data-rel="" title="" data-original-title="">
+                                <i class="fas fa-file-alt"> </i>
+                            </a>
+                            <!--editar-->
+                            <a data-toggle="" class="" style="" data-original-title="" title="">
+                                <i class="fas fa-edit"> </i>
+                            </a>
+                            <!--apagar-->
+                            <a href="" data-rel="" title="" data-original-title="">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+
+                        </div>
                     </td>
                 </tr>
 

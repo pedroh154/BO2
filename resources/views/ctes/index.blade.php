@@ -20,7 +20,7 @@
             <hr class="sidebar-divider">
             <h5>Incluir CT-e</h5>
         </div>
-        <div class="d-sm-flex align-items-center justify-content-between mb-4 container-fluid">
+        <div class="d-sm-flex align-items-end justify-content-between mb-4 container-fluid">
 
             <!-- <input type="file" class="form-control">-->
             <div class="col-md-2">
@@ -56,7 +56,6 @@
         </div>
 
         <div class="d-flex flex-column">
-            <hr class="sidebar-divider">
             <h5>Filtros</h5>
         </div>
         <div class="d-sm-flex align-items-center justify-content-between mb-4 container-fluid">
@@ -99,31 +98,55 @@
                         <th style="width: 90px;" scope="col">Volumes</th>
                         <th style="width: 400px;" scope="col">Destinatário</th>
                         <th style="width: 60px;" scope="col">✓</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($listCtes as $cte)
-                    <tr>
-                        <td style="text-align: left;">{{ $cte->cidade_remetente_id }}</td>
+                    <tr onclick='trclick();'>
+                        <td style="text-align: left;" onclick='tdclick();'>{{ $cte->cidade_remetente_id }}</td>
                         <td style="text-align: right;">{{ $cte->numero_cte }}</td>
-                        <td style="text-align: right;">{{ $cte->valor_cte }}</td>
+                        <td style="text-align: right;">R$ {{ number_format($cte->valor_cte, 2)}}</td>
                         @if ($cte->tipo_pagamento == "0")
                         <td style="text-align: center;">CIF</td>
-                        
+
                         @else
                         <td style="text-align: center;">FOB</td>
-                        
+
                         @endif
                         <td style="text-align: right;">{{ $cte->volume }}</td>
                         <td style="text-align: center;">Nicolas Luis Artino de Aguiar</td>
                         <td>
                             <div class="custom-control custom-checkbox" style="text-align: center;">
-                                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                <label class="custom-control-label" for="customCheck1"></label>
+                                <input type="checkbox" class="custom-control-input" id="{{ $cte->id }}">
+                                <label class="custom-control-label" for="{{ $cte->id }}"></label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="action-buttons">
+                                <!--PDF-->
+                                <a href="" class="" data-rel="" title="" data-original-title="">
+                                    <i class="fas fa-file-pdf"></i>
+                                </a>
+                                <!--detalhes-->
+                                <a href="/ctes/detalhescte" class="" data-rel="" title="" data-original-title="">
+                                    <i class="fas fa-file-alt"></i>
+                                </a>
+                                <!--editar-->
+                                <a href="" data-toggle="" class="" style="" data-original-title="" title="">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <!--apagar-->
+                                <a href="" data-rel="" title="" data-original-title="">
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>
+
                             </div>
                         </td>
                     </tr>
                     @endforeach
+
+
                     <!-- <tr>
                         <td style="text-align: left;">Canoas</td>
                         <td style="text-align: right;">4322236</td>
@@ -160,6 +183,15 @@
     </div>
 </div>
 
+<script>
+    function trclick() {
+        console.log('tr clicked')
+    };
+
+    function tdclick() {
+        console.log('td clicked')
+    };
+</script>
 
 <footer class="container">
     <!-- <a href="https://sistema.ssw.inf.br/bin/ssw0422" target="_blank" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">SSW</button></a>

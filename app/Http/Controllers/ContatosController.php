@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\Models\Contato;
 use Illuminate\Support\Facades\Auth;
@@ -15,13 +16,20 @@ class ContatosController extends Controller
     }
 
     /* views */
-    public function index(){
+    public function index()
+    {
         $listContatos = Contato::where('user_id', auth()->id())->orderBy('nome')->get();
         return view('contatos.index', compact('listContatos'));
     }
 
-    public function novoContato(){
+    public function novoContato()
+    {
         return view('contatos.criarcontato');
+    }
+
+    public function editarContato()
+    {
+        return view('contatos.editarcontato');
     }
 
     /* CRUD */
@@ -34,7 +42,7 @@ class ContatosController extends Controller
         $this->objContato->user_id = auth()->id();
 
         $this->objContato->save();
-        
+
         return redirect()->back();
     }
 }

@@ -27,6 +27,7 @@
                     <th style="width: 70px;" scope="col">Telefone</th>
                     <th style="width: 100px;" scope="col">Endereço</th>
                     <th style="width: 75px;" scope="col">Descrição</th>
+                    <th></Th>
                 </tr>
             </thead>
             <tbody>
@@ -45,7 +46,23 @@
 
                     <td style="text-align: left;">{{ $contato->desc }}</td>
                     </td>
-                    
+                    <td>
+                        <div class="action-buttons">
+                            <!--detalhes-->
+                            <a href="" class="" data-rel="" title="" data-original-title="">
+                                <i class="fas fa-file-alt"> </i>
+                            </a>
+                            <!--editar-->
+                            <a href="/contatos/editarcontato" data-toggle="" class="" style="" data-original-title="" title="">
+                                <i class="fas fa-edit"> </i>
+                            </a>
+                            <!--apagar-->
+                            <a href="" data-rel="" title="" data-original-title="">
+                                <i class="fas fa-trash-alt"></i>
+                            </a>
+
+                        </div>
+                    </td>
                 </tr>
 
                 @endforeach
