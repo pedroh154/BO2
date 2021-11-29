@@ -18,25 +18,25 @@
     </div>
     @endif
 
-    <h4 class="container-fluid">Forneça os dados abaixo:</h4> <br>
+    <h4 class="container-fluid">Detalhes do contato</h4> <br>
     <form class="container-fluid" action="/contatos">
         @csrf
         <div class="mb-3">
             <!--VER IDS-->
             <label for="nomecontato" class="form-label">Nome Completo</label>
-            <input disabled type="text" class="form-control" id="nome" required name="nome" aria-describedby="emailHelp">
+            <input disabled type="text" class="form-control" id="nome" required name="nome" aria-describedby="emailHelp" value="{{$contato->nome}}">
         </div>
         <div class="mb-3">
             <label for="telefonecontato" class="form-label">Telefone</label>
-            <input disabled type="number" class="form-control" id="fone" required name="fone">
+            <input disabled type="number" class="form-control" id="fone" required name="fone" value="{{$contato->fone}}">
         </div>
         <div class="mb-3">
             <label for="enderecocontato" class="form-label">Endereço</label>
-            <input disabled type="text" class="form-control" id="endereco" name="endereco" aria-describedby="emailHelp">
+            <input disabled type="text" class="form-control" id="endereco" name="endereco" aria-describedby="emailHelp" value="{{$contato->endereco}}">
         </div>
         <div class="mb-3">
             <label for="descricaocontato" class="form-label">Descrição</label>
-            <textarea disabled class="form-control" id="desc" name="desc" rows="3"></textarea>
+            <textarea disabled class="form-control" id="desc" name="desc" rows="3" value="{{$contato->desc}}"></textarea>
         </div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <button type="submit" class="btn btn-primary">Fechar</button>

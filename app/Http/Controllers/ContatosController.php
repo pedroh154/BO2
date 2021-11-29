@@ -27,17 +27,24 @@ class ContatosController extends Controller
         return view('contatos.criarcontato');
     }
 
-    public function detalhesContato()
+    public function detalhesContato($contato)
     {
-        return view('contatos.detalhescontato');
+        return view('contatos.detalhescontato', compact('contato'));
     }
 
-    public function editarContato()
+    public function editarContato($contato)
     {
-        return view('contatos.editarcontato');
+        return view('contatos.editarcontato', compact('contato'));
     }
 
     /* CRUD */
+    //visualizar
+    public function show($id)
+    {
+        return $this->detalhesContato($this->objContato->find($id));
+    }
+
+    //inserir
     public function manter(Request $request)
     {
         $this->objContato->fone = $request->fone;

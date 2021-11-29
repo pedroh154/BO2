@@ -49,7 +49,7 @@
                     <td>
                         <div class="action-buttons">
                             <!--detalhes-->
-                            <a href="/contatos/detalhescontato" class="" data-rel="" title="" data-original-title="">
+                            <a href="{{url("contatos/$contato->id")}}" class="" data-rel="" title="" data-original-title="">
                                 <i class="fas fa-file-alt"> </i>
                             </a>
                             <!--editar-->
