@@ -18,7 +18,8 @@ class CtesController extends Controller
 
     /* VIEWS */
     public function index(){
-        return view('ctes.index');
+        $listCtes = Cte::where('user_id', auth()->id())->orderBy('data_chegada')->get();
+        return view('ctes.index', compact('listCtes'));
     }
 
     public function novoCte(){
@@ -31,9 +32,9 @@ class CtesController extends Controller
     }
 
     public function detalhesCte(){
-        $listCtes = Cte::where('user_id', auth()->id())->orderBy('data_chegada')->get();
+        
 
-        return view('ctes.detalhescte', compact('listCtes'));
+        return view('ctes.detalhescte');
     }
 
     /* CRUD */
