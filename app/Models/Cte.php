@@ -22,15 +22,21 @@ class Cte extends Model
         'valor_nf',
         'remetente_id',
         'destinatario_id',
+        'cidade_remetente_id',
+        'cidade_destinataria_id',
         'user_id',
     ];
 
     public function users(){
-        return $this->belongsTo(User::class);
+        return $this->hasOne(User::class);
     }
 
     public function clientes(){
         return $this->hasMany(Cliente::class);
+    }
+
+    public function cidades(){
+        return $this->hasMany(Cidade::class);
     }
 
     /**

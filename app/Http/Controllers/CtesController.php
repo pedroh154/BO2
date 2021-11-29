@@ -31,7 +31,9 @@ class CtesController extends Controller
     }
 
     public function detalhesCte(){
-        return view('ctes.detalhescte')/*->with($data)*/;
+        $listCtes = Cte::where('user_id', auth()->id())->orderBy('data_chegada')->get();
+
+        return view('ctes.detalhescte', compact('listCtes'));
     }
 
     /* CRUD */
@@ -48,6 +50,8 @@ class CtesController extends Controller
         $this->objCte->valor_nf = $request->valor_nf;
         $this->objCte->remetente_id = $request->remetente_id;
         $this->objCte->destinatario_id = $request->destinatario_id;
+        $this->objCte->cidade_remetente_id = $request->cidade_remetente_id;
+        $this->objCte->cidade_destinataria_id = $request->cidade_destinataria_id;
         $this->objCte->user_id = auth()->id();
 
         $this->objCte->save();

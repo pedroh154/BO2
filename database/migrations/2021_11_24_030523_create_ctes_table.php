@@ -32,6 +32,12 @@ class CreateCtesTable extends Migration
 
             $table->foreignId('destinatario_id');
             $table->foreign('destinatario_id')->references('id')->on('clientes')->onDelete('CASCADE');
+            
+            $table->foreignId('cidade_remetente_id');
+            $table->foreign('cidade_remetente_id')->references('id')->on('cidades')->onDelete('CASCADE');
+
+            $table->foreignId('cidade_destinataria_id');
+            $table->foreign('cidade_destinataria_id')->references('id')->on('cidades')->onDelete('CASCADE');
 
             $table->foreignId('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
