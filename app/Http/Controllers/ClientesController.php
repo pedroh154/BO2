@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Http\Requests\ClientesRequest;
 use App\Models\Cliente;
 use App\Models\Cidade;
-use Illuminate\Http\Request;
-use Illuminate\Routing\Route;
-use Illuminate\Support\Facades\DB;
 
 class ClientesController extends Controller
 {
@@ -29,7 +28,7 @@ class ClientesController extends Controller
     }
 
     /* CRUD */
-    public function manter(Request $request)
+    public function manter(ClientesRequest $request)
     {
         $this->objCliente->fone = $request->fone;
         $this->objCliente->nome = $request->nome;

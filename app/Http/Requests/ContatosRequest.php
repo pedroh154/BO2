@@ -24,8 +24,10 @@ class ContatosRequest extends FormRequest
     public function rules()
     {
         return [
-            'nome' => 'required',
-            'fone' => 'required',
+            'nome' => 'required|String',
+            'fone' => 'nullable|numeric',
+            'endereco' => 'nullable|string',
+            'desc' => 'nullable|string',
         ];
     }
 }

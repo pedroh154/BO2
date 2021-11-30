@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\ContatosRequest;
 use App\Models\Contato;
 
 class ContatosController extends Controller
@@ -44,7 +44,7 @@ class ContatosController extends Controller
     }
 
     //inserir
-    public function manter(Request $request)
+    public function manter(ContatosRequest $request)
     {
         $this->objContato->fone = $request->fone;
         $this->objContato->nome = $request->nome;

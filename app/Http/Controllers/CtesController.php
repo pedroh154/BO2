@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Cte;
 use App\Models\Cliente;
-
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Models\Cidade;
+use App\Http\Requests\CtesRequest;
+
 
 class CtesController extends Controller
 {
@@ -58,7 +57,7 @@ class CtesController extends Controller
         return $this->detalhesCte($this->objCte->find($id));
     }
 
-    public function manter(Request $request)
+    public function manter(CtesRequest $request)
     {
         $this->objCte->numero_nf = $request->numero_nf;
         $this->objCte->valor_cte = $request->valor_cte;
@@ -69,6 +68,8 @@ class CtesController extends Controller
         $this->objCte->data_entrega = $request->data_entrega;
         $this->objCte->tipo_pagamento = $request->tipo_pagamento;
         $this->objCte->valor_nf = $request->valor_nf;
+        $this->objCte->pode_alterar = true;
+        $this->objCte->finalizado = false;
         $this->objCte->remetente_id = $request->remetente_id;
         $this->objCte->destinatario_id = $request->destinatario_id;
         $this->objCte->cidade_remetente_id = $request->cidade_remetente_id;

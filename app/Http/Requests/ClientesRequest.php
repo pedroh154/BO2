@@ -25,9 +25,11 @@ class ClientesRequest extends FormRequest
     {
         return [
             'nome' => 'required|string',
-            'cep' => 'required|string',
+            'cep' => 'required|numeric',
             'endereco' => 'required|string',
-            'cadastro_nacional' => 'required|string',
+            'cadastro_nacional' => 'required|numeric',
+            'fone' => 'nullable|numeric',
+            'obs' => 'nullable|string',
         ];
     }
 }

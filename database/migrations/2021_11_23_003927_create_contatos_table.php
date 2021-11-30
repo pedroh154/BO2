@@ -17,7 +17,7 @@ class CreateContatosTable extends Migration
             $table->id();
             $table->string('nome');
             $table->string('endereco')->nullable();
-            $table->string('fone');
+            $table->string('fone')->nullable();
             $table->string('desc')->nullable();
 
             $table->foreignId('user_id');

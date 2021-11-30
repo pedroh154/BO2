@@ -24,12 +24,13 @@ class CtesRequest extends FormRequest
     public function rules()
     {
         return [
-            'numero_nf' => 'required',
+            'numero_nf' => 'required|numeric|unique:ctes',
             'valor_nf' => 'required|numeric',
-            'numero_cte' => 'required',
+            'numero_cte' => 'required|numeric|unique:ctes',
             'valor_cte' => 'required|numeric',
             'data_chegada' => 'required|date',
-            'data_entrega' => 'date',
+            'data_entrega' => 'nullable|date',
+            'obs' => 'nullable|string',
             'tipo_pagamento' => 'required|numeric',
             'volume' => 'required|numeric',
         ];

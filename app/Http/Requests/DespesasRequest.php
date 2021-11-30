@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class DespesasRequest extends FormRequest
 {
@@ -26,6 +27,9 @@ class DespesasRequest extends FormRequest
         return [
             'data' => 'required|Date',
             'valor' => 'required|numeric',
+            'categoria' => ['required',
+                Rule::in(['Água', 'Luz', 'Manutenção', 'Aluguel', 'Outros'])],
+            'desc' => 'nullable|string',
         ];
     }
 }

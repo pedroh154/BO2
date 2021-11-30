@@ -16,9 +16,9 @@ class CreateDespesasTable extends Migration
         Schema::create('despesas', function (Blueprint $table) {
             $table->id();
 
-            $table->string('categoria');
+            $table->enum('categoria', ['Água', 'Luz', 'Manutenção', 'Aluguel', 'Outros']);
             $table->date('data');
-            $table->float('valor')->unsigned();
+            $table->double('valor')->unsigned();
             $table->string('desc')->nullable();
 
             $table->foreignId('user_id');
