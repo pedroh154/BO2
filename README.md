@@ -2,6 +2,7 @@
 Controle pessoal - AP Sistemas
 
 ## TODO:
+- se livrar do auto complete do google - ANDRÉ
 - janela para quando clicar no CTE na tabela - ANDRÉ
 - janela para quando clicar no contato na tabela - ANDRÉ
 - janela para quando clicar na despesa na tabela - ANDRÉ
