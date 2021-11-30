@@ -32,7 +32,7 @@ class Cte extends Model
     }
 
     public function clientes(){
-        return $this->hasMany(Cliente::class);
+        return $this->hasOne(Cliente::class);
     }
 
     public function cidades(){

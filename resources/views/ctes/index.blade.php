@@ -133,7 +133,7 @@
                                     <i class="fas fa-file-alt"></i>
                                 </a>
                                 <!--editar-->
-                                <a href="ctes/editarcte" data-toggle="" class="" style="" data-original-title="" title="">
+                                <a href="{{url("ctes/editar/$cte->id")}}" data-toggle="" class="" style="" data-original-title="" title="">
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <!--apagar-->

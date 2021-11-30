@@ -21,7 +21,7 @@ class CreateCtesTable extends Migration
             $table->double('valor_cte', 10, 2);
             $table->date('data_chegada');
             $table->date('data_entrega')->nullable();
-            $table->integer('tipo_pagamento');
+            $table->integer('tipo_pagamento'); /* 0- CIF, 1- FOB */
             $table->unsignedInteger('volume');
             $table->string('obs')->nullable();
             $table->boolean('pode_alterar')->default(true);
