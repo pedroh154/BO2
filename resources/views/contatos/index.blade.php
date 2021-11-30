@@ -53,7 +53,7 @@
                                 <i class="fas fa-file-alt"> </i>
                             </a>
                             <!--editar-->
-                            <a href="/contatos/editarcontato" data-toggle="" class="" style="" data-original-title="" title="">
+                            <a href="{{url("contatos/editar/$contato->id")}}" data-toggle="" class="" style="" data-original-title="" title="">
                                 <i class="fas fa-edit"> </i>
                             </a>
                             <!--apagar-->

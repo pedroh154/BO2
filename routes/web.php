@@ -50,7 +50,8 @@ Route::post('/cliente-enviar', 'App\Http\Controllers\ClientesController@manter')
 //get
 Route::get('/contatos', 'App\Http\Controllers\ContatosController@index');
 Route::get('/contatos/novocontato', 'App\Http\Controllers\ContatosController@novoContato');
-Route::get('/contatos/editarcontato', 'App\Http\Controllers\ContatosController@editarContato');
+Route::get('/contatos/editar/{id}', 'App\Http\Controllers\ContatosController@edit');
+Route::get('/contatos/atualizar/{id}', 'App\Http\Controllers\ContatosController@update');
 Route::get('/contatos/{id}', 'App\Http\Controllers\ContatosController@show');
 
 //post

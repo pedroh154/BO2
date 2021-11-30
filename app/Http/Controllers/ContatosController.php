@@ -26,9 +26,9 @@ class ContatosController extends Controller
         return view('contatos.criarcontato');
     }
 
-    public function detalhesContato($contato)
+    public function detalhesContato($contato, bool $editavel)
     {
-        return view('contatos.detalhescontato', compact('contato'));
+        return view('contatos.detalhescontato', compact('contato', 'editavel'));
     }
 
     public function editarContato($contato)
@@ -40,7 +40,7 @@ class ContatosController extends Controller
     //visualizar
     public function show($id)
     {
-        return $this->detalhesContato($this->objContato->find($id));
+        return $this->detalhesContato($this->objContato->find($id), false);
     }
 
     //inserir
@@ -53,6 +53,25 @@ class ContatosController extends Controller
         $this->objContato->user_id = auth()->id();
 
         $this->objContato->save();
+
+        return redirect()->back();
+    }
+
+    //editar   
+    public function edit($id)
+    {
+        return $this->detalhesContato($this->objContato->find($id), true);
+    }
+
+    //update   
+    public function update(ContatosRequest $request, $id)
+    {
+        $this->objContato->where('id', $id)->update([
+            'fone' => $request->fone,
+            'nome' => $request->nome,
+            'desc' => $request->desc,
+            'endereco' => $request->endereco,
+        ]);
 
         return redirect()->back();
     }
