@@ -28,23 +28,23 @@
             <div class="col-md-7">
                 <!--VER IDS-->
                 <label for="nomecliente" class="form-label">Nome Completo</label>
-                <input type="text" class="form-control" id="nome" required name="nome">
+                <input type="text" maxlength="200" class="form-control" id="nome" required name="nome">
             </div>
             <div class="col-md-3">
                 <label for="fonecliente" class="form-label">Telefone</label>
-                <input type="number" class="form-control" id="fone" name="fone">
+                <input type="text" maxlength="15" class="form-control" id="fone" name="fone" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
             </div>
             <div class="col-md-2">
                 <label for="cepcliente" class="form-label">CEP</label>
-                <input type="number" class="form-control" id="cep" required name="cep">
+                <input type="text" maxlength="8" class="form-control" id="cep" required name="cep" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
             </div>
             <div class="col-md-5">
                 <label for="enderecocliente" class="form-label">Endereço</label>
-                <input type="text" class="form-control" id="endereco" required name="endereco">
+                <input type="text" maxlength="150" class="form-control" id="endereco" required name="endereco">
             </div>
             <div class="col-md-3">
                 <label for="cadastronacionalcliente" class="form-label">CPF/CNPJ</label>
-                <input type="number" class="form-control" id="cadastro_nacional" required name="cadastro_nacional">
+                <input type="text" class="form-control" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" maxlength="14" id="cadastro_nacional" required name="cadastro_nacional">
             </div>
             <div class="col-md-4">
                 <label for="cidadesr" class="form-label">Cidade</label>
@@ -58,7 +58,7 @@
 
             <div class="mb-3">
                 <label for="obscliente" class="form-label">Observações</label>
-                <textarea class="form-control" id="obs" name="obs" rows="2"></textarea>
+                <textarea class="form-control" maxlength="280" id="obs" name="obs" rows="2"></textarea>
             </div>
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <button type="submit" class="btn btn-primary">Cadastrar</button>

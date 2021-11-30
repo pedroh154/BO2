@@ -34,23 +34,23 @@
             <!--REVER FOR e ID-->
             <div class="col-md-4">
                 <label for="numcte" class="form-label">Número CT-e</label>
-                <input type="number" class="form-control" name="numero_cte" id="numero_cte" required>
+                <input type="text" maxlength="20" class="form-control" name="numero_cte" id="numero_cte" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
             </div>
             <div class="col-md-4">
                 <label for="valorcte" class="form-label">Valor CT-e</label>
-                <input type="number" class="form-control" name="valor_cte" id="valor_cte" placeholder="R$" required>
+                <input type="text"  class="form-control" name="valor_cte" id="valor_cte" placeholder="R$" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
             </div>
             <div class="col-md-4">
                 <label for="qtdevol" class="form-label">Quantidade de volumes</label>
-                <input type="number" class="form-control" name="volume" id="volume" required>
+                <input type="text" maxlength="6" class="form-control" name="volume" id="volume" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
             </div>
             <div class="col-md-4">
                 <label for="numnf" class="form-label">Número NF</label>
-                <input type="number" class="form-control" name="numero_nf" id="numero_nf" required>
+                <input type="text" maxlength="20" class="form-control" name="numero_nf" id="numero_nf" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
             </div>
             <div class="col-md-4">
                 <label for="valornf" class="form-label">Valor NF</label>
-                <input type="number" class="form-control" name="valor_nf" id="valor_nf" placeholder="R$" required>
+                <input type="text" class="form-control" name="valor_nf" id="valor_nf" placeholder="R$" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
             </div>
             <div class="col-md-4">
                 <label for="data" class="form-label">Data de chegada</label>
@@ -84,7 +84,7 @@
 
             <div class="mb-2">
                 <label for="obs" class="form-label">Observação</label>
-                <textarea class="form-control" id="obs" name="obs" rows="2"></textarea>
+                <textarea class="form-control" maxlength="280" id="obs" name="obs" rows="2"></textarea>
             </div>
             <BR>
             <hr class="sidebar-divider">

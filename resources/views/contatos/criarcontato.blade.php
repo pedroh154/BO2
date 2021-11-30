@@ -24,19 +24,19 @@
         <div class="mb-3">
             <!--VER IDS-->
             <label for="nomecontato" class="form-label">Nome Completo</label>
-            <input type="text" class="form-control" id="nome" required name="nome" aria-describedby="emailHelp">
+            <input type="text" maxlength="200" class="form-control" id="nome" required name="nome" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
             <label for="telefonecontato" class="form-label">Telefone</label>
-            <input type="number" class="form-control" id="fone"  name="fone">
+            <input type="text" maxlength="15" class="form-control" id="fone"  name="fone" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
         </div>
         <div class="mb-3">
             <label for="enderecocontato" class="form-label">Endereço</label>
-            <input type="text" class="form-control" id="endereco" name="endereco" aria-describedby="emailHelp">
+            <input type="text" maxlength="150" class="form-control" id="endereco" name="endereco" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
             <label for="descricaocontato" class="form-label">Descrição</label>
-            <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
+            <textarea class="form-control" maxlength="280" id="desc" name="desc" rows="3"></textarea>
         </div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
         <button type="submit" class="btn btn-primary">Cadastrar</button>

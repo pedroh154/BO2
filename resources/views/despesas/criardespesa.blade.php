@@ -36,7 +36,7 @@
         </div>
         <div class="mb-3">
             <label for="data" class="form-label">Data</label>
-            <input type="date" class="form-control" id="data" name="data" required>
+            <input type="date" class="form-control" id="data" name="data" value="<?php echo date('Y-m-d'); ?>" required>
         </div>
         <div class="mb-3">
             <label for="valor" class="form-label">Valor</label>
@@ -44,7 +44,7 @@
         </div>
         <div class="mb-3">
             <label for="desc" class="form-label">Descrição</label>
-            <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
+            <textarea class="form-control" maxlength="280" id="desc" name="desc" rows="3"></textarea>
         </div>
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <button type="submit" class="btn btn-primary">Cadastrar</button>
