@@ -23,7 +23,7 @@
 
     <h4 class="container-fluid">Forneça os dados abaixo:</h4> <br>
     <div class="container-fluid">
-        <form class="row g-3" action="/cliente-enviar" method="POST">
+        <form class="row g-3" action="/cliente-enviar" method="POST" autocomplete="off">
             @csrf
             <div class="col-md-7">
                 <!--VER IDS-->

@@ -29,7 +29,7 @@
     <h4 class="container-fluid">Forneça os dados abaixo:</h4> <br>
     <!--REVER ACTION-->
     <div class="container-fluid">
-        <form class="row g-3" action="/cte-enviar" method="POST">
+        <form class="row g-3" action="/cte-enviar" method="POST" autocomplete="off">
             @csrf
             <!--REVER FOR e ID-->
             <div class="col-md-4">
@@ -54,7 +54,7 @@
             </div>
             <div class="col-md-4">
                 <label for="data" class="form-label">Data de chegada</label>
-                <input type="date" class="form-control" name="data_chegada" id="data_chegada" required>
+                <input type="date" class="form-control" name="data_chegada" id="data_chegada" value="<?php echo date('Y-m-d'); ?>" required>
             </div>
             <div class="col-md-4">
                 <label for="tipo_pagamento" class="form-label">Método de pagamento</label>

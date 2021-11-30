@@ -19,7 +19,7 @@
     @endif
 
     <h4 class="container-fluid">Forneça os dados abaixo:</h4>     <br>
-    <form class="container-fluid" action="/contato-enviar" method="POST">
+    <form class="container-fluid" action="/contato-enviar" method="POST" autocomplete="off">
         @csrf
         <div class="mb-3">
             <!--VER IDS-->

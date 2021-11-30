@@ -2,8 +2,6 @@
 Controle pessoal - AP Sistemas
 
 ## TODO:
-- se livrar do auto complete do google - ANDRÉ
-- máscara para CPF, real, telefone, etc - ANDRÉ
 - revisar largura/altura texfields - ANDRÉ
 
 - delete CTE - PEDRO
@@ -19,7 +17,7 @@ Controle pessoal - AP Sistemas
 - gerar relatorios
 - fazer download pdf cte (api receita)
 - gerar comprovante de entrega
-
+- máscara para CPF, real, telefone, etc - ANDRÉ
 
 
 ## CONSIDERAR:

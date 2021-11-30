@@ -21,7 +21,7 @@
         </div>
     @endif
     <h4 class="container-fluid">Forneça os dados abaixo:</h4> <br>
-    <form class="container-fluid" action="/despesa-enviar" method="POST">
+    <form class="container-fluid" action="/despesa-enviar" method="POST" autocomplete="off">
         @csrf
         <div class="input-group mb-3">
             <!--VER IDS-->
