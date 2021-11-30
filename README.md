@@ -3,15 +3,9 @@ Controle pessoal - AP Sistemas
 
 ## TODO:
 - se livrar do auto complete do google - ANDRÉ
-- janela para quando clicar no CTE na tabela - ANDRÉ
-- janela para quando clicar no contato na tabela - ANDRÉ
-- janela para quando clicar na despesa na tabela - ANDRÉ
-- botaozinho pra excluir/alterar item da tabela CTE - ANDRÉ
-- botaozinho pra excluir/alterar item da tabela DESPESA - ANDRÉ
-- botaozinho pra excluir/alterar item da tabela CONTATO - ANDRÉ
-- rever validaçao de campos nos views - ANDRÉ
 - máscara para CPF, real, telefone, etc - ANDRÉ
 - revisar largura/altura texfields - ANDRÉ
+
 - update CTE - PEDRO
 - delete CTE - PEDRO
 - update DESPESA - PEDRO
