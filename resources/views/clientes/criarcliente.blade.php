@@ -32,7 +32,7 @@
             </div>
             <div class="col-md-3">
                 <label for="fonecliente" class="form-label">Telefone</label>
-                <input type="number" class="form-control" id="fone" required name="fone">
+                <input type="number" class="form-control" id="fone" name="fone">
             </div>
             <div class="col-md-2">
                 <label for="cepcliente" class="form-label">CEP</label>
@@ -40,15 +40,15 @@
             </div>
             <div class="col-md-5">
                 <label for="enderecocliente" class="form-label">Endereço</label>
-                <input type="text" class="form-control" id="endereco" name="endereco">
+                <input type="text" class="form-control" id="endereco" required name="endereco">
             </div>
             <div class="col-md-3">
                 <label for="cadastronacionalcliente" class="form-label">CPF/CNPJ</label>
-                <input type="number" class="form-control" id="cadastro_nacional" name="cadastro_nacional">
+                <input type="number" class="form-control" id="cadastro_nacional" required name="cadastro_nacional">
             </div>
             <div class="col-md-4">
                 <label for="cidadesr" class="form-label">Cidade</label>
-                <input id="cidade_id" name="cidade_id" class="form-control" list="listcidades" placeholder="Digite para pesquisar...">
+                <input id="cidade_id" name="cidade_id" class="form-control" required list="listcidades" placeholder="Digite para pesquisar...">
                 <datalist id="listcidades">
                     @foreach ($listCidades as $cidade)
                     <option value="{{ $cidade->id }}" hidden> {!! $cidade->name !!} </option>

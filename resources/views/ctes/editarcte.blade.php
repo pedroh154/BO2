@@ -54,7 +54,7 @@
             </div>
             <div class="col-md-4">
                 <label for="data" class="form-label">Data de chegada</label>
-                <input type="date" class="form-control" name="data_chegada" id="data_chegada">
+                <input type="date" class="form-control" name="data_chegada" id="data_chegada" required>
             </div>
             <div class="col-md-4">
                 <label for="tipo_pagamento" class="form-label">Método de pagamento</label>
@@ -91,7 +91,7 @@
             <h5> Definir cliente</h5>
             <div class="input-group">
                 <label for="inputZip" class="col-12">Cliente remetente</label>
-                <input id="remetente_id" name="remetente_id" class="form-control" list="listclientes" placeholder="Digite para pesquisar...">
+                <input id="remetente_id" name="remetente_id" class="form-control" list="listclientes" placeholder="Digite para pesquisar..." required>
                 <datalist id="listclientes">
                     @foreach ($listClientes as $cliente)
                     <option value="{{ $cliente->id }}" hidden> {!! $cliente->nome !!} </option>
@@ -110,7 +110,7 @@
             </div>
             <div class="input-group ">
                 <label for="inputZip" class="col-12">Cliente destinatário</label>
-                <input id="destinatario_id" name="destinatario_id" class="form-control" list="listclientes" placeholder="Digite para pesquisar...">
+                <input id="destinatario_id" name="destinatario_id" class="form-control" list="listclientes" placeholder="Digite para pesquisar..." required>
                 <datalist id="listclientes">
                     @foreach ($listCidades as $cidade)
                     <option value="{{ $cidade->id }}" hidden> {!! $cidade->nome !!} </option>
