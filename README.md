@@ -6,11 +6,9 @@ Controle pessoal - AP Sistemas
 - máscara para CPF, real, telefone, etc - ANDRÉ
 - revisar largura/altura texfields - ANDRÉ
 
-- update CTE - PEDRO
 - delete CTE - PEDRO
 - update DESPESA - PEDRO
 - delete DESPESA - PEDRO
-- update CONTATO - PEDRO
 - delete CONTATO - PEDRO
 - update CLIENTE - PEDRO
 - delete CLIENTE - PEDRO
