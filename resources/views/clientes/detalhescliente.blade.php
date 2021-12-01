@@ -2,6 +2,7 @@
 @section('content')
 
 <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
+<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
 
 <div id="content-wrapper" class="d-flex flex-column" style="background-color: #f4f5f8;">
     <h1 class="container-fluid">@if($editavel == false) Detalhes do cliente @else Editar cliente @endif</h1>

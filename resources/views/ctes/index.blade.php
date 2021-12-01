@@ -120,8 +120,8 @@
                                 <label class="custom-control-label" for="{{ $cte->id }}"></label>
                             </div>
                         </td>
-                        <td class="col-md-2" style="text-align: center;">
-                            <div class="action-buttons">
+                        <td class="col-md-2 " >
+                            <div class="action-buttons hstack gap-2" style="text-align: center;">
                                 <!--PDF-->
                                 <a href="" class="" data-rel="" title="" data-original-title="">
                                     <i class="fas fa-file-pdf"></i>
@@ -135,10 +135,14 @@
                                     <i class="fas fa-edit"></i>
                                 </a>
                             <!--apagar-->
-                            <form action="{{"/ctes/excluir/$cte->id"}}" method="POST">
+                            <form id="apagar" action="{{"/ctes/excluir/$cte->id"}}" method="POST">
                                 @method('DELETE')
                                 @csrf
-                                <button type="submit" class="btn btn-outline-danger">EXCLUIR</button>
+                            <!--    <a data-method="delete" href="{{"/ctes/excluir/$cte->id"}}"  onclick="document.getElementById('apagar').submit()">
+
+                                    <i class="fas fa-trash-alt"></i>
+                                </a>-->
+                                <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
                             </form>
 
                             </div>

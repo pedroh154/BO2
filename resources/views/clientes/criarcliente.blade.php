@@ -3,6 +3,7 @@
 @section('content')
 <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
 
 
 <!--<div class="btn-group" role="group" aria-label="Basic example">
