@@ -25,7 +25,7 @@
                     <th style="width: 150px;" scope="col">Nome</th>
                     <th style="width: 70px;" scope="col">Telefone</th>
                     <th style="width: 100px;" scope="col">Endereço</th>
-                    <th style="width: 75px;" scope="col">Descrição</th>
+                    <th style="width: 75px;" scope="col">Cidade</th>
                     <th></Th>
                 </tr>
             </thead>
@@ -38,7 +38,7 @@
                     </td>
                     <td style="text-align: left;">{{$cliente->endereco}}</td>
                     </td>
-                    <td style="text-align: left;">{{ $cliente->desc }}</td>
+                    <td style="text-align: left;">{{ $cliente->cidade_id }}</td>
                     </td>
                     <td class="col-md-1" style="text-align: center;">
                         <div class="action-buttons">
