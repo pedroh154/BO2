@@ -33,7 +33,7 @@
             </div>
             <div class="col-md-4">
                 <label for="valorcte" class="form-label">Valor CT-e</label>
-                <input type="text"  class="form-control" name="valor_cte" id="valor_cte" placeholder="R$" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+                <input type="text" maxlength="10" class="form-control" name="valor_cte" id="valor_cte" placeholder="R$" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
             </div>
             <div class="col-md-4">
                 <label for="qtdevol" class="form-label">Quantidade de volumes</label>
@@ -45,7 +45,7 @@
             </div>
             <div class="col-md-4">
                 <label for="valornf" class="form-label">Valor NF</label>
-                <input type="text" class="form-control" name="valor_nf" id="valor_nf" placeholder="R$" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+                <input type="text" maxlength="10" class="form-control" name="valor_nf" id="valor_nf" placeholder="R$" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
             </div>
             <div class="col-md-4">
                 <label for="data" class="form-label">Data de chegada</label>
@@ -60,7 +60,7 @@
             </div>
             <div class="col-md-4">
                 <label for="cidade_remetente_id" class="form-label">Cidade remetente</label>
-                <input autocomplete="new-password" id="cidade_remetente_id" class="form-control" name="cidade_remetente_id" list="listcidadesr" placeholder="Digite para pesquisar..." required>
+                <input autocomplete="new-password" id="cidade_remetente_id"  class="form-control" name="cidade_remetente_id" list="listcidadesr" placeholder="Digite para pesquisar..." required>
                 <datalist id="listcidadesr">
                     @foreach ($listCidades as $cidade)
                         <option value="{{ $cidade->id }}" hidden> {!! $cidade->name !!} </option>

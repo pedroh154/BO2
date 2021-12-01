@@ -103,7 +103,7 @@
                                 <td style="text-align: center;">FOB</td>
                             @endif
                         <td style="text-align: right;">{{ $cte->volume }}</td>
-                        <td style="text-align: center;">Nicolas Luis Artino de Aguiar</td>
+                        <td style="text-align: center;">{{ $cte->destinatario_id }}</td>
                         <td>
                             <div class="custom-control custom-checkbox" style="text-align: center;">
                                 <input type="checkbox" class="custom-control-input" id="{{ $cte->id }}">
