@@ -122,7 +122,7 @@
                 </div>
                 <div class="col-md-4">
                     <label for="valornf" class="form-label">Valor NF</label>
-                    <input type="number" class="form-control" name="valor_nf" id="valor_nf" value="{{number_format($cte->valor_nf, 2)}}">
+                    <input type="number" class="form-control" name="valor_nf" id="valor_nf" value="{{$cte->valor_nf}}">
                 </div>
                 <div class="col-md-4">
                     <label for="data" class="form-label">Data de chegada</label>

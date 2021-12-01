@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="{{ URL::asset('css/sb-admin-2.min.css') }}">
     <link href="{{ URL::asset('css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ URL::asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-    
     <title>Projeto BO2</title>
 
 </head>

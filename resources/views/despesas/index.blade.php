@@ -1,7 +1,5 @@
 @extends('layouts.app')
-
 @section('content')
-
 
 
 <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
@@ -13,6 +11,14 @@
     });
     document.getElementById('valorformatado').innerHTML = number_format;
 </script>
+
+@if(isset($errors) && count($errors)>0)
+        <div class="text-center mt-4 mb-4 p-2 alert-danger">
+            @foreach($errors->all() as $erro)
+                {{$erro}}<br>
+            @endforeach
+        </div>
+    @endif
 
 <!--<div class="btn-group" role="group" aria-label="Basic example">
             <a href="/home" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Página Inicial</button></a>
@@ -28,7 +34,6 @@
              </div>
             @endif
         @csrf
-        @method('DELETE')
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <a class="btn btn-primary" href="/despesas/novadespesa" role="button">Cadastrar despesa</a>
         </div> <br>
@@ -70,10 +75,11 @@
                                 <i class="fas fa-edit"> </i>
                             </a>
                             <!--apagar-->
-                            <a href="" data-rel="" title="" data-original-title="">
-                                <i class="fas fa-trash-alt"></i>
-                            </a>
-
+                            <form action="{{"/despesas/excluir/$despesa->id"}}" method="POST">
+                                @method('DELETE')
+                                @csrf
+                                <button type="submit" class="btn btn-outline-danger">EXCLUIR</button>
+                                </form>
                         </div>
                     </td>
                 </tr>

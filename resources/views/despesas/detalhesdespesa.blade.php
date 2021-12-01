@@ -51,7 +51,7 @@
                 <!--VER IDS-->
                 <label class="input-group-text" for="inputGroupSelect01">Categoria</label>
                 <select class="form-select" id="categoria" name="categoria" required>
-                    @foreach($categorias as $categoria)
+                    @foreach($listCategorias as $categoria)
                         @if($categoria == $despesa->categoria)
                             <option value="{{$categoria}}" selected>{{$categoria}}</option>
                         @else

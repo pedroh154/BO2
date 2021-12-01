@@ -65,6 +65,7 @@ Route::post('/despesa-enviar', 'App\Http\Controllers\DespesasController@manter')
 Route::get('/despesas/editar/{id}', 'App\Http\Controllers\DespesasController@edit')->middleware('auth');;
 Route::get('/despesas/atualizar/{id}', 'App\Http\Controllers\DespesasController@update')->middleware('auth');;
 Route::get('/despesas/{id}', 'App\Http\Controllers\DespesasController@show')->middleware('auth');;
+Route::delete('/despesas/excluir/{id}', 'App\Http\Controllers\DespesasController@destroy')->middleware('auth');;
 
 
 

@@ -86,4 +86,12 @@ class DespesasController extends Controller
 
         return redirect('/despesas')->withInput()->withMessage('Despesa editada com sucesso!');
     }
+
+    //update   
+    public function destroy($id)
+    {
+        $this->objDespesa->destroy($id);
+
+        return redirect('/despesas')->withInput()->withMessage('Despesa deletada com sucesso!');
+    }
 }
