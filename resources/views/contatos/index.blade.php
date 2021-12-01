@@ -63,9 +63,11 @@
                                 <i class="fas fa-edit"> </i>
                             </a>
                             <!--apagar-->
-                            <a href="" data-rel="" title="" data-original-title="">
-                                <i class="fas fa-trash-alt"></i>
-                            </a>
+                            <form action="{{"/contatos/excluir/$contato->id"}}" method="POST">
+                                @method('DELETE')
+                                @csrf
+                                <button type="submit" class="btn btn-outline-danger">EXCLUIR</button>
+                            </form>
 
                         </div>
                     </td>

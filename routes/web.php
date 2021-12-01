@@ -40,6 +40,7 @@ Route::post('/cte-enviar', 'App\Http\Controllers\CtesController@manter')->middle
 Route::get('/ctes/editar/{id}', 'App\Http\Controllers\CtesController@edit')->middleware('auth');;
 Route::get('/ctes/atualizar/{id}', 'App\Http\Controllers\CtesController@update')->middleware('auth');;
 Route::get('/ctes/{id}', 'App\Http\Controllers\CtesController@show')->middleware('auth');;
+Route::delete('/ctes/excluir/{id}', 'App\Http\Controllers\CtesController@destroy')->middleware('auth');;
 
 /* Clientes */
 Route::get('/clientes', 'App\Http\Controllers\ClientesController@index')->middleware('auth');;
@@ -49,6 +50,7 @@ Route::post('/cliente-enviar', 'App\Http\Controllers\ClientesController@manter')
 Route::get('/clientes/editar/{id}', 'App\Http\Controllers\ClientesController@edit')->middleware('auth');;
 Route::get('/clientes/atualizar/{id}', 'App\Http\Controllers\ClientesController@update')->middleware('auth');;
 Route::get('/clientes/{id}', 'App\Http\Controllers\ClientesController@show')->middleware('auth');;
+Route::delete('/clientes/excluir/{id}', 'App\Http\Controllers\ClientesController@destroy')->middleware('auth');;
 
 /* CONTATOS */
 Route::get('/contatos', 'App\Http\Controllers\ContatosController@index')->middleware('auth');;
@@ -57,6 +59,7 @@ Route::post('/contato-enviar', 'App\Http\Controllers\ContatosController@manter')
 Route::get('/contatos/editar/{id}', 'App\Http\Controllers\ContatosController@edit')->middleware('auth');;
 Route::get('/contatos/atualizar/{id}', 'App\Http\Controllers\ContatosController@update')->middleware('auth');;
 Route::get('/contatos/{id}', 'App\Http\Controllers\ContatosController@show')->middleware('auth');;
+Route::delete('/contatos/excluir/{id}', 'App\Http\Controllers\ContatosController@destroy')->middleware('auth');;
 
 /* DESPESAS */
 Route::get('/despesas', 'App\Http\Controllers\DespesasController@index')->middleware('auth');;

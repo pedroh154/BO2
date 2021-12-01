@@ -123,4 +123,12 @@ class CtesController extends Controller
 
         return redirect('/ctes')->withInput()->withMessage('CT-e editado com sucesso!');
     }
+
+        //destroy   
+        public function destroy($id)
+        {
+            $this->objCte->destroy($id);
+    
+            return redirect('/ctes')->withInput()->withMessage('CT-e deletado com sucesso!');
+        }
 }

@@ -75,4 +75,12 @@ class ContatosController extends Controller
 
         return redirect('/contatos')->withInput()->withMessage('Contato editado com sucesso!');
     }
+
+        //destroy   
+        public function destroy($id)
+        {
+            $this->objContato->destroy($id);
+    
+            return redirect('/contatos')->withInput()->withMessage('contato deletado com sucesso!');
+        }
 }

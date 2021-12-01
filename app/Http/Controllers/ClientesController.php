@@ -84,4 +84,12 @@ class ClientesController extends Controller
 
         return redirect('/clientes')->withInput()->withMessage('Cliente editado com sucesso!');
     }
+
+        //destroy   
+        public function destroy($id)
+        {
+            $this->objCliente->destroy($id);
+    
+            return redirect('/clientes')->withInput()->withMessage('Cliente deletado com sucesso!');
+        }
 }
