@@ -50,8 +50,7 @@
                 </div>
                 <div class="col-md-4">
                     <label for="metodo" class="form-label">Método de pagamento</label>
-                    <select id="metodo" class="form-select" disabled>
-                        <select id="tipo_pagamento" name="tipo_pagamento" class="form-select">
+                        <select id="tipo_pagamento" name="tipo_pagamento" disabled class="form-select">
                             @foreach($listTiposDePagamento as $tipo)
                                 @if($tipo == $cte->tipo_pagamento)
                                     <option value="{{$tipo}}" selected>{{$tipo}}</option>
