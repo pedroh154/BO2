@@ -53,7 +53,7 @@
                     <td style="text-align: left;">{{ $contato->desc }}</td>
                     </td>
                     <td class="col-md-1" style="text-align: center;">
-                        <div class="action-buttons">
+                        <div class="action-buttons hstack gap-2">
                             <!--detalhes-->
                             <a href="{{url("contatos/$contato->id")}}" class="" data-rel="" title="" data-original-title="">
                                 <i class="fas fa-file-alt"> </i>
@@ -66,7 +66,7 @@
                             <form action="{{"/contatos/excluir/$contato->id"}}" method="POST">
                                 @method('DELETE')
                                 @csrf
-                                <button type="submit" class="btn btn-outline-danger">EXCLUIR</button>
+                                <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
                             </form>
 
                         </div>
