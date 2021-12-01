@@ -63,7 +63,7 @@
                         <a class="collapse-item" href="/ctes">Visualizar CT-es</a>
                         <a class="collapse-item" href="/ctes/novocte">Cadastrar CT-e</a>
                         <a class="collapse-item" href="/clientes">Visualizar clientes</a>
-                        <a class="collapse-item" href="/novocliente">Cadastrar cliente</a>
+                        <a class="collapse-item" href="/clientes/novocliente">Cadastrar cliente</a>
                       <!--  <a class="collapse-item" href="">Animations</a>
                         <a class="collapse-item" href="">Other</a>-->
                     </div>

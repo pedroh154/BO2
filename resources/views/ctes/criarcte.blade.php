@@ -92,7 +92,7 @@
                         <option value="{{ $cliente->id }}" hidden> {!! $cliente->nome !!} </option>
                     @endforeach
                 </datalist>
-                <a href="/novoclientepop" data-target="#criarcliente" data-toggle="modal">
+                <a href="/clientes/novoclientepop" data-target="#criarcliente" data-toggle="modal">
                     <button class="btn btn-outline-secondary" type="button">+</button></a>
                 <div class="modal fade text-center" id="criarcliente">
                     <div class="modal-dialog">
@@ -109,7 +109,7 @@
                         <option value="{{ $cidade->id }}" hidden> {!! $cidade->nome !!} </option>
                     @endforeach
                 </datalist>
-                <a href="/novoclientepop" data-target="#criarcliente" data-toggle="modal">
+                <a href="/clientes/novoclientepop" data-target="#criarcliente" data-toggle="modal">
                     <button class="btn btn-outline-secondary" type="button">+</button></a>
                 <div class="modal fade text-center" id="criarcliente">
                     <div class="modal-dialog">
