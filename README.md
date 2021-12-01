@@ -15,6 +15,7 @@ Controle pessoal - AP Sistemas
 - update CLIENTE - PEDRO
 - delete CLIENTE - PEDRO
 - revisar tamanho de campos db - PEDRO
+- rever relações db models - PEDRO
 
 - ligar com api receita
 - regras de negócio banco
