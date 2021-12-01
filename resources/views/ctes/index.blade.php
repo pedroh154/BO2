@@ -1,16 +1,9 @@
 @extends('layouts.app')
-
 @section('content')
+
 <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
 
-<!--<div class="btn-group" role="group" aria-label="Basic example">
-            <a href="/home" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Página Inicial</button></a>
-            <a href="/contatos" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Contatos</button></a>
-        </div>-->
 <h1></h1>
-
-
-
 <div id="content-wrapper" class="d-flex flex-column" style="background-color: #f4f5f8;">
     <div class="container-fluid">
         <div class="row">
@@ -21,8 +14,6 @@
             <h5>Incluir CT-e</h5>
         </div>
         <div class="d-sm-flex align-items-end justify-content-between mb-4 container-fluid">
-
-            <!-- <input type="file" class="form-control">-->
             <div class="col-md-2">
                 <label for="filtroempresa" class="form-label">Empresa</label>
                 <select id="filtroempresa" class="form-select">
@@ -73,7 +64,6 @@
                 <input type="date" class="form-control" id="datainicial">
             </div>
             <div class="col-md-3">
-                <!--deixar dia de hoje como padrao-->
                 <label for="datafinal" class="form-label">Data final</label>
                 <input type="date" class="form-control" id="datafinal" value="<?php echo date('Y-m-d'); ?>">
             </div>
@@ -107,13 +97,11 @@
                         <td style="text-align: left;" onclick='tdclick();'>{{ $cte->cidade_remetente_id }}</td>
                         <td style="text-align: right;">{{ $cte->numero_cte }}</td>
                         <td style="text-align: right;">R$ {{ number_format($cte->valor_cte, 2)}}</td>
-                        @if ($cte->tipo_pagamento == "0")
-                        <td style="text-align: center;">CIF</td>
-
-                        @else
-                        <td style="text-align: center;">FOB</td>
-
-                        @endif
+                            @if ($cte->tipo_pagamento == "CIF")
+                                <td style="text-align: center;">CIF</td>
+                            @else
+                                <td style="text-align: center;">FOB</td>
+                            @endif
                         <td style="text-align: right;">{{ $cte->volume }}</td>
                         <td style="text-align: center;">Nicolas Luis Artino de Aguiar</td>
                         <td>
