@@ -19,15 +19,9 @@
             <hr class="sidebar-divider">
             <h5>Incluir CT-e</h5>
         </div>
-        <div class="d-sm-flex align-items-end justify-content-between mb-4 container-fluid">
-            <div class="col-md-2">
-                <label for="filtroempresa" class="form-label">Empresa</label>
-                <select id="filtroempresa" class="form-select">
-                    <option selected value="UNIAO">União</option>
-                    <option value="TEX">TEX</option>
-                </select>
-            </div>
-            <div class="container-fluid">
+        <div class="hstack gap-3">
+
+            <div class="col-md-8">
                 <div class="btn-group col-md-2" role="group" aria-label="Basic radio toggle button group">
                     <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
                     <label class="btn btn-outline-primary" for="btnradio1">SSW</label>
@@ -39,9 +33,9 @@
                     <input type="number" class="form-control" id="chavecte" placeholder="Insira a chave do CT-e">
                 </div>
             </div>
-            <div class="container">
+            <div class="vstack gap-2 col-md-4">
                 <label class="btn btn-default">
-                    <a class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" type="file"><i class="fas fa-upload"></i> Importar XML</a> <input type="file" hidden>
+                    <a class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm " type="file"><i class="fas fa-upload"></i> Importar XML</a> <input type="file" hidden>
                 </label>
                 <label class="btn btn-default">
                     <a class="btn btn-sm btn-primary shadow-sm" href="/ctes/novocte" type="button"><i class="fas fa-pen-square"></i> Cadastrar CT-e manualmente</a>
@@ -55,21 +49,21 @@
         <div class="d-flex flex-column">
             <h5>Filtros</h5>
         </div>
-        <div class="d-sm-flex align-items-center justify-content-between mb-4 container-fluid">
+        <div class="hstack gap-4 ">
+            <div class="col-2">
+                <!--d-sm-flex justify-content-between mb-4 container-->
+                <label for="filtroempresa" class="form-label">Empresa</label>
+                <select id="filtroempresa" class="form-select col-md-12">
+                    <option selected value="UNIAO">União</option>
+                    <option value="TEX">TEX</option>
+                </select>
+            </div>
+
             <div class="col-md-2">
-                <a class="btn btn-sm btn-primary shadow-sm" href="" type="button"><i class="fas fa-sync"></i></a>
-            </div>
-            <div class="input-group col-md-2">
-                <input id="search-input" type="search" class="form-control" placeholder="Digite aqui...">
-                <button id="search-button" type="button" class="btn btn-primary">
-                    <i class="fa fa-search"></i>
-                </button>
-            </div>
-            <div class="col-md-3">
                 <label for="datainicial" class="form-label">Data inicial</label>
                 <input type="date" class="form-control" id="datainicial">
             </div>
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <label for="datafinal" class="form-label">Data final</label>
                 <input type="date" class="form-control" id="datafinal" value="<?php echo date('Y-m-d'); ?>">
             </div>
@@ -80,6 +74,16 @@
                     <option>FOB</option>
                 </select>
             </div>
+
+            <div class="input-group col-md-2">
+                <input id="search-input" type="search" class="form-control" placeholder="Digite aqui...">
+                <button id="search-button" type="button" class="btn btn-primary">
+                    <i class="fa fa-search"></i>
+                </button>
+
+            </div>
+            <a class="btn btn-sm btn-primary shadow-sm" href="" type="button"><i class="fas fa-sync"></i> Atualizar informações</a>
+
         </div>
         <div>
             <br>
@@ -103,11 +107,11 @@
                         <td style="text-align: left;" onclick='tdclick();'>{{ $cte->cidade_remetente_id }}</td>
                         <td style="text-align: right;">{{ $cte->numero_cte }}</td>
                         <td style="text-align: right;">R$ {{ number_format($cte->valor_cte, 2)}}</td>
-                            @if ($cte->tipo_pagamento == "CIF")
-                                <td style="text-align: center;">CIF</td>
-                            @else
-                                <td style="text-align: center;">FOB</td>
-                            @endif
+                        @if ($cte->tipo_pagamento == "CIF")
+                        <td style="text-align: center;">CIF</td>
+                        @else
+                        <td style="text-align: center;">FOB</td>
+                        @endif
                         <td style="text-align: right;">{{ $cte->volume }}</td>
                         <td style="text-align: center;">{{ $cte->destinatario_id }}</td>
                         <td>
