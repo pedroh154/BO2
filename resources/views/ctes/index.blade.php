@@ -3,12 +3,11 @@
 
 <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
 
-<h1></h1>
+
 <div id="content-wrapper" class="d-flex flex-column" style="background-color: #f4f5f8;">
     <div class="container-fluid">
         
-            <p class="h3 mb-0 text-gray-800">Projeto BO2 - Página principal</p>
-        
+            <h1>Projeto BO2 - Página principal</h1>
         
             <!-- checar por sucesso -->
             @if(session()->has('message'))
