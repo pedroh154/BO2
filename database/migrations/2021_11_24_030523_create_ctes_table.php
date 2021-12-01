@@ -15,10 +15,10 @@ class CreateCtesTable extends Migration
     {
         Schema::create('ctes', function (Blueprint $table) {
             $table->id();
-            $table->string('numero_nf')->unique();
-            $table->double('valor_nf', 10, 2);
-            $table->string('numero_cte')->unique();
-            $table->double('valor_cte', 10, 2);
+            $table->string('numero_nf', 20)->unique();
+            $table->double('valor_nf', 8, 2);
+            $table->string('numero_cte', 20)->unique();
+            $table->double('valor_cte', 8, 2);
             $table->date('data_chegada');
             $table->date('data_entrega')->nullable();
             $table->enum('tipo_pagamento', ['CIF', 'FOB']);

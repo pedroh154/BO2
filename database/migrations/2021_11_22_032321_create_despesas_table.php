@@ -18,8 +18,8 @@ class CreateDespesasTable extends Migration
 
             $table->enum('categoria', ['Água', 'Luz', 'Manutenção', 'Aluguel', 'Outros']);
             $table->date('data');
-            $table->double('valor')->unsigned();
-            $table->string('desc')->nullable();
+            $table->double('valor');
+            $table->string('desc', 280)->nullable();
 
             $table->foreignId('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
