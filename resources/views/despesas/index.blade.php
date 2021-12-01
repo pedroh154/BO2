@@ -22,6 +22,12 @@
 <div id="content-wrapper" class="d-flex flex-column" style="background-color: #f4f5f8;">
     <div class="container-fluid">
         <h1>Despesas</h1>
+            <!-- checar por sucesso -->
+            @if(session()->has('message'))
+                <div class="alert alert-success">
+                    {{ session()->get('message') }}
+             </div>
+            @endif
         @csrf
         @method('DELETE')
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">

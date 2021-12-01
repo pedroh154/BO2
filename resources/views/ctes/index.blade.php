@@ -9,6 +9,12 @@
         <div class="row">
             <p class="h3 mb-0 text-gray-800">Projeto BO2 - Página principal</p>
         </div>
+            <!-- checar por sucesso -->
+            @if(session()->has('message'))
+                <div class="alert alert-success">
+                    {{ session()->get('message') }}
+                </div>
+            @endif
         <div class="d-flex flex-column">
             <hr class="sidebar-divider">
             <h5>Incluir CT-e</h5>
