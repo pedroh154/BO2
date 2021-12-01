@@ -42,9 +42,13 @@ Route::get('/ctes/atualizar/{id}', 'App\Http\Controllers\CtesController@update')
 Route::get('/ctes/{id}', 'App\Http\Controllers\CtesController@show')->middleware('auth');;
 
 /* Clientes */
+Route::get('/clientes', 'App\Http\Controllers\ClientesController@index')->middleware('auth');;
 Route::get('/novocliente', 'App\Http\Controllers\ClientesController@novoCliente')->middleware('auth');;
 Route::get('/novoclientepop', 'App\Http\Controllers\ClientesController@novoClientePop')->middleware('auth');;
 Route::post('/cliente-enviar', 'App\Http\Controllers\ClientesController@manter')->middleware('auth');;
+Route::get('/clientes/editar/{id}', 'App\Http\Controllers\ClientesController@edit')->middleware('auth');;
+Route::get('/clientes/atualizar/{id}', 'App\Http\Controllers\ClientesController@update')->middleware('auth');;
+Route::get('/clientes/{id}', 'App\Http\Controllers\ClientesController@show')->middleware('auth');;
 
 /* CONTATOS */
 Route::get('/contatos', 'App\Http\Controllers\ContatosController@index')->middleware('auth');;

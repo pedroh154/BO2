@@ -15,6 +15,13 @@ class ClientesController extends Controller
         $this->objCliente = new Cliente();
     }
 
+    /* VIEWS */
+    public function index()
+    {
+        $listClientes = Cliente::where('user_id', auth()->id())->orderBy('nome')->get();
+        return view('clientes.index', compact('listClientes'));
+    }
+
     public function novoCliente(){
         $cidade = new Cidade();
         $listCidades = $cidade->all();
@@ -25,6 +32,13 @@ class ClientesController extends Controller
         $cidade = new Cidade();
         $listCidades = $cidade->all();
         return view('layouts.criarclientepop', compact('listCidades'));
+    }
+
+    public function detalhesCliente($cliente, bool $editavel)
+    {
+        $listCidades = Cidade::all();
+
+        return view('clientes.detalhescliente', compact('cliente', 'listCidades', 'editavel'));
     }
 
     /* CRUD */
@@ -42,5 +56,30 @@ class ClientesController extends Controller
         $this->objCliente->save();
 
         return redirect()->back();
+    }
+
+    //visualizar
+    public function show($id)
+    {
+        return $this->detalhesCliente($this->objCliente->find($id), false);
+    }
+
+    //editar   
+    public function edit($id)
+    {
+        return $this->detalhesCliente($this->objCliente->find($id), true);
+    }
+
+    //update   
+    public function update(ClientesRequest $request, $id)
+    {
+        $this->objCliente->where('id', $id)->update([
+            'nome' => $request->nome,
+            'cep' => $request->cep,
+            'endereco' => $request->endereco,
+            'cadastro_nacional' => $request->cadastro_nacional,
+            'fone' => $request->fone,
+            'obs' => $request->obs,
+        ]);
     }
 }
