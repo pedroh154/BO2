@@ -61,7 +61,7 @@
                                 <i class="fas fa-file-alt"> </i>
                             </a>
                             <!--editar-->
-                            <a href="/despesas/editardespesa" data-toggle="" class="" style="" data-original-title="" title="">
+                            <a href="{{"/despesas/editar/$despesa->id"}}" data-toggle="" class="" style="" data-original-title="" title="">
                                 <i class="fas fa-edit"> </i>
                             </a>
                             <!--apagar-->

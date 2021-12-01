@@ -57,10 +57,10 @@ Route::get('/contatos/{id}', 'App\Http\Controllers\ContatosController@show');
 /* DESPESAS */
 Route::get('/despesas', 'App\Http\Controllers\DespesasController@index');
 Route::get('/despesas/novadespesa', 'App\Http\Controllers\DespesasController@novaDespesa');
-Route::get('/despesas/editardespesa', 'App\Http\Controllers\DespesasController@editarDespesa');
-Route::get('/despesas/{id}', 'App\Http\Controllers\DespesasController@show');
 Route::post('/despesa-enviar', 'App\Http\Controllers\DespesasController@manter');
-
+Route::get('/despesas/editar/{id}', 'App\Http\Controllers\DespesasController@edit');
+Route::get('/despesas/atualizar/{id}', 'App\Http\Controllers\DespesasController@update');
+Route::get('/despesas/{id}', 'App\Http\Controllers\DespesasController@show');
 
 
 

@@ -7,7 +7,17 @@ use App\Models\Despesa;
 
 class DespesasController extends Controller
 {
+    /* obj mestre para CRUD */
     private $objDespesa;
+
+    /* lista com possíveis categorias de despesa (usado pelo detalhesDespesa) */
+    private $categorias = [
+        'Aluguel',
+        'Luz',
+        'Água',
+        'Manutenção',
+        'Outros',
+    ];
 
     public function __construct()
     {
@@ -26,9 +36,10 @@ class DespesasController extends Controller
         return view('despesas.criardespesa');
     }
 
-    public function detalhesDespesa($despesa)
+    public function detalhesDespesa($despesa, bool $editavel)
     {
-        return view('despesas.detalhesdespesa', compact('despesa'));
+        $listCategorias = $this->categorias;
+        return view('despesas.detalhesdespesa', compact('despesa', 'editavel', 'listCategorias'));
     }
 
     public function editarDespesa()
@@ -40,10 +51,10 @@ class DespesasController extends Controller
     //visualizar
     public function show($id)
     {
-        return $this->detalhesDespesa($this->objDespesa->find($id));
+        return $this->detalhesDespesa($this->objDespesa->find($id), false);
     }
 
-    /* CRUD */
+    //inserir
     public function manter(DespesasRequest $request)
     {
         $this->objDespesa->categoria = $request->categoria;
@@ -55,5 +66,22 @@ class DespesasController extends Controller
         $this->objDespesa->save();
 
         return redirect()->back();
+    }
+
+    //editar   
+    public function edit($id)
+    {
+        return $this->detalhesDespesa($this->objDespesa->find($id), true);
+    }
+
+    //update   
+    public function update(DespesasRequest $request, $id)
+    {
+        $this->objDespesa->find($id)->update([
+            'categoria' => $request->categoria,
+            'data' => $request->data,
+            'valor' => $request->valor,
+            'desc' => $request->desc,
+        ]);
     }
 }
