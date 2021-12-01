@@ -1,6 +1,6 @@
 @extends('layouts.app')
-
 @section('content')
+
 <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -10,28 +10,23 @@
 <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-<!--<div class="btn-group" role="group" aria-label="Basic example">
-            <a href="/home" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Página Inicial</button></a>
-            <a href="/contatos" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Contatos</button></a>
-        </div>-->
 
 <div id="content-wrapper" class="d-flex flex-column" style="background-color: #f4f5f8;">
     <h1 class="container-fluid">Cadastrar CT-e</h1>
 
     @if(isset($errors) && count($errors)>0)
-    <div class="text-center mt-4 mb-4 p-2 alert-danger">
-        @foreach($errors->all() as $erro)
-        {{$erro}}<br>
+        <div class="text-center mt-4 mb-4 p-2 alert-danger">
+            @foreach($errors->all() as $erro)
+            {{$erro}}<br>
         @endforeach
-    </div>
+        </div>
     @endif
 
     <h4 class="container-fluid">Forneça os dados abaixo:</h4> <br>
-    <!--REVER ACTION-->
+
     <div class="container-fluid">
-        <form class="row g-3" action="/cte-enviar" method="POST" autocomplete="off">
+        <form class="row g-3" action="/cte-enviar" method="POST" autocomplete="new-password">
             @csrf
-            <!--REVER FOR e ID-->
             <div class="col-md-4">
                 <label for="numcte" class="form-label">Número CT-e</label>
                 <input type="text" maxlength="20" class="form-control" name="numero_cte" id="numero_cte" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
@@ -59,25 +54,25 @@
             <div class="col-md-4">
                 <label for="tipo_pagamento" class="form-label">Método de pagamento</label>
                 <select id="tipo_pagamento" name="tipo_pagamento" class="form-select">
-                    <option selected value="0">CIF</option>
-                    <option value="1">FOB</option>
+                    <option selected value="CIF">CIF</option>
+                    <option value="FOB">FOB</option>
                 </select>
             </div>
             <div class="col-md-4">
                 <label for="cidade_remetente_id" class="form-label">Cidade remetente</label>
-                <input id="cidade_remetente_id" class="form-control" name="cidade_remetente_id" list="listcidadesr" placeholder="Digite para pesquisar..." required>
+                <input autocomplete="new-password" id="cidade_remetente_id" class="form-control" name="cidade_remetente_id" list="listcidadesr" placeholder="Digite para pesquisar..." required>
                 <datalist id="listcidadesr">
                     @foreach ($listCidades as $cidade)
-                    <option value="{{ $cidade->id }}" hidden> {!! $cidade->name !!} </option>
+                        <option value="{{ $cidade->id }}" hidden> {!! $cidade->name !!} </option>
                     @endforeach
                 </datalist>
             </div>
             <div class="col-md-4">
                 <label for="cidade_destinataria_id" class="form-label">Cidade destinatária</label>
-                <input id="cidade_destinataria_id" class="form-control" name="cidade_destinataria_id" list="listcidadesd" placeholder="Digite para pesquisar..." required>
+                <input autocomplete="new-password" id="cidade_destinataria_id" class="form-control" name="cidade_destinataria_id" list="listcidadesd" placeholder="Digite para pesquisar..." required>
                 <datalist id="listcidadesd">
                     @foreach ($listCidades as $cidade)
-                    <option value="{{ $cidade->id }}" hidden> {!! $cidade->name !!} </option>
+                        <option value="{{ $cidade->id }}" hidden> {!! $cidade->name !!} </option>
                     @endforeach
                 </datalist>
             </div>
@@ -91,16 +86,14 @@
             <h5> Definir cliente</h5>
             <div class="input-group">
                 <label for="inputZip" class="col-12">Cliente remetente</label>
-                <input id="remetente_id" name="remetente_id" class="form-control" list="listclientes" placeholder="Digite para pesquisar..." required>
+                <input autocomplete="new-password" id="remetente_id" name="remetente_id" class="form-control" list="listclientes" placeholder="Digite para pesquisar..." required>
                 <datalist id="listclientes">
                     @foreach ($listClientes as $cliente)
-                    <option value="{{ $cliente->id }}" hidden> {!! $cliente->nome !!} </option>
+                        <option value="{{ $cliente->id }}" hidden> {!! $cliente->nome !!} </option>
                     @endforeach
                 </datalist>
-
                 <a href="/novoclientepop" data-target="#criarcliente" data-toggle="modal">
                     <button class="btn btn-outline-secondary" type="button">+</button></a>
-                <!--<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">-->
                 <div class="modal fade text-center" id="criarcliente">
                     <div class="modal-dialog">
                         <div class="modal-content">
@@ -110,10 +103,10 @@
             </div>
             <div class="input-group ">
                 <label for="inputZip" class="col-12">Cliente destinatário</label>
-                <input id="destinatario_id" name="destinatario_id" class="form-control" list="listclientes" placeholder="Digite para pesquisar..." required>
+                <input autocomplete="new-password" id="destinatario_id" name="destinatario_id" class="form-control" list="listclientes" placeholder="Digite para pesquisar..." required>
                 <datalist id="listclientes">
                     @foreach ($listCidades as $cidade)
-                    <option value="{{ $cidade->id }}" hidden> {!! $cidade->nome !!} </option>
+                        <option value="{{ $cidade->id }}" hidden> {!! $cidade->nome !!} </option>
                     @endforeach
                 </datalist>
                 <a href="/novoclientepop" data-target="#criarcliente" data-toggle="modal">
@@ -131,14 +124,7 @@
         </form>
     </div>
 
+<footer class="container">
+</footer>
 
-
-
-
-
-    <footer class="container">
-        <!--<a href="https://sistema.ssw.inf.br/bin/ssw0422" target="_blank" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">SSW</button></a>
-    <a href="/logout" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Logout</button></a>
--->
-    </footer>
-    @endsection('content')
+@endsection('content')

@@ -51,14 +51,13 @@
                 <div class="col-md-4">
                     <label for="metodo" class="form-label">Método de pagamento</label>
                     <select id="metodo" class="form-select" disabled>
-                        @if($cte->tipo_pagamento == 0)
-                            <option selected value="0">CIF</option>
-                            <option value="1">FOB</option>
-                        @else
-                            <option value="0">CIF</option>
-                            <option selected value="1">FOB</option>
-                        @endif
-                    </select>
+                        <select id="tipo_pagamento" name="tipo_pagamento" class="form-select">
+                            @foreach($listTiposDePagamento as $tipo)
+                                @if($tipo == $cte->tipo_pagamento)
+                                    <option value="{{$tipo}}" selected>{{$tipo}}</option>
+                                @endif
+                            @endforeach
+                        </select>
                 </div>
                 <div class="col-md-4">
                     <label for="cidadesr" class="form-label">Cidade remetente</label>
@@ -133,14 +132,13 @@
                 <div class="col-md-4">
                     <label for="metodo" class="form-label">Método de pagamento</label>
                     <select id="tipo_pagamento" name="tipo_pagamento" class="form-select">
-                        @if($cte->tipo_pagamento == 0)
-                            <option selected value="0">CIF</option>
-                            <option value="1">FOB</option>
-                        @else
-                            <option value="0">CIF</option>
-                            <option selected value="1">FOB</option>
-                        @endif
-                        
+                        @foreach($listTiposDePagamento as $tipo)
+                            @if($tipo == $cte->tipo_pagamento)
+                                <option value="{{$tipo}}" selected>{{$tipo}}</option>
+                            @else
+                                <option value="{{$tipo}}">{{$tipo}}</option>
+                            @endif
+                        @endforeach
                     </select>
                 </div>
                 <div class="col-md-4">

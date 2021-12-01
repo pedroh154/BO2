@@ -13,6 +13,11 @@ class CtesController extends Controller
 {
     private $objCte;
 
+    private $tiposDePagamento = [
+        'CIF',
+        'FOB',
+    ];
+
     public function __construct()
     {
         $this->objCte = new Cte();
@@ -42,9 +47,9 @@ class CtesController extends Controller
 
         $listClientes = Cliente::where('user_id', auth()->id())->orderBy('nome')->get();
 
-        $tipo_pag = ["0" => "CIF", "1" => "FOB"];
+        $listTiposDePagamento = $this->tiposDePagamento;
 
-        return view('ctes.detalhescte', compact('cte', 'editavel', 'listCidades', 'listClientes', 'tipo_pag'));
+        return view('ctes.detalhescte', compact('cte', 'editavel', 'listCidades', 'listClientes', 'listTiposDePagamento'));
     }
 
     public function editarCte()
