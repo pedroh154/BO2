@@ -30,37 +30,37 @@ Route::group(['middleware' => ['auth']], function() {
  }); 
 
 /* home (auth) */
-Route::get('/', 'App\Http\Controllers\CtesController@index');
-Route::get('/home', 'App\Http\Controllers\CtesController@index');
+Route::get('/home', 'App\Http\Controllers\CtesController@index')->middleware('auth');;
+Route::redirect('/', '/home')->middleware('auth');;
 
 /* CTE's */
-Route::get('/ctes', 'App\Http\Controllers\CtesController@index');
-Route::get('/ctes/novocte', 'App\Http\Controllers\CtesController@novoCte');
-Route::post('/cte-enviar', 'App\Http\Controllers\CtesController@manter');
-Route::get('/ctes/editar/{id}', 'App\Http\Controllers\CtesController@edit');
-Route::get('/ctes/atualizar/{id}', 'App\Http\Controllers\CtesController@update');
-Route::get('/ctes/{id}', 'App\Http\Controllers\CtesController@show');
+Route::get('/ctes', 'App\Http\Controllers\CtesController@index')->middleware('auth');;
+Route::get('/ctes/novocte', 'App\Http\Controllers\CtesController@novoCte')->middleware('auth');;
+Route::post('/cte-enviar', 'App\Http\Controllers\CtesController@manter')->middleware('auth');;
+Route::get('/ctes/editar/{id}', 'App\Http\Controllers\CtesController@edit')->middleware('auth');;
+Route::get('/ctes/atualizar/{id}', 'App\Http\Controllers\CtesController@update')->middleware('auth');;
+Route::get('/ctes/{id}', 'App\Http\Controllers\CtesController@show')->middleware('auth');;
 
 /* Clientes */
-Route::get('/novocliente', 'App\Http\Controllers\ClientesController@novoCliente');
-Route::get('/novoclientepop', 'App\Http\Controllers\ClientesController@novoClientePop');
-Route::post('/cliente-enviar', 'App\Http\Controllers\ClientesController@manter');
+Route::get('/novocliente', 'App\Http\Controllers\ClientesController@novoCliente')->middleware('auth');;
+Route::get('/novoclientepop', 'App\Http\Controllers\ClientesController@novoClientePop')->middleware('auth');;
+Route::post('/cliente-enviar', 'App\Http\Controllers\ClientesController@manter')->middleware('auth');;
 
 /* CONTATOS */
-Route::get('/contatos', 'App\Http\Controllers\ContatosController@index');
-Route::get('/contatos/novocontato', 'App\Http\Controllers\ContatosController@novoContato');
-Route::post('/contato-enviar', 'App\Http\Controllers\ContatosController@manter');
-Route::get('/contatos/editar/{id}', 'App\Http\Controllers\ContatosController@edit');
-Route::get('/contatos/atualizar/{id}', 'App\Http\Controllers\ContatosController@update');
-Route::get('/contatos/{id}', 'App\Http\Controllers\ContatosController@show');
+Route::get('/contatos', 'App\Http\Controllers\ContatosController@index')->middleware('auth');;
+Route::get('/contatos/novocontato', 'App\Http\Controllers\ContatosController@novoContato')->middleware('auth');;
+Route::post('/contato-enviar', 'App\Http\Controllers\ContatosController@manter')->middleware('auth');;
+Route::get('/contatos/editar/{id}', 'App\Http\Controllers\ContatosController@edit')->middleware('auth');;
+Route::get('/contatos/atualizar/{id}', 'App\Http\Controllers\ContatosController@update')->middleware('auth');;
+Route::get('/contatos/{id}', 'App\Http\Controllers\ContatosController@show')->middleware('auth');;
 
 /* DESPESAS */
-Route::get('/despesas', 'App\Http\Controllers\DespesasController@index');
-Route::get('/despesas/novadespesa', 'App\Http\Controllers\DespesasController@novaDespesa');
-Route::post('/despesa-enviar', 'App\Http\Controllers\DespesasController@manter');
-Route::get('/despesas/editar/{id}', 'App\Http\Controllers\DespesasController@edit');
-Route::get('/despesas/atualizar/{id}', 'App\Http\Controllers\DespesasController@update');
-Route::get('/despesas/{id}', 'App\Http\Controllers\DespesasController@show');
+Route::get('/despesas', 'App\Http\Controllers\DespesasController@index')->middleware('auth');;
+Route::get('/despesas/novadespesa', 'App\Http\Controllers\DespesasController@novaDespesa')->middleware('auth');;
+Route::post('/despesa-enviar', 'App\Http\Controllers\DespesasController@manter')->middleware('auth');;
+Route::get('/despesas/editar/{id}', 'App\Http\Controllers\DespesasController@edit')->middleware('auth');;
+Route::get('/despesas/atualizar/{id}', 'App\Http\Controllers\DespesasController@update')->middleware('auth');;
+Route::get('/despesas/{id}', 'App\Http\Controllers\DespesasController@show')->middleware('auth');;
 
 
 
