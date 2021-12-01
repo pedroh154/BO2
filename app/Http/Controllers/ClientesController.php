@@ -55,7 +55,7 @@ class ClientesController extends Controller
 
         $this->objCliente->save();
 
-        return redirect('/clientes')->withMessage('Cliente cadastrado com sucesso!');
+        return redirect('/clientes')->withInput()->withMessage('Cliente cadastrado com sucesso!');
     }
 
     //visualizar
@@ -82,6 +82,6 @@ class ClientesController extends Controller
             'obs' => $request->obs,
         ]);
 
-        return redirect('/clientes')->withMessage('Cliente editado com sucesso!');
+        return redirect('/clientes')->withInput()->withMessage('Cliente editado com sucesso!');
     }
 }

@@ -27,16 +27,20 @@ class Cte extends Model
         'user_id',
     ];
 
-    public function users(){
-        return $this->hasOne(User::class);
+    public function destinatario(){
+        return $this->belongsTo(Cliente::class);
     }
 
-    public function clientes(){
-        return $this->hasOne(Cliente::class);
+    public function remetente(){
+        return $this->belongsTo(Cliente::class);
     }
 
-    public function cidades(){
-        return $this->hasMany(Cidade::class);
+    public function cidade_remetente(){
+        return $this->belongsTo(Cidade::class);
+    }
+
+    public function cidade_destinataria(){
+        return $this->belongsTo(Cidade::class);
     }
 
     /**

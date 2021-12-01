@@ -54,7 +54,7 @@ class ContatosController extends Controller
 
         $this->objContato->save();
 
-        return redirect('/contatos')->withMessage('Contato cadastrado com sucesso!');
+        return redirect('/contatos')->withInput()->withMessage('Contato cadastrado com sucesso!');
     }
 
     //editar   
@@ -73,6 +73,6 @@ class ContatosController extends Controller
             'endereco' => $request->endereco,
         ]);
 
-        return redirect('/contatos')->withMessage('Contato editado com sucesso!');
+        return redirect('/contatos')->withInput()->withMessage('Contato editado com sucesso!');
     }
 }

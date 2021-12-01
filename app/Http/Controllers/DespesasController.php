@@ -65,7 +65,7 @@ class DespesasController extends Controller
 
         $this->objDespesa->save();
 
-        return redirect('/despesas')->withMessage('Despesa cadastrada com sucesso!');
+        return redirect('/despesas')->withInput()->withMessage('Despesa cadastrada com sucesso!');
     }
 
     //editar   
@@ -84,6 +84,6 @@ class DespesasController extends Controller
             'desc' => $request->desc,
         ]);
 
-        return redirect('/despesas')->withMessage('Despesa editada com sucesso!');
+        return redirect('/despesas')->withInput()->withMessage('Despesa editada com sucesso!');
     }
 }

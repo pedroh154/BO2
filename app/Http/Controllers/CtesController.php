@@ -92,7 +92,7 @@ class CtesController extends Controller
 
         $this->objCte->save();
 
-        return redirect('/ctes')->withMessage('CT-e cadastrado com sucesso!');
+        return redirect('/ctes')->withInput()->withMessage('CT-e cadastrado com sucesso!');
     }
 
     //editar   
@@ -121,6 +121,6 @@ class CtesController extends Controller
             'cidade_destinataria_id' => $request->cidade_destinataria_id,
         ]);
 
-        return redirect('/ctes')->withMessage('CT-e editado com sucesso!');
+        return redirect('/ctes')->withInput()->withMessage('CT-e editado com sucesso!');
     }
 }
