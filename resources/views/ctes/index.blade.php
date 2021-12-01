@@ -7,14 +7,20 @@
 <div id="content-wrapper" class="d-flex flex-column" style="background-color: #f4f5f8;">
     <div class="container-fluid">
         
-            <h1>Projeto BO2 - Página principal</h1>
-        
-            <!-- checar por sucesso -->
-            @if(session()->has('message'))
-                <div class="alert alert-success">
-                    {{ session()->get('message') }}
-                </div>
-            @endif
+        <h1>Projeto BO2 - Página principal</h1>
+        @if(isset($errors) && count($errors)>0)
+            <div class="text-center mt-4 mb-4 p-2 alert-danger">
+                @foreach($errors->all() as $erro)
+                    {{$erro}}<br>
+                @endforeach
+            </div>
+        @endif
+        <!-- checar por sucesso -->
+        @if(session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+        @endif
         <div class="d-flex flex-column">
             <hr class="sidebar-divider">
             <h5>Incluir CT-e</h5>

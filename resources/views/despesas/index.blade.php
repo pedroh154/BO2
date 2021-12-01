@@ -12,13 +12,7 @@
     document.getElementById('valorformatado').innerHTML = number_format;
 </script>
 
-@if(isset($errors) && count($errors)>0)
-        <div class="text-center mt-4 mb-4 p-2 alert-danger">
-            @foreach($errors->all() as $erro)
-                {{$erro}}<br>
-            @endforeach
-        </div>
-    @endif
+
 
 <!--<div class="btn-group" role="group" aria-label="Basic example">
             <a href="/home" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Página Inicial</button></a>
@@ -27,12 +21,19 @@
 <div id="content-wrapper" class="d-flex flex-column" style="background-color: #f4f5f8;">
     <div class="container-fluid">
         <h1>Despesas</h1>
+        @if(isset($errors) && count($errors)>0)
+            <div class="text-center mt-4 mb-4 p-2 alert-danger">
+                @foreach($errors->all() as $erro)
+                    {{$erro}}<br>
+                @endforeach
+            </div>
+        @endif
             <!-- checar por sucesso -->
-            @if(session()->has('message'))
-                <div class="alert alert-success">
-                    {{ session()->get('message') }}
-             </div>
-            @endif
+        @if(session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+        @endif
         @csrf
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <a class="btn btn-primary" href="/despesas/novadespesa" role="button">Cadastrar despesa</a>
@@ -78,8 +79,13 @@
                             <form action="{{"/despesas/excluir/$despesa->id"}}" method="POST">
                                 @method('DELETE')
                                 @csrf
+<<<<<<< Updated upstream
                                 <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
                                 </form>
+=======
+                                <button type="submit" class="btn btn-outline-danger">EXCLUIR</button>
+                            </form>
+>>>>>>> Stashed changes
                         </div>
                     </td>
                 </tr>
