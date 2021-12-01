@@ -38,10 +38,10 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">{{ __('Login') }}</h1>
                                     </div>
-                                    <form method="POST" action="{{ route('login') }}" class="user">
+                                    <form method="POST" action="{{ route('login') }}" class="user" autocomplete="new-password">
                                         @csrf
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user @error('email') is-invalid @enderror" id="email" aria-describedby="emailHelp " name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Insira o e-mail">
+                                            <input type="email" autocomplete="new-password" class="form-control form-control-user @error('email') is-invalid @enderror" id="email" aria-describedby="emailHelp " name="email" value="{{ old('email') }}" required autofocus placeholder="Insira o e-mail">
 
                                             @error('email')
                                             <span class="invalid-feedback" role="alert">
@@ -51,7 +51,7 @@
 
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control form-control-user @error('password') is-invalid @enderror" id="password" placeholder="Senha" name="password" required autocomplete="current-password">
+                                            <input type="password" autocomplete="new-password" class="form-control form-control-user @error('password') is-invalid @enderror" id="password" placeholder="Senha" name="password" required>
 
                                             @error('password')
                                             <span class="invalid-feedback" role="alert">

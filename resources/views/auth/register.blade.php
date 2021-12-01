@@ -32,11 +32,20 @@
                                                           <!--{{ __('Register') }}-->
                                 <h1 class="h4 text-gray-900 mb-4">Crie uma conta!</h1>
                             </div>
-                            <form method="POST" action="{{ route('register') }}">
+
+                            @if(isset($errors) && count($errors)>0)
+                                 <div class="text-center mt-4 mb-4 p-2 alert-danger">
+                                    @foreach($errors->all() as $erro)
+                                        {{$erro}}<br>
+                                    @endforeach
+                                </div>
+                            @endif
+
+                            <form method="POST" action="{{ route('register') }}" autocomplete="new-password">
                             @csrf
                                 <div class="form-group row">
                                     <div class="col-sm-12">
-                                        <input type="text" class="form-control @error('name') is-invalid @enderror form-control-user " value="{{ old('name') }}" name="nome" id="nome" placeholder="Nome completo" required autocomplete="name" autofocus>
+                                        <input autocomplete="new-password" type="text" class="form-control @error('name') is-invalid @enderror form-control-user " value="{{ old('name') }}" name="nome" id="nome" placeholder="Nome completo" required autofocus>
                                         @error('name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -46,7 +55,7 @@
 
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user @error('email') is-invalid @enderror" value="{{ old('email') }}" id="email" name="email" required autocomplete="email" placeholder="E-mail">
+                                    <input type="email" autocomplete="new-password" class="form-control form-control-user @error('email') is-invalid @enderror" value="{{ old('email') }}" id="email" name="email" required placeholder="E-mail">
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -55,7 +64,7 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user @error('password') is-invalid @enderror" id="password" name="password" required autocomplete="new-password" placeholder="Senha">
+                                        <input type="password" autocomplete="new-password" class="form-control form-control-user @error('password') is-invalid @enderror" id="password" name="password" required placeholder="Senha">
                                         @error('password')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -63,7 +72,7 @@
                                         @enderror
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user" id="password-confirm" name="password_confirmation" placeholder="Confirmar senha" required autocomplete="new-password">
+                                        <input type="password" class="form-control form-control-user" id="password-confirm" name="password_confirmation" placeholder="Confirmar senha" required >
                                     </div>
                                 </div>
                                 <hr> 

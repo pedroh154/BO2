@@ -53,10 +53,10 @@ class RegisterController extends Controller
             'nome' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'ssw_usuario' => ['string'],
-            'ssw_senha' => ['string'],
-            'ssw_cpf' => ['string', 'numeric'],
-            'ssw_dom' => ['string'],
+            'ssw_usuario' => ['string', 'nullable'],
+            'ssw_senha' => ['string', 'nullable'],
+            'ssw_cpf' => ['string', 'numeric', 'nullable'],
+            'ssw_dom' => ['string', 'nullable'],
         ]);
     }
 
