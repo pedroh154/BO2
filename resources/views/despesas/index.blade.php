@@ -79,13 +79,8 @@
                             <form action="{{"/despesas/excluir/$despesa->id"}}" method="POST">
                                 @method('DELETE')
                                 @csrf
-<<<<<<< Updated upstream
                                 <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
                                 </form>
-=======
-                                <button type="submit" class="btn btn-outline-danger">EXCLUIR</button>
-                            </form>
->>>>>>> Stashed changes
                         </div>
                     </td>
                 </tr>

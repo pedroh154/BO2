@@ -7,7 +7,7 @@
 <div id="content-wrapper" class="d-flex flex-column" style="background-color: #f4f5f8;">
     <div class="container-fluid">
         
-        <h1>Projeto BO2 - Página principal</h1>
+        <h1>CT-es</h1>
         @if(isset($errors) && count($errors)>0)
             <div class="text-center mt-4 mb-4 p-2 alert-danger">
                 @foreach($errors->all() as $erro)
