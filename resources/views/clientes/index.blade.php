@@ -8,16 +8,16 @@
         <h1>Clientes</h1>
         @if(isset($errors) && count($errors)>0)
         <div class="text-center mt-4 mb-4 p-2 alert-danger">
-                @foreach($errors->all() as $erro)
-                    {{$erro}}<br>
-                @endforeach
-                </div>
+            @foreach($errors->all() as $erro)
+            {{$erro}}<br>
+            @endforeach
+        </div>
         @endif
         <!-- checar por sucesso -->
         @if(session()->has('message'))
-            <div class="alert alert-success">
-                {{ session()->get('message') }}
-            </div>
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
         @endif
 
         @csrf
@@ -47,7 +47,7 @@
                     <td style="text-align: left;">{{ $cliente->cidade_id }}</td>
                     </td>
                     <td class="col-md-1" style="text-align: center;">
-                        <div class="action-buttons">
+                        <div class="action-buttons hstack gap-2">
                             <!--detalhes-->
                             <a href="{{url("clientes/$cliente->id")}}" class="" data-rel="" title="" data-original-title="">
                                 <i class="fas fa-file-alt"> </i>
@@ -56,12 +56,12 @@
                             <a href="{{url("clientes/editar/$cliente->id")}}" data-toggle="" class="" style="" data-original-title="" title="">
                                 <i class="fas fa-edit"> </i>
                             </a>
-                                                        <!--apagar-->
-                                                        <form action="{{"/clientes/excluir/$cliente->id"}}" method="POST">
-                                                            @method('DELETE')
-                                                            @csrf
-                                                            <button type="submit" class="btn btn-outline-danger">EXCLUIR</button>
-                                                        </form>
+                            <!--apagar-->
+                            <form action="{{"/clientes/excluir/$cliente->id"}}" method="POST">
+                                @method('DELETE')
+                                @csrf
+                                <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                            </form>
                         </div>
                     </td>
                 </tr>
