@@ -15,11 +15,11 @@
     <h1 class="container-fluid">Cadastrar despesa</h1>
 
     @if(isset($errors) && count($errors)>0)
-        <div class="text-center mt-4 mb-4 p-2 alert-danger">
-            @foreach($errors->all() as $erro)
-                {{$erro}}<br>
-            @endforeach
-        </div>
+    <div class="text-center mt-4 mb-4 p-2 alert-danger">
+        @foreach($errors->all() as $erro)
+        {{$erro}}<br>
+        @endforeach
+    </div>
     @endif
     <h4 class="container-fluid">Forneça os dados abaixo:</h4> <br>
     <form class="container-fluid" action="/despesa-enviar" method="POST" autocomplete="off">
@@ -28,11 +28,11 @@
             <!--VER IDS-->
             <label class="input-group-text" for="inputGroupSelect01">Categoria</label>
             <select class="form-select" id="categoria" name="categoria" required>
-                <option value="Aluguel" selected>Aluguel</option>
+                <option value="Água" selected>Água</option>
+                <option value="Aluguel">Aluguel</option>
                 <option value="Luz">Luz</option>
-                <option value="Água">Água</option>
                 <option value="Manutenção">Manutenção</option>
-                <option value="Outros" >Outros</option>
+                <option value="Outros">Outros</option>
             </select>
         </div>
         <div class="mb-3">
@@ -41,7 +41,7 @@
         </div>
         <div class="mb-3">
             <label for="valor" class="form-label">Valor</label>
-            <input type="number" step="0.01"  class="form-control" id="valor" required placeholder="R$" name="valor">
+            <input type="number" step="0.01" class="form-control" id="valor" required placeholder="R$" name="valor">
         </div>
         <div class="mb-3">
             <label for="desc" class="form-label">Descrição</label>
