@@ -172,7 +172,7 @@
                             <img class="img-profile rounded-circle" src="https://source.unsplash.com/Qb7D1xw28Co/150x150">
                         </a>
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" href="/user/config">
                                 <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                 Configurações
                             </a>
