@@ -213,4 +213,6 @@
     <a href="/logout" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Logout</button></a>
 -->
 </footer>
+
+
 @endsection('content')

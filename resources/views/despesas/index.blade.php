@@ -50,52 +50,77 @@
             </thead>
 
             <tbody>
+                <!-- para cada despesa passada pelo controller... -->
                 @foreach ($listDespesas as $despesa)
-                <tr>
-                    <td style="text-align: left;" class="col-md-3">{{ $despesa->categoria }}</td>
-                    </td>
-
-                    <td style="text-align: center;" class="col-md-2">{{ $despesa->data }}</td>
-                    </td>
-
-
-                    <td style="text-align: right;" class="col-md-2">R$ {{ number_format($despesa->valor, 2)}}</td>
-                    </td>
-
-
-                    <td style="text-align: left;" class="col-md-4">{{ $despesa->desc }}</td>
-
-                    <td class="col-md-1" style="text-align: center;">
-                        <div class="action-buttons hstack gap-2">
-                            <!--detalhes-->
-                            <a href="{{url("despesas/$despesa->id")}}" class="" data-rel="" title="" data-original-title="">
-                                <i class="fas fa-file-alt"> </i>
-                            </a>
-                            <!--editar-->
-                            <a href="{{"/despesas/editar/$despesa->id"}}" data-toggle="" class="" style="" data-original-title="" title="">
-                                <i class="fas fa-edit"> </i>
-                            </a>
-                            <!--apagar-->
-                            <form action="{{"/despesas/excluir/$despesa->id"}}" method="POST">
-                                @method('DELETE')
-                                @csrf
-                                <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-                                </form>
-                        </div>
-                    </td>
-                </tr>
-
+                    <tr>
+                        <!-- exibir dados da despesa.. -->
+                        <td style="text-align: left;" class="col-md-3">{{ $despesa->categoria }}</td>
+                        <td style="text-align: center;" class="col-md-2">{{ $despesa->data }}</td>
+                        <td style="text-align: right;" class="col-md-2">R$ {{ number_format($despesa->valor, 2)}}</td>
+                        <td style="text-align: left;" class="col-md-4">{{ $despesa->desc }}</td>
+            
+                        <!-- criar botoes de CRUD -->
+                        <td class="col-md-1" style="text-align: center;">
+                            <div class="action-buttons hstack gap-2">
+                                <!-- criar botão visualizar -->
+                                <a href="{{url("despesas/$despesa->id")}}" class="" data-rel="" title="" data-original-title="">
+                                    <i class="fas fa-file-alt"></i>
+                                </a>
+                                <!-- criar botão editar -->
+                                <a href="{{"/despesas/editar/$despesa->id"}}" data-toggle="" class="" style="" data-original-title="" title="">
+                                    <i class="fas fa-edit"></i>
+                                </a>
+                                <!-- criar botão excluir -->
+                                <a href="#" data-toggle="modal" data-id="{{$despesa->id}}" data-target="#deleteModal" >
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
                 @endforeach
 
+                 <!-- extra: modal de confirmação de exclusão -->
+                 <form id="deleteForm" action="{{"/despesas/excluir/$despesa->id"}}" method="POST">
+                    @method('DELETE')
+                    @csrf
+                    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <!-- input escondido pro js pegar o valor -->
+                        <input name="despesa_id" id="despesa_id">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Confirmação de exclusão</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Deseja realmente excluir {{$despesa->categoria}} do dia {{$despesa->data}}?
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+                                    <button type="submit" class="btn btn-danger">Continuar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+    
+                <script type="text/javascript">
+                    $('#deleteModal').on('show.bs.modal', function(event){
+                        var button = $(event.relatedTarget);
+                        var recipientId = button.data('id');
+                        console.log(recipientId);
+                
+                        var modal = $(this);
+                        modal.find('despesa_id').val(recipientId);
+                    })
+                </script>
 
             </tbody>
-
         </table>
     </div>
 </div>
 <footer class="container">
-    <!--  <a href="https://sistema.ssw.inf.br/bin/ssw0422" target="_blank" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">SSW</button></a>
-    <a href="/logout" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Logout</button></a>
--->
 </footer>
 @endsection('content')
