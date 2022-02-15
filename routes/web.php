@@ -70,5 +70,6 @@ Route::get('/despesas/atualizar/{id}', 'App\Http\Controllers\DespesasController@
 Route::get('/despesas/{id}', 'App\Http\Controllers\DespesasController@show')->middleware('auth');;
 Route::delete('/despesas/excluir/{id}', 'App\Http\Controllers\DespesasController@destroy')->middleware('auth');;
 
-
+/* CONFIG */
+Route::get('/user/config', 'App\Http\Controllers\UserConfigController@index')->middleware('auth');;
 
