@@ -86,7 +86,7 @@
 
                                 <div class="form-group text-center">
                                     
-                                <a class="btn btn-primary col-sm-6 mb-3 mb-sm-0" href="#" role="button">Alterar dados SSW</a>
+                                <a class="btn btn-primary col-sm-6 mb-3 mb-sm-0" href="/user/config/alterarssw" role="button">Alterar credenciais SSW</a>
                                 <a class="btn btn-danger col-sm-5 mb-3 mb-sm-0" href="#" role="button">Apagar dados SSW</a>
 
                                 </div>

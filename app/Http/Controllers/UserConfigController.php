@@ -33,5 +33,9 @@ class UserConfigController extends Controller
         return view('config.alterarsenha');
     }
 
+    public function alterarssw()
+    {
+        return view('config.alterarssw');
+    }
     
 }

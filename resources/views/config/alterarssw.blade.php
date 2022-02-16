@@ -19,15 +19,15 @@
     <div class="container ">
 
         <div class="card o-hidden border-0 shadow-lg my-5 col-6 ">
-            <div class="card-body p-0 ">
+            <div class="card-body p-0 " >
                 <!-- Nested Row within Card Body -->
                 <div class="row">
-
+                    
                     <div class="">
                         <div class="p-5">
                             <div class="text-center">
                                 <!--{{ __('Register') }}-->
-                                <h1 class="h4 text-gray-900 mb-4">Alterar senha</h1>
+                                <h1 class="h4 text-gray-900 mb-4">Alterar credenciais SSW</h1>
                             </div>
 
                             @if(isset($errors) && count($errors)>0)
@@ -40,43 +40,36 @@
 
                             <form method="POST" action="{{ route('register') }}" autocomplete="new-password">
                                 @csrf
+     
 
-                                <div class="form-group">
-                                    <input type="email" autocomplete="new-password" class="form-control form-control-user @error('email') is-invalid @enderror" value="{{ old('email') }}" id="email" name="senha_atual" placeholder="Senha atual">
-                                    @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
+                                <div class="form-group row">
+                                    <div class="col-sm-5 mb-3 mb-sm-0">
+
+                                        <!--     REVER IDS DE SENHA         -->
+                                        <input type="text" class="form-control form-control-user" id="ssw_dom" placeholder="SSW Domínio"  name="ssw_dom">
+                                    </div>
+                                    <div class="col-sm-7">
+                                        <input type="text" class="form-control form-control-user" id="ssw_cpf" placeholder="SSW CPF"  name="ssw_cpf">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-5 mb-3 mb-sm-0">
+                                        <input type="text" class="form-control form-control-user" id="ssw_usuario" placeholder="SSW Usuário"  name="ssw_usuario">
+                                    </div>
+
                                 </div>
 
-                                <div class="form-group">
-                                    <input type="email" autocomplete="new-password" class="form-control form-control-user @error('email') is-invalid @enderror" value="{{ old('email') }}" id="email" name="nova_senha" placeholder="Nova senha">
-                                    @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-
-                                <div class="form-group">
-                                    <input type="email" autocomplete="new-password" class="form-control form-control-user @error('email') is-invalid @enderror" value="{{ old('email') }}" id="email" name="confirmar_senha" placeholder="Confirmar nova senha">
-                                    @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
+                                <hr>
 
                                 <div class="form-group text-center">
-
-                                    <a class="btn btn-primary col-sm-6 mb-3 mb-sm-0" href="/user/config/alterarsenha" role="button">Alterar</a>
+                                    
+                                    <a class="btn btn-primary col-sm-6 mb-3 mb-sm-0" href="/user/config/alterarssw" role="button">Alterar</a>
                                     <a class="btn btn-secondary col-sm-5 mb-3 mb-sm-0" href="/user/config" role="button">Cancelar</a>
+    
+                                    </div>
 
-                                </div>
 
-
-
+                                
                             </form>
 
 
