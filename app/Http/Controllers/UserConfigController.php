@@ -27,4 +27,11 @@ class UserConfigController extends Controller
     {
         return view('config.index');
     }
+
+    public function alterarsenha()
+    {
+        return view('config.alterarsenha');
+    }
+
+    
 }

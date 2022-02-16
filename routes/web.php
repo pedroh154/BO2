@@ -72,4 +72,5 @@ Route::delete('/despesas/excluir/{id}', 'App\Http\Controllers\DespesasController
 
 /* CONFIG */
 Route::get('/user/config', 'App\Http\Controllers\UserConfigController@index')->middleware('auth');;
+Route::get('/user/config/alterarsenha', 'App\Http\Controllers\UserConfigController@alterarsenha')->middleware('auth');;
 
