@@ -6,7 +6,9 @@ use App\Models\Cte;
 use App\Models\Cliente;
 use App\Models\Cidade;
 use App\Http\Requests\CtesRequest;
-use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Http;
+use App\Http\Controllers\Input;
+use Illuminate\Http\Request;
 
 
 class CtesController extends Controller
@@ -95,6 +97,47 @@ class CtesController extends Controller
         return redirect('/ctes')->withInput()->withMessage('CT-e cadastrado com sucesso!');
     }
 
+    public function RF_Manter($request)
+    {
+        print_r($request);
+
+        // $this->objCte->numero_nf = $request->numero_nf;
+        // $this->objCte->valor_cte = $request->valor_cte;
+        // $this->objCte->volume = $request->volume;
+        // $this->objCte->obs = $request->obs;
+        // $this->objCte->data_chegada = $request->data_chegada;
+        // $this->objCte->numero_cte = $request->numero_cte;
+        // $this->objCte->data_entrega = $request->data_entrega;
+        // $this->objCte->tipo_pagamento = $request->tipo_pagamento;
+        // $this->objCte->valor_nf = $request->valor_nf;
+        // $this->objCte->pode_alterar = true;
+        // $this->objCte->finalizado = false;
+        // $this->objCte->remetente_id = $request->remetente_id;
+        // $this->objCte->destinatario_id = $request->destinatario_id;
+        // $this->objCte->cidade_remetente_id = $request->cidade_remetente_id;
+        // $this->objCte->cidade_destinataria_id = $request->cidade_destinataria_id;
+        // $this->objCte->user_id = auth()->id();
+
+        // $this->objCte->save();
+
+        // return redirect('/ctes')->withInput()->withMessage('CT-e cadastrado com sucesso!');
+    }
+
+    public function RF_fetch(Request $request)
+    {
+        //var_dump($_POST);
+
+        $response = Http::Post("https://api.infosimples.com/api/v2/consultas/receita-federal/cte", [
+            "cte" => $request->input('chavecte'), 
+            "pkcs12_cert" => "",
+            "pkcs12_pass" => "",
+            "token" => "blJ5RUg_X5mXVizzTboG5XVYB4iDanJGy5KHU_kc"
+        ]);
+
+        //var_dump($response);
+        $this->RF_Manter(json_decode($response->body(), true));
+    }   
+
     //editar   
     public function edit($id)
     {
@@ -124,11 +167,12 @@ class CtesController extends Controller
         return redirect('/ctes')->withInput()->withMessage('CT-e editado com sucesso!');
     }
 
-        //destroy   
-        public function destroy($id)
-        {
-            $this->objCte->destroy($id);
-    
-            return redirect('/ctes')->withInput()->withMessage('CT-e deletado com sucesso!');
-        }
+    //destroy   
+    public function destroy($id)
+    {
+        $this->objCte->destroy($id);
+
+        return redirect('/ctes')->withInput()->withMessage('CT-e deletado com sucesso!');
+    }
+
 }

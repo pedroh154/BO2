@@ -36,7 +36,11 @@
                     <label class="btn btn-outline-primary" for="btnradio2">RF</label>
                 </div>
                 <div class="col-md-12">
-                    <input type="number" class="form-control" id="chavecte" placeholder="Insira a chave do CT-e">
+                    <form class="form-horizontal" action="/cte-fetch/" method="POST">
+                        @csrf
+                        <input id="chavecte" name="chavecte" class="form-control" placeholder="Insira a chave do CT-e">
+                        <button type="submit" class="btn btn-add btn-lg">Buscar CTe</button>    
+                    </form>
                 </div>
             </div>
             <div class="vstack gap-2 col-md-4">
@@ -52,6 +56,8 @@
 
         </div>
 
+
+        
         <div class="d-flex flex-column">
             <h5>Filtros</h5>
         </div>
@@ -149,44 +155,13 @@
                                     <i class="fas fa-trash-alt"></i>
                                 </a>-->
                                 <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                
                             </form>
 
                             </div>
                         </td>
                     </tr>
                     @endforeach
-
-
-                    <!-- <tr>
-                        <td style="text-align: left;">Canoas</td>
-                        <td style="text-align: right;">4322236</td>
-                        <td style="text-align: right;">R$ 42,36</td>
-                        <td style="text-align: center;">FOB</td>
-                        <td style="text-align: right;">7</td>
-                        <td style="text-align: center;">Rogério Sousa</td>
-                        <td>
-                            <div class="custom-control custom-checkbox" style="text-align: center;">
-                                <input type="checkbox" class="custom-control-input" id="customCheck2">
-                                <label class="custom-control-label" for="customCheck2"></label>
-                            </div>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td style="text-align: left;">Ponta Grossa</td>
-                        <td style="text-align: right;">7654321</td>
-                        <td style="text-align: right;">R$ 221,58</td>
-                        <td style="text-align: center;">CIF</td>
-                        <td style="text-align: right;">18</td>
-                        <td style="text-align: center;">Acir Pires Nobre</td>
-                        <td>
-                            <div class="custom-control custom-checkbox" style="text-align: center;">
-                                <input type="checkbox" class="custom-control-input" id="customCheck3">
-                                <label class="custom-control-label" for="customCheck3"></label>
-                            </div>
-                        </td>
-                    </tr>
--->
                 </tbody>
             </table>
         </div>
@@ -207,12 +182,5 @@
         console.log('td clicked')
     };
 </script>
-
-<footer class="container">
-    <!-- <a href="https://sistema.ssw.inf.br/bin/ssw0422" target="_blank" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">SSW</button></a>
-    <a href="/logout" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Logout</button></a>
--->
-</footer>
-
 
 @endsection('content')

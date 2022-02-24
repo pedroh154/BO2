@@ -41,6 +41,7 @@ Route::get('/ctes/editar/{id}', 'App\Http\Controllers\CtesController@edit')->mid
 Route::get('/ctes/atualizar/{id}', 'App\Http\Controllers\CtesController@update')->middleware('auth');;
 Route::get('/ctes/{id}', 'App\Http\Controllers\CtesController@show')->middleware('auth');;
 Route::delete('/ctes/excluir/{id}', 'App\Http\Controllers\CtesController@destroy')->middleware('auth');;
+Route::post('/cte-fetch', 'App\Http\Controllers\CtesController@RF_Fetch')->middleware('auth');;
 
 /* Clientes */
 Route::get('/clientes', 'App\Http\Controllers\ClientesController@index')->middleware('auth');;
@@ -69,6 +70,7 @@ Route::get('/despesas/editar/{id}', 'App\Http\Controllers\DespesasController@edi
 Route::get('/despesas/atualizar/{id}', 'App\Http\Controllers\DespesasController@update')->middleware('auth');;
 Route::get('/despesas/{id}', 'App\Http\Controllers\DespesasController@show')->middleware('auth');;
 Route::delete('/despesas/excluir/{id}', 'App\Http\Controllers\DespesasController@destroy')->middleware('auth');;
+
 
 /* CONFIG */
 Route::get('/user/config', 'App\Http\Controllers\UserConfigController@index')->middleware('auth');;
