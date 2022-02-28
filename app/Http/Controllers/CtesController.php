@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cte;
 use App\Models\Cliente;
 use App\Models\Cidade;
+use App\Models\Transportadora;
 use App\Http\Requests\CtesRequest;
 use Illuminate\Support\Facades\Http;
 use App\Http\Controllers\Input;
@@ -39,7 +40,10 @@ class CtesController extends Controller
 
         $listClientes = Cliente::where('user_id', auth()->id())->orderBy('nome')->get();
 
-        return view('ctes.criarcte', compact('listCidades', 'listClientes'));
+        $transp = new Transportadora();
+        $listTransp = $transp->all();
+
+        return view('ctes.criarcte', compact('listCidades', 'listClientes', 'listTransp'));
     }
 
     public function detalhesCte($cte, bool $editavel)
@@ -90,6 +94,7 @@ class CtesController extends Controller
         $this->objCte->destinatario_id = $request->destinatario_id;
         $this->objCte->cidade_remetente_id = $request->cidade_remetente_id;
         $this->objCte->cidade_destinataria_id = $request->cidade_destinataria_id;
+        $this->objCte->transportadora_id = $request->transportadora_id;
         $this->objCte->user_id = auth()->id();
 
         $this->objCte->save();

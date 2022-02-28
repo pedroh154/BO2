@@ -60,10 +60,11 @@
                 </select>
             </div>
             <div class="col-md-2">
-                <label for="tipo_pagamento" class="form-label">Empresa</label>
-                <select id="tipo_pagamento" name="tipo_pagamento" class="form-select">
-                    <option selected value="">União</option>
-                    <option value="">TEX</option>
+                <label for="transportadora" class="form-label">Transportadora</label>
+                <select id="transportadora_id" name="transportadora_id" class="form-select">
+                    @foreach ($listTransp as $transp)
+                        <option value="{{ $transp->id }}"> {!! $transp->nome !!} </option>
+                    @endforeach
                 </select>
             </div>
             <div class="col-md-4">
