@@ -42,6 +42,9 @@ class CreateCtesTable extends Migration
             $table->foreignId('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE');
 
+            $table->foreignId('transportadora_id');
+            $table->foreign('transportadora_id')->references('id')->on('transportadoras')->onDelete('CASCADE')->onUpdate('CASCADE');
+
             $table->timestamps();
         });
     }
