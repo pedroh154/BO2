@@ -52,11 +52,18 @@
                 <label for="data" class="form-label">Data de chegada</label>
                 <input type="date" class="form-control" name="data_chegada" id="data_chegada" value="<?php echo date('Y-m-d'); ?>" required>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <label for="tipo_pagamento" class="form-label">Método de pagamento</label>
                 <select id="tipo_pagamento" name="tipo_pagamento" class="form-select">
                     <option selected value="CIF">CIF</option>
                     <option value="FOB">FOB</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label for="tipo_pagamento" class="form-label">Empresa</label>
+                <select id="tipo_pagamento" name="tipo_pagamento" class="form-select">
+                    <option selected value="">União</option>
+                    <option value="">TEX</option>
                 </select>
             </div>
             <div class="col-md-4">
