@@ -154,7 +154,7 @@
 
                                     <i class="fas fa-trash-alt"></i>
                                 </a>-->
-                                <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                <button style="color: red;" type="submit" class="btn btn-sm"><i class="fas fa-trash-alt"></i></button>
                                 
                             </form>
 

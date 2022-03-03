@@ -59,14 +59,16 @@
             <div class="col-md-4">
                 <label for="cidade_remetente_id" class="form-label">Cidade remetente</label>
                 <br>
-                <select id="cidade_remetente_id" name="cidade_remetente_id" style='width: 300px;'>
+                
+                <select id='cidade_remetente_id' name="cidade_remetente_id" class="col-md-12">
                     <option value='0'>Selecione a cidade remetente</option>
                 </select>
             </div>
             <div class="col-md-4">
                 <label for="cidade_destinataria_id" class="form-label">Cidade destinatária</label>
                 <br>
-                <select id="cidade_destinataria_id" name="cidade_destinataria_id" style='width: 300px;'>
+                <select id="cidade_destinataria_id" name="cidade_destinataria_id" class="col-md-12">
+
                     <option value='0'>Selecione a cidade destinatária</option>
                 </select>
             </div>

@@ -71,8 +71,8 @@
                                     <i class="fas fa-edit"></i>
                                 </a>
                                 <!-- criar botão excluir -->
-                                <a href="#" data-toggle="modal" data-id="{{$despesa->id}}" data-target="#deleteModal" >
-                                    <i class="fas fa-trash"></i>
+                                <a href="#" data-toggle="modal" data-id="{{$despesa->id}}" data-target="#deleteModal" style="color: red;">
+                                    <i class="fas fa-trash-alt"></i>
                                 </a>
                             </div>
                         </td>

@@ -67,13 +67,13 @@
                             </a>
                             <!--editar-->
                             <a href="{{url("contatos/editar/$contato->id")}}" data-toggle="" class="" style="" data-original-title="" title="">
-                                <i class="fas fa-edit"> </i>
+                                <i class="fas fa-edit"></i>
                             </a>
                             <!--apagar-->
                             <form action="{{"/contatos/excluir/$contato->id"}}" method="POST">
                                 @method('DELETE')
                                 @csrf
-                                <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                <button style="color: red;" type="submit" class="btn btn-sm"><i class="fas fa-trash-alt"></i></button>
                             </form>
 
                         </div>
