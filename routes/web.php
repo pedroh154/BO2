@@ -43,6 +43,7 @@ Route::get('/ctes/{id}', 'App\Http\Controllers\CtesController@show')->middleware
 Route::delete('/ctes/excluir/{id}', 'App\Http\Controllers\CtesController@destroy')->middleware('auth');;
 Route::post('/cte-fetch', 'App\Http\Controllers\CtesController@RF_Fetch')->middleware('auth');;
 
+/* cidades */
 Route::post('/getCidades', 'App\Http\Controllers\CtesController@getCidades')->middleware('auth');
 
 /* Clientes */

@@ -249,7 +249,7 @@
            url: "/getCidades",
            type: "post",
            dataType: 'json',
-           delay: 250,
+           delay: 500,
            data: function (params) {
              return {
                 _token: CSRF_TOKEN,
@@ -280,7 +280,7 @@
            url: "/getCidades",
            type: "post",
            dataType: 'json',
-           delay: 250,
+           delay: 500,
            data: function (params) {
              return {
                 _token: CSRF_TOKEN,

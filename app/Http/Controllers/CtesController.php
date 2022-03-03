@@ -182,11 +182,12 @@ class CtesController extends Controller
     }
 
     public function getCidades(Request $request){
+
         $listCidades = array();
         $search = $request->search;
 
         if($search != "") {
-            $listCidades = Cidade::orderby('name','asc')->select('id','name')->where('name', 'like', '%' .$search . '%')->limit(5)->get();
+            $listCidades = Cidade::orderBy('name','asc')->where('name', 'like', '%' .$search . '%')->limit(5)->get();
         }
         else {
             $listCidades = Cidade::orderBy('name')->get();
