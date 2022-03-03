@@ -3,16 +3,6 @@
 @section('content')
 <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-
-
-<!--<div class="btn-group" role="group" aria-label="Basic example">
-            <a href="/home" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Página Inicial</button></a>
-            <a href="/contatos" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Contatos</button></a>
-        </div>-->
-
 <div id="content-wrapper" class="d-flex flex-column" style="background-color: #f4f5f8;">
     <h1 class="container-fluid">Cadastrar cliente</h1>
 
@@ -50,14 +40,12 @@
                 <input type="text" class="form-control" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" maxlength="14" id="cadastro_nacional" required name="cadastro_nacional">
             </div>
             <div class="col-md-4">
-                    <label for="a" class="form-label">Cidade</label>
-                    <select id="cidade_id" required name="cidade_id" class="selectpicker" data-live-search="true">
-                        @foreach ($listCidades as $cidade)
-                            <option name="field" value={{$cidade->id}}>{{ $cidade->name }} - {{$cidade->estado_id}} </option>
-                        @endforeach
-                    </select>
+                <label for="cidade_destinataria_id" class="form-label">Cidade</label>
+                <br>
+                <select id="cidade_destinataria_id" name="cidade_destinataria_id" style='width: 300px;'>
+                    <option value='0'>Selecione a cidade</option>
+                </select>
             </div>
-
             <div class="mb-3">
                 <label for="obscliente" class="form-label">Observações</label>
                 <textarea class="form-control" maxlength="280" id="obs" name="obs" rows="2"></textarea>

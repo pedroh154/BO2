@@ -140,7 +140,6 @@ class CtesController extends Controller
             "token" => "blJ5RUg_X5mXVizzTboG5XVYB4iDanJGy5KHU_kc"
         ]);
 
-        //var_dump($response);
         $this->RF_Manter(json_decode($response->body(), true));
     }   
 

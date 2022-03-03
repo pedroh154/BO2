@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="csrf-token" content="{{ csrf_token() }}" content="width=device-width, initial-scale=1">
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
@@ -13,6 +14,7 @@
         <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.full.min.js" defer></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
         <title>Projeto BO2</title>
     </head>
 
@@ -203,7 +205,66 @@
 
         <script src="{{ URL::asset('js/demo/chart-pie-demo.js') }}"></script>
     -->
-
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </body>
+
+    <script type="text/javascript">
+        // CSRF Token
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        $(document).ready(function(){
+     
+          $( "#cidade_remetente_id" ).select2({
+             ajax: { 
+               url: "/getCidades",
+               type: "post",
+               dataType: 'json',
+               delay: 500,
+               data: function (params) {
+                 return {
+                    _token: CSRF_TOKEN,
+                    search: params.term // search term
+                 };
+               },
+               processResults: function (response) {
+                 return {
+                   results: response
+                 };
+               },
+               cache: true
+             }
+     
+          });
+     
+        });
+    </script>
+    
+    
+    <script type="text/javascript">
+        // CSRF Token
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        $(document).ready(function(){
+     
+          $( "#cidade_destinataria_id" ).select2({
+             ajax: { 
+               url: "/getCidades",
+               type: "post",
+               dataType: 'json',
+               delay: 500,
+               data: function (params) {
+                 return {
+                    _token: CSRF_TOKEN,
+                    search: params.term // search term
+                 };
+               },
+               processResults: function (response) {
+                 return {
+                   results: response
+                 };
+               },
+               cache: true
+             }
+     
+          });
+     
+        });
+    </script>
 </html>

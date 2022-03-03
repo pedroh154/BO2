@@ -59,14 +59,14 @@
             <div class="col-md-4">
                 <label for="cidade_remetente_id" class="form-label">Cidade remetente</label>
                 <br>
-                <select id='cidade_remetente' style='width: 300px;'>
+                <select id="cidade_remetente_id" name="cidade_remetente_id" style='width: 300px;'>
                     <option value='0'>Selecione a cidade remetente</option>
                 </select>
             </div>
             <div class="col-md-4">
                 <label for="cidade_destinataria_id" class="form-label">Cidade destinatária</label>
                 <br>
-                <select id='cidade_destinataria' style='width: 300px;'>
+                <select id="cidade_destinataria_id" name="cidade_destinataria_id" style='width: 300px;'>
                     <option value='0'>Selecione a cidade destinatária</option>
                 </select>
             </div>
@@ -237,67 +237,4 @@
 
     // });
 </script> 
-
-
-<script type="text/javascript">
-    // CSRF Token
-    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-    $(document).ready(function(){
- 
-      $( "#cidade_destinataria" ).select2({
-         ajax: { 
-           url: "/getCidades",
-           type: "post",
-           dataType: 'json',
-           delay: 500,
-           data: function (params) {
-             return {
-                _token: CSRF_TOKEN,
-                search: params.term // search term
-             };
-           },
-           processResults: function (response) {
-             return {
-               results: response
-             };
-           },
-           cache: true
-         }
- 
-      });
- 
-    });
-</script>
-
-
-<script type="text/javascript">
-    // CSRF Token
-    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-    $(document).ready(function(){
- 
-      $( "#cidade_remetente" ).select2({
-         ajax: { 
-           url: "/getCidades",
-           type: "post",
-           dataType: 'json',
-           delay: 500,
-           data: function (params) {
-             return {
-                _token: CSRF_TOKEN,
-                search: params.term // search term
-             };
-           },
-           processResults: function (response) {
-             return {
-               results: response
-             };
-           },
-           cache: true
-         }
- 
-      });
- 
-    });
-</script>
-
 @endsection('content')

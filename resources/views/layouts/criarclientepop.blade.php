@@ -3,40 +3,40 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">-->
+    <meta name="csrf-token" content="{{ csrf_token() }}" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css') }}" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     <link rel="stylesheet" href="">
     <link rel="stylesheet" href="{{ URL::asset('css/sb-admin-2.min.css') }}">
     <link href="{{ URL::asset('css/all.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ URL::asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
-
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.full.min.js" defer></script>
 
     <title>Projeto BO2</title>
-
 </head>
 
 <body>
     <div class="modal-header">
         <h5 class="modal-title">Criar cliente</h5>
+
         @if(isset($errors) && count($errors)>0)
-        <div class="text-center mt-4 mb-4 p-2 alert-danger">
-            @foreach($errors->all() as $erro)
-            {{$erro}}<br>
-            @endforeach
-        </div>
+            <div class="text-center mt-4 mb-4 p-2 alert-danger">
+                @foreach($errors->all() as $erro)
+                    {{$erro}}<br>
+                @endforeach
+            </div>
         @endif
 
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
+
     <div class="modal-body">
         <div id="content-wrapper" class="d-flex flex-column " style="background-color: #FFFFFF;">
             <h1 class="container-fluid" style="text-align: left;">Cadastrar cliente</h1>
-
             <h4 class="container-fluid" style="text-align: left;">Forneça os dados abaixo:</h4> <br>
             <form class="row g-3" action="/cliente-enviar" method="POST" autocomplete="off">
                 @csrf
@@ -61,15 +61,14 @@
                     <label for="cadastronacionalcliente" class="form-label">CPF/CNPJ</label>
                     <input type="text" maxlength="14" class="form-control" id="cadastro_nacional" name="cadastro_nacional" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
                 </div>
-                <div class="col-md-5">
-                    <label for="cidadesr" class="form-label">Cidade</label>
-                    <input id="cidade_id" name="cidade_id" class="form-control" list="listcidades" placeholder="Pesquisar...">
-                    <datalist id="listcidades">
-                        @foreach ($listCidades as $cidade)
-                        <option value="{{ $cidade->id }}" hidden> {!! $cidade->name !!} </option>
-                        @endforeach
-                    </datalist>
+                <div class="col-md-4">
+                    <label for="cidade_remetente_id" class="form-label">Cidade remetente</label>
+                    <br>
+                    <select id='cidade_remetente' style='width: 150px;'>
+                        <option value='0'>Cidade remetente</option>
+                    </select>
                 </div>
+                
                 <div class="col-md-12">
                     <label for="obscliente" class="form-label">Observações</label>
                     <textarea class="form-control" maxlength="280" id="obs" name="obs" rows="2"></textarea>
@@ -79,6 +78,35 @@
                 </div>
             </form>
         </div>
-
     </div>
+
+    <script type="text/javascript">
+        // CSRF Token
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        $(document).ready(function(){
+     
+          $( "#cidade_remetente" ).select2({
+             ajax: { 
+               url: "/getCidades",
+               type: "post",
+               dataType: 'json',
+               delay: 500,
+               data: function (params) {
+                 return {
+                    _token: CSRF_TOKEN,
+                    search: params.term // search term
+                 };
+               },
+               processResults: function (response) {
+                 return {
+                   results: response
+                 };
+               },
+               cache: true
+             }
+     
+          });
+     
+        });
+    </script>
 </body>
