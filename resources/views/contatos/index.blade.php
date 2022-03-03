@@ -63,17 +63,17 @@
                         <div class="action-buttons hstack gap-2">
                             <!-- criar botão visualizar -->
                             <a href="{{url("contatos/$contato->id")}}" class="" data-rel="" title="" data-original-title="">
-                                <button class="btn btn-info" type="submit"><i class="fa-solid fa-file-lines"></i></button>
+                                <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-lines"></i></button>
                             </a>
                             <!-- criar botão editar -->
                             <a href="{{"/contatos/editar/$contato->id"}}" data-toggle="" class="" style="" data-original-title="" title="">
-                                <button class="btn btn-info" type="submit"><i class="fa-solid fa-pen"></i></button>
+                                <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-pen"></i></button>
                             </a>
                             <!--apagar-->
                             <form action="{{"/contatos/excluir/$contato->id"}}" method="POST">
                                 @method('DELETE')
                                 @csrf
-                                <button class="btn btn-info" type="submit"><i class="fas fa-trash-alt"></i></button>
+                                <button class="btn btn-danger btn-sm" type="submit"><i class="fas fa-trash-alt"></i></button>
                             </form>
                         </div>
                     </td>
