@@ -52,8 +52,6 @@
                 </label>
             </div>
 
-            <!--<a class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" type="file"><i class="fas fa-upload fa-sm text-white-50"></i> Importar XML</a>-->
-
         </div>
 
 
@@ -132,32 +130,26 @@
                                 <label class="custom-control-label" for="{{ $cte->id }}"></label>
                             </div>
                         </td>
-                        <td class="col-md-2 " >
-                            <div class="action-buttons hstack gap-2" style="text-align: center;">
-                                <!--PDF-->
-                                <a href="" class="" data-rel="" title="" data-original-title="">
-                                    <i class="fas fa-file-pdf"></i>
-                                </a>
-                                <!--detalhes-->
+                        <td class="col-md-1" style="text-align: center;">
+                            <div class="action-buttons hstack gap-2">
+                                <!-- criar botão pdf -->
                                 <a href="{{url("ctes/$cte->id")}}" class="" data-rel="" title="" data-original-title="">
-                                    <i class="fas fa-file-alt"></i>
+                                    <button class="btn btn-danger" type="submit"><i class="fa-solid fa-file-pdf"></i></button>
                                 </a>
-                                <!--editar-->
-                                <a href="{{url("ctes/editar/$cte->id")}}" data-toggle="" class="" style="" data-original-title="" title="">
-                                    <i class="fas fa-edit"></i>
+                                <!-- criar botão visualizar -->
+                                <a href="{{url("ctes/$cte->id")}}" class="" data-rel="" title="" data-original-title="">
+                                    <button class="btn btn-info" type="submit"><i class="fa-solid fa-file-lines"></i></button>
                                 </a>
-                            <!--apagar-->
-                            <form id="apagar" action="{{"/ctes/excluir/$cte->id"}}" method="POST">
-                                @method('DELETE')
-                                @csrf
-                            <!--    <a data-method="delete" href="{{"/ctes/excluir/$cte->id"}}"  onclick="document.getElementById('apagar').submit()">
-
-                                    <i class="fas fa-trash-alt"></i>
-                                </a>-->
-                                <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
-                                
-                            </form>
-
+                                <!-- criar botão editar -->
+                                <a href="{{"/ctes/editar/$cte->id"}}" data-toggle="" class="" style="" data-original-title="" title="">
+                                    <button class="btn btn-info" type="submit"><i class="fa-solid fa-pen"></i></button>
+                                </a>
+                                <!--apagar-->
+                                <form action="{{"/ctes/excluir/$cte->id"}}" method="POST">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button class="btn btn-info" type="submit"><i class="fas fa-trash-alt"></i></button>
+                                </form>
                             </div>
                         </td>
                     </tr>

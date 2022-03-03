@@ -48,19 +48,19 @@
                     </td>
                     <td class="col-md-1" style="text-align: center;">
                         <div class="action-buttons hstack gap-2">
-                            <!--detalhes-->
+                            <!-- criar botão visualizar -->
                             <a href="{{url("clientes/$cliente->id")}}" class="" data-rel="" title="" data-original-title="">
-                                <i class="fas fa-file-alt"> </i>
+                                <button class="btn btn-info" type="submit"><i class="fa-solid fa-file-lines"></i></button>
                             </a>
-                            <!--editar-->
-                            <a href="{{url("clientes/editar/$cliente->id")}}" data-toggle="" class="" style="" data-original-title="" title="">
-                                <i class="fas fa-edit"> </i>
+                            <!-- criar botão editar -->
+                            <a href="{{"/clientes/editar/$cliente->id"}}" data-toggle="" class="" style="" data-original-title="" title="">
+                                <button class="btn btn-info" type="submit"><i class="fa-solid fa-pen"></i></button>
                             </a>
                             <!--apagar-->
                             <form action="{{"/clientes/excluir/$cliente->id"}}" method="POST">
                                 @method('DELETE')
                                 @csrf
-                                <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                <button class="btn btn-info" type="submit"><i class="fas fa-trash-alt"></i></button>
                             </form>
                         </div>
                     </td>
