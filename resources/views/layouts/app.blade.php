@@ -2,18 +2,18 @@
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">-->
+        <meta name="csrf-token" content="{{ csrf_token() }}" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css') }}" type="text/css">
         <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-        <link rel="stylesheet" href="">
         <link rel="stylesheet" href="{{ URL::asset('css/sb-admin-2.min.css') }}">
         <link href="{{ URL::asset('css/all.min.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ URL::asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
+        <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.full.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
         <title>Projeto BO2</title>
-
     </head>
 
     <body id="page-top">
@@ -189,57 +189,20 @@
                 crossorigin="anonymous">
         </script>
 
-        <!-- jquery  teste
-        <script>
-            jQuery(document).ready(function(){
-            jQuery('#ajaxSubmit').click(function(e){
-                e.preventDefault();
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
-                    }
-                });
-                jQuery.ajax({
-                    url:"https://api.infosimples.com/api/v2/consultas/receita-federal/cte",
-                    dataType:"json",
-                    method: "post",
-                    data:{
-                        "cte": "41220206367990000268570020010732281015252145", 
-                        "pkcs12_cert": "",
-                        "pkcs12_pass": "",
-                        "token": "blJ5RUg_X5mXVizzTboG5XVYB4iDanJGy5KHU_kc"
-                    },
-                    beforeSend:function(result) {
-                        console.log(result);
-                    },
-                    complete: function(result) {
-                        console.log(result);
-                    },
-                    error:function(result) {
-                        console.log(result);
-                    },
-                    success: function(result){
-                        console.log(result);
-                    }
-                    });
-                });
-            });
-        </script>
-        -->
-
         <!-- Core plugin JavaScript-->
         <script src="{{ URL::asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
-        <!-- Custom scripts for all pages-->
+        <!-- 
         <script src="{{ URL::asset('js/sb-admin-2.min.js') }}"></script>
 
-        <!-- Page level plugins -->
+       Page level plugins 
         <script src="{{ URL::asset('vendor/chart.js/Chart.min.js') }}"></script>
 
-        <!-- Page level custom scripts -->
+
         <script src="{{ URL::asset('js/demo/chart-area-demo.js') }}"></script>
 
         <script src="{{ URL::asset('js/demo/chart-pie-demo.js') }}"></script>
+    -->
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </body>

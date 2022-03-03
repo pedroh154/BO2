@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cte;
 use App\Models\Cliente;
 use App\Models\Cidade;
+use App\Models\Estado;
 use App\Models\Transportadora;
 use App\Http\Requests\CtesRequest;
 use Illuminate\Support\Facades\Http;
@@ -178,6 +179,32 @@ class CtesController extends Controller
         $this->objCte->destroy($id);
 
         return redirect('/ctes')->withInput()->withMessage('CT-e deletado com sucesso!');
+    }
+
+    public function getCidades(Request $request){
+        $listCidades = array();
+        $search = $request->search;
+
+        if($search != "") {
+            $listCidades = Cidade::orderby('name','asc')->select('id','name')->where('name', 'like', '%' .$search . '%')->limit(5)->get();
+        }
+        else {
+            $listCidades = Cidade::orderBy('name')->get();
+        }
+        
+        $response = array();
+
+        foreach($listCidades as $cidade){
+
+            $estado = Estado::where('id', $cidade->estado_id)->first();
+
+            $response[] = array(
+                    "id"=>$cidade->id,
+                    "text"=>$cidade->name . ' - ' . $estado->abbr
+            );
+
+        }
+        return response()->json($response);  
     }
 
 }

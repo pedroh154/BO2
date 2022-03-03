@@ -2,8 +2,10 @@
 
 @section('content')
 <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 
 <!--<div class="btn-group" role="group" aria-label="Basic example">
@@ -48,13 +50,12 @@
                 <input type="text" class="form-control" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" maxlength="14" id="cadastro_nacional" required name="cadastro_nacional">
             </div>
             <div class="col-md-4">
-                <label for="cidadesr" class="form-label">Cidade</label>
-                <input id="cidade_id" name="cidade_id" class="form-control" required list="listcidades" placeholder="Digite para pesquisar...">
-                <datalist id="listcidades">
-                    @foreach ($listCidades as $cidade)
-                    <option value="{{ $cidade->id }}" hidden> {!! $cidade->name !!} </option>
-                    @endforeach
-                </datalist>
+                    <label for="a" class="form-label">Cidade</label>
+                    <select id="cidade_id" required name="cidade_id" class="selectpicker" data-live-search="true">
+                        @foreach ($listCidades as $cidade)
+                            <option name="field" value={{$cidade->id}}>{{ $cidade->name }} - {{$cidade->estado_id}} </option>
+                        @endforeach
+                    </select>
             </div>
 
             <div class="mb-3">
@@ -78,4 +79,5 @@
     <a href="/logout" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Logout</button></a>
 -->
 </footer>
+
 @endsection('content')

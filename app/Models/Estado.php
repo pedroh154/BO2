@@ -4,7 +4,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class State extends Model
+class Estado extends Model
 {
 
     use HasFactory;
@@ -44,7 +44,7 @@ class State extends Model
      */
     public function cidade()
     {
-        return $this->hasMany(Cidade::class, 'cidade_id', 'id');
+        return $this->hasMany(Cidade::class);
     }
 
 }

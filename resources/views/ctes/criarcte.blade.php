@@ -1,17 +1,6 @@
 @extends('layouts.app')
 @section('content')
 
-<link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
-
-
 <div id="content-wrapper" class="d-flex flex-column" style="background-color: #f4f5f8;">
     <h1 class="container-fluid">Cadastrar CT-e</h1>
 
@@ -69,21 +58,17 @@
             </div>
             <div class="col-md-4">
                 <label for="cidade_remetente_id" class="form-label">Cidade remetente</label>
-                <input autocomplete="new-password" id="cidade_remetente_id"  class="form-control" name="cidade_remetente_id" list="listcidadesr" placeholder="Digite para pesquisar..." required>
-                <datalist id="listcidadesr">
-                    @foreach ($listCidades as $cidade)
-                        <option value="{{ $cidade->id }}" hidden> {!! $cidade->name !!} </option>
-                    @endforeach
-                </datalist>
+                <br>
+                <select id='cidade_remetente' style='width: 300px;'>
+                    <option value='0'>Selecione a cidade remetente</option>
+                </select>
             </div>
             <div class="col-md-4">
                 <label for="cidade_destinataria_id" class="form-label">Cidade destinatária</label>
-                <input autocomplete="new-password" id="cidade_destinataria_id" class="form-control" name="cidade_destinataria_id" list="listcidadesd" placeholder="Digite para pesquisar..." required>
-                <datalist id="listcidadesd">
-                    @foreach ($listCidades as $cidade)
-                        <option value="{{ $cidade->id }}" hidden> {!! $cidade->name !!} </option>
-                    @endforeach
-                </datalist>
+                <br>
+                <select id='cidade_destinataria' style='width: 300px;'>
+                    <option value='0'>Selecione a cidade destinatária</option>
+                </select>
             </div>
 
             <div class="mb-2">
@@ -132,8 +117,187 @@
             </div>
         </form>
     </div>
-
-<footer class="container">
+    <footer class="container">
 </footer>
+
+<!-- EX ANDERSON -->
+<script>
+    console.log("a");
+
+    $(document).ready(function() {
+        let elementSelect2 = $("#codigo_fornecedor");
+        console.log(elementSelect2);
+            let url = "fornecedor/backendCall/selectFornecedor";
+            elementSelect2.select2({
+                placeholder: "Selecione...",
+                allowClear: false,
+                multiple: false,
+                quietMillis: 2000,
+                initSelection: function(element, callback) {
+                    $.ajax({
+                        url: url,
+                        dataType: "json",
+                        type: 'POST',
+                        params: {
+                            contentType: "application/json; charset=utf-8",
+                        },
+                        data: {
+                            termo: $(element).val(),
+                            page: 1
+                        },
+                        success: (data) => callback(data.itens[0])
+                    })
+                },
+                ajax: {
+                    url: url,
+                    dataType: 'json',
+                    type: 'POST',
+                    data: (term, page) => {
+                        return {
+                            termo: term,
+                            page: page,
+                        };
+                    },
+                    results: (data, page) => {
+                        if (page == 1) {
+                            $(elementSelect2).data('count', data.count);
+                        }
+                        return {
+                            results: data.itens,
+                            more: (page * 30) < $(elementSelect2).data('count')
+                        };
+                    }
+                },
+                formatResult: (data) => data.text,
+                formatSelection: (data) => data.text
+            });
+        },
+    );
+
+    // const select2ProdutoFunctions = {
+    //     init: () => {
+    //         select2ProdutoFunctions.buscarFornecedor();
+    //         console.log("b");
+    //     },
+
+    //     buscarFornecedor: (caller) => {
+    //         console.log("c");
+    //         let elementSelect2 = $("[data-select='buscarFornecedor']");
+    //         let url = ${BASEURL}/fornecedor/backendCall/selectFornecedor;
+    //         elementSelect2.select2({
+    //             placeholder: "Selecione...",
+    //             allowClear: false,
+    //             multiple: false,
+    //             quietMillis: 2000,
+    //             initSelection: function(element, callback) {
+    //                 $.ajax({
+    //                     url: url,
+    //                     dataType: "json",
+    //                     type: 'POST',
+    //                     params: {
+    //                         contentType: "application/json; charset=utf-8",
+    //                     },
+    //                     data: {
+    //                         termo: $(element).val(),
+    //                         page: 1
+    //                     },
+    //                     success: (data) => callback(data.itens[0])
+    //                 })
+    //             },
+    //             ajax: {
+    //                 url: url,
+    //                 dataType: 'json',
+    //                 type: 'POST',
+    //                 data: (term, page) => {
+    //                     return {
+    //                         termo: term,
+    //                         page: page,
+    //                     };
+    //                 },
+    //                 results: (data, page) => {
+    //                     if (page == 1) {
+    //                         $(elementSelect2).data('count', data.count);
+    //                     }
+    //                     return {
+    //                         results: data.itens,
+    //                         more: (page * 30) < $(elementSelect2).data('count')
+    //                     };
+    //                 }
+    //             },
+    //             formatResult: (data) => data.text,
+    //             formatSelection: (data) => data.text
+    //         });
+    //     },
+    // };
+
+    // document.addEventListener("DOMContentLoaded", () => {
+    //     dataGridProdutoFunctions.init();
+    //     produtoFunctions.init();
+    //     select2ProdutoFunctions.init();
+
+    // });
+</script> 
+
+
+<script type="text/javascript">
+    // CSRF Token
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    $(document).ready(function(){
+ 
+      $( "#cidade_destinataria" ).select2({
+         ajax: { 
+           url: "/getCidades",
+           type: "post",
+           dataType: 'json',
+           delay: 250,
+           data: function (params) {
+             return {
+                _token: CSRF_TOKEN,
+                search: params.term // search term
+             };
+           },
+           processResults: function (response) {
+             return {
+               results: response
+             };
+           },
+           cache: true
+         }
+ 
+      });
+ 
+    });
+</script>
+
+
+<script type="text/javascript">
+    // CSRF Token
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    $(document).ready(function(){
+ 
+      $( "#cidade_remetente" ).select2({
+         ajax: { 
+           url: "/getCidades",
+           type: "post",
+           dataType: 'json',
+           delay: 250,
+           data: function (params) {
+             return {
+                _token: CSRF_TOKEN,
+                search: params.term // search term
+             };
+           },
+           processResults: function (response) {
+             return {
+               results: response
+             };
+           },
+           cache: true
+         }
+ 
+      });
+ 
+    });
+</script>
 
 @endsection('content')
