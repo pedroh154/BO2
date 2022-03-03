@@ -48,6 +48,7 @@
                     <option value="FOB">FOB</option>
                 </select>
             </div>
+
             <div class="col-md-2">
                 <label for="transportadora" class="form-label">Transportadora</label>
                 <select id="transportadora_id" name="transportadora_id" class="form-select">
@@ -56,6 +57,7 @@
                     @endforeach
                 </select>
             </div>
+
             <div class="col-md-4">
                 <label for="cidade_remetente_id" class="form-label">Cidade remetente</label>
                 <br>
@@ -77,44 +79,44 @@
             </div>
             <BR>
             <hr class="sidebar-divider">
+
             <h5> Definir cliente</h5>
-            <div class="input-group">
-                <label for="inputZip" class="col-12">Cliente remetente</label>
-                <input autocomplete="new-password" id="remetente_id" name="remetente_id" class="form-control" list="listclientes" placeholder="Digite para pesquisar..." required>
-                <datalist id="listclientes">
-                    @foreach ($listClientes as $cliente)
-                        <option value="{{ $cliente->id }}" hidden> {!! $cliente->nome !!} </option>
-                    @endforeach
-                </datalist>
-                <a href="/clientes/novoclientepop" data-target="#criarcliente" data-toggle="modal">
-                    <button class="btn btn-outline-secondary" type="button">+</button></a>
-                <div class="modal fade text-center" id="criarcliente">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                        </div>
+            <div class="col-md-4">
+                <label for="remetente_id" class="form-label">Cliente remetente</label>
+                <br>
+                <select id="remetente_id" name="remetente_id" style='width: 300px;'>
+                    <option value='0'>Selecione o cliente remetente</option>
+                </select>
+            </div>
+            <a href="/clientes/novoclientepop" data-target="#criarcliente" data-toggle="modal">
+                <button class="btn btn-outline-secondary" type="button">+</button></a>
+            <div class="modal fade text-center" id="criarcliente">
+                <div class="modal-dialog">
+                    <div class="modal-content">
                     </div>
                 </div>
             </div>
-            <div class="input-group ">
-                <label for="inputZip" class="col-12">Cliente destinatário</label>
-                <input autocomplete="new-password" id="destinatario_id" name="destinatario_id" class="form-control" list="listclientes" placeholder="Digite para pesquisar..." required>
-                <datalist id="listclientes">
-                    @foreach ($listCidades as $cidade)
-                        <option value="{{ $cidade->id }}" hidden> {!! $cidade->nome !!} </option>
-                    @endforeach
-                </datalist>
-                <a href="/clientes/novoclientepop" data-target="#criarcliente" data-toggle="modal">
-                    <button class="btn btn-outline-secondary" type="button">+</button></a>
-                <div class="modal fade text-center" id="criarcliente">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                        </div>
+            
+            <div class="col-md-4">
+                <label for="destinatario_id" class="form-label">Cliente destinatário</label>
+                <br>
+                <select id="destinatario_id" name="destinatario_id" style='width: 300px;'>
+                    <option value='0'>Selecione o cliente destinatário</option>
+                </select>
+            </div>
+            <a href="/clientes/novoclientepop" data-target="#criarcliente" data-toggle="modal">
+                <button class="btn btn-outline-secondary" type="button">+</button></a>
+            <div class="modal fade text-center" id="criarcliente">
+                <div class="modal-dialog">
+                    <div class="modal-content">
                     </div>
                 </div>
             </div>
+
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
             </div>
+
         </form>
     </div>
     <footer class="container">

@@ -55,6 +55,7 @@ Route::get('/clientes/editar/{id}', 'App\Http\Controllers\ClientesController@edi
 Route::get('/clientes/atualizar/{id}', 'App\Http\Controllers\ClientesController@update')->middleware('auth');;
 Route::get('/clientes/{id}', 'App\Http\Controllers\ClientesController@show')->middleware('auth');;
 Route::delete('/clientes/excluir/{id}', 'App\Http\Controllers\ClientesController@destroy')->middleware('auth');;
+Route::post('/getClientes', 'App\Http\Controllers\ClientesController@getClientes')->middleware('auth');
 
 /* CONTATOS */
 Route::get('/contatos', 'App\Http\Controllers\ContatosController@index')->middleware('auth');;

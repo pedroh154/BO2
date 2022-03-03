@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ClientesRequest;
 use App\Models\Cliente;
 use App\Models\Cidade;
+use Illuminate\Http\Request;
 
 class ClientesController extends Controller
 {
@@ -85,11 +86,26 @@ class ClientesController extends Controller
         return redirect('/clientes')->withInput()->withMessage('Cliente editado com sucesso!');
     }
 
-        //destroy   
-        public function destroy($id)
-        {
-            $this->objCliente->destroy($id);
-    
-            return redirect('/clientes')->withInput()->withMessage('Cliente deletado com sucesso!');
+    //destroy   
+    public function destroy($id)
+    {
+        $this->objCliente->destroy($id);
+
+        return redirect('/clientes')->withInput()->withMessage('Cliente deletado com sucesso!');
+    }
+
+    public function getClientes(Request $request){
+
+        $listClientes = Cliente::where('user_id', auth()->id())->orderBy('nome')->get();
+        
+        $response = array();
+
+        foreach($listClientes as $cliente){
+            $response[] = array(
+                    "id"=>$cliente->id,
+                    "text"=>$cliente->nome
+            );
         }
+        return response()->json($response);  
+    }
 }

@@ -70,53 +70,16 @@
                                 <a href="{{"/despesas/editar/$despesa->id"}}" data-toggle="" class="" style="" data-original-title="" title="">
                                     <i class="fas fa-edit"></i>
                                 </a>
-                                <!-- criar botão excluir -->
-                                <a href="#" data-toggle="modal" data-id="{{$despesa->id}}" data-target="#deleteModal" >
-                                    <i class="fas fa-trash"></i>
-                                </a>
+                                <!--apagar-->
+                                <form action="{{"/despesas/excluir/$despesa->id"}}" method="POST">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fas fa-trash-alt"></i></button>
+                                </form>
                             </div>
                         </td>
                     </tr>
                 @endforeach
-
-                 <!-- extra: modal de confirmação de exclusão -->
-                 <form id="deleteForm" action="{{"/despesas/excluir/$despesa->id"}}" method="POST">
-                    @method('DELETE')
-                    @csrf
-                    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <!-- input escondido pro js pegar o valor -->
-                        <input name="despesa_id" id="despesa_id">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Confirmação de exclusão</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    Deseja realmente excluir {{$despesa->categoria}} do dia {{$despesa->data}}?
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-                                    <button type="submit" class="btn btn-danger">Continuar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-    
-                <script type="text/javascript">
-                    $('#deleteModal').on('show.bs.modal', function(event){
-                        var button = $(event.relatedTarget);
-                        var recipientId = button.data('id');
-                        console.log(recipientId);
-                
-                        var modal = $(this);
-                        modal.find('despesa_id').val(recipientId);
-                    })
-                </script>
-
             </tbody>
         </table>
     </div>

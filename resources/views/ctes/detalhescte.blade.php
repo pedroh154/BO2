@@ -102,76 +102,85 @@
     <!-- FORMULÁRIO DE EDIT -->
     @else
         <div class="container-fluid">
-                <form class="row g-3" action={{ "/ctes/atualizar/$cte->id" }}>
-                    @method('PUT')
-                    @csrf
-                    <div class="col-md-4">
-                        <label for="numcte" class="form-label">Número CT-e</label>
-                        <input type="number" class="form-control" name="numero_cte" id="numero_cte" value="{{$cte->numero_cte}}">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="valorcte" class="form-label">Valor CT-e</label>
-                        <input type="number" class="form-control" name="valor_cte" id="valor_cte" placeholder="R$" value="{{($cte->valor_cte)}}">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="qtdevol" class="form-label">Quantidade de volumes</label>
-                        <input type="number" class="form-control" name="volume" id="volume" value="{{$cte->volume}}">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="numnf" class="form-label">Número NF</label>
-                        <input type="number" class="form-control" name="numero_nf" id="numero_nf" value="{{$cte->numero_nf}}">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="valornf" class="form-label">Valor NF</label>
-                        <input type="number" class="form-control" name="valor_nf" id="valor_nf" value="{{$cte->valor_nf}}">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="data" class="form-label">Data de chegada</label>
-                        <input type="date" class="form-control" name="data_chegada" id="data_chegada" value="{{$cte->data_chegada}}">
-                    </div>
-                    <div class="col-md-4">
-                        <label for="metodo" class="form-label">Método de pagamento</label>
-                        <select id="tipo_pagamento" name="tipo_pagamento" class="form-select">
-                            @foreach($listTiposDePagamento as $tipo)
-                                @if($tipo == $cte->tipo_pagamento)
-                                    <option value="{{$tipo}}" selected>{{$tipo}}</option>
-                                @else
-                                    <option value="{{$tipo}}">{{$tipo}}</option>
-                                @endif
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="cidade_remetente_id" class="form-label">Cidade remetente</label>
-                        <br>
-                        <select id="cidade_remetente_id" name="cidade_remetente_id" style='width: 300px;'>
-                            <option value='0'>Selecione a cidade remetente</option>
-                        </select>
-                    </div>
-                    <div class="col-md-4">
-                        <label for="cidade_destinataria_id" class="form-label">Cidade destinatária</label>
-                        <br>
-                        <select id="cidade_destinataria_id" name="cidade_destinataria_id" style='width: 300px;'>
-                            <option value='0'>Selecione a cidade destinatária</option>
-                        </select>
-                    </div>
+            <form class="row g-3" action={{ "/ctes/atualizar/$cte->id" }}>
+                @method('PUT')
+                @csrf
+                <div class="col-md-4">
+                    <label for="numcte" class="form-label">Número CT-e</label>
+                    <input type="number" class="form-control" name="numero_cte" id="numero_cte" value="{{$cte->numero_cte}}">
+                </div>
+                <div class="col-md-4">
+                    <label for="valorcte" class="form-label">Valor CT-e</label>
+                    <input type="number" class="form-control" name="valor_cte" id="valor_cte" placeholder="R$" value="{{($cte->valor_cte)}}">
+                </div>
+                <div class="col-md-4">
+                    <label for="qtdevol" class="form-label">Quantidade de volumes</label>
+                    <input type="number" class="form-control" name="volume" id="volume" value="{{$cte->volume}}">
+                </div>
+                <div class="col-md-4">
+                    <label for="numnf" class="form-label">Número NF</label>
+                    <input type="number" class="form-control" name="numero_nf" id="numero_nf" value="{{$cte->numero_nf}}">
+                </div>
+                <div class="col-md-4">
+                    <label for="valornf" class="form-label">Valor NF</label>
+                    <input type="number" class="form-control" name="valor_nf" id="valor_nf" value="{{$cte->valor_nf}}">
+                </div>
+                <div class="col-md-4">
+                    <label for="data" class="form-label">Data de chegada</label>
+                    <input type="date" class="form-control" name="data_chegada" id="data_chegada" value="{{$cte->data_chegada}}">
+                </div>
+
+                <div class="col-md-4">
+                    <label for="metodo" class="form-label">Método de pagamento</label>
+                    <select id="tipo_pagamento" name="tipo_pagamento" class="form-select">
+                        @foreach($listTiposDePagamento as $tipo)
+                            @if($tipo == $cte->tipo_pagamento)
+                                <option value="{{$tipo}}" selected>{{$tipo}}</option>
+                            @else
+                                <option value="{{$tipo}}">{{$tipo}}</option>
+                            @endif
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="cidade_remetente_id" class="form-label">Cidade remetente</label>
+                    <br>
+                    <select id="cidade_remetente_id" name="cidade_remetente_id" style='width: 300px;'>
+                        <option value='0'>Selecione a cidade remetente</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="cidade_destinataria_id" class="form-label">Cidade destinatária</label>
+                    <br>
+                    <select id="cidade_destinataria_id" name="cidade_destinataria_id" style='width: 300px;'>
+                        <option value='0'>Selecione a cidade destinatária</option>
+                    </select>
+                </div>
+
                 <div class="mb-2">
                     <label for="obscte" class="form-label">Observação</label>
                     <textarea class="form-control" id="obs" name="obs" rows="2">{{$cte->obs}}</textarea>
                 </div>
                 <BR>
+
                 <hr class="sidebar-divider">
                 <h5> Clientes</h5>
-                <div class="input-group">
-                    <label for="inputZip" class="col-12">Cliente remetente</label>
-                    <select class="form-select" id="remetente_id" name="remetente_id" aria-label="Example select with button addon">
-                        <option selected>{{$cte->remetente_id}}</option>
+
+                <div class="col-md-4">
+                    <label for="remetente_id" class="form-label">Cliente remetente</label>
+                    <br>
+                    <select id="remetente_id" name="remetente_id" style='width: 300px;'>
+                        <option value='0'>Selecione o cliente remetente</option>
                     </select>
                 </div>
-                <div class="input-group ">
-                    <label for="inputZip" class="col-12">Cliente destinatário</label>
-                    <select class="form-select" id="destinatario_id" name="destinatario_id" aria-label="Example select with button addon">
-                        <option selected>{{$cte->destinatario_id}}</option>
+
+                <div class="col-md-4">
+                    <label for="destinatario_id" class="form-label">Cliente destinatário</label>
+                    <br>
+                    <select id="destinatario_id" name="destinatario_id" style='width: 300px;'>
+                        <option value='0'>Selecione o cliente destinatário</option>
                     </select>
                 </div>
 

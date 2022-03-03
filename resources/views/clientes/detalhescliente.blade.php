@@ -81,33 +81,12 @@
                 <input value="{{$cliente->cadastro_nacional}}" type="text" class="cadastro_nacional form-control" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" id="cadastro_nacional" required name="cadastro_nacional">
             </div>
             <div class="col-md-4">
-                <label for="cidadesr" class="form-label">Cidade</label>
-                <input id="cidade_id" value="{{$cliente->cidade_id}}"name="cidade_id" class="form-control" required list="listcidades" placeholder="Digite para pesquisar...">
-                <datalist id="listcidades">
-                    @foreach ($listCidades as $cidade)
-                        <option value="{{ $cidade->id }}"> {{ $cidade->name }} </option>
-                    @endforeach
-                </datalist>
+                <label class="form-label">Cidade</label>
+                <br>
+                <select id="cidade_id" name="cidade_id" style='width: 300px;'>
+                    <option value='0'>Selecione a cidade</option>
+                </select>
             </div>
-
-            <script type='text/javascript'>
-                $j=jQuery.noConflict();
-                $j(document).ready(function () {
-
-                    $j("#fone").inputmask("(99) 99999-9999", ({removeMaskOnSubmit: true}));
-                    $j("#cep").inputmask("99.999-999", ({removeMaskOnSubmit: true}));
-
-                    var options = {
-                        onKeyPress: function (cpf, ev, el, op) {
-                            var masks = ['000.000.000-000', '00.000.000/0000-00'];
-                            $('#cadastro_nacional').inputmask((cpf.length > 14) ? masks[1] : masks[0], op);
-                        }
-                    }
-
-                    $j('#cadastro_nacional').length < 11 ? $j('#cadastro_nacional').inputmask('99.999.999/9999-99', options) : 
-                        $j('#cadastro_nacional').inputmask('999.999.999-99', options);
-                });
-            </script>
 
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <button type="submit" class="btn btn-secondary">@if($editavel == false)Fechar @else Confirmar @endif</button>

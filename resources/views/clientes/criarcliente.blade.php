@@ -40,9 +40,9 @@
                 <input type="text" class="form-control" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;" maxlength="14" id="cadastro_nacional" required name="cadastro_nacional">
             </div>
             <div class="col-md-4">
-                <label for="cidade_destinataria_id" class="form-label">Cidade</label>
+                <label class="form-label">Cidade</label>
                 <br>
-                <select id="cidade_destinataria_id" name="cidade_destinataria_id" style='width: 300px;'>
+                <select id="cidade_id" name="cidade_id" style='width: 300px;'>
                     <option value='0'>Selecione a cidade</option>
                 </select>
             </div>
@@ -56,12 +56,6 @@
         </form>
     </div>
 </div>
-
-
-
-
-
-
 <footer class="container">
     <!--<a href="https://sistema.ssw.inf.br/bin/ssw0422" target="_blank" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">SSW</button></a>
     <a href="/logout" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Logout</button></a>

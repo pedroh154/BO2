@@ -267,4 +267,95 @@
      
         });
     </script>
+
+    <script type="text/javascript">
+        // CSRF Token
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        $(document).ready(function(){
+     
+          $( "#cidade_id" ).select2({
+             ajax: { 
+               url: "/getCidades",
+               type: "post",
+               dataType: 'json',
+               delay: 500,
+               data: function (params) {
+                 return {
+                    _token: CSRF_TOKEN,
+                    search: params.term // search term
+                 };
+               },
+               processResults: function (response) {
+                 return {
+                   results: response
+                 };
+               },
+               cache: true
+             }
+     
+          });
+     
+        });
+    </script>
+
+    <script type="text/javascript">
+        // CSRF Token
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        $(document).ready(function(){
+    
+        $( "#destinatario_id" ).select2({
+            ajax: { 
+            url: "/getClientes",
+            type: "post",
+            dataType: 'json',
+            delay: 500,
+            data: function (params) {
+                return {
+                    _token: CSRF_TOKEN,
+                    search: params.term // search term
+                };
+            },
+            processResults: function (response) {
+                return {
+                results: response
+                };
+            },
+            cache: true
+            }
+    
+        });
+    
+        });
+    </script>
+
+<script type="text/javascript">
+    // CSRF Token
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    $(document).ready(function(){
+
+    $( "#remetente_id" ).select2({
+        ajax: { 
+        url: "/getClientes",
+        type: "post",
+        dataType: 'json',
+        delay: 500,
+        data: function (params) {
+            return {
+                _token: CSRF_TOKEN,
+                search: params.term // search term
+            };
+        },
+        processResults: function (response) {
+            return {
+            results: response
+            };
+        },
+        cache: true
+        }
+
+    });
+
+    });
+</script>
+
 </html>
