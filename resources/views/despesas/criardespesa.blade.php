@@ -41,7 +41,7 @@
         </div>
         <div class="mb-3">
             <label for="valor" class="form-label">Valor</label>
-            <input type="number" step="0.01" class="form-control" id="valor" required placeholder="R$" name="valor">
+            <input type="text" class="form-control" id="valor" required placeholder="R$" name="valor">
         </div>
         <div class="mb-3">
             <label for="desc" class="form-label">Descrição</label>

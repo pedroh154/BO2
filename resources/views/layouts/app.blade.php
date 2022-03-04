@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <meta charset="utf-8">
-        <meta name="csrf-token" content="{{ csrf_token() }}" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8" name="csrf-token" content="{{ csrf_token() }}" content="width=device-width, initial-scale=1">
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css') }}" type="text/css">
-        <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-        <link rel="stylesheet" href="{{ URL::asset('css/sb-admin-2.min.css') }}">
-        <link href="{{ URL::asset('css/all.min.css') }}" rel="stylesheet" type="text/css">
-        <link href="{{ URL::asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
         <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.full.min.js" defer></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+        <link rel="stylesheet" href="{{ URL::asset('css/sb-admin-2.min.css') }}">
+
         <title>Projeto BO2</title>
     </head>
 
@@ -43,7 +40,7 @@
 
                 <!-- Heading -->
                 <div class="sidebar-heading">
-                    Interface
+                    Opções
                 </div>
 
                 <!-- Nav Item - Utilities Collapse Menu -->
@@ -103,33 +100,12 @@
                     Adicionais
                 </div>
 
-                <!-- Nav Item - Pages Collapse Menu -->
-            <!--    <li class="nav-item">
-                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-                        <i class="fas fa-fw fa-folder"></i>
-                        <span>Pages</span>
-                    </a>
-                    <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                        <div class="bg-white py-2 collapse-inner rounded">
-                            <h6 class="collapse-header">Login Screens:</h6>
-                            <a class="collapse-item" href="login.html">Login</a>
-                            <a class="collapse-item" href="register.html">Register</a>
-                            <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                            <div class="collapse-divider"></div>
-                            <h6 class="collapse-header">Other Pages:</h6>
-                            <a class="collapse-item" href="404.html">404 Page</a>
-                            <a class="collapse-item" href="blank.html">Blank Page</a>
-                        </div>
-                    </div>
-                </li>-->
-
                 <!-- Nav Item - Charts -->
                 <li class="nav-item">
                     <a class="nav-link" href="https://sistema.ssw.inf.br/bin/ssw0422" target="_blank">
                     <i class="fas fa-globe"></i>
                         <span>SSW</span></a>
                 </li>
-                
 
                 <li class="nav-item">
                     <a class="nav-link" href="/logout">
@@ -144,10 +120,6 @@
                 <div class="text-center d-none d-md-inline">
                     <button class="rounded-circle border-0" id="sidebarToggle"></button>
                 </div>
-
-                <!-- Sidebar Message -->
-
-
             </ul>
 
             <div id="content-wrapper" class="d-flex flex-column" style="background-color: #f4f5f8;">
@@ -170,42 +142,25 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="/logout">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
+                                    Sair
                                 </a>
                             </div>
                         </li>
                     </ul>
                 </nav>
+                
                 @yield('content')
 
             </div>
         </div>
+
         <br>
-
         <!-- Bootstrap core JavaScript-->
-        <script src="{{ URL::asset('vendor/jquery/jquery.min.js') }}"></script>
         <script src="{{ URL::asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-
-        <!-- jquery -->
-        <script src="http://code.jquery.com/jquery-3.3.1.min.js"
-                integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-                crossorigin="anonymous">
-        </script>
 
         <!-- Core plugin JavaScript-->
         <script src="{{ URL::asset('vendor/jquery-easing/jquery.easing.min.js') }}"></script>
-
-        <!-- 
         <script src="{{ URL::asset('js/sb-admin-2.min.js') }}"></script>
-
-       Page level plugins 
-        <script src="{{ URL::asset('vendor/chart.js/Chart.min.js') }}"></script>
-
-
-        <script src="{{ URL::asset('js/demo/chart-area-demo.js') }}"></script>
-
-        <script src="{{ URL::asset('js/demo/chart-pie-demo.js') }}"></script>
-    -->
     </body>
 
     <script type="text/javascript">
@@ -356,6 +311,46 @@
 
     });
 
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+    $('.date').mask('00/00/0000');
+    $('.time').mask('00:00:00');
+    $('.date_time').mask('00/00/0000 00:00:00');
+    $('#cep').mask('00000-000');
+    $('#fone').mask('(99) 99999-9999');
+    $('.phone_with_ddd').mask('(00) 0000-0000');
+    $('.phone_us').mask('(000) 000-0000');
+    $('.mixed').mask('AAA 000-S0S');
+    $('#cadastro_nacional').mask('000.000.000-00', {reverse: true});
+    $('.cnpj').mask('00.000.000/0000-00', {reverse: true});
+    $('#valor_nf').mask('000.000.000.000.000,00', {reverse: true});
+    $('#valor_cte').mask('000.000.000.000.000,00', {reverse: true});
+    $('#valor').mask('000.000.000.000.000,00', {reverse: true});
+    $('.money2').mask("#.##0,00", {reverse: true});
+    $('.ip_address').mask('0ZZ.0ZZ.0ZZ.0ZZ', {
+        translation: {
+        'Z': {
+            pattern: /[0-9]/, optional: true
+        }
+        }
+    });
+    $('.ip_address').mask('099.099.099.099');
+    $('.percent').mask('##0,00%', {reverse: true});
+    $('.clear-if-not-match').mask("00/00/0000", {clearIfNotMatch: true});
+    $('.placeholder').mask("00/00/0000", {placeholder: "__/__/____"});
+    $('.fallback').mask("00r00r0000", {
+        translation: {
+            'r': {
+            pattern: /[\/]/,
+            fallback: '/'
+            },
+            placeholder: "__/__/____"
+        }
+        });
+    $('.selectonfocus').mask("00/00/0000", {selectOnFocus: true});
     });
 </script>
 

@@ -2,7 +2,7 @@
 
 @section('content')
 <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
-<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
 
 <!--<div class="btn-group" role="group" aria-label="Basic example">
             <a href="/home" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Página Inicial</button></a>
