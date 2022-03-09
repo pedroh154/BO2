@@ -40,6 +40,8 @@
                 Relatório
             </button>
             <!-- Modal -->
+            <form action="{{"/gerarDespesa"}}" method="get">
+            @csrf
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
@@ -50,28 +52,23 @@
                         <div class="modal-body container-fluid">
                             <!--conteúdo do modal-->
                             <h6 class="modal-title"> Selecione o período</h6>
-
                             <div class="input-group mb-3">
-                                
-                                
                                 <select class="form-select" id="periodo" name="periodo" required>
-                                    <option value="5dias" selected>5 dias</option>
-                                    <option value="10dias">10 dias</option>
-                                    <option value="15dias">15 dias</option>
-                                    <option value="30dias">30 dias</option>
-                                    
+                                    <option value="5" selected>5 dias</option>
+                                    <option value="10">10 dias</option>
+                                    <option value="15">15 dias</option>
+                                    <option value="30">30 dias</option>
                                 </select>
                             </div>
-
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                            <button type="button" class="btn btn-primary">Gerar relatório</button>
+                            <button type="submit" class="btn btn-primary">Gerar relatório</button>
                         </div>
                     </div>
                 </div>
             </div>
-
+        </form>
             <a class="btn btn-primary" href="/despesas/novadespesa" role="button">Cadastrar despesa</a>
         </div> <br>
         <table class="table table-striped table-hover table-bordered table-sm">
@@ -120,6 +117,7 @@
         </table>
     </div>
 </div>
+
 <footer class="container">
 </footer>
 @endsection('content')
