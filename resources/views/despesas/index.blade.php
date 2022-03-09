@@ -22,20 +22,56 @@
     <div class="container-fluid">
         <h1>Despesas</h1>
         @if(isset($errors) && count($errors)>0)
-            <div class="text-center mt-4 mb-4 p-2 alert-danger">
-                @foreach($errors->all() as $erro)
-                    {{$erro}}<br>
-                @endforeach
-            </div>
+        <div class="text-center mt-4 mb-4 p-2 alert-danger">
+            @foreach($errors->all() as $erro)
+            {{$erro}}<br>
+            @endforeach
+        </div>
         @endif
-            <!-- checar por sucesso -->
+        <!-- checar por sucesso -->
         @if(session()->has('message'))
-            <div class="alert alert-success">
-                {{ session()->get('message') }}
-            </div>
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
         @endif
         @csrf
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Relatório
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Relatório de despesas - gastos</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body container-fluid">
+                            <!--conteúdo do modal-->
+                            <h6 class="modal-title"> Selecione o período</h6>
+
+                            <div class="input-group mb-3">
+                                
+                                
+                                <select class="form-select" id="periodo" name="periodo" required>
+                                    <option value="5dias" selected>5 dias</option>
+                                    <option value="10dias">10 dias</option>
+                                    <option value="15dias">15 dias</option>
+                                    <option value="30dias">30 dias</option>
+                                    
+                                </select>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                            <button type="button" class="btn btn-primary">Gerar relatório</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <a class="btn btn-primary" href="/despesas/novadespesa" role="button">Cadastrar despesa</a>
         </div> <br>
         <table class="table table-striped table-hover table-bordered table-sm">
@@ -52,33 +88,33 @@
             <tbody>
                 <!-- para cada despesa passada pelo controller... -->
                 @foreach ($listDespesas as $despesa)
-                    <tr>
-                        <!-- exibir dados da despesa.. -->
-                        <td style="text-align: left;" class="col-md-3">{{ $despesa->categoria }}</td>
-                        <td style="text-align: center;" class="col-md-2">{{ $despesa->data }}</td>
-                        <td style="text-align: right;" class="col-md-2">R$ {{ number_format($despesa->valor, 2)}}</td>
-                        <td style="text-align: left;" class="col-md-4">{{ $despesa->desc }}</td>
-            
-                        <!-- criar botoes de CRUD -->
-                        <td class="col-md-1" style="text-align: center;">
-                            <div class="action-buttons hstack gap-2">
-                                <!-- criar botão visualizar -->
-                                <a href="{{url("despesas/$despesa->id")}}" class="" data-rel="" title="" data-original-title="">
-                                    <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-lines"></i></button>
-                                </a>
-                                <!-- criar botão editar -->
-                                <a href="{{"/despesas/editar/$despesa->id"}}" data-toggle="" class="" style="" data-original-title="" title="">
-                                    <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-pen"></i></button>
-                                </a>
-                                <!--apagar-->
-                                <form action="{{"/despesas/excluir/$despesa->id"}}" method="POST">
-                                    @method('DELETE')
-                                    @csrf
-                                    <button class="btn btn-danger btn-sm" type="submit"><i class="fas fa-trash-alt"></i></button>
-                                </form>
-                            </div>
-                        </td>
-                    </tr>
+                <tr>
+                    <!-- exibir dados da despesa.. -->
+                    <td style="text-align: left;" class="col-md-3">{{ $despesa->categoria }}</td>
+                    <td style="text-align: center;" class="col-md-2">{{ $despesa->data }}</td>
+                    <td style="text-align: right;" class="col-md-2">R$ {{ number_format($despesa->valor, 2)}}</td>
+                    <td style="text-align: left;" class="col-md-4">{{ $despesa->desc }}</td>
+
+                    <!-- criar botoes de CRUD -->
+                    <td class="col-md-1" style="text-align: center;">
+                        <div class="action-buttons hstack gap-2">
+                            <!-- criar botão visualizar -->
+                            <a href="{{url("despesas/$despesa->id")}}" class="" data-rel="" title="" data-original-title="">
+                                <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-lines"></i></button>
+                            </a>
+                            <!-- criar botão editar -->
+                            <a href="{{"/despesas/editar/$despesa->id"}}" data-toggle="" class="" style="" data-original-title="" title="">
+                                <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-pen"></i></button>
+                            </a>
+                            <!--apagar-->
+                            <form action="{{"/despesas/excluir/$despesa->id"}}" method="POST">
+                                @method('DELETE')
+                                @csrf
+                                <button class="btn btn-danger btn-sm" type="submit"><i class="fas fa-trash-alt"></i></button>
+                            </form>
+                        </div>
+                    </td>
+                </tr>
                 @endforeach
             </tbody>
         </table>
