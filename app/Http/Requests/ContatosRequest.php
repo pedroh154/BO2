@@ -30,4 +30,12 @@ class ContatosRequest extends FormRequest
             'desc' => 'nullable|string',
         ];
     }
+
+    public function messages() 
+    {
+        return [
+        'nome.required' => 'O campo nome é obrigatório',
+        'valor.required' => 'O campo valor é obrigatório',
+    ];
+    }
 }

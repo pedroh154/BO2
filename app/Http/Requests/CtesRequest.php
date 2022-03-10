@@ -37,6 +37,20 @@ class CtesRequest extends FormRequest
             'obs' => 'nullable|string',
             'tipo_pagamento' => 'required',
             'volume' => 'required|numeric',
+            'cidade_remetente_id' => 'required|numeric',
+            'cidade_destinataria_id' => 'required|numeric',
+            'remetente_id' => 'required|numeric',
+            'destinatario_id' => 'required|numeric',
         ];
+    }
+
+    public function messages() 
+    {
+        return [
+        'numero_nf.required' => 'O campo Número da NF é obrigatório',
+        'numero_nf.unique' => 'Já existe uma NF cadastrada com esse número',
+        'numero_cte.required' => 'O campo Número do CT-e é obrigatório',
+        'numero_cte.unique' => 'Já existe um CT-e cadastrado com esse número',
+    ];
     }
 }

@@ -32,4 +32,12 @@ class DespesasRequest extends FormRequest
             'desc' => 'nullable|string',
         ];
     }
+
+    public function messages() 
+    {
+        return [
+        'data.required' => 'O campo data é obrigatório',
+        'valor.required' => 'O campo valor é obrigatório',
+    ];
+    }
 }

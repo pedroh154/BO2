@@ -32,4 +32,14 @@ class ClientesRequest extends FormRequest
             'obs' => 'nullable|string',
         ];
     }
+
+    public function messages() 
+    {
+        return [
+        'nome.required' => 'O campo Nome é obrigatório',
+        'cep.required' => 'O campo CEP é obrigatório',
+        'endereco.required' => 'O campo Endereço é obrigatório',
+        'cadastro_nacional.required' => 'O campo CPF/CNPJ é obrigatório',
+    ];
+    }
 }
