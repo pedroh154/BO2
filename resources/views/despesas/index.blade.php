@@ -41,34 +41,38 @@
             </button>
             <!-- Modal -->
             <form action="{{"/gerarDespesa"}}" method="get">
-            @csrf
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Relatório de despesas - gastos</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body container-fluid">
-                            <!--conteúdo do modal-->
-                            <h6 class="modal-title"> Selecione o período</h6>
-                            <div class="input-group mb-3">
-                                <select class="form-select" id="periodo" name="periodo" required>
-                                    <option value="5" selected>5 dias</option>
-                                    <option value="10">10 dias</option>
-                                    <option value="15">15 dias</option>
-                                    <option value="30">30 dias</option>
-                                </select>
+                @csrf
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Relatório de despesas - gastos</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-                            <button type="submit" class="btn btn-primary">Gerar relatório</button>
+                            <div class="modal-body container-fluid">
+                                <!--conteúdo do modal-->
+                                <h6 class="modal-title"> Selecione o período</h6>
+                                <div class="input-group mb-3">
+                                    <select class="form-select" id="periodo" name="periodo" required>
+                                        <option value="1" selected>1 dia</option>
+                                        <option value="7" >7 dias</option>
+                                        <option value="15">15 dias</option>
+                                        <option value="30">30 dias</option>
+                                        <option value="90">3 meses</option>
+                                        <option value="180">6 meses</option>
+                                        <option value="365">1 ano</option>
+
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                <button type="submit" class="btn btn-primary">Gerar relatório</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </form>
+            </form>
             <a class="btn btn-primary" href="/despesas/novadespesa" role="button">Cadastrar despesa</a>
         </div> <br>
         <table class="table table-striped table-hover table-bordered table-sm">
