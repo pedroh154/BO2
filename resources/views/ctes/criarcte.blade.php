@@ -15,35 +15,35 @@
     <h4 class="container-fluid">Forneça os dados abaixo:</h4> <br>
 
     <div class="container-fluid">
-        <form class="row g-3" action="/cte-enviar" method="POST" autocomplete="new-password">
+        <form id="criarcteform" class="row g-3" action="/cte-enviar" method="POST" autocomplete="new-password">
             @csrf
             <div class="col-md-4">
-                <label for="numcte" class="form-label">Número CT-e</label>
-                <input type="text" maxlength="20" class="form-control" name="numero_cte" id="numero_cte" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+                <label for="numcte" class="form-label">Número do CT-e</label>
+                <input type="text" maxlength="20" oninvalid="this.setCustomValidity('O número do CT-e é obrigatório')" oninput="setCustomValidity('')" class="form-control" name="numero_cte" id="numero_cte" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
             </div>
             <div class="col-md-4">
-                <label for="valorcte" class="form-label">Valor CT-e</label>
-                <input type="text" maxlength="10" class="form-control" name="valor_cte" id="valor_cte" placeholder="R$" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+                <label for="valorcte" class="form-label">Valor do CT-e</label>
+                <input type="text" maxlength="10" oninvalid="this.setCustomValidity('O Valor do CT-e é obrigatório')" oninput="setCustomValidity('')" class="form-control" name="valor_cte" id="valor_cte" placeholder="R$" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
             </div>
             <div class="col-md-4">
                 <label for="qtdevol" class="form-label">Quantidade de volumes</label>
-                <input type="text" maxlength="6" class="form-control" name="volume" id="volume" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+                <input type="text" maxlength="6" class="form-control" oninvalid="this.setCustomValidity('A Quantidade de volumes é obrigatória')" oninput="setCustomValidity('')" name="volume" id="volume" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
             </div>
             <div class="col-md-4">
-                <label for="numnf" class="form-label">Número NF</label>
-                <input type="text" maxlength="20" class="form-control" name="numero_nf" id="numero_nf" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+                <label for="numnf" class="form-label">Número da NF</label>
+                <input type="text" maxlength="20" oninvalid="this.setCustomValidity('O número da NF é obrigatório')" oninput="setCustomValidity('')" class="form-control" name="numero_nf" id="numero_nf" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
             </div>
             <div class="col-md-4">
-                <label for="valornf" class="form-label">Valor NF</label>
-                <input type="text" maxlength="10" class="form-control" name="valor_nf" id="valor_nf" placeholder="R$" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+                <label for="valornf" class="form-label">Valor da NF</label>
+                <input type="text" maxlength="10" class="form-control" oninvalid="this.setCustomValidity('O Valor da NF é obrigatório')" oninput="setCustomValidity('')" name="valor_nf" id="valor_nf" placeholder="R$" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
             </div>
             <div class="col-md-4">
                 <label for="data" class="form-label">Data de chegada</label>
-                <input type="date" class="form-control" name="data_chegada" id="data_chegada" value="<?php echo date('Y-m-d'); ?>" required>
+                <input type="date" class="form-control" oninvalid="this.setCustomValidity('A Data de chegada é obrigatória')" oninput="setCustomValidity('')" name="data_chegada" id="data_chegada" value="<?php echo date('Y-m-d'); ?>" required>
             </div>
             <div class="col-md-2">
                 <label for="tipo_pagamento" class="form-label">Método de pagamento</label>
-                <select id="tipo_pagamento" name="tipo_pagamento" class="form-select">
+                <select required id="tipo_pagamento" name="tipo_pagamento" class="form-select">
                     <option selected value="CIF">CIF</option>
                     <option value="FOB">FOB</option>
                 </select>
@@ -51,7 +51,7 @@
 
             <div class="col-md-2">
                 <label for="transportadora" class="form-label">Transportadora</label>
-                <select id="transportadora_id" name="transportadora_id" class="form-select">
+                <select required id="transportadora_id" name="transportadora_id" class="form-select">
                     @foreach ($listTransp as $transp)
                         <option value="{{ $transp->id }}"> {!! $transp->nome !!} </option>
                     @endforeach
@@ -61,17 +61,15 @@
             <div class="col-md-4">
                 <label for="cidade_remetente_id" class="form-label">Cidade remetente</label>
                 <br>
-                
                 <select id='cidade_remetente_id' name="cidade_remetente_id" class="col-md-12">
-                    <option value='0'>Selecione a cidade remetente</option>
+                    <option value=''>Selecione a cidade remetente</option>
                 </select>
             </div>
             <div class="col-md-4">
                 <label for="cidade_destinataria_id" class="form-label">Cidade destinatária</label>
                 <br>
                 <select id="cidade_destinataria_id" name="cidade_destinataria_id" class="col-md-12">
-
-                    <option value='0'>Selecione a cidade destinatária</option>
+                    <option value=''>Selecione a cidade destinatária</option>
                 </select>
             </div>
 
@@ -89,12 +87,12 @@
                 <select id="remetente_id" name="remetente_id" style='width: 300px;'>
                     <option value='0'>Selecione o cliente remetente</option>
                 </select>
-            </div>
-            <a href="/clientes/novoclientepop" data-target="#criarcliente" data-toggle="modal">
-                <button class="btn btn-outline-secondary" type="button">+</button></a>
-            <div class="modal fade text-center" id="criarcliente">
-                <div class="modal-dialog">
-                    <div class="modal-content">
+                <a href="/clientes/novoclientepop" data-target="#criarcliente" data-toggle="modal">
+                    <button class="btn btn-outline-secondary" type="button">+</button></a>
+                <div class="modal fade text-center" id="criarcliente">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -105,12 +103,12 @@
                 <select id="destinatario_id" name="destinatario_id" style='width: 300px;'>
                     <option value='0'>Selecione o cliente destinatário</option>
                 </select>
-            </div>
-            <a href="/clientes/novoclientepop" data-target="#criarcliente" data-toggle="modal">
-                <button class="btn btn-outline-secondary" type="button">+</button></a>
-            <div class="modal fade text-center" id="criarcliente">
-                <div class="modal-dialog">
-                    <div class="modal-content">
+                <a href="/clientes/novoclientepop" data-target="#criarcliente" data-toggle="modal">
+                    <button class="btn btn-outline-secondary" type="button">+</button></a>
+                <div class="modal fade text-center" id="criarcliente">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        </div>
                     </div>
                 </div>
             </div>

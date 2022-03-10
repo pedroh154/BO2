@@ -315,6 +315,24 @@
 </script>
 
 <script type="text/javascript">
+    $("#criarcteform").submit(function() {
+        $("#valor_cte").unmask();
+        $("#valor_nf").unmask();
+        $("#valor").unmask();
+    });
+
+    $("#criarclienteform").submit(function() {
+        $("#cadastro_nacional").unmask();
+        $("#cep").unmask();
+        $("#fone").unmask();
+    });
+
+    $("#criardespesaform").submit(function() {
+        $("#valor").unmask();
+    });
+</script>
+
+<script type="text/javascript">
     $(document).ready(function(){
     $('.date').mask('00/00/0000');
     $('.time').mask('00:00:00');
@@ -324,11 +342,11 @@
     $('.phone_with_ddd').mask('(00) 0000-0000');
     $('.phone_us').mask('(000) 000-0000');
     $('.mixed').mask('AAA 000-S0S');
-    $('#cadastro_nacional').mask('000.000.000-00', {reverse: true});
-    $('.cnpj').mask('00.000.000/0000-00', {reverse: true});
-    $('#valor_nf').mask('000.000.000.000.000,00', {reverse: true});
-    $('#valor_cte').mask('000.000.000.000.000,00', {reverse: true});
-    $('#valor').mask('000.000.000.000.000,00', {reverse: true});
+    $('#cadastro_nacional').mask('000.000.000-00', {reverse: true}, {removeMaskOnSubmit: true});
+    $('.cnpj').mask('00.000.000/0000-00', {reverse: true}, {removeMaskOnSubmit: true});
+    $('#valor_nf').mask('000.000.000.000.000,00', {reverse: true}, {removeMaskOnSubmit: true});
+    $('#valor_cte').mask('000.000.000.000.000,00', {reverse: true}, {removeMaskOnSubmit: true});
+    $('#valor').mask('000.000.000.000.000,00', {reverse: true}, {removeMaskOnSubmit: true});
     $('.money2').mask("#.##0,00", {reverse: true});
     $('.ip_address').mask('0ZZ.0ZZ.0ZZ.0ZZ', {
         translation: {

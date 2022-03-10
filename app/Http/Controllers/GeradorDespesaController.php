@@ -13,7 +13,7 @@ namespace App\Http\Controllers;
         $to = Carbon::now('GMT-3')->subDays($periodo->periodo);
         $despesasList = Despesa::where('user_id', auth()->id())->whereBetween('data', [$to, $now])->get();
 
-        if($periodo->periodo >= 0 && $periodo->periodo < 31){
+        if($periodo->periodo < 366){
             $dompdf = new Dompdf();
             
             $now = Carbon::now('GMT-3');

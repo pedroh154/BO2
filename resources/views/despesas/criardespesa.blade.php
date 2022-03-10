@@ -22,7 +22,7 @@
     </div>
     @endif
     <h4 class="container-fluid">Forneça os dados abaixo:</h4> <br>
-    <form class="container-fluid" action="/despesa-enviar" method="POST" autocomplete="off">
+    <form id="criardespesaform" class="container-fluid" action="/despesa-enviar" method="POST" autocomplete="off">
         @csrf
         <div class="input-group mb-3">
             <!--VER IDS-->
@@ -41,7 +41,7 @@
         </div>
         <div class="mb-3">
             <label for="valor" class="form-label">Valor</label>
-            <input type="text" class="form-control" id="valor" required placeholder="R$" name="valor">
+            <input type="text" class="form-control" id="valor" required placeholder="R$" name="valor" oninvalid="this.setCustomValidity('O campo Valor é obrigatório')" oninput="setCustomValidity('')">
         </div>
         <div class="mb-3">
             <label for="desc" class="form-label">Descrição</label>
