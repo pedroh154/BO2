@@ -118,9 +118,9 @@
                         <td style="text-align: right;">{{ $cte->numero_cte }}</td>
                         <td style="text-align: right;">R$ {{ number_format($cte->valor_cte, 2)}}</td>
                         @if ($cte->tipo_pagamento == "CIF")
-                        <td style="text-align: center;">CIF</td>
+                            <td style="text-align: center;">CIF</td>
                         @else
-                        <td style="text-align: center;">FOB</td>
+                            <td style="text-align: center;">FOB</td>
                         @endif
                         <td style="text-align: right;">{{ $cte->volume }}</td>
                         <td style="text-align: center;">{{ $cte->destinatario_id }}</td>
@@ -136,9 +136,20 @@
                                 <a href="{{url("ctes/$cte->id")}}" class="" data-rel="" title="" data-original-title="">
                                     <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-pdf"></i></button>
                                 </a>
+                                @if ($cte->finalizado == true)
+                                    <!-- criar botão gerar comprovante -->
+                                    <a href="{{url("gerarcomprovante/$cte->id")}}" class="" data-rel="" title="" data-original-title="">
+                                        <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-lines"></i></button>
+                                    </a>
+                                @else
+                                    <!-- criar botão gerar comprovante -->
+                                    <a href="{{url("gerarcomprovante/$cte->id")}}" class="" data-rel="" title="" data-original-title="">
+                                        <button disabled class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-lines"></i></button>
+                                    </a>
+                                @endif
                                 <!-- criar botão visualizar -->
                                 <a href="{{url("ctes/$cte->id")}}" class="" data-rel="" title="" data-original-title="">
-                                    <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-lines"></i></button>
+                                    <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                                 </a>
                                 <!-- criar botão editar -->
                                 <a href="{{"/ctes/editar/$cte->id"}}" data-toggle="" class="" style="" data-original-title="" title="">

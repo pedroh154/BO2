@@ -33,6 +33,9 @@ Route::group(['middleware' => ['auth']], function() {
 Route::get('/home', 'App\Http\Controllers\CtesController@index')->middleware('auth');;
 Route::redirect('/', '/home')->middleware('auth');;
 
+/* Comprovante */
+Route::get('/gerarcomprovante/{id}', 'App\Http\Controllers\GeradorComprovanteController@gerarComprovante')->middleware('auth');;
+
 /* CTE's */
 Route::get('/ctes', 'App\Http\Controllers\CtesController@index')->middleware('auth');;
 Route::get('/ctes/novocte', 'App\Http\Controllers\CtesController@novoCte')->middleware('auth');;
