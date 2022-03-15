@@ -93,7 +93,7 @@
                     <!-- exibir dados da despesa.. -->
                     <td style="text-align: left;" class="col-md-3">{{ $despesa->categoria }}</td>
                     <td style="text-align: center;" class="col-md-2">{{ $despesa->data }}</td>
-                    <td style="text-align: right;" class="col-md-2">R$ {{ number_format($despesa->valor, 2)}}</td>
+                    <td id="valor_despesa" style="text-align: right;" class="col-md-2">R$ {{ $despesa->valor }}</td>
                     <td style="text-align: left;" class="col-md-4">{{ $despesa->desc }}</td>
 
                     <!-- criar botoes de CRUD -->

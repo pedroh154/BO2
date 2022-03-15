@@ -45,7 +45,7 @@
             </div>
             <div class="vstack gap-2 col-md-4">
                 <label class="btn btn-default">
-                    <a class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm " type="file"><i class="fas fa-upload"></i> Importar XML</a> <input type="file" hidden>
+                    <a class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm " type="file"><i class="fas fa-upload"></i> Importar XML do CT-e</a> <input type="file" hidden>
                 </label>
                 <label class="btn btn-default">
                     <a class="btn btn-sm btn-primary shadow-sm" href="/ctes/novocte" type="button"><i class="fas fa-pen-square"></i> Cadastrar CT-e manualmente</a>
@@ -54,8 +54,8 @@
 
         </div>
 
+        <br>
 
-        
         <div class="d-flex flex-column">
             <h5>Filtros</h5>
         </div>
@@ -90,7 +90,6 @@
                 <button id="search-button" type="button" class="btn btn-primary">
                     <i class="fa fa-search"></i>
                 </button>
-
             </div>
             <a class="btn btn-sm btn-primary shadow-sm" href="" type="button"><i class="fas fa-sync"></i> Atualizar informações</a>
 
@@ -116,7 +115,7 @@
                     <tr onclick='trclick();'>
                         <td style="text-align: left;" onclick='tdclick();'>{{ $cte->cidade_remetente_id }}</td>
                         <td style="text-align: right;">{{ $cte->numero_cte }}</td>
-                        <td style="text-align: right;">R$ {{ number_format($cte->valor_cte, 2)}}</td>
+                        <td id="valor_cte" class="valor_cte" style="text-align: right;">R$ {{ $cte->valor_cte }}</td>
                         @if ($cte->tipo_pagamento == "CIF")
                             <td style="text-align: center;">CIF</td>
                         @else
