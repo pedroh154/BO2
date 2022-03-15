@@ -6,20 +6,51 @@
 
 <div id="content-wrapper" class="d-flex flex-column" style="background-color: #f4f5f8;">
     <div class="container-fluid">
-        
-        <h1>CT-es</h1>
-        @if(isset($errors) && count($errors)>0)
-            <div class="text-center mt-4 mb-4 p-2 alert-danger">
-                @foreach($errors->all() as $erro)
-                    {{$erro}}<br>
-                @endforeach
+        <div class="hstack gap-2 ">
+            <div class="col-md-11">
+                <h1>CT-es</h1>
             </div>
+            <div class="col-md-1">
+                <!-- Button trigger modal -->
+                <span data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Precisa de ajuda?">
+                        <i class="fa-solid fa-question"></i>
+                    </button>
+                </span>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Help de Contexto</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        @if(isset($errors) && count($errors)>0)
+        <div class="text-center mt-4 mb-4 p-2 alert-danger">
+            @foreach($errors->all() as $erro)
+            {{$erro}}<br>
+            @endforeach
+        </div>
         @endif
         <!-- checar por sucesso -->
         @if(session()->has('message'))
-            <div class="alert alert-success">
-                {{ session()->get('message') }}
-            </div>
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
         @endif
         <div class="d-flex flex-column">
             <hr class="sidebar-divider">
@@ -39,7 +70,7 @@
                     <form class="form-horizontal" action="/cte-fetch/" method="POST">
                         @csrf
                         <input id="chavecte" name="chavecte" class="form-control" placeholder="Insira a chave do CT-e">
-                        <button type="submit" class="btn btn-add btn-lg">Buscar CTe</button>    
+                        <button type="submit" class="btn btn-add btn-lg">Buscar CTe</button>
                     </form>
                 </div>
             </div>
@@ -117,9 +148,9 @@
                         <td style="text-align: right;">{{ $cte->numero_cte }}</td>
                         <td id="valor_cte" class="valor_cte" style="text-align: right;">R$ {{ $cte->valor_cte }}</td>
                         @if ($cte->tipo_pagamento == "CIF")
-                            <td style="text-align: center;">CIF</td>
+                        <td style="text-align: center;">CIF</td>
                         @else
-                            <td style="text-align: center;">FOB</td>
+                        <td style="text-align: center;">FOB</td>
                         @endif
                         <td style="text-align: right;">{{ $cte->volume }}</td>
                         <td style="text-align: center;">{{ $cte->destinatario_id }}</td>
@@ -136,15 +167,15 @@
                                     <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-pdf"></i></button>
                                 </a>
                                 @if ($cte->finalizado == true)
-                                    <!-- criar botão gerar comprovante -->
-                                    <a href="{{url("gerarcomprovante/$cte->id")}}" class="" data-rel="" title="" data-original-title="">
-                                        <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-lines"></i></button>
-                                    </a>
+                                <!-- criar botão gerar comprovante -->
+                                <a href="{{url("gerarcomprovante/$cte->id")}}" class="" data-rel="" title="" data-original-title="">
+                                    <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-lines"></i></button>
+                                </a>
                                 @else
-                                    <!-- criar botão gerar comprovante -->
-                                    <a href="{{url("gerarcomprovante/$cte->id")}}" class="" data-rel="" title="" data-original-title="">
-                                        <button disabled class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-lines"></i></button>
-                                    </a>
+                                <!-- criar botão gerar comprovante -->
+                                <a href="{{url("gerarcomprovante/$cte->id")}}" class="" data-rel="" title="" data-original-title="">
+                                    <button disabled class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-lines"></i></button>
+                                </a>
                                 @endif
                                 <!-- criar botão visualizar -->
                                 <a href="{{url("ctes/$cte->id")}}" class="" data-rel="" title="" data-original-title="">
