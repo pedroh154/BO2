@@ -2,14 +2,46 @@
 @section('content')
 
 <div id="content-wrapper" class="d-flex flex-column" style="background-color: #f4f5f8;">
-    <h1 class="container-fluid">Cadastrar CT-e</h1>
+
+    <div class="hstack gap-2 ">
+        <div class="col-md-11 container-fluid">
+            <h1>Cadastrar CT-e</h1>
+        </div>
+        <div class="col-md-1">
+            <!-- Button trigger modal -->
+            <span data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Precisa de ajuda?">
+                    <i class="fa-solid fa-question"></i>
+                </button>
+            </span>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Help de Contexto</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     @if(isset($errors) && count($errors)>0)
-        <div class="text-center mt-4 mb-4 p-2 alert-danger">
-            @foreach($errors->all() as $erro)
-            {{$erro}}<br>
+    <div class="text-center mt-4 mb-4 p-2 alert-danger">
+        @foreach($errors->all() as $erro)
+        {{$erro}}<br>
         @endforeach
-        </div>
+    </div>
     @endif
 
     <h4 class="container-fluid">Forneça os dados abaixo:</h4> <br>
@@ -53,7 +85,7 @@
                 <label for="transportadora" class="form-label">Transportadora</label>
                 <select required id="transportadora_id" name="transportadora_id" class="form-select">
                     @foreach ($listTransp as $transp)
-                        <option value="{{ $transp->id }}"> {!! $transp->nome !!} </option>
+                    <option value="{{ $transp->id }}"> {!! $transp->nome !!} </option>
                     @endforeach
                 </select>
             </div>
@@ -96,7 +128,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-md-4">
                 <label for="destinatario_id" class="form-label">Cliente destinatário</label>
                 <br>
@@ -120,15 +152,15 @@
         </form>
     </div>
     <footer class="container">
-</footer>
+    </footer>
 
-<!-- EX ANDERSON -->
-<script>
-    console.log("a");
+    <!-- EX ANDERSON -->
+    <script>
+        console.log("a");
 
-    $(document).ready(function() {
-        let elementSelect2 = $("#codigo_fornecedor");
-        console.log(elementSelect2);
+        $(document).ready(function() {
+            let elementSelect2 = $("#codigo_fornecedor");
+            console.log(elementSelect2);
             let url = "fornecedor/backendCall/selectFornecedor";
             elementSelect2.select2({
                 placeholder: "Selecione...",
@@ -173,70 +205,69 @@
                 formatResult: (data) => data.text,
                 formatSelection: (data) => data.text
             });
-        },
-    );
+        }, );
 
-    // const select2ProdutoFunctions = {
-    //     init: () => {
-    //         select2ProdutoFunctions.buscarFornecedor();
-    //         console.log("b");
-    //     },
+        // const select2ProdutoFunctions = {
+        //     init: () => {
+        //         select2ProdutoFunctions.buscarFornecedor();
+        //         console.log("b");
+        //     },
 
-    //     buscarFornecedor: (caller) => {
-    //         console.log("c");
-    //         let elementSelect2 = $("[data-select='buscarFornecedor']");
-    //         let url = ${BASEURL}/fornecedor/backendCall/selectFornecedor;
-    //         elementSelect2.select2({
-    //             placeholder: "Selecione...",
-    //             allowClear: false,
-    //             multiple: false,
-    //             quietMillis: 2000,
-    //             initSelection: function(element, callback) {
-    //                 $.ajax({
-    //                     url: url,
-    //                     dataType: "json",
-    //                     type: 'POST',
-    //                     params: {
-    //                         contentType: "application/json; charset=utf-8",
-    //                     },
-    //                     data: {
-    //                         termo: $(element).val(),
-    //                         page: 1
-    //                     },
-    //                     success: (data) => callback(data.itens[0])
-    //                 })
-    //             },
-    //             ajax: {
-    //                 url: url,
-    //                 dataType: 'json',
-    //                 type: 'POST',
-    //                 data: (term, page) => {
-    //                     return {
-    //                         termo: term,
-    //                         page: page,
-    //                     };
-    //                 },
-    //                 results: (data, page) => {
-    //                     if (page == 1) {
-    //                         $(elementSelect2).data('count', data.count);
-    //                     }
-    //                     return {
-    //                         results: data.itens,
-    //                         more: (page * 30) < $(elementSelect2).data('count')
-    //                     };
-    //                 }
-    //             },
-    //             formatResult: (data) => data.text,
-    //             formatSelection: (data) => data.text
-    //         });
-    //     },
-    // };
+        //     buscarFornecedor: (caller) => {
+        //         console.log("c");
+        //         let elementSelect2 = $("[data-select='buscarFornecedor']");
+        //         let url = ${BASEURL}/fornecedor/backendCall/selectFornecedor;
+        //         elementSelect2.select2({
+        //             placeholder: "Selecione...",
+        //             allowClear: false,
+        //             multiple: false,
+        //             quietMillis: 2000,
+        //             initSelection: function(element, callback) {
+        //                 $.ajax({
+        //                     url: url,
+        //                     dataType: "json",
+        //                     type: 'POST',
+        //                     params: {
+        //                         contentType: "application/json; charset=utf-8",
+        //                     },
+        //                     data: {
+        //                         termo: $(element).val(),
+        //                         page: 1
+        //                     },
+        //                     success: (data) => callback(data.itens[0])
+        //                 })
+        //             },
+        //             ajax: {
+        //                 url: url,
+        //                 dataType: 'json',
+        //                 type: 'POST',
+        //                 data: (term, page) => {
+        //                     return {
+        //                         termo: term,
+        //                         page: page,
+        //                     };
+        //                 },
+        //                 results: (data, page) => {
+        //                     if (page == 1) {
+        //                         $(elementSelect2).data('count', data.count);
+        //                     }
+        //                     return {
+        //                         results: data.itens,
+        //                         more: (page * 30) < $(elementSelect2).data('count')
+        //                     };
+        //                 }
+        //             },
+        //             formatResult: (data) => data.text,
+        //             formatSelection: (data) => data.text
+        //         });
+        //     },
+        // };
 
-    // document.addEventListener("DOMContentLoaded", () => {
-    //     dataGridProdutoFunctions.init();
-    //     produtoFunctions.init();
-    //     select2ProdutoFunctions.init();
+        // document.addEventListener("DOMContentLoaded", () => {
+        //     dataGridProdutoFunctions.init();
+        //     produtoFunctions.init();
+        //     select2ProdutoFunctions.init();
 
-    // });
-</script> 
-@endsection('content')
+        // });
+    </script>
+    @endsection('content')

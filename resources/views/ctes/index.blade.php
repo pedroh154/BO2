@@ -13,7 +13,7 @@
             <div class="col-md-1">
                 <!-- Button trigger modal -->
                 <span data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="top" title="Precisa de ajuda?">
+                    <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Precisa de ajuda?">
                         <i class="fa-solid fa-question"></i>
                     </button>
                 </span>

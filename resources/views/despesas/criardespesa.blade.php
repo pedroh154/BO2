@@ -12,7 +12,38 @@
 <!---->
 
 <div id="content-wrapper" class="d-flex flex-column" style="background-color: #f4f5f8;">
-    <h1 class="container-fluid">Cadastrar despesa</h1>
+    <div class="hstack gap-2 ">
+        <div class="col-md-11 container-fluid">
+            <h1>Cadastrar despesa</h1>
+        </div>
+        <div class="col-md-1">
+            <!-- Button trigger modal -->
+            <span data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Precisa de ajuda?">
+                    <i class="fa-solid fa-question"></i>
+                </button>
+            </span>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Help de Contexto</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     @if(isset($errors) && count($errors)>0)
     <div class="text-center mt-4 mb-4 p-2 alert-danger">
