@@ -20,18 +20,46 @@
 
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">Help de Contexto</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                ...
+                                <div>
+                                    <h4>Incluir CT-e</h4>
+                                    <div class="container-fluid">
+                                        <p><strong>QUATRO OPÇÕES PARA INCLUSÃO DE CT-ES</strong></p>
+                                        <p><strong>Inserir a chave: </strong>escolhendo entre o sistema SSW e a Receita Federal, basta inserir a chave de acesso no campo embaixo.</p>
+                                        <p><strong>Upload XML: </strong>basta selecionar o arquivo XML do CT-e.</p>
+                                        <p><strong>Cadastro manual: </strong>uma nova tela será aberta para o cadastro manual do CT-e.</p>
+                                    </div>
+                                    <hr class="sidebar-divider">
+                                    <h4>Filtros</h4>
+                                    <div class="container-fluid">
+                                        <p><strong>OPÇÕES DE FILTROS DA TABELA</strong></p>
+                                        <p><strong>Empresa: </strong>selecione a empresa desejada.</p>
+                                        <p><strong>Datas: </strong>selecione duas datas para determinar um período para o filtro.</p>
+                                        <p><strong>Método de pagamento: </strong>selecione o método de pagamento.</p>
+                                        <p><strong>Pesquisa: </strong>digite qualquer dado para filtro (cidade, número de CT-e, destinatário, etc.).</p>
+                                        <p><strong>Botão "Atualizar informações": </strong>atualiza automaticamente o estado de entrega do CT-e caso o sistema SSW esteja disponível.</p>
+                                    </div>
+                                    <hr class="sidebar-divider">
+                                    <h4>Tabela</h4>
+                                    <div class="container-fluid">
+                                        <p><strong>✓</strong> - campo para determinar se o CT-e já foi finalizado (entregue).</p>
+                                        <p><strong>BOTÕES DA ÚLTIMA COLUNA</strong></p>
+                                        <p><button class="btn btn-info"><i class="fa-solid fa-file-pdf"></i></button> - download do arquivo PDF do CT-e.</p>
+                                        <p><button class="btn btn-info"><i class="fa-solid fa-file-lines"></i></button> - gerar comprovante de entrega.</p>
+                                        <p><button class="btn btn-info"><i class="fa-solid fa-magnifying-glass"></i></button> - detalhes do CT-e.</p>
+                                        <p><button class="btn btn-info"><i class="fa-solid fa-pen"></i></button> - editar informações do CT-e.</p>
+                                        <p><button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button> - deletar CT-e.</p>
+                                    </div>
+                                </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                             </div>
                         </div>
                     </div>
@@ -111,7 +139,8 @@
             <div class="col-md-2">
                 <label for="filtropagamento" class="form-label">Método de pagamento</label>
                 <select id="filtropagamento" class="form-select">
-                    <option selected>CIF</option>
+                    <option selected>Ambos</option>
+                    <option>CIF</option>
                     <option>FOB</option>
                 </select>
             </div>
