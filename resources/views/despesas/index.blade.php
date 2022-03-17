@@ -35,18 +35,24 @@
 
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Help de Contexto</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Help de Contexto - Despesas</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                ...
+                                <div>
+                                    <h4>Tabela</h4>
+                                    <div class="container-fluid">
+                                        <p><button class="btn btn-info"><i class="fa-solid fa-magnifying-glass"></i></button> - detalhes da despesa.</p>
+                                        <p><button class="btn btn-info"><i class="fa-solid fa-pen"></i></button> - editar informações da despesa.</p>
+                                        <p><button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button> - deletar despesa.</p>
+                                    </div>
+                                </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                             </div>
                         </div>
                     </div>
@@ -133,7 +139,7 @@
                         <div class="action-buttons hstack gap-2">
                             <!-- criar botão visualizar -->
                             <a href="{{url("despesas/$despesa->id")}}" class="" data-rel="" title="" data-original-title="">
-                                <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-lines"></i></button>
+                                <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                             </a>
                             <!-- criar botão editar -->
                             <a href="{{"/despesas/editar/$despesa->id"}}" data-toggle="" class="" style="" data-original-title="" title="">
