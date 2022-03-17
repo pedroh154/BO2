@@ -18,18 +18,28 @@
 
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Help de Contexto</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Help de Contexto - Cadastrar cliente</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            ...
+                            <div>
+                                <h4>Cadastrar cliente</h4>
+                                <div class="container-fluid">
+                                    <p><strong>Nome completo: </strong>forneça o nome completo do cliente (obrigatório).</p>
+                                    <p><strong>Telefone: </strong>forneça o contato do cliente (opcional).</p>
+                                    <p><strong>CEP: </strong>forneça o CEP do cliente (obrigatório, apenas números).</p>
+                                    <p><strong>Endereço: </strong>forneça o endereço do cliente (obrigatório).</p>
+                                    <p><strong>CPF/CNPJ: </strong>forneça o CPF ou CNPJ do cliente (obrigatório, apenas números).</p>
+                                    <p><strong>Cidade: </strong>selecione a cidade do cliente (obrigatório).</p>
+                                    <p><strong>Observação: </strong>insira uma observação ao cliente (opcional).</p>
+                                </div>
+                            </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                         </div>
                     </div>
                 </div>
