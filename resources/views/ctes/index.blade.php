@@ -23,14 +23,14 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Help de Contexto</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Help de Contexto - CT-es</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
                                 <div>
                                     <h4>Incluir CT-e</h4>
                                     <div class="container-fluid">
-                                        <p><strong>QUATRO OPÇÕES PARA INCLUSÃO DE CT-ES</strong></p>
+                               <!--         <p><strong>QUATRO OPÇÕES PARA INCLUSÃO DE CT-ES</strong></p> -->
                                         <p><strong>Inserir a chave: </strong>escolhendo entre o sistema SSW e a Receita Federal, basta inserir a chave de acesso no campo embaixo.</p>
                                         <p><strong>Upload XML: </strong>basta selecionar o arquivo XML do CT-e.</p>
                                         <p><strong>Cadastro manual: </strong>uma nova tela será aberta para o cadastro manual do CT-e.</p>
@@ -38,7 +38,7 @@
                                     <hr class="sidebar-divider">
                                     <h4>Filtros</h4>
                                     <div class="container-fluid">
-                                        <p><strong>OPÇÕES DE FILTROS DA TABELA</strong></p>
+                                <!--        <p><strong>OPÇÕES DE FILTROS DA TABELA</strong></p>-->
                                         <p><strong>Empresa: </strong>selecione a empresa desejada.</p>
                                         <p><strong>Datas: </strong>selecione duas datas para determinar um período para o filtro.</p>
                                         <p><strong>Método de pagamento: </strong>selecione o método de pagamento.</p>
@@ -49,7 +49,7 @@
                                     <h4>Tabela</h4>
                                     <div class="container-fluid">
                                         <p><strong>✓</strong> - campo para determinar se o CT-e já foi finalizado (entregue).</p>
-                                        <p><strong>BOTÕES DA ÚLTIMA COLUNA</strong></p>
+                                <!--        <p><strong>BOTÕES DA ÚLTIMA COLUNA</strong></p> -->
                                         <p><button class="btn btn-info"><i class="fa-solid fa-file-pdf"></i></button> - download do arquivo PDF do CT-e.</p>
                                         <p><button class="btn btn-info"><i class="fa-solid fa-file-lines"></i></button> - gerar comprovante de entrega.</p>
                                         <p><button class="btn btn-info"><i class="fa-solid fa-magnifying-glass"></i></button> - detalhes do CT-e.</p>

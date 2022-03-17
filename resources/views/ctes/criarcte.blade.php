@@ -17,18 +17,50 @@
 
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Help de Contexto</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Help de Contexto - Cadastrar CT-e</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            ...
+                            <div>
+                                <div class="container-fluid">
+                                    <!--         <p><strong>QUATRO OPÇÕES PARA INCLUSÃO DE CT-ES</strong></p> -->
+                                    <p><strong>Número do CT-e: </strong>forneça o número do CT-e (obrigatório, apenas números).</p>
+                                    <p><strong>Valor do CT-e: </strong>forneça o valor do CT-e (obrigatório, apenas números).</p>
+                                    <p><strong>Quantidade de volumes: </strong>forneça a quantidade de volumes do CT-e (obrigatório, apenas números).</p>
+                                    <p><strong>Número da NF: </strong>forneça o número da nota fiscal do CT-e (obrigatório, apenas números).</p>
+                                    <p><strong>Valor da NF: </strong>forneça o valor da nota fiscal do CT-e (obrigatório, apenas números).</p>
+                                    <p><strong>Data de chegada: </strong>forneça a data de chegada do CT-e (obrigatório).</p>
+                                    <p><strong>Método de pagamento: </strong>selecione o método de pagamento do CT-e (obrigatório).</p>
+                                    <p><strong>Transportadora: </strong>selecione a transportadora do CT-e (obrigatório).</p>
+                                    <p><strong>Cidade remetente: </strong>selecione a cidade de origem do CT-e (obrigatório).</p>
+                                    <p><strong>Cidade destinatária: </strong>forneça a cidade de destino do CT-e (obrigatório).</p>
+                                    <p><strong>Observação: </strong>insira uma observação ao CT-e (opcional).</p>
+                                </div>
+                                <hr class="sidebar-divider">
+                                <h4>Definir cliente</h4>
+                                <div class="container-fluid">
+                                    <!--        <p><strong>OPÇÕES DE FILTROS DA TABELA</strong></p>-->
+                                    <p><strong>Clientes remetente e destinatário: </strong>selecione o cliente remetente ou destinatário do CT-e (obrigatório). Caso necessário, adicione um novo cliente.</p>
+
+                                </div>
+                                <hr class="sidebar-divider">
+                                <h4>Cadastrar cliente</h4>
+                                <div class="container-fluid">
+                                    <p><strong>Nome completo: </strong>forneça o nome completo do cliente (obrigatório).</p>
+                                    <p><strong>Telefone: </strong>forneça o contato do cliente (opcional).</p>
+                                    <p><strong>CEP: </strong>forneça o CEP do cliente (obrigatório, apenas números).</p>
+                                    <p><strong>Endereço: </strong>forneça o endereço do cliente (obrigatório).</p>
+                                    <p><strong>CPF/CNPJ: </strong>forneça o CPF ou CNPJ do cliente (obrigatório, apenas números).</p>
+                                    <p><strong>Cidade: </strong>selecione a cidade do cliente (obrigatório).</p>
+                                    <p><strong>Observação: </strong>insira uma observação ao cliente (opcional).</p>
+                                </div>
+                            </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                         </div>
                     </div>
                 </div>
