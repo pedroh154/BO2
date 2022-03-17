@@ -11,7 +11,7 @@ class ReadXmlController extends Controller
     {
         if($req->isMethod("POST")){
 
-            $xmlDataString = file_get_contents(public_path('sample-course.xml'));
+            $xmlDataString = file_get_contents($req->);
             $xmlObject = simplexml_load_string($xmlDataString);
                     
             $json = json_encode($xmlObject);

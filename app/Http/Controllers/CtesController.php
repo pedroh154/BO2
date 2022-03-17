@@ -189,7 +189,7 @@ class CtesController extends Controller
             $listCidades = Cidade::orderBy('name','asc')->where('name', 'like', '%' .$search . '%')->limit(5)->get();
         }
         else {
-            $listCidades = Cidade::orderBy('name')->get();
+            $listCidades = Cidade::orderBy('name')->limit(5)->get();
         }
         
         $response = array();

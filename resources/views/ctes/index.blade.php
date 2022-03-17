@@ -234,7 +234,6 @@
     document.getElementById('datafinal').value = new Date().toDateInputValue();
 </script>
 
-
 <script>
     function trclick() {
         console.log('tr clicked')
