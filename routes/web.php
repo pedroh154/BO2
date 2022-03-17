@@ -46,6 +46,9 @@ Route::get('/ctes/{id}', 'App\Http\Controllers\CtesController@show')->middleware
 Route::delete('/ctes/excluir/{id}', 'App\Http\Controllers\CtesController@destroy')->middleware('auth');;
 Route::post('/cte-fetch', 'App\Http\Controllers\CtesController@RF_Fetch')->middleware('auth');;
 
+/* XML */
+Route::post('/xml-enviar', 'App\Http\Controllers\ReadXmlController@XML')->middleware('auth');;
+
 /* cidades */
 Route::post('/getCidades', 'App\Http\Controllers\CtesController@getCidades')->middleware('auth');
 
