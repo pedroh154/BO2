@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ClientesRequest;
-use App\Models\Cliente;
+use App\Models\Cliente; 
+use App\Models\Contato;
 use App\Models\Cidade;
 use Illuminate\Http\Request;
 
 class ClientesController extends Controller
 {
-    private $objCliente;
+    public $objCliente;
 
     public function __construct()
     {
@@ -55,6 +56,16 @@ class ClientesController extends Controller
         $this->objCliente->user_id = auth()->id();
 
         $this->objCliente->save();
+
+        if(Contato::where('fone', $this->objCliente->fone)->first() == null){
+            $objContato = new Contato();
+            $objContato->fone = $this->objCliente->fone;
+            $objContato->nome = $this->objCliente->nome;
+            $objContato->desc = $this->objCliente->obs;
+            $objContato->endereco = $this->objCliente->endereco;
+            $objContato->user_id = auth()->id();
+            $objContato->save();
+        }
 
         return redirect('/clientes')->withInput()->withMessage('Cliente cadastrado com sucesso!');
     }
