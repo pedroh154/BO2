@@ -30,7 +30,7 @@ class CtesController extends Controller
     /* VIEWS */
     public function index()
     {
-        $listCtes = Cte::where('user_id', auth()->id())->orderBy('data_chegada')->get();
+        $listCtes = Cte::where('user_id', auth()->id())->orderBy('data_chegada')->paginate(10);
         return view('ctes.index', compact('listCtes'));
     }
 

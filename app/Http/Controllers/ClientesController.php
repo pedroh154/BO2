@@ -19,7 +19,7 @@ class ClientesController extends Controller
     /* VIEWS */
     public function index()
     {
-        $listClientes = Cliente::where('user_id', auth()->id())->orderBy('nome')->get();
+        $listClientes = Cliente::where('user_id', auth()->id())->orderBy('nome')->paginate(15);
         return view('clientes.index', compact('listClientes'));
     }
 

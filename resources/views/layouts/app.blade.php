@@ -321,6 +321,10 @@
         $("#valor").unmask();
     });
 
+    $("#criarcontatoform").submit(function() {
+        $("#fone").unmask();
+    });
+
     $("#criarclienteform").submit(function() {
         $("#cadastro_nacional").unmask();
         $("#cep").unmask();

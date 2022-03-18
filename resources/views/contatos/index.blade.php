@@ -124,6 +124,10 @@
             </tbody>
 
         </table>
+
+        <div class="d-flex justify-content-center">
+            {{ $listContatos->links("pagination::bootstrap-4") }}
+        </div>
     </div>
 </div>
 <!--<a href="/novocontato" >

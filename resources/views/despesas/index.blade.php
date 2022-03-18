@@ -157,7 +157,13 @@
                 @endforeach
             </tbody>
         </table>
+        <div class="d-flex justify-content-center">
+        {{ $listDespesas->links("pagination::bootstrap-4") }}
+        </div>
+        
+
     </div>
+
 </div>
 
 <footer class="container">
