@@ -27,7 +27,7 @@ class DespesasController extends Controller
     /* VIEWS */
     public function index()
     {
-        $listDespesas = Despesa::where('user_id', auth()->id())->orderBy('categoria')->paginate(15);
+        $listDespesas = Despesa::where('user_id', auth()->id())->orderBy('created_at', 'DESC')->paginate(15);
         return view('despesas.index', compact('listDespesas'));
     }
 
