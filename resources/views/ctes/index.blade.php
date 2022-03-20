@@ -88,17 +88,17 @@
 
             <div class="col-md-8">
                 <div class="btn-group col-md-2" role="group" aria-label="Basic radio toggle button group">
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" disabled> <!--checked-->
                     <label class="btn btn-outline-primary" for="btnradio1">SSW</label>
 
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" disabled>
                     <label class="btn btn-outline-primary" for="btnradio2">RF</label>
                 </div>
                 <div class="col-md-12">
                     <form class="form-horizontal" action="/cte-fetch/" method="POST">
                         @csrf
-                        <input id="chavecte" name="chavecte" class="form-control" placeholder="Insira a chave do CT-e">
-                        <button type="submit" class="btn btn-add btn-lg">Buscar CTe</button>
+                        <input id="chavecte" name="chavecte" class="form-control" placeholder="Insira a chave do CT-e" disabled>
+                        <button type="submit" class="btn btn-add btn-lg" disabled>Buscar CTe</button>
                     </form>
                 </div>
             </div>
