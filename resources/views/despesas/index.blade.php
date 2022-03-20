@@ -43,6 +43,12 @@
                             </div>
                             <div class="modal-body">
                                 <div>
+                                    <h4>Filtros</h4>
+                                    <div class="container-fluid">
+                                        <p><strong>Categoria: </strong>selecione a categoria desejada.</p>
+                                        <p><strong>Data: </strong>selecione a data desejada.</p>
+                                        <p><strong>Pesquisa: </strong>digite valor ou descrição para filtro.</p>
+                                    </div>
                                     <h4>Tabela</h4>
                                     <div class="container-fluid">
                                         <p><button class="btn btn-info"><i class="fa-solid fa-magnifying-glass"></i></button> - detalhes da despesa.</p>
@@ -74,17 +80,17 @@
         @endif
         @csrf
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#relatorio">
                 Relatório
             </button>
             <!-- Modal -->
             <form action="{{"/gerarDespesa"}}" method="get">
                 @csrf
-                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="relatorio" tabindex="-1" aria-labelledby="relatorioLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Relatório de despesas - gastos</h5>
+                                <h5 class="modal-title" id="relatorioLabel">Relatório de despesas - gastos</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body container-fluid">
@@ -112,7 +118,35 @@
                 </div>
             </form>
             <a class="btn btn-primary" href="/despesas/novadespesa" role="button">Cadastrar despesa</a>
-        </div> <br>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-3">
+                <label for="data" class="form-label"> </label>
+                <div class="input-group">
+                    <!--VER IDS-->
+                    <label class="input-group-text" for="inputGroupSelect01">Categoria</label>
+                    <select class="form-select" id="categoria" name="categoria">
+                        <option value="Todos" selected>Todos</option>
+                        <option value="Água">Água</option>
+                        <option value="Aluguel">Aluguel</option>
+                        <option value="Luz">Luz</option>
+                        <option value="Manutenção">Manutenção</option>
+                        <option value="Outros">Outros</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <label for="data" class="form-label">Data</label>
+                <input type="date" class="form-control" id="data" name="data"> <!--value="<?php echo date('Y-m-d'); ?>" -->
+            </div>
+            <div class="col-sm-3">
+                <label for="pesquisa" class="form-label">Pesquisa</label>
+                <input type="text" class="form-control" id="pesquisa" required placeholder="Digite aqui..." name="pesquisa">
+            </div>
+        </div>
+
+        <br>
         <table class="table table-striped table-hover table-bordered table-sm">
             <thead>
                 <tr style="text-align: center;">
@@ -158,9 +192,9 @@
             </tbody>
         </table>
         <div class="d-flex justify-content-center">
-        {{ $listDespesas->links("pagination::bootstrap-4") }}
+            {{ $listDespesas->links("pagination::bootstrap-4") }}
         </div>
-        
+
 
     </div>
 
