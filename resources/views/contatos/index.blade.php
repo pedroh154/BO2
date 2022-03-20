@@ -36,8 +36,10 @@
                             </div>
                             <div class="modal-body">
                                 <div>
+                                    <p><strong>Pesquisa: </strong>digite qualquer dado para filtro (nome, telefone, endereço, etc.).</p>
                                     <h4>Tabela</h4>
                                     <div class="container-fluid">
+
                                         <p><button class="btn btn-info"><i class="fa-solid fa-magnifying-glass"></i></button> - detalhes do contato.</p>
                                         <p><button class="btn btn-info"><i class="fa-solid fa-pen"></i></button> - editar informações do contato.</p>
                                         <p><button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button> - deletar contato.</p>
@@ -69,8 +71,22 @@
         @endif
         @csrf
         @method('DELETE')
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <!-- <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <a class="btn btn-primary" href="/contatos/novocontato" role="button">Cadastrar contato</a>
+        </div> -->
+        <div class="row">
+            <div class="col-md-2">
+
+                <label for="datafinal" class="form-label">Pesquisa</label>
+                <input id="search-input" type="search" class="form-control" placeholder="Digite aqui...">
+
+            </div>
+            <div class="col-md-2 offset-md-8">
+
+                <label for="datafinal" class="form-label">                                                   </label>
+                <a class="btn btn-primary" href="/contatos/novocontato" role="button">Cadastrar contato</a>
+
+            </div>
         </div> <br>
         <table class="table table-striped table-hover table-bordered table-sm">
             <thead>
