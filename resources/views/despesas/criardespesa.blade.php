@@ -26,18 +26,25 @@
 
             <!-- Modal -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Help de Contexto</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Help de Contexto - Cadastrar despesa</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            ...
+                            <div>
+                                <h4>Cadastrar despesa</h4>
+                                <div class="container-fluid">
+                                    <p><strong>Categoria: </strong>selecione a categoria da despesa (obrigatório).</p>
+                                    <p><strong>Data: </strong>forneça a data da despesa (obritatório).</p>
+                                    <p><strong>Valor: </strong>forneça o valor da despesa (obrigatório).</p>
+                                    <p><strong>Descrição: </strong>insira uma descrição à despesa (opcional).</p>
+                                </div>
+                            </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                         </div>
                     </div>
                 </div>
