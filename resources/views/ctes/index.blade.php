@@ -137,6 +137,9 @@
                 <input type="date" class="form-control" id="datafinal" value="<?php echo date('Y-m-d'); ?>">
             </div>
             <div class="col-md-2">
+                <a href="home/?tipo_pagamento=CIF">CIF</a>
+                <a href="home/?tipo_pagamento=FOB">FOB</a>
+                <a href="/">TODOS</a>
                 <label for="filtropagamento" class="form-label">Método de pagamento</label>
                 <select id="filtropagamento" class="form-select">
                     <option selected>Ambos</option>

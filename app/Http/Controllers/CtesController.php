@@ -30,7 +30,13 @@ class CtesController extends Controller
     /* VIEWS */
     public function index()
     {
-        $listCtes = Cte::where('user_id', auth()->id())->orderBy('id', 'DESC')->paginate(10);
+        if (request()->has('tipo_pagamento')) {
+            $listCtes = Cte::where('tipo_pagamento', request('tipo_pagamento'))->paginate(10)
+            ->appends('tipo_pagamento', request('tipo_pagamento'));
+        } else {
+            $listCtes = Cte::where('user_id', auth()->id())->orderBy('id', 'DESC')->paginate(10);
+        }
+
         return view('ctes.index', compact('listCtes'));
     }
 
@@ -134,21 +140,21 @@ class CtesController extends Controller
         //var_dump($_POST);
 
         $response = Http::Post("https://api.infosimples.com/api/v2/consultas/receita-federal/cte", [
-            "cte" => $request->input('chavecte'), 
+            "cte" => $request->input('chavecte'),
             "pkcs12_cert" => "",
             "pkcs12_pass" => "",
             "token" => "blJ5RUg_X5mXVizzTboG5XVYB4iDanJGy5KHU_kc"
         ]);
 
         $this->RF_Manter(json_decode($response->body(), true));
-    }   
+    }
 
     //editar   
     public function edit($id)
     {
         return $this->detalhesCte($this->objCte->find($id), true);
     }
-    
+
     //update   
     public function update(CtesRequest $request, $id)
     {
@@ -180,31 +186,29 @@ class CtesController extends Controller
         return redirect('/ctes')->withInput()->withMessage('CT-e deletado com sucesso!');
     }
 
-    public function getCidades(Request $request){
+    public function getCidades(Request $request)
+    {
 
         $listCidades = array();
         $search = $request->search;
 
-        if($search != "") {
-            $listCidades = Cidade::orderBy('name','asc')->where('name', 'like', '%' .$search . '%')->limit(5)->get();
-        }
-        else {
+        if ($search != "") {
+            $listCidades = Cidade::orderBy('name', 'asc')->where('name', 'like', '%' . $search . '%')->limit(5)->get();
+        } else {
             $listCidades = Cidade::orderBy('name')->limit(5)->get();
         }
-        
+
         $response = array();
 
-        foreach($listCidades as $cidade){
+        foreach ($listCidades as $cidade) {
 
             $estado = Estado::where('id', $cidade->estado_id)->first();
 
             $response[] = array(
-                    "id"=>$cidade->id,
-                    "text"=>$cidade->name . ' - ' . $estado->abbr
+                "id" => $cidade->id,
+                "text" => $cidade->name . ' - ' . $estado->abbr
             );
-
         }
-        return response()->json($response);  
+        return response()->json($response);
     }
-
 }
