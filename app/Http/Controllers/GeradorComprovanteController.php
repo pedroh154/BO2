@@ -4,6 +4,7 @@
     use App\Models\Cte;
     use App\Models\Cliente;
     use App\Models\Cidade;
+    use App\Models\User;
     use Dompdf\Dompdf;
     use Dompdf\Options;
     use Carbon\Carbon;
@@ -28,6 +29,8 @@
                 $comprovante_rem = Cliente::where('id', $comprovante_cte->remetente_id)->get()->first();
                 $comprovante_dest = Cliente::where('id', $comprovante_cte->destinatario_id)->get()->first();
                 $comprovante_cidade = Cidade::where('id', $comprovante_cte->cidade_destinataria_id)->get()->first();
+                $comprovante_user = User::where('id', $comprovante_cte->user_id)->get()->first();
+
             //     $now = Carbon::now('GMT-3');
             //     $to = Carbon::now('GMT-3')->subDays($periodo->periodo);
                 //$despesasList = Despesa::whereBetween('data', [$to, $now])->get();
@@ -68,7 +71,7 @@
 
                     <br>
                     
-                    <h3>Assinado: </h3>
+                    <h3>Assinado: '. $comprovante_user->nome .'</h3>
 
                     
 
