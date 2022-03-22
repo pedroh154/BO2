@@ -49,6 +49,10 @@ class Cidade extends Model
     /**
      * Get the state that owns the city.
      */
+    public function clientes(){
+        return $this->hasMany(Cliente::class);
+    }
+
     public function estado()
     {
         return $this->belongsTo(Estado::class);

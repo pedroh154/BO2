@@ -176,7 +176,7 @@
                 <tbody>
                     @foreach ($listCtes as $cte)
                         <tr onclick='trclick();'>
-                            <td style="text-align: left;" onclick='tdclick();'>{{ $cte->cidade_remetente_id }}</td>
+                            <td style="text-align: left;" onclick='tdclick();'>{{ $cte->cidade_remetente->name }}</td>
                             <td style="text-align: right;">{{ $cte->numero_cte }}</td>
                             <td id="valor_cte{{$loop->index}}" style="text-align: right;">{{ $cte->valor_cte }}</td>
                             @if ($cte->tipo_pagamento == "CIF")
@@ -185,7 +185,7 @@
                                 <td style="text-align: center;">FOB</td>
                             @endif
                             <td style="text-align: right;">{{ $cte->volume }}</td>
-                            <td style="text-align: center;">{{ $cte->destinatario_id }}</td>
+                            <td style="text-align: center;">{{ $cte->destinatario->nome }}</td>
                             <td>
                                 <div class="custom-control custom-checkbox" style="text-align: center;">
                                     <input type="checkbox" class="custom-control-input" id="{{ $cte->id }}">
