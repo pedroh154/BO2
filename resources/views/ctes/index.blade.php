@@ -2,23 +2,21 @@
 @section('content')
 
 <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
-
-
 <div id="content-wrapper" class="d-flex flex-column" style="background-color: #f4f5f8;">
     <div class="container-fluid">
         <div class="hstack gap-2 ">
             <div class="col-md-11">
                 <h1>CT-es</h1>
             </div>
+
             <div class="col-md-1">
-                <!-- Button trigger modal -->
+                <!-- MODAL HELP CONTEXTO -->
                 <span data-bs-toggle="modal" data-bs-target="#exampleModal">
                     <button type="button" class="btn btn-warning" data-bs-toggle="tooltip" data-bs-placement="top" title="Precisa de ajuda?">
                         <i class="fa-solid fa-question"></i>
                     </button>
                 </span>
 
-                <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
@@ -66,26 +64,29 @@
                 </div>
             </div>
         </div>
+        <!-- MODAL HELP CONTEXTO -->
 
+        <!-- checar por ERROS -->
         @if(isset($errors) && count($errors)>0)
-        <div class="text-center mt-4 mb-4 p-2 alert-danger">
-            @foreach($errors->all() as $erro)
-            {{$erro}}<br>
-            @endforeach
-        </div>
+            <div class="text-center mt-4 mb-4 p-2 alert-danger">
+                @foreach($errors->all() as $erro)
+                    {{$erro}}<br>
+                @endforeach
+            </div>
         @endif
-        <!-- checar por sucesso -->
+        <!-- checar por SUCESSO -->
         @if(session()->has('message'))
-        <div class="alert alert-success">
-            {{ session()->get('message') }}
-        </div>
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
         @endif
+
         <div class="d-flex flex-column">
             <hr class="sidebar-divider">
             <h5>Incluir CT-e</h5>
         </div>
-        <div class="hstack gap-3">
 
+        <div class="hstack gap-3">
             <div class="col-md-8">
                 <div class="btn-group col-md-2" role="group" aria-label="Basic radio toggle button group">
                     <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" disabled> <!--checked-->

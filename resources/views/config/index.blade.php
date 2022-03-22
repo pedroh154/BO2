@@ -3,21 +3,8 @@
 @section('content')
 <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
 
-<!-- <div class="btn-group" role="group" aria-label="Basic example">
-            <a href="/home" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Página Inicial</button></a>
-            <a href="/contatos" style="color: #FFFFFF;"><button type="button" class="btn btn-primary">Contatos</button></a>
-        </div>-->
-<!--<h1></h1>-->
-<!--<p style="color: #FFFFFF;"></p>-->
-
-<!--<table class="table table-striped table-hover table-bordered caption-top" >-->
-
 <div id="content-wrapper" class="d-flex flex-column" style="background-color: #f4f5f8;">
-
-
-
     <div class="container">
-
         <div class="card o-hidden border-0 shadow-lg my-5">
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
@@ -31,18 +18,18 @@
                             </div>
 
                             @if(isset($errors) && count($errors)>0)
-                            <div class="text-center mt-4 mb-4 p-2 alert-danger">
-                                @foreach($errors->all() as $erro)
-                                {{$erro}}<br>
-                                @endforeach
-                            </div>
+                                <div class="text-center mt-4 mb-4 p-2 alert-danger">
+                                    @foreach($errors->all() as $erro)
+                                        {{$erro}}<br>
+                                    @endforeach
+                                </div>
                             @endif
 
                             <form method="POST" action="{{ route('register') }}" autocomplete="new-password">
                                 @csrf
                                 <div class="form-group row">
                                     <div class="col-sm-12">
-                                        <input autocomplete="new-password" type="text" class="form-control @error('name') is-invalid @enderror form-control-user " value="{{ old('name') }}" name="nome" id="nome" placeholder="Nome completo" disabled>
+                                        <input autocomplete="new-password" type="text" class="form-control @error('name') is-invalid @enderror form-control-user " value="{{ $user->nome }}" name="nome" id="nome" placeholder="Nome completo" disabled>
                                         @error('name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -52,7 +39,7 @@
 
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" autocomplete="new-password" class="form-control form-control-user @error('email') is-invalid @enderror" value="{{ old('email') }}" id="email" name="email" disabled placeholder="E-mail">
+                                    <input type="email" autocomplete="new-password" class="form-control form-control-user @error('email') is-invalid @enderror" value="{{ $user->email }}" id="email" name="email" disabled placeholder="E-mail">
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
