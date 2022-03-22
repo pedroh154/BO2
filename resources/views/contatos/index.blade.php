@@ -104,7 +104,7 @@
                     <td style="text-align: left;">{{ $contato->nome }}</td>
                     </td>
 
-                    <td style="text-align: left;">{{ $contato->fone }}</td>
+                    <td id="fone{{$loop->index}}" style="text-align: left;">{{ $contato->fone }}</td>
                     </td>
 
 

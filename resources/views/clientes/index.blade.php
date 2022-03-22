@@ -77,7 +77,7 @@
                 <tr>
                     <td style="text-align: left;">{{ $cliente->nome }}</td>
                     </td>
-                    <td style="text-align: left;">{{ $cliente->fone }}</td>
+                    <td id="fone{{$loop->index}}" style="text-align: left;">{{ $cliente->fone }}</td>
                     </td>
                     <td style="text-align: left;">{{$cliente->endereco}}</td>
                     </td>
