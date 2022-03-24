@@ -28,7 +28,7 @@ class ConfigController extends Controller
 
     public function alterarsenhaindex()
     {
-        return view('config.alterarsenha', compact('user'));
+        return view('config.alterarsenha');
     }
 
     /**
