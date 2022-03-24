@@ -68,17 +68,17 @@
 
         <!-- checar por ERROS -->
         @if(isset($errors) && count($errors)>0)
-            <div class="text-center mt-4 mb-4 p-2 alert-danger">
-                @foreach($errors->all() as $erro)
-                    {{$erro}}<br>
-                @endforeach
-            </div>
+        <div class="text-center mt-4 mb-4 p-2 alert-danger">
+            @foreach($errors->all() as $erro)
+            {{$erro}}<br>
+            @endforeach
+        </div>
         @endif
         <!-- checar por SUCESSO -->
         @if(session()->has('message'))
-            <div class="alert alert-success">
-                {{ session()->get('message') }}
-            </div>
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
         @endif
 
         <div class="d-flex flex-column">
@@ -89,7 +89,8 @@
         <div class="hstack gap-3">
             <div class="col-md-8">
                 <div class="btn-group col-md-2" role="group" aria-label="Basic radio toggle button group">
-                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" disabled> <!--checked-->
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" disabled>
+                    <!--checked-->
                     <label class="btn btn-outline-primary" for="btnradio1">SSW</label>
 
                     <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off" disabled>
@@ -120,12 +121,13 @@
             <h5>Filtros</h5>
         </div>
         <div class="hstack gap-4 ">
-            <div class="col-2">
+            <div class="col-1">
                 <!--d-sm-flex justify-content-between mb-4 container-->
                 <label for="filtroempresa" class="form-label">Empresa</label>
                 <select id="filtroempresa" class="form-select col-md-12">
                     <option selected value="UNIAO">União</option>
                     <option value="TEX">TEX</option>
+                    <option value="TODAS">Todas</option>
                 </select>
             </div>
 
@@ -137,10 +139,10 @@
                 <label for="datafinal" class="form-label">Data final</label>
                 <input type="date" class="form-control" id="datafinal" value="<?php echo date('Y-m-d'); ?>">
             </div>
-            <div class="col-md-2">
-                <label for="filtropagamento" class="form-label">Método de pagamento</label>
+            <div class="col-md-1">
+                <label for="filtropagamento" class="form-label">Pagamento</label>
                 <select id="filtropagamento" class="form-select">
-                    <option selected>Ambos</option>
+                    <option selected>Todos</option>
                     <option>CIF</option>
                     <option>FOB</option>
                 </select>
@@ -151,8 +153,18 @@
                 <input id="search-input" type="search" class="form-control" placeholder="Digite aqui...">
             </div>
             <div class="col-md-2">
+                <label for="filtropagamento" class="form-label">Situação</label>
+                <select id="filtropagamento" class="form-select">
+                    <option selected>Todos</option>
+                    <option>Entregue</option>
+                    <option>Não entregue</option>
+                </select>
+            </div>
+            <div class="col-md-1">
                 <label for="datafinal" class="form-label"></label>
-                <a class="btn btn-sm btn-primary shadow-sm" href="" type="button"><i class="fas fa-sync"></i> Atualizar informações</a>
+                <form>
+                    <button class="btn btn-sm btn-primary shadow-sm" type="submit" disabled><i class="fas fa-sync"></i> Atualizar informações</button>
+                </form>
             </div>
         </div>
         <div>
@@ -173,61 +185,61 @@
                 </thead>
                 <tbody>
                     @foreach ($listCtes as $cte)
-                        <tr onclick='trclick();'>
-                            <td style="text-align: left;" onclick='tdclick();'>{{ $cte->cidade_remetente->name }}</td>
-                            <td style="text-align: right;">{{ $cte->numero_cte }}</td>
-                            <td id="valor_cte{{$loop->index}}" style="text-align: right;">{{ $cte->valor_cte }}</td>
-                            @if ($cte->tipo_pagamento == "CIF")
-                                <td style="text-align: center;">CIF</td>
-                            @else
-                                <td style="text-align: center;">FOB</td>
-                            @endif
-                            <td style="text-align: right;">{{ $cte->volume }}</td>
-                            <td style="text-align: center;">{{ $cte->destinatario->nome }}</td>
-                            <td>
-                                <div class="custom-control custom-checkbox" style="text-align: center;">
-                                    @if ($cte->finalizado)
-                                        <input checked disabled type="checkbox" class="custom-control-input" id="{{ $cte->id }}">
-                                    @else
-                                        <input disabled type="checkbox" class="custom-control-input" id="{{ $cte->id }}">
-                                    @endif
-                                    <label class="custom-control-label" for="{{ $cte->id }}"></label>
-                                </div>
-                            </td>
-                            <td class="col-md-1" style="text-align: center;">
-                                <div class="action-buttons hstack gap-2">
-                                    <!-- criar botão pdf -->
-                                    <a href="{{url("ctes/$cte->id")}}" class="" data-rel="" title="" data-original-title="">
-                                        <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-pdf"></i></button>
-                                    </a>
-                                    @if ($cte->finalizado == true)
-                                        <!-- criar botão gerar comprovante -->
-                                        <a href="{{url("gerarcomprovante/$cte->id")}}" class="" data-rel="" title="" data-original-title="">
-                                            <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-lines"></i></button>
-                                        </a>
-                                    @else
-                                        <!-- criar botão gerar comprovante -->
-                                        <a href="{{url("gerarcomprovante/$cte->id")}}" class="" data-rel="" title="" data-original-title="">
-                                            <button disabled class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-lines"></i></button>
-                                        </a>
-                                    @endif
-                                    <!-- criar botão visualizar -->
-                                    <a href="{{url("ctes/$cte->id")}}" class="" data-rel="" title="" data-original-title="">
-                                        <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                                    </a>
-                                    <!-- criar botão editar -->
-                                    <a href="{{"/ctes/editar/$cte->id"}}" data-toggle="" class="" style="" data-original-title="" title="">
-                                        <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-pen"></i></button>
-                                    </a>
-                                    <!--apagar-->
-                                    <form action="{{"/ctes/excluir/$cte->id"}}" method="POST">
-                                        @method('DELETE')
-                                        @csrf
-                                        <button class="btn btn-danger btn-sm" type="submit"><i class="fas fa-trash-alt"></i></button>
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>
+                    <tr onclick='trclick();'>
+                        <td style="text-align: left;" onclick='tdclick();'>{{ $cte->cidade_remetente->name }}</td>
+                        <td style="text-align: right;">{{ $cte->numero_cte }}</td>
+                        <td id="valor_cte{{$loop->index}}" style="text-align: right;">{{ $cte->valor_cte }}</td>
+                        @if ($cte->tipo_pagamento == "CIF")
+                        <td style="text-align: center;">CIF</td>
+                        @else
+                        <td style="text-align: center;">FOB</td>
+                        @endif
+                        <td style="text-align: right;">{{ $cte->volume }}</td>
+                        <td style="text-align: center;">{{ $cte->destinatario->nome }}</td>
+                        <td>
+                            <div class="custom-control custom-checkbox" style="text-align: center;">
+                                @if ($cte->finalizado)
+                                <input checked disabled type="checkbox" class="custom-control-input" id="{{ $cte->id }}">
+                                @else
+                                <input disabled type="checkbox" class="custom-control-input" id="{{ $cte->id }}">
+                                @endif
+                                <label class="custom-control-label" for="{{ $cte->id }}"></label>
+                            </div>
+                        </td>
+                        <td class="col-md-1" style="text-align: center;">
+                            <div class="action-buttons hstack gap-2">
+                                <!-- criar botão pdf -->
+                                <a href="{{url("ctes/$cte->id")}}" class="" data-rel="" title="" data-original-title="">
+                                    <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-pdf"></i></button>
+                                </a>
+                                @if ($cte->finalizado == true)
+                                <!-- criar botão gerar comprovante -->
+                                <a href="{{url("gerarcomprovante/$cte->id")}}" class="" data-rel="" title="" data-original-title="">
+                                    <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-lines"></i></button>
+                                </a>
+                                @else
+                                <!-- criar botão gerar comprovante -->
+                                <a href="{{url("gerarcomprovante/$cte->id")}}" class="" data-rel="" title="" data-original-title="">
+                                    <button disabled class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-lines"></i></button>
+                                </a>
+                                @endif
+                                <!-- criar botão visualizar -->
+                                <a href="{{url("ctes/$cte->id")}}" class="" data-rel="" title="" data-original-title="">
+                                    <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                                </a>
+                                <!-- criar botão editar -->
+                                <a href="{{"/ctes/editar/$cte->id"}}" data-toggle="" class="" style="" data-original-title="" title="">
+                                    <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-pen"></i></button>
+                                </a>
+                                <!--apagar-->
+                                <form action="{{"/ctes/excluir/$cte->id"}}" method="POST">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button class="btn btn-danger btn-sm" type="submit"><i class="fas fa-trash-alt"></i></button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
                     @endforeach
                 </tbody>
             </table>
