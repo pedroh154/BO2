@@ -11,6 +11,7 @@ use App\Http\Requests\CtesRequest;
 use Illuminate\Support\Facades\Http;
 use App\Http\Controllers\Input;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 
 class CtesController extends Controller
@@ -37,7 +38,9 @@ class CtesController extends Controller
             $listCtes = Cte::where('user_id', auth()->id())->orderBy('id', 'DESC')->paginate(10);
         }
 
-        return view('ctes.index', compact('listCtes'));
+        $date = Carbon::now();
+
+        return view('ctes.index', compact('listCtes', 'date'));
     }
 
     public function novoCte()

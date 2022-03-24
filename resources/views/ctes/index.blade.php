@@ -188,7 +188,11 @@
                             <td style="text-align: center;">{{ $cte->destinatario_id }}</td>
                             <td>
                                 <div class="custom-control custom-checkbox" style="text-align: center;">
-                                    <input type="checkbox" class="custom-control-input" id="{{ $cte->id }}">
+                                    @if ($cte->finalizado)
+                                        <input checked disabled type="checkbox" class="custom-control-input" id="{{ $cte->id }}">
+                                    @else
+                                        <input type="checkbox" class="custom-control-input" id="{{ $cte->id }}">
+                                    @endif
                                     <label class="custom-control-label" for="{{ $cte->id }}"></label>
                                 </div>
                             </td>

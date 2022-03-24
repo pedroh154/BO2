@@ -352,7 +352,7 @@
         $('#valor_cte').mask('000.000.000.000.000,00', {reverse: true}, {removeMaskOnSubmit: true});
 
                 //i = numero do paginate
-                for( i =0; i< 15 ; i++){ 
+        for( i =0; i< 15 ; i++){ 
             $('#valor_nf'+i).mask('000.000.000.000.000,00', {reverse: true}, {removeMaskOnSubmit: true});
         }
        
