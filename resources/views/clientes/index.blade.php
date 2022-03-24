@@ -81,7 +81,7 @@
                     </td>
                     <td style="text-align: left;">{{$cliente->endereco}}</td>
                     </td>
-                    <td style="text-align: left;">{{ $cliente->cidade_id }}</td>
+                    <td style="text-align: left;">{{ $cliente->cidade->name }}</td>
                     </td>
                     <td class="col-md-1" style="text-align: center;">
                         <div class="action-buttons hstack gap-2">

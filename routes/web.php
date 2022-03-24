@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ConfigController;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,6 +85,5 @@ Route::delete('/despesas/excluir/{id}', 'App\Http\Controllers\DespesasController
 Route::get('/gerarDespesa', 'App\Http\Controllers\GeradorDespesaController@gerarDespesa')->middleware('auth');
 
 /* CONFIG */
-Route::get('/user/config', 'App\Http\Controllers\UserConfigController@index')->middleware('auth');;
-Route::get('/user/config/alterarsenha', 'App\Http\Controllers\UserConfigController@alterarsenha')->middleware('auth');;
-Route::get('/user/config/alterarssw', 'App\Http\Controllers\UserConfigController@alterarssw')->middleware('auth');;
+Route::resource('/user/config', ConfigController::class)->middleware('auth');
+Route::get('/user/config/alterarsenha', 'App\Http\Controllers\ConfigController@alterarsenhaindex')->middleware('auth');;

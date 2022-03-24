@@ -29,8 +29,8 @@ class Cliente extends Model
         'remember_token',
     ];
 
-    public function clientes(){
-        return $this->belongsToMany(Cte::class);
+    public function cidade(){
+        return $this->belongsTo(Cidade::class);
     }
 
     public function users(){
