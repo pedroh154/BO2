@@ -40,6 +40,7 @@
                                         <p><strong>Empresa: </strong>selecione a empresa desejada.</p>
                                         <p><strong>Datas: </strong>selecione duas datas para determinar um período para o filtro.</p>
                                         <p><strong>Método de pagamento: </strong>selecione o método de pagamento.</p>
+                                        <p><strong>Situação: </strong>selecione a situação do CT-e.</p>
                                         <p><strong>Pesquisa: </strong>digite qualquer dado para filtro (cidade, número de CT-e, destinatário, etc.).</p>
                                         <p><strong>Botão "Atualizar informações": </strong>atualiza automaticamente o estado de entrega do CT-e caso o sistema SSW esteja disponível.</p>
                                     </div>
@@ -147,11 +148,6 @@
                     <option>FOB</option>
                 </select>
             </div>
-
-            <div class=" col-md-2">
-                <label for="datafinal" class="form-label">Pesquisa</label>
-                <input id="search-input" type="search" class="form-control" placeholder="Digite aqui...">
-            </div>
             <div class="col-md-2">
                 <label for="filtropagamento" class="form-label">Situação</label>
                 <select id="filtropagamento" class="form-select">
@@ -160,6 +156,11 @@
                     <option>Não entregue</option>
                 </select>
             </div>
+            <div class=" col-md-2">
+                <label for="datafinal" class="form-label">Pesquisa</label>
+                <input id="search-input" type="search" class="form-control" placeholder="Digite aqui...">
+            </div>
+
             <div class="col-md-1">
                 <label for="datafinal" class="form-label"></label>
                 <form>
