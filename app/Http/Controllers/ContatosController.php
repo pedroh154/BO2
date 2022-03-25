@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ContatosRequest;
 use App\Models\Contato;
+use Illuminate\Http\Request;
 
 class ContatosController extends Controller
 {
@@ -76,11 +77,21 @@ class ContatosController extends Controller
         return redirect('/contatos')->withInput()->withMessage('Contato editado com sucesso!');
     }
 
-        //destroy   
-        public function destroy($id)
-        {
-            $this->objContato->destroy($id);
-    
-            return redirect('/contatos')->withInput()->withMessage('contato deletado com sucesso!');
-        }
+    //destroy   
+    public function destroy($id)
+    {
+        $this->objContato->destroy($id);
+
+        return redirect('/contatos')->withInput()->withMessage('contato deletado com sucesso!');
+    }
+
+    //destroy   
+    public function search(Request $request)
+    {
+        $listContatos = Contato::where('nome', 'LIKE', "%{$request->search}%")->orWhere('fone', 'LIKE', "%{$request->search}%")->paginate(15);
+        $filters = $request->all();
+        //dd($request->search); die;
+        return view('contatos.index', compact('listContatos', 'filters'));
+        //return redirect('/contatos')->withInput()->withMessage('contato deletado com sucesso!');
+    }
 }

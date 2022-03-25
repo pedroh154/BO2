@@ -88,3 +88,6 @@ Route::get('/gerarDespesa', 'App\Http\Controllers\GeradorDespesaController@gerar
 Route::resource('/user/config', ConfigController::class)->middleware('auth');
 Route::get('/alterarsenha', [App\Http\Controllers\ConfigController::class, 'alterarsenhaindex'])->name('changePasswordGet');
 Route::post('/changePassword', [App\Http\Controllers\ConfigController::class, 'changePasswordPost'])->name('changePasswordPost');
+
+/* filtros */
+Route::any('contatos/pesquisar', 'App\Http\Controllers\ContatosController@search')->middleware('auth');;

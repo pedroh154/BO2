@@ -61,23 +61,22 @@
             </div>
         @endif
 
-        @csrf
-        @method('DELETE')
         <!-- <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <a class="btn btn-primary" href="/contatos/novocontato" role="button">Cadastrar contato</a>
         </div> -->
+        
         <div class="row">
             <div class="col-md-2">
-
-                <label for="datafinal" class="form-label">Pesquisa</label>
-                <input id="search-input" type="search" class="form-control" placeholder="Digite aqui...">
-
+                <form action="/contatos/pesquisar" method="POST">
+                    @csrf
+                    <label for="datafinal" class="form-label">Pesquisa</label>
+                    <input id="search" name="search" type="text" class="form-control" placeholder="Digite aqui...">
+                    <button type="submit" class="btn btn-primary">filtrar</button>
+                </form>
             </div>
             <div class="col-md-2 offset-md-8">
-
                 <label for="datafinal" class="form-label">                                                   </label>
                 <a class="btn btn-primary" href="/contatos/novocontato" role="button">Cadastrar contato</a>
-
             </div>
         </div> <br>
         <table class="table table-striped table-hover table-bordered table-sm">
@@ -117,6 +116,7 @@
                                 <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-pen"></i></button>
                             </a>
                             <!--apagar-->
+                            <!--apagar-->
                             <form action="{{"/contatos/excluir/$contato->id"}}" method="POST">
                                 @method('DELETE')
                                 @csrf
@@ -134,7 +134,11 @@
         </table>
 
         <div class="d-flex justify-content-center">
-            {{ $listContatos->links("pagination::bootstrap-4") }}
+            @if(isset($filters))
+                {{ $listContatos->appends($filters)->links("pagination::bootstrap-4") }}
+            @else
+                {{ $listContatos->links("pagination::bootstrap-4") }}
+            @endif
         </div>
     </div>
 </div>
