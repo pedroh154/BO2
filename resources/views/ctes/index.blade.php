@@ -186,10 +186,14 @@
                 </thead>
                 <tbody>
                     @foreach ($listCtes as $cte)
-                    <tr onclick='trclick();'>
+                    <tr onclick='trclick();' id="id_cte_table{{$cte->id}}">
+                    <input type="hidden" id="id_cte_table" value="{{$cte->cidade_remetente->name}}"/>
+                    <input type="hidden" id="id_cte_table" value="{{$cte->destinatario->name}}"/>
+                    <input type="hidden" id="id_cte_table" value="{{$cte->numero_cte}}"/>
+                   
                         <td style="text-align: left; max-width: 150px" class="text-truncate" onclick='tdclick();'>{{ $cte->cidade_remetente->name }}</td>
-                        <td style="text-align: right; max-width: 70px" class="text-truncate"> {{ $cte->numero_cte }}</td>
-                        <td id="valor_cte{{$loop->index}}" style="text-align: right; max-width: 100px" class="text-truncate">{{ $cte->valor_cte }}</td>
+                        <td style="text-align: right; max-width: 70px" class="text-truncate">{{ $cte->numero_cte }}</td>
+                        <td id="valor_cte{{$loop->index}}"style="text-align: right; max-width: 100px" class="text-truncate">{{ $cte->valor_cte }}</td>
                         @if ($cte->tipo_pagamento == "CIF")
                         <td style="text-align: center; max-width: 100px" class="text-truncate">CIF</td>
                         @else
@@ -227,10 +231,11 @@
                                     <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-pen"></i></button>
                                 </a>
                                 <!--apagar-->
-                                <form action="{{"/ctes/excluir/$cte->id"}}" method="POST">
+                                <form id="excluirCte{{$cte->id}}" action="{{"/ctes/excluir/$cte->id"}}" method="POST">
                                     @method('DELETE')
                                     @csrf
-                                    <button class="btn btn-danger btn-sm" type="submit"><i class="fas fa-trash-alt"></i></button>
+                                    <input type="hidden" id="id_cte" value="{{$cte->id}}"/>
+                                    <button id ="btnExcluirCte" class="btn btn-danger btn-sm fas fa-trash-alt" type="button"></button>
                                 </form>
                             </div>
                         </td>
@@ -244,12 +249,40 @@
         </div>
     </div>
 </div>
-
+<div id="modalExcluir" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Confirmar exclusão</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <input type="hidden" id="id_cte_modal"/>
+        <p>Deseja realmente excluir este cte.</p>
+      </div>
+      <div class="modal-footer">
+        <button id="confirmarExclusao" type="button" class="btn btn-primary">Sim</button>
+        <button  type="button" class="btn btn-secondary" data-dismiss="modalExcluir">Não</button>
+      </div>
+    </div>
+  </div>
+</div>
 <script>
     document.getElementById('datafinal').value = new Date().toDateInputValue();
 </script>
 
 <script>
+      $(document).on('click', "#btnExcluirCte", (e) => {
+            $("#modalExcluir").modal('show');
+        //    console.log($('id_cte_table'+$(e.target).parent()[0][2].value));
+            $("#id_cte_modal").val($(e.target).parent()[0][2].value);
+        });
+
+        $(document).on('click', "#confirmarExclusao", (e) => {
+            $("#excluirCte"+  $("#id_cte_modal").val()).submit();
+        });
     function trclick() {
         console.log('tr clicked')
     };
