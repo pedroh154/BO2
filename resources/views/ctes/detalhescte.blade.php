@@ -51,14 +51,14 @@
             <div class="col-md-4">
                 <label for="cidade_remetente_id" class="form-label">Cidade remetente</label>
                 <br>
-                <select id="cidade_remetente_id" name="cidade_remetente_id" style='width: 300px;'>
+                <select id="cidade_remetente_id" name="cidade_remetente_id" class="col-md-12 form-select">
                     <option value={{$cidade_rem_nome->id}}>{{$cidade_rem_nome->name}} - {{$cidade_rem_nome->estado->abbr}}</option>
                 </select>
             </div>
             <div class="col-md-4">
                 <label for="cidade_destinataria_id" class="form-label">Cidade destinatária</label>
                 <br>
-                <select id="cidade_destinataria_id" name="cidade_destinataria_id" style='width: 300px;'>
+                <select id="cidade_destinataria_id" name="cidade_destinataria_id" class="col-md-12 form-select">
                     <option value={{$cidade_dest_nome->id}}>{{$cidade_dest_nome->name}} - {{$cidade_dest_nome->estado->abbr}}</option>
                 </select>
             </div>
@@ -88,7 +88,7 @@
             <div class="col-md-4">
                 <label for="remetente_id" class="form-label">Cliente remetente</label>
                 <br>
-                <select id="remetente_id" name="remetente_id" style='width: 300px;'>
+                <select id="remetente_id" name="remetente_id" class="col-md-12 form-select">
                     <option value={{$cliente_rem_nome->id}}>{{$cliente_rem_nome->nome}} - {{$cliente_rem_nome->cadastro_nacional}}</option>
                 </select>
             </div>
@@ -96,13 +96,13 @@
             <div class="col-md-4">
                 <label for="destinatario_id" class="form-label">Cliente destinatário</label>
                 <br>
-                <select id="destinatario_id" name="destinatario_id" style='width: 300px;'>
+                <select id="destinatario_id" name="destinatario_id" class="col-md-12 form-select">
                     <option value={{$cliente_dest_nome->id}}>{{$cliente_dest_nome->nome}} - {{$cliente_dest_nome->cadastro_nacional}}</option>
                 </select>
             </div>
 
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button type="submit" class="btn btn-secondary">Confirmar</button>
+                <button type="submit" class="btn btn-primary">Confirmar</button>
             </div>
 
         </form>
