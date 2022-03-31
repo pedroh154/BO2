@@ -26,23 +26,23 @@
             @csrf
             <div class="col-md-4">
                 <label for="numcte" class="form-label">Número CT-e</label>
-                <input type="text" class="form-control" name="numero_cte" id="numero_cte" value="{{$cte->numero_cte}}">
+                <input type="text" class="form-control" name="numero_cte" id="numero_cte" maxlength="20" value="{{$cte->numero_cte}}" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
             </div>
             <div class="col-md-4">
                 <label for="valorcte" class="form-label">Valor CT-e</label>
-                <input type="text" class="form-control" name="valor_cte" id="valor_cte" placeholder="R$" value="{{($cte->valor_cte)}}">
+                <input type="text" class="form-control" name="valor_cte" id="valor_cte" maxlength="10" placeholder="R$" value="{{($cte->valor_cte)}}">
             </div>
             <div class="col-md-4">
                 <label for="qtdevol" class="form-label">Quantidade de volumes</label>
-                <input type="text" class="form-control" name="volume" id="volume" value="{{$cte->volume}}">
+                <input type="text" class="form-control" name="volume" id="volume" value="{{$cte->volume}}" maxlength="6" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
             </div>
             <div class="col-md-4">
                 <label for="numnf" class="form-label">Número NF</label>
-                <input type="text" class="form-control" name="numero_nf" id="numero_nf" value="{{$cte->numero_nf}}">
+                <input type="text" class="form-control" name="numero_nf" maxlength="20" maxlength="10" id="numero_nf" value="{{$cte->numero_nf}}" onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
             </div>
             <div class="col-md-4">
                 <label for="valornf" class="form-label">Valor NF</label>
-                <input type="text" class="form-control" name="valor_nf" id="valor_nf" value="{{$cte->valor_nf}}">
+                <input type="text" class="form-control" name="valor_nf" id="valor_nf" value="{{$cte->valor_nf}}" >
             </div>
             <div class="col-md-4">
                 <label for="data" class="form-label">Data de chegada</label>
@@ -90,7 +90,7 @@
             
             <div class="mb-2 col-md-8">
                 <label for="obscte" class="form-label">Observação</label>
-                <textarea class="form-control" id="obs" name="obs" rows="1">{{$cte->obs}}</textarea>
+                <textarea class="form-control" maxlength="280" id="obs" name="obs" rows="1">{{$cte->obs}}</textarea>
             </div>
             <div class="col-md-4">
                 <label for="metodo" class="form-label">Situação</label>
