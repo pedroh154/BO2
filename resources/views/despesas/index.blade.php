@@ -198,10 +198,11 @@
                                 <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-pen"></i></button>
                             </a>
                             <!--apagar-->
-                            <form action="{{"/despesas/excluir/$despesa->id"}}" method="POST">
+                            <form id="excluirCte{{$despesa->id}}" action="{{"/despesas/excluir/$despesa->id"}}" method="POST">
                                 @method('DELETE')
                                 @csrf
-                                <button class="btn btn-danger btn-sm" type="submit"><i class="fas fa-trash-alt"></i></button>
+                                <input type="hidden" id="id_cte" value="{{$despesa->id}}"/>
+                                <button id="btnExcluirCte" class="btn btn-danger btn-sm fas fa-trash-alt" type="button"></button>
                             </form>
                         </div>
                     </td>
@@ -217,6 +218,49 @@
     </div>
 
 </div>
+
+<div id="modalExcluir" class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Confirmar exclusão</h5>
+          <button id="cancelarExclusao"  type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        <input type="hidden" id="id_cte_modal"/>
+          <p>Deseja realmente excluir este cte.</p>
+        </div>
+        <div class="modal-footer">
+          <button id="confirmarExclusao" type="button" class="btn btn-primary">Sim</button>
+          <button  id="cancelarExclusao" type="button" class="btn btn-secondary">Não</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+    $(document).on('click', "#cancelarExclusao", (e) => {
+           $("#modalExcluir").modal('hide');
+       });
+     $(document).on('click', "#btnExcluirCte", (e) => {
+           $("#modalExcluir").modal('show');
+       //    console.log($('id_cte_table'+$(e.target).parent()[0][2].value));
+           $("#id_cte_modal").val($(e.target).parent()[0][2].value);
+       });
+
+       $(document).on('click', "#confirmarExclusao", (e) => {
+           $("#excluirCte"+  $("#id_cte_modal").val()).submit();
+       });
+   function trclick() {
+       console.log('tr clicked')
+   };
+
+   function tdclick() {
+       console.log('td clicked')
+   };
+</script>
 
 <footer class="container">
 </footer>
