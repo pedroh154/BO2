@@ -370,6 +370,10 @@
         $("#valor_nf").unmask();
         $("#valor").unmask();
     });
+
+    $("#editardespesaform").submit(function() {
+        $("#valor").unmask();
+    });
 </script>
 
 <script type="text/javascript">

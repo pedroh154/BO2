@@ -45,7 +45,7 @@
         
     <!-- FORMULÁRIO DE EDIT -->
     @else
-        <form class="container-fluid" action={{"/despesas/atualizar/$despesa->id"}}>
+        <form id="editardespesaform" class="container-fluid" action={{"/despesas/atualizar/$despesa->id"}}>
             @method('PUT')
             @csrf
             <div class="input-group mb-3">
