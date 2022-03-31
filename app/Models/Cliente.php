@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Kyslik\ColumnSortable\Sortable;
 
 class Cliente extends Model
 {
     use HasFactory;
-
+    use Sortable;
     protected $fillable = [
         'endereco',
         'nome',
@@ -19,6 +20,8 @@ class Cliente extends Model
         'cidade_id',
         'user_id',
     ];
+
+    protected $sortable = ['endereco', 'nome', 'cadastro_nacional', 'cep', 'fone', 'obs', 'cidade_id'];
 
     /**
      * The attributes that should be hidden for serialization.

@@ -97,10 +97,10 @@
         <table class="table table-striped table-hover table-bordered table-sm">
             <thead>
                 <tr style="text-align: center;">
-                    <th style="width: 170px;" scope="col">Nome</th>
-                    <th style="width: 50px;" scope="col">Telefone</th>
-                    <th style="width: 100px;" scope="col">Endereço</th>
-                    <th style="width: 75px;" scope="col">Cidade</th>
+                    <th style="width: 170px;" scope="col">@sortablelink('nome', 'nome')</th>
+                    <th style="width: 50px;" scope="col">@sortablelink('fone', 'telefone')</th>
+                    <th style="width: 100px;" scope="col">@sortablelink('endereco', 'endereço')</th>
+                    <th style="width: 75px;" scope="col">@sortablelink('cidade_id', 'cidade')</th>
                     <th></Th>
                 </tr>
             </thead>
