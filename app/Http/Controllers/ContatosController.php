@@ -88,10 +88,9 @@ class ContatosController extends Controller
     //destroy   
     public function search(Request $request)
     {
-        $listContatos = Contato::where('nome', 'LIKE', "%{$request->search}%")->orWhere('fone', 'LIKE', "%{$request->search}%")->paginate(15);
+        $listContatos = Contato::where('nome', 'LIKE', "%{$request->search}%")->orWhere('fone', 'LIKE', "%{$request->search}%")
+        ->orWhere('desc', 'LIKE', "%{$request->search}%")->orWhere('endereco', 'LIKE', "%{$request->search}%")->paginate(15);
         $filters = $request->all();
-        //dd($request->search); die;
         return view('contatos.index', compact('listContatos', 'filters'));
-        //return redirect('/contatos')->withInput()->withMessage('contato deletado com sucesso!');
     }
 }
