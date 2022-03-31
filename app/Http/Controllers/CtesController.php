@@ -71,13 +71,16 @@ class CtesController extends Controller
         $listTiposDePagamento = $this->tiposDePagamento;
         $situacao = $this->situacao;
 
+        $transp = new Transportadora();
+        $listTransp = $transp->all();
+
         $cidade_rem_nome = Cidade::where('id', $cte->cidade_remetente_id)->first();
         $cidade_dest_nome = Cidade::where('id', $cte->cidade_destinataria_id)->first();
 
         $cliente_rem_nome = Cliente::where('id', $cte->remetente_id)->first();
         $cliente_dest_nome = Cliente::where('id', $cte->destinatario_id)->first();
         
-        return view('ctes.detalhescte', compact('cte', 'listCidades', 'listClientes', 'listTiposDePagamento', 'situacao',
+        return view('ctes.detalhescte', compact('cte', 'listTransp', 'listCidades', 'listClientes', 'listTiposDePagamento', 'situacao',
                                                 'cidade_dest_nome', 'cidade_rem_nome', 'cliente_rem_nome', 'cliente_dest_nome'));
     }
 
@@ -112,7 +115,7 @@ class CtesController extends Controller
         $this->objCte->tipo_pagamento = $request->tipo_pagamento;
         $this->objCte->valor_nf = $request->valor_nf;
         $this->objCte->pode_alterar = true;
-        $this->objCte->finalizado = false;
+        $this->objCte->finalizado = 'ABERTO';
         $this->objCte->remetente_id = $request->remetente_id;
         $this->objCte->destinatario_id = $request->destinatario_id;
         $this->objCte->cidade_remetente_id = $request->cidade_remetente_id;
@@ -188,6 +191,7 @@ class CtesController extends Controller
             'remetente_id' => $request->remetente_id,
             'destinatario_id' => $request->destinatario_id,
             'cidade_remetente_id' => $request->cidade_remetente_id,
+            'finalizado' => $request->finalizado,
             'cidade_destinataria_id' => $request->cidade_destinataria_id,
         ]);
 

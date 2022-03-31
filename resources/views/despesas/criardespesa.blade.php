@@ -80,7 +80,7 @@
             </div>
             <div class="mb-3">
                 <label for="valor" class="form-label">Valor</label>
-                <input type="text" class="form-control" id="valor" required placeholder="R$" name="valor" oninvalid="this.setCustomValidity('O campo Valor é obrigatório')" oninput="setCustomValidity('')">
+                <input type="text" class="form-control" id="valor" required placeholder="R$" name="valor" oninvalid="this.setCustomValidity('O Valor é obrigatório')" oninput="setCustomValidity('')">
             </div>
             <div class="mb-3">
                 <label for="desc" class="form-label">Descrição</label>

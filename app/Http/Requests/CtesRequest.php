@@ -51,6 +51,10 @@ class CtesRequest extends FormRequest
         'numero_nf.unique' => 'Já existe uma NF cadastrada com esse número',
         'numero_cte.required' => 'O campo Número do CT-e é obrigatório',
         'numero_cte.unique' => 'Já existe um CT-e cadastrado com esse número',
+        'cidade_remetente_id.required' => 'A cidade remetente é obrigatória',
+        'cidade_destinataria_id.required' => 'A cidade destinatária é obrigatória',
+        'remetente_id.required' => 'O cliente remetente é obrigatório',
+        'destinatario_id.required' => 'O cliente destinatário é obrigatório',
     ];
     }
 }

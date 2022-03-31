@@ -45,7 +45,7 @@
                             @csrf
                                 <div class="form-group row">
                                     <div class="col-sm-12">
-                                        <input autocomplete="new-password" type="text" class="form-control @error('name') is-invalid @enderror form-control-user " value="{{ old('name') }}" name="nome" id="nome" placeholder="Nome completo" required autofocus>
+                                        <input oninvalid="this.setCustomValidity('O Nome é obrigatório')" oninput="setCustomValidity('')" autocomplete="new-password" type="text" class="form-control @error('name') is-invalid @enderror form-control-user " value="{{ old('name') }}" name="nome" id="nome" placeholder="Nome completo" required autofocus>
                                         @error('name')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -55,7 +55,7 @@
 
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" autocomplete="new-password" class="form-control form-control-user @error('email') is-invalid @enderror" value="{{ old('email') }}" id="email" name="email" required placeholder="E-mail">
+                                    <input oninvalid="this.setCustomValidity('O E-mail é obrigatório')" oninput="setCustomValidity('')" type="email" autocomplete="new-password" class="form-control form-control-user @error('email') is-invalid @enderror" value="{{ old('email') }}" id="email" name="email" required placeholder="E-mail">
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -64,7 +64,7 @@
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" autocomplete="new-password" class="form-control form-control-user @error('password') is-invalid @enderror" id="password" name="password" required placeholder="Senha">
+                                        <input oninvalid="this.setCustomValidity('A senha é obrigatória')" oninput="setCustomValidity('')" type="password" autocomplete="new-password" class="form-control form-control-user @error('password') is-invalid @enderror" id="password" name="password" required placeholder="Senha">
                                         @error('password')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
@@ -72,7 +72,7 @@
                                         @enderror
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user" id="password-confirm" name="password_confirmation" placeholder="Confirmar senha" required >
+                                        <input oninvalid="this.setCustomValidity('Confirme sua senha')" oninput="setCustomValidity('')" type="password" class="form-control form-control-user" id="password-confirm" name="password_confirmation" placeholder="Confirmar senha" required >
                                     </div>
                                 </div>
                                 <hr> 

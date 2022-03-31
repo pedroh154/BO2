@@ -25,7 +25,7 @@ class CreateCtesTable extends Migration
             $table->unsignedInteger('volume');
             $table->string('obs')->nullable();
             $table->boolean('pode_alterar')->default(true);
-            $table->boolean('finalizado')->default(false);
+            $table->enum('finalizado', ['CONCLUÍDO', 'ABERTO'])->default('ABERTO');
 
             $table->foreignId('remetente_id');
             $table->foreign('remetente_id')->references('id')->on('clientes')->onDelete('CASCADE');

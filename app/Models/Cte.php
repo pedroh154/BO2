@@ -10,6 +10,7 @@ class Cte extends Model
 {
     use HasFactory;
     use Sortable;
+    
     protected $fillable = [
         'numero_nf',
         'valor_cte',
@@ -45,6 +46,10 @@ class Cte extends Model
 
     public function cidade_destinataria(){
         return $this->belongsTo(Cidade::class);
+    }
+
+    public function transportadora(){
+        return $this->belongsTo(Transportadora::class);
     }
 
     /**

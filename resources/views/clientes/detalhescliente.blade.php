@@ -46,6 +46,10 @@
                     <option value={{$cidade->id}}>{{$cidade->name}} - {{$cidade->estado->abbr}}</option>
                 </select>
             </div>
+            <div class="mb-3">
+                <label for="descricaocontato" class="form-label">Observação</label>
+                <textarea class="form-control" id="obs" name="obs" rows="3">{{$cliente->obs}}</textarea>
+            </div>
 
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <button type="submit" class="btn btn-secondary">Confirmar</button>

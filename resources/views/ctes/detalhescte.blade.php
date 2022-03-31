@@ -51,17 +51,26 @@
             <div class="col-md-2">
                 <label for="tipo_pagamento" class="form-label">Método de pagamento</label>
                 <select required id="tipo_pagamento" name="tipo_pagamento" class="form-select">
-                    <option selected value="CIF">CIF</option>
-                    <option value="FOB">FOB</option>
+                    @foreach ($listTiposDePagamento as $tipo)
+                        @if($tipo == $cte->tipo_pagamento)
+                            <option selected value="{{ $tipo }}"> {!! $tipo !!} </option>
+                        @else
+                            <option value="{{ $tipo }}"> {!! $tipo !!} </option>
+                        @endif
+                    @endforeach
                 </select>
             </div>
 
             <div class="col-md-2">
                 <label for="transportadora" class="form-label">Transportadora</label>
                 <select required id="transportadora_id" name="transportadora_id" class="form-select">
-                    
-                    <option value="">  </option>
-                    
+                        @foreach ($listTransp as $transp)
+                            @if($transp->nome == $cte->transportadora->nome)
+                                <option selected value="{{ $transp->id }}"> {!! $transp->nome !!} </option>
+                            @else
+                                <option value="{{ $transp->id }}"> {!! $transp->nome !!} </option>
+                            @endif
+                        @endforeach
                 </select>
             </div>
             <div class="col-md-4">
@@ -86,15 +95,17 @@
             <div class="col-md-4">
                 <label for="metodo" class="form-label">Situação</label>
                 <select id="finalizado" name="finalizado" class="form-select">
+
                     @foreach($situacao as $tipo)
-                    @if($tipo == 'CONCLUÍDO' && $cte->finalizado)
-                    <option value="{{$tipo}}" selected>{{$tipo}}</option>
-                    @elseif($tipo == 'ABERTO' && !$cte->finalizado)
-                    <option value="{{$tipo}}" selected>{{$tipo}}</option>
-                    @else
-                    <option value="{{$tipo}}">{{$tipo}}</option>
-                    @endif
+                        @if($tipo == 'CONCLUÍDO' && $cte->finalizado == 'CONCLUÍDO')
+                            <option value="CONCLUÍDO" selected>{{$tipo}}</option>
+                        @elseif($tipo == 'ABERTO' && !$cte->finalizado == 'ABERTO')
+                            <option value="ABERTO" selected>{{$tipo}}</option>
+                        @else
+                            <option value="{{$tipo}}">{{$tipo}}</option>
+                        @endif
                     @endforeach
+
                 </select>
             </div>
             <BR>

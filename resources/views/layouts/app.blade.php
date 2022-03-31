@@ -376,7 +376,34 @@
         $('.phone_with_ddd').mask('(00) 0000-0000');
         $('.phone_us').mask('(000) 000-0000');
         $('.mixed').mask('AAA 000-S0S');
-        $('#cadastro_nacional').mask('000.000.000-00', {reverse: true}, {removeMaskOnSubmit: true});
+
+        
+
+        $("#cadastro_nacional").keydown(function(){
+            try {
+                $("#cadastro_nacional").unmask();
+            } catch (e) {}
+
+            var tamanho = $("#cadastro_nacional").val().length;
+
+            if(tamanho < 11){
+                $("#cadastro_nacional").mask("999.999.999-99");
+            } else {
+                $("#cadastro_nacional").mask("99.999.999/9999-99");
+            }
+
+            // ajustando foco
+            var elem = this;
+            setTimeout(function(){
+                // mudo a posição do seletor
+                elem.selectionStart = elem.selectionEnd = 10000;
+            }, 0);
+            // reaplico o valor para mudar o foco
+            var currentValue = $(this).val();
+            $(this).val('');
+            $(this).val(currentValue);
+        });
+
         $('.cnpj').mask('00.000.000/0000-00', {reverse: true}, {removeMaskOnSubmit: true});
         $('#valor_nf').mask('000.000,00', {reverse: true}, {removeMaskOnSubmit: true});
         $('#valor_cte').mask('000.000,00', {reverse: true}, {removeMaskOnSubmit: true});

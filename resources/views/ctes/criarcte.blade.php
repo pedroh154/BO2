@@ -99,33 +99,43 @@
                 @csrf
                 <div class="col-md-4">
                     <label for="numcte" class="form-label">Número do CT-e</label>
-                    <input type="text" maxlength="20" oninvalid="this.setCustomValidity('O número do CT-e é obrigatório')" oninput="setCustomValidity('')" class="form-control" name="numero_cte" id="numero_cte" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+                    <input value="{{ old('numero_cte') }}" type="text" maxlength="20" oninvalid="this.setCustomValidity('O número do CT-e é obrigatório')" oninput="setCustomValidity('')" class="form-control" name="numero_cte" id="numero_cte" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
                 </div>
                 <div class="col-md-4">
                     <label for="valorcte" class="form-label">Valor do CT-e</label>
-                    <input type="text" maxlength="10" oninvalid="this.setCustomValidity('O Valor do CT-e é obrigatório')" oninput="setCustomValidity('')" class="form-control" name="valor_cte" id="valor_cte" placeholder="R$" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+                    <input value="{{ old('valor_cte') }}" type="text" maxlength="10" oninvalid="this.setCustomValidity('O Valor do CT-e é obrigatório')" oninput="setCustomValidity('')" class="form-control" name="valor_cte" id="valor_cte" placeholder="R$" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
                 </div>
                 <div class="col-md-4">
                     <label for="qtdevol" class="form-label">Quantidade de volumes</label>
-                    <input type="text" maxlength="6" class="form-control" oninvalid="this.setCustomValidity('A Quantidade de volumes é obrigatória')" oninput="setCustomValidity('')" name="volume" id="volume" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+                    <input value="{{ old('volume') }}" type="text" maxlength="6" class="form-control" oninvalid="this.setCustomValidity('A Quantidade de volumes é obrigatória')" oninput="setCustomValidity('')" name="volume" id="volume" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
                 </div>
                 <div class="col-md-4">
                     <label for="numnf" class="form-label">Número da NF</label>
-                    <input type="text" maxlength="20" oninvalid="this.setCustomValidity('O número da NF é obrigatório')" oninput="setCustomValidity('')" class="form-control" name="numero_nf" id="numero_nf" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+                    <input value="{{ old('numero_nf') }}" type="text" maxlength="20" oninvalid="this.setCustomValidity('O número da NF é obrigatório')" oninput="setCustomValidity('')" class="form-control" name="numero_nf" id="numero_nf" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
                 </div>
                 <div class="col-md-4">
                     <label for="valornf" class="form-label">Valor da NF</label>
-                    <input type="text" maxlength="10" class="form-control" oninvalid="this.setCustomValidity('O Valor da NF é obrigatório')" oninput="setCustomValidity('')" name="valor_nf" id="valor_nf" placeholder="R$" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
+                    <input value="{{ old('valor_nf') }}" type="text" maxlength="10" class="form-control" oninvalid="this.setCustomValidity('O Valor da NF é obrigatório')" oninput="setCustomValidity('')" name="valor_nf" id="valor_nf" placeholder="R$" required onkeypress="if (!isNaN(String.fromCharCode(window.event.keyCode))) return true; else return false;">
                 </div>
                 <div class="col-md-4">
                     <label for="data" class="form-label">Data de chegada</label>
-                    <input type="date" class="form-control" oninvalid="this.setCustomValidity('A Data de chegada é obrigatória')" oninput="setCustomValidity('')" name="data_chegada" id="data_chegada" value="<?php echo date('Y-m-d'); ?>" required>
+                    <input value="{{ old('data_chegada') }}" type="date" class="form-control" oninvalid="this.setCustomValidity('A Data de chegada é obrigatória')" oninput="setCustomValidity('')" name="data_chegada" id="data_chegada" value="<?php echo date('Y-m-d'); ?>" required>
                 </div>
                 <div class="col-md-2">
                     <label for="tipo_pagamento" class="form-label">Método de pagamento</label>
                     <select required id="tipo_pagamento" name="tipo_pagamento" class="form-select">
-                        <option selected value="CIF">CIF</option>
-                        <option value="FOB">FOB</option>
+                        @if("{{old('tipo_pagamento') }}" == "")
+                            <option selected value="CIF">CIF</option>
+                            <option value="FOB">FOB</option>
+                        @else
+                            @if( "{{ old('tipo_pagamento') }}" == "CIF")
+                                <option selected value="CIF">CIF</option>
+                                <option value="FOB">FOB</option>
+                            @else
+                                <option value="CIF">CIF</option>
+                                <option selected value="FOB">FOB</option>
+                            @endif
+                        @endif
                     </select>
                 </div>
 
@@ -133,7 +143,7 @@
                     <label for="transportadora" class="form-label">Transportadora</label>
                     <select required id="transportadora_id" name="transportadora_id" class="form-select">
                         @foreach ($listTransp as $transp)
-                        <option value="{{ $transp->id }}"> {!! $transp->nome !!} </option>
+                            <option value="{{ $transp->id }}"> {!! $transp->nome !!} </option>
                         @endforeach
                     </select>
                 </div>

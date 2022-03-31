@@ -66,7 +66,7 @@
             <div class="mb-3">
                 <!--VER IDS-->
                 <label for="nomecontato" class="form-label">Nome Completo</label>
-                <input type="text" oninvalid="this.setCustomValidity('O campo Nome é obrigatório')" oninput="setCustomValidity('')" maxlength="200" class="form-control" id="nome" required name="nome" aria-describedby="emailHelp">
+                <input type="text" oninvalid="this.setCustomValidity('O Nome é obrigatório')" oninput="setCustomValidity('')" maxlength="200" class="form-control" id="nome" required name="nome" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
                 <label for="telefonecontato" class="form-label">Telefone</label>

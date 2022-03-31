@@ -203,7 +203,7 @@
                         <td style="text-align: center; max-width: 400px" class="text-truncate">{{ $cte->destinatario->nome }} - {{ $cte->destinatario->cadastro_nacional }}</td>
                         <td>
                             <div style="text-align: center;">
-                                @if ($cte->finalizado)
+                                @if ($cte->finalizado == 'CONCLUÍDO')
                                     <span class="badge badge-info">CONCLUÍDO</span>
                                 @else
                                     <span class="badge badge-success">ABERTO</span>
