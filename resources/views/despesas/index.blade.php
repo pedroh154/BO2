@@ -79,9 +79,9 @@
         @endif
         @csrf
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#relatorio" disabled>
+         <!--   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#relatorio" disabled>
                 Relatório
-            </button>
+            </button>-->
             <!-- Modal -->
             <form action="{{"/gerarDespesa"}}" method="get">
                 @csrf

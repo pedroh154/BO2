@@ -42,7 +42,7 @@
                                         <p><strong>Situação: </strong>selecione a situação do CT-e.</p>
                                         <p><strong>Pesquisa: </strong>digite qualquer dado para filtro (cidade, número de CT-e, destinatário, etc.).</p>
                                         <p><strong>Resetar: </strong>apagar os filtros.</p>
-                                        <p><strong>Botão "Atualizar informações": </strong>atualiza automaticamente o estado de entrega do CT-e caso o sistema SSW esteja disponível.</p>
+                                    <!--    <p><strong>Botão "Atualizar informações": </strong>atualiza automaticamente o estado de entrega do CT-e caso o sistema SSW esteja disponível.</p> -->
                                     </div>
                                     <hr class="sidebar-divider">
                                     <h4>Tabela</h4>
@@ -120,51 +120,51 @@
         <div class="d-flex flex-column">
             <h5>Filtros</h5>
         </div>
+        <div class="d-flex flex-column" >
+            <form action="/ctes/pesquisar" method="POST">
+                @csrf
+                <div class="hstack gap-4 ">
+                    <div class="col-1">
+                        <!--d-sm-flex justify-content-between mb-4 container-->
+                        <label for="empresa" class="form-label">Empresa</label>
+                        <select id="empresa" name="empresa" class="form-select col-md-12">
+                            <option selected value="Todas">Todas</option>
+                            <option value="2">União</option>
+                            <option value="1">TEX</option>
+                        </select>
+                    </div>
 
-        <form action="/ctes/pesquisar" method="POST">
-            @csrf
-            <div class="hstack gap-4 ">
-                <div class="col-1">
-                    <!--d-sm-flex justify-content-between mb-4 container-->
-                    <label for="empresa" class="form-label">Empresa</label>
-                    <select id="empresa" name="empresa" class="form-select col-md-12">
-                        <option selected value="Todas">Todas</option>
-                        <option value="2">União</option>
-                        <option value="1">TEX</option>
-                    </select>
+                    <div class="col-md-1">
+                        <label for="pagamento" class="form-label">Pagamento</label>
+                        <select id="pagamento" name="pagamento" class="form-select col-md-12">
+                            <option selected value="Ambos">Ambos</option>
+                            <option value="CIF">CIF</option>
+                            <option value="FOB">FOB</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-2">
+                        <label for="situacao" class="form-label">Situação</label>
+                        <select id="situacao" name="situacao" class="form-select">
+                            <option selected value="TODOS">Todos</option>
+                            <option value="ABERTO">Aberto</option>
+                            <option value="CONCLUÍDO">Concluído</option>
+                        </select>
+                    </div>
+                    <div class="vr"></div>
+                    <div class="col-md-12">
+                        <label> </label>
+                        <button type="submit" class="btn btn-primary">Filtrar</button>
+                        <a href="/ctes"> <button type="button" class="btn btn-outline-danger me-md-2">Limpar</button></a>
+                    </div>
                 </div>
+            </form>
 
-                <div class="col-md-1">
-                    <label for="pagamento" class="form-label">Pagamento</label>
-                    <select id="pagamento" name="pagamento" class="form-select col-md-12">
-                        <option selected value="Ambos">Ambos</option>
-                        <option value="CIF">CIF</option>
-                        <option value="FOB">FOB</option>
-                    </select>
-                </div>
-
-                <div class="col-md-2">
-                    <label for="situacao" class="form-label">Situação</label>
-                    <select id="situacao" name="situacao" class="form-select">
-                        <option selected value="TODOS">Todos</option>
-                        <option value="ABERTO">Aberto</option>
-                        <option value="CONCLUÍDO">Concluído</option>
-                    </select>
-                </div>
-
-                <div class="col-md-12">
-                    <label> </label>
-                    <button type="submit" class="btn btn-primary">Filtrar</button>
-                    <a href="/ctes"> <button type="button" class="btn btn-outline-danger me-md-2">Limpar</button></a>
-                </div>
-            </div>
-        </form>
-
-            <div class="col-md-1">
+          <!--  <div class="col-md-1">
                 <label for="datafinal" class="form-label"></label>
-                    <button class="btn btn-sm btn-primary shadow-sm" type="submit" disabled><i class="fas fa-sync"></i> Atualizar informações</button>
-            </div>
-            
+                <button class="btn btn-sm btn-primary shadow-sm" type="submit" disabled><i class="fas fa-sync"></i> Atualizar informações</button>
+            </div> -->
+
         </div>
         <div>
             <br>
@@ -185,13 +185,13 @@
                 <tbody>
                     @foreach ($listCtes as $cte)
                     <tr onclick='trclick();' id="id_cte_table{{$cte->id}}">
-                    <input type="hidden" id="id_cte_table" value="{{$cte->cidade_remetente->name}}"/>
-                    <input type="hidden" id="id_cte_table" value="{{$cte->destinatario->name}}"/>
-                    <input type="hidden" id="id_cte_table" value="{{$cte->numero_cte}}"/>
-                   
+                        <input type="hidden" id="id_cte_table" value="{{$cte->cidade_remetente->name}}" />
+                        <input type="hidden" id="id_cte_table" value="{{$cte->destinatario->name}}" />
+                        <input type="hidden" id="id_cte_table" value="{{$cte->numero_cte}}" />
+
                         <td style="text-align: left; max-width: 150px" class="text-truncate" onclick='tdclick();'>{{ $cte->cidade_remetente->name }}</td>
                         <td style="text-align: right; max-width: 70px" class="text-truncate">{{ $cte->numero_cte }}</td>
-                        <td id="valor_cte{{$loop->index}}"style="text-align: right; max-width: 135px" class="text-truncate">{{ $cte->valor_cte }}</td>
+                        <td id="valor_cte{{$loop->index}}" style="text-align: right; max-width: 135px" class="text-truncate">{{ $cte->valor_cte }}</td>
                         @if ($cte->tipo_pagamento == "CIF")
                         <td style="text-align: center; max-width: 100px" class="text-truncate">CIF</td>
                         @else
@@ -202,25 +202,25 @@
                         <td>
                             <div style="text-align: center;">
                                 @if ($cte->finalizado == 'CONCLUÍDO')
-                                    <span class="badge badge-info">CONCLUÍDO</span>
+                                <span class="badge badge-info">CONCLUÍDO</span>
                                 @else
-                                    <span class="badge badge-success">ABERTO</span>
+                                <span class="badge badge-success">ABERTO</span>
                                 @endif
                             </div>
                         </td>
                         <td class="col-md-1" style="text-align: center;">
                             <div class="action-buttons hstack gap-2">
                                 <!-- criar botão pdf -->
-                               <!-- <a href="{{url("ctes/$cte->id")}}" class="" data-rel="" title="" data-original-title=""> -->
-                                    <button disabled class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-pdf"></i></button>
-                               <!-- </a>-->
+                                <!-- <a href="{{url("ctes/$cte->id")}}" class="" data-rel="" title="" data-original-title=""> -->
+                                <button disabled class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-pdf"></i></button>
+                                <!-- </a>-->
                                 <form method="get" action="{{url("gerarcomprovante/$cte->id")}}">
                                     @if ($cte->finalizado == 'ABERTO')
                                     <!-- criar botão gerar comprovante -->
-                                        <button href="" disabled class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-lines"></i></button>
+                                    <button href="" disabled class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-lines"></i></button>
                                     @else
                                     <!-- criar botão gerar comprovante -->
-                                        <button href="{{url("gerarcomprovante/$cte->id")}}"  class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-lines"></i></button>
+                                    <button href="{{url("gerarcomprovante/$cte->id")}}" class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-lines"></i></button>
                                     @endif
                                 </form>
                                 <!-- criar botão editar -->
@@ -231,8 +231,8 @@
                                 <form id="excluirCte{{$cte->id}}" action="{{"/ctes/excluir/$cte->id"}}" method="POST">
                                     @method('DELETE')
                                     @csrf
-                                    <input type="hidden" id="id_cte" value="{{$cte->id}}"/>
-                                    <button id ="btnExcluirCte" class="btn btn-danger btn-sm fas fa-trash-alt" type="button"></button>
+                                    <input type="hidden" id="id_cte" value="{{$cte->id}}" />
+                                    <button id="btnExcluirCte" class="btn btn-danger btn-sm fas fa-trash-alt" type="button"></button>
                                 </form>
                             </div>
                         </td>
@@ -247,42 +247,43 @@
     </div>
 </div>
 <div id="modalExcluir" class="modal" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Confirmar exclusão</h5>
-        <button id="cancelarExclusao"  type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <input type="hidden" id="id_cte_modal"/>
-        <p>Deseja realmente excluir esse CT-e?</p>
-      </div>
-      <div class="modal-footer">
-        <button id="confirmarExclusao" type="button" class="btn btn-primary">Sim</button>
-        <button  id="cancelarExclusao" type="button" class="btn btn-secondary">Não</button>
-      </div>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirmar exclusão</h5>
+                <button id="cancelarExclusao" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="id_cte_modal" />
+                <p>Deseja realmente excluir esse CT-e?</p>
+            </div>
+            <div class="modal-footer">
+                <button id="confirmarExclusao" type="button" class="btn btn-primary">Sim</button>
+                <button id="cancelarExclusao" type="button" class="btn btn-secondary">Não</button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 <script>
     document.getElementById('datafinal').value = new Date().toDateInputValue();
 </script>
 
 <script>
-     $(document).on('click', "#cancelarExclusao", (e) => {
-            $("#modalExcluir").modal('hide');
-        });
-      $(document).on('click', "#btnExcluirCte", (e) => {
-            $("#modalExcluir").modal('show');
+    $(document).on('click', "#cancelarExclusao", (e) => {
+        $("#modalExcluir").modal('hide');
+    });
+    $(document).on('click', "#btnExcluirCte", (e) => {
+        $("#modalExcluir").modal('show');
         //    console.log($('id_cte_table'+$(e.target).parent()[0][2].value));
-            $("#id_cte_modal").val($(e.target).parent()[0][2].value);
-        });
+        $("#id_cte_modal").val($(e.target).parent()[0][2].value);
+    });
 
-        $(document).on('click', "#confirmarExclusao", (e) => {
-            $("#excluirCte"+  $("#id_cte_modal").val()).submit();
-        });
+    $(document).on('click', "#confirmarExclusao", (e) => {
+        $("#excluirCte" + $("#id_cte_modal").val()).submit();
+    });
+
     function trclick() {
         console.log('tr clicked')
     };
