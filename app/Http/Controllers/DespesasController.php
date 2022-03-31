@@ -99,11 +99,14 @@ class DespesasController extends Controller
     //destroy   
     public function search(Request $request)
     {
-        $listDespesas = Despesa::where('user_id', auth()->id());
-
         if ($request->has('categoria'))
         {
-            $listDespesas->where('categoria', 'LIKE', $request->input('categoria'));
+            $listDespesas->where('user_id', auth()->id())->where('categoria', 'LIKE', $request->input('categoria'));
+        }
+
+        if ($request->has('data'))
+        {
+            $listDespesas->where('data', 'LIKE', $request->input('data'));
         }
 
         // if ($request->has('search'))
@@ -114,7 +117,7 @@ class DespesasController extends Controller
         //     });
         // }
 
-        //$listDespesas->paginate(15);
+        //$listDespesas;
         $filters = $request->all();
 
         return view('despesas.index', compact('listDespesas', 'filters'));

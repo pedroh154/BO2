@@ -180,7 +180,7 @@
                         <th style="width: 100px;" scope="col">@sortablelink('tipo_pagamento', 'CIF/FOB')</th>
                         <th style="width: 110px;" scope="col">@sortablelink('volume', 'volume')</th>
                         <th style="width: 400px;" scope="col">@sortablelink('destinatario_id', 'Destinatário')</th>
-                        <th style="width: 130px;" scope="col">@sortablelink('finalizado', 'Entregue')</th>
+                        <th style="width: 130px;" scope="col">@sortablelink('finalizado', 'Situação')</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -202,13 +202,13 @@
                         <td style="text-align: right; max-width: 90px" class="text-truncate">{{ $cte->volume }}</td>
                         <td style="text-align: center; max-width: 400px" class="text-truncate">{{ $cte->destinatario->nome }}</td>
                         <td>
-                            <div class="custom-control custom-checkbox" style="text-align: center;">
+                            <div style="text-align: center;">
                                 @if ($cte->finalizado)
-                                <input checked disabled type="checkbox" class="custom-control-input" id="{{ $cte->id }}">
+                                    <span class="badge badge-info">CONCLUÍDO</span>
                                 @else
-                                <input disabled type="checkbox" class="custom-control-input" id="{{ $cte->id }}">
+                                    <span class="badge badge-success">ABERTO</span>
                                 @endif
-                                <label class="custom-control-label" for="{{ $cte->id }}"></label>
+                                    <label class="custom-control-label" for="{{ $cte->id }}"></label>
                             </div>
                         </td>
                         <td class="col-md-1" style="text-align: center;">
@@ -260,7 +260,7 @@
       </div>
       <div class="modal-body">
       <input type="hidden" id="id_cte_modal"/>
-        <p>Deseja realmente excluir este cte.</p>
+        <p>Deseja realmente excluir esse CT-e?</p>
       </div>
       <div class="modal-footer">
         <button id="confirmarExclusao" type="button" class="btn btn-primary">Sim</button>

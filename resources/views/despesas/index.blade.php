@@ -233,7 +233,7 @@
         </div>
         <div class="modal-body">
         <input type="hidden" id="id_cte_modal"/>
-          <p>Deseja realmente excluir este cte.</p>
+          <p>Deseja realmente excluir essa despesa?</p>
         </div>
         <div class="modal-footer">
           <button id="confirmarExclusao" type="button" class="btn btn-primary">Sim</button>

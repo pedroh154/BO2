@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Http;
 use App\Http\Controllers\Input;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 
 class CtesController extends Controller
@@ -21,6 +22,11 @@ class CtesController extends Controller
     private $tiposDePagamento = [
         'CIF',
         'FOB',
+    ];
+
+    private $situacao = [
+        'ABERTO',
+        'CONCLUÍDO',
     ];
 
     public function __construct()
@@ -54,13 +60,25 @@ class CtesController extends Controller
     public function detalhesCte($cte, bool $editavel)
     {
         $cidade = new Cidade();
+
+        //$cidade = DB::table('cidades')->select('*');
+        //$cidade->where('id','=',1100015);
+
+        //dd($cidade->paginate(15)); die;
+
         $listCidades = $cidade->all();
-
         $listClientes = Cliente::where('user_id', auth()->id())->orderBy('nome')->get();
-
         $listTiposDePagamento = $this->tiposDePagamento;
+        $situacao = $this->situacao;
 
-        return view('ctes.detalhescte', compact('cte', 'editavel', 'listCidades', 'listClientes', 'listTiposDePagamento'));
+        $cidade_rem_nome = Cidade::where('id', $cte->cidade_remetente_id)->first();
+        $cidade_dest_nome = Cidade::where('id', $cte->cidade_destinataria_id)->first();
+
+        $cliente_rem_nome = Cliente::where('id', $cte->remetente_id)->first();
+        $cliente_dest_nome = Cliente::where('id', $cte->destinatario_id)->first();
+        
+        return view('ctes.detalhescte', compact('cte', 'listCidades', 'listClientes', 'listTiposDePagamento', 'situacao',
+                                                'cidade_dest_nome', 'cidade_rem_nome', 'cliente_rem_nome', 'cliente_dest_nome'));
     }
 
     public function editarCte()
