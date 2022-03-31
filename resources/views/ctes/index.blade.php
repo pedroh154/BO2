@@ -106,7 +106,9 @@
             </div>
             <div class="vstack gap-2 col-md-4">
                 <label class="btn btn-default">
-                    <a class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm " type="file"><i class="fas fa-upload"></i> Importar XML do CT-e</a> <input type="file" hidden>
+                    <!--<a class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm " type="file"><i class="fas fa-upload"></i> Importar XML do CT-e</a> <input type="file" hidden>-->
+                    <button class="btn btn-sm btn-primary shadow-sm" type="submit" disabled>Importar XML do CT-e</button>
+
                 </label>
                 <label class="btn btn-default">
                     <a class="btn btn-sm btn-primary shadow-sm" href="/ctes/novocte" type="button"><i class="fas fa-pen-square"></i> Cadastrar CT-e manualmente</a>
