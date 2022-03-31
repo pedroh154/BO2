@@ -192,15 +192,15 @@
                     <input type="hidden" id="id_cte_table" value="{{$cte->numero_cte}}"/>
                    
                         <td style="text-align: left; max-width: 150px" class="text-truncate" onclick='tdclick();'>{{ $cte->cidade_remetente->name }}</td>
-                        <td style="text-align: right; max-width: 70px" class="text-truncate">{{ $cte->numero_cte }}</td>
-                        <td id="valor_cte{{$loop->index}}"style="text-align: right; max-width: 100px" class="text-truncate">{{ $cte->valor_cte }}</td>
+                        <td style="text-align: left; max-width: 70px" class="text-truncate">{{ $cte->numero_cte }}</td>
+                        <td id="valor_cte{{$loop->index}}"style="text-align: right; max-width: 135px" class="text-truncate">{{ $cte->valor_cte }}</td>
                         @if ($cte->tipo_pagamento == "CIF")
                         <td style="text-align: center; max-width: 100px" class="text-truncate">CIF</td>
                         @else
                         <td style="text-align: center; max-width: 100px" class="text-truncate">FOB</td>
                         @endif
                         <td style="text-align: right; max-width: 90px" class="text-truncate">{{ $cte->volume }}</td>
-                        <td style="text-align: center; max-width: 400px" class="text-truncate">{{ $cte->destinatario->nome }}</td>
+                        <td style="text-align: center; max-width: 400px" class="text-truncate">{{ $cte->destinatario->nome }} - {{ $cte->destinatario->cadastro_nacional }}</td>
                         <td>
                             <div style="text-align: center;">
                                 @if ($cte->finalizado)
@@ -208,7 +208,6 @@
                                 @else
                                     <span class="badge badge-success">ABERTO</span>
                                 @endif
-                                    <label class="custom-control-label" for="{{ $cte->id }}"></label>
                             </div>
                         </td>
                         <td class="col-md-1" style="text-align: center;">
