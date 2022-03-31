@@ -40,7 +40,9 @@ class ClientesController extends Controller
     {
         $listCidades = Cidade::all();
 
-        return view('clientes.detalhescliente', compact('cliente', 'listCidades', 'editavel'));
+        $cidade = Cidade::where('id', $cliente->cidade_id)->first();
+
+        return view('clientes.detalhescliente', compact('cidade', 'cliente', 'listCidades', 'editavel'));
     }
 
     /* CRUD */
