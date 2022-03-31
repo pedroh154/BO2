@@ -16,7 +16,7 @@
         {
             $comprovante_cte = Cte::where('user_id', auth()->id())->where('id', $id)->get()->first();
 
-            if($comprovante_cte->finalizado == false){
+            if($comprovante_cte->finalizado == 'CONCLUÍDO'){
             //$now = Carbon::now('GMT-3');
             //$to = Carbon::now('GMT-3')->subDays($periodo->periodo);
             //$despesasList = Despesa::where('user_id', auth()->id())->whereBetween('data', [$to, $now])->get();

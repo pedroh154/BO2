@@ -216,12 +216,12 @@
                                     <button disabled class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-pdf"></i></button>
                                <!-- </a>-->
                                 <form method="get" action="{{url("gerarcomprovante/$cte->id")}}">
-                                    @if ($cte->finalizado == true)
+                                    @if ($cte->finalizado == 'ABERTO')
                                     <!-- criar botão gerar comprovante -->
-                                        <button href="" class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-lines"></i></button>
+                                        <button href="" disabled class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-lines"></i></button>
                                     @else
                                     <!-- criar botão gerar comprovante -->
-                                        <button href="{{url("gerarcomprovante/$cte->id")}}" disabled class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-lines"></i></button>
+                                        <button href="{{url("gerarcomprovante/$cte->id")}}"  class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-lines"></i></button>
                                     @endif
                                 </form>
                                 <!-- criar botão editar -->
