@@ -375,6 +375,10 @@
         $("#valor").unmask();
     });
 
+    $("#editarcontatoform").submit(function() {
+        $("#fone").unmask();
+    });
+
     $("#editarclienteform").submit(function() {
         $("#fone").unmask();
         $("#cep").unmask();
