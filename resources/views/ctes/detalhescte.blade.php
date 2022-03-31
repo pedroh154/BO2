@@ -48,6 +48,22 @@
                 <label for="data" class="form-label">Data de chegada</label>
                 <input type="date" class="form-control" name="data_chegada" id="data_chegada" value="{{$cte->data_chegada}}">
             </div>
+            <div class="col-md-2">
+                <label for="tipo_pagamento" class="form-label">Método de pagamento</label>
+                <select required id="tipo_pagamento" name="tipo_pagamento" class="form-select">
+                    <option selected value="CIF">CIF</option>
+                    <option value="FOB">FOB</option>
+                </select>
+            </div>
+
+            <div class="col-md-2">
+                <label for="transportadora" class="form-label">Transportadora</label>
+                <select required id="transportadora_id" name="transportadora_id" class="form-select">
+                    
+                    <option value="">  </option>
+                    
+                </select>
+            </div>
             <div class="col-md-4">
                 <label for="cidade_remetente_id" class="form-label">Cidade remetente</label>
                 <br>
@@ -62,23 +78,24 @@
                     <option value={{$cidade_dest_nome->id}}>{{$cidade_dest_nome->name}} - {{$cidade_dest_nome->estado->abbr}}</option>
                 </select>
             </div>
+            
+            <div class="mb-2 col-md-8">
+                <label for="obscte" class="form-label">Observação</label>
+                <textarea class="form-control" id="obs" name="obs" rows="1">{{$cte->obs}}</textarea>
+            </div>
             <div class="col-md-4">
                 <label for="metodo" class="form-label">Situação</label>
                 <select id="finalizado" name="finalizado" class="form-select">
                     @foreach($situacao as $tipo)
-                        @if($tipo == 'CONCLUÍDO' && $cte->finalizado)
-                            <option value="{{$tipo}}" selected>{{$tipo}}</option>
-                        @elseif($tipo == 'ABERTO' && !$cte->finalizado)
-                            <option value="{{$tipo}}" selected>{{$tipo}}</option>
-                        @else
-                            <option value="{{$tipo}}">{{$tipo}}</option>
-                        @endif
+                    @if($tipo == 'CONCLUÍDO' && $cte->finalizado)
+                    <option value="{{$tipo}}" selected>{{$tipo}}</option>
+                    @elseif($tipo == 'ABERTO' && !$cte->finalizado)
+                    <option value="{{$tipo}}" selected>{{$tipo}}</option>
+                    @else
+                    <option value="{{$tipo}}">{{$tipo}}</option>
+                    @endif
                     @endforeach
                 </select>
-            </div>
-            <div class="mb-2">
-                <label for="obscte" class="form-label">Observação</label>
-                <textarea class="form-control" id="obs" name="obs" rows="2">{{$cte->obs}}</textarea>
             </div>
             <BR>
 
