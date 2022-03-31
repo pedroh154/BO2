@@ -254,7 +254,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Confirmar exclusão</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button id="cancelarExclusao"  type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -264,7 +264,7 @@
       </div>
       <div class="modal-footer">
         <button id="confirmarExclusao" type="button" class="btn btn-primary">Sim</button>
-        <button  type="button" class="btn btn-secondary" data-dismiss="modalExcluir">Não</button>
+        <button  id="cancelarExclusao" type="button" class="btn btn-secondary">Não</button>
       </div>
     </div>
   </div>
@@ -274,6 +274,9 @@
 </script>
 
 <script>
+     $(document).on('click', "#cancelarExclusao", (e) => {
+            $("#modalExcluir").modal('hide');
+        });
       $(document).on('click', "#btnExcluirCte", (e) => {
             $("#modalExcluir").modal('show');
         //    console.log($('id_cte_table'+$(e.target).parent()[0][2].value));
