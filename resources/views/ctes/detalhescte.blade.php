@@ -58,13 +58,9 @@
             <div class="col-md-2">
                 <label for="transportadora" class="form-label">Transportadora</label>
                 <select required id="transportadora_id" name="transportadora_id" class="form-select">
-                        @foreach ($listTransp as $transp)
-                            @if($transp->nome == $cte->transportadora->nome)
-                                <option selected value="{{ $transp->id }}"> {!! $transp->nome !!} </option>
-                            @else
-                                <option value="{{ $transp->id }}"> {!! $transp->nome !!} </option>
-                            @endif
-                        @endforeach
+                    @foreach ($listTransp as $tipo)
+                        <option value="{{ $tipo->id }}"> {!! $tipo->nome !!} </option>
+                    @endforeach
                 </select>
             </div>
             <div class="col-md-4">

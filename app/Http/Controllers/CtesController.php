@@ -177,8 +177,8 @@ class CtesController extends Controller
     //update   
     public function update(CtesRequest $request, $id)
     {
-
         $this->objCte->find($id)->update([
+            'transportadora_id' => $request->transportadora_id,
             'numero_nf' => $request->numero_nf,
             'valor_cte' => $request->valor_cte,
             'volume' => $request->volume,

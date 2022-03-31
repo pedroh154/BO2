@@ -41,6 +41,7 @@ class CtesRequest extends FormRequest
             'cidade_destinataria_id' => 'required|numeric',
             'remetente_id' => 'required|numeric',
             'destinatario_id' => 'required|numeric',
+            'transportadora_id' => 'required|numeric',
         ];
     }
 
