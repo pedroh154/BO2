@@ -71,7 +71,6 @@
         <hr class="sidebar-divider">
         <div class="row">
             <div class="col-md-2">
-
                 <form action="/contatos/pesquisar" method="POST">
                     @csrf
                     <div class="hstack gap-3">

@@ -91,3 +91,4 @@ Route::post('/changePassword', [App\Http\Controllers\ConfigController::class, 'c
 
 /* filtros */
 Route::any('contatos/pesquisar', 'App\Http\Controllers\ContatosController@search')->middleware('auth');;
+Route::any('clientes/pesquisar', 'App\Http\Controllers\ClientesController@search')->middleware('auth');;
