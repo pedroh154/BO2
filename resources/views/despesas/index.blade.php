@@ -170,10 +170,10 @@
         <table class="table table-striped table-hover table-bordered table-sm">
             <thead>
                 <tr style="text-align: center;">
-                    <th style="width: 15px;" scope="col">Categoria</th>
-                    <th style="width: 50px;" scope="col">Data</th>
-                    <th style="width: 100px;" scope="col">Valor</th>
-                    <th style="width: 200px;" scope="col">Descrição</th>
+                    <th style="width: 15px;" scope="col">@sortablelink('categoria', 'categoria')</th>
+                    <th style="width: 50px;" scope="col">@sortablelink('data', 'data')</th>
+                    <th style="width: 50px;" scope="col">@sortablelink('valor', 'valor')</th>
+                    <th style="width: 200px;" scope="col">@sortablelink('desc', 'desc')</th>
                     <th></th>
                 </tr>
             </thead>
@@ -214,7 +214,7 @@
             </tbody>
         </table>
         <div class="d-flex justify-content-center">
-            {{ $listDespesas->links("pagination::bootstrap-4") }}
+        {!! $listDespesas->links("pagination::bootstrap-4")  !!}
         </div>
 
 

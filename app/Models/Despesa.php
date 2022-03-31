@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use Kyslik\ColumnSortable\Sortable;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -8,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Despesa extends Model
 {
     use HasFactory;
-
+    use Sortable;
      /**
      * The attributes that are mass assignable.
      *
@@ -21,6 +22,8 @@ class Despesa extends Model
         'desc',
         'user_id',
     ];
+
+    protected $sortable = ['categoria', 'valor', 'data', 'desc'];
 
     /**
      * The attributes that should be hidden for serialization.

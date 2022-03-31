@@ -28,7 +28,7 @@ class DespesasController extends Controller
     /* VIEWS */
     public function index()
     {
-        $listDespesas = Despesa::where('user_id', auth()->id())->orderBy('created_at', 'DESC')->paginate(15);
+        $listDespesas = Despesa::where('user_id', auth()->id())->sortable()->paginate(2);
         return view('despesas.index', compact('listDespesas'));
     }
 
@@ -99,17 +99,22 @@ class DespesasController extends Controller
     //destroy   
     public function search(Request $request)
     {
-        $listDespesas = array();
+        $listDespesas = Despesa::where('user_id', auth()->id());
 
-        $categoria = $request->input('categoria');
-        $data = $request->input('data');
-        $search = $request->input('search');
+        if ($request->has('categoria'))
+        {
+            $listDespesas->where('categoria', 'LIKE', $request->input('categoria'));
+        }
 
-        $listDespesas = Despesa::where('user_id', auth()->id())
-            ->where('categoria', 'LIKE', $categoria)
-            //->where('data', 'LIKE', $data)
-            ->paginate(15);
+        // if ($request->has('search'))
+        // {
+        //     $listDespesas->where(function ($q) use ($request)
+        //     {
+        //         return $q->where('desc', 'LIKE', $request->input('search') . '%');
+        //     });
+        // }
 
+        //$listDespesas->paginate(15);
         $filters = $request->all();
 
         return view('despesas.index', compact('listDespesas', 'filters'));
