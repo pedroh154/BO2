@@ -321,7 +321,7 @@
     // });
 </script>
 
-<script>
+<!--<script>
     $(document).on('change', "#destinatario_id", function() {
         console.log($(this).val());
 
@@ -333,6 +333,6 @@
     });
 
     console.log($(".select2"))
-</script>
+</script>-->
 
 @endsection('content')

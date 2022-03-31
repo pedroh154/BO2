@@ -73,8 +73,8 @@
 
                                 <div class="form-group text-center">
                                     
-                                <a class="btn btn-primary col-sm-6 mb-3 mb-sm-0" href="" role="button">Alterar credenciais SSW</a>
-                                <a class="btn btn-danger col-sm-5 mb-3 mb-sm-0" href="#" role="button">Apagar dados SSW</a>
+                               <button disabled class="btn btn-primary col-sm-6 mb-3 mb-sm-0" role="button"> Alterar credenciais SSW </button>
+                               <button disabled class="btn btn-danger col-sm-5 mb-3 mb-sm-0" role="button">Apagar dados SSW</button>
 
                                 </div>
                             </form>

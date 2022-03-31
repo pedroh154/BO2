@@ -82,7 +82,7 @@ class ContatosController extends Controller
     {
         $this->objContato->destroy($id);
 
-        return redirect('/contatos')->withInput()->withMessage('contato deletado com sucesso!');
+        return redirect('/contatos')->withInput()->withMessage('Contato deletado com sucesso!');
     }
 
     //destroy   

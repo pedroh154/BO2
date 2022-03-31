@@ -49,9 +49,9 @@
                                     <div class="container-fluid">
                                         <p><strong>✓</strong> - campo para determinar se o CT-e já foi finalizado (entregue).</p>
                                         <!--        <p><strong>BOTÕES DA ÚLTIMA COLUNA</strong></p> -->
-                                        <p><button class="btn btn-info"><i class="fa-solid fa-file-pdf"></i></button> - download do arquivo PDF do CT-e.</p>
-                                        <p><button class="btn btn-info"><i class="fa-solid fa-file-lines"></i></button> - gerar comprovante de entrega.</p>
-                                        <p><button class="btn btn-info"><i class="fa-solid fa-magnifying-glass"></i></button> - detalhes do CT-e.</p>
+                                        <p><button class="btn btn-info"><i class="fa-solid fa-file-pdf"></i></button> - download do arquivo PDF do CT-e (quando disponível).</p>
+                                        <p><button class="btn btn-info"><i class="fa-solid fa-file-lines"></i></button> - gerar comprovante de entrega (quando disponível).</p>
+                                        <!--<p><button class="btn btn-info"><i class="fa-solid fa-magnifying-glass"></i></button> - detalhes do CT-e.</p>-->
                                         <p><button class="btn btn-info"><i class="fa-solid fa-pen"></i></button> - editar informações do CT-e.</p>
                                         <p><button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button> - deletar CT-e.</p>
                                     </div>
@@ -192,7 +192,7 @@
                     <input type="hidden" id="id_cte_table" value="{{$cte->numero_cte}}"/>
                    
                         <td style="text-align: left; max-width: 150px" class="text-truncate" onclick='tdclick();'>{{ $cte->cidade_remetente->name }}</td>
-                        <td style="text-align: left; max-width: 70px" class="text-truncate">{{ $cte->numero_cte }}</td>
+                        <td style="text-align: right; max-width: 70px" class="text-truncate">{{ $cte->numero_cte }}</td>
                         <td id="valor_cte{{$loop->index}}"style="text-align: right; max-width: 135px" class="text-truncate">{{ $cte->valor_cte }}</td>
                         @if ($cte->tipo_pagamento == "CIF")
                         <td style="text-align: center; max-width: 100px" class="text-truncate">CIF</td>
@@ -213,9 +213,9 @@
                         <td class="col-md-1" style="text-align: center;">
                             <div class="action-buttons hstack gap-2">
                                 <!-- criar botão pdf -->
-                                <a href="{{url("ctes/$cte->id")}}" class="" data-rel="" title="" data-original-title="">
-                                    <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-pdf"></i></button>
-                                </a>
+                               <!-- <a href="{{url("ctes/$cte->id")}}" class="" data-rel="" title="" data-original-title=""> -->
+                                    <button disabled class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-pdf"></i></button>
+                               <!-- </a>-->
                                 <form method="get" action="{{url("gerarcomprovante/$cte->id")}}">
                                     @if ($cte->finalizado == true)
                                     <!-- criar botão gerar comprovante -->
