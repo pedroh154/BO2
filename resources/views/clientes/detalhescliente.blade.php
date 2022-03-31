@@ -42,7 +42,7 @@
             <div class="col-md-4">
                 <label class="form-label">Cidade</label>
                 <br>
-                <select id="cidade_id" name="cidade_id" style='width: 300px;'>
+                <select id="cidade_id" name="cidade_id" class="col-md-12 form-select">
                     <option value={{$cidade->id}}>{{$cidade->name}} - {{$cidade->estado->abbr}}</option>
                 </select>
             </div>
