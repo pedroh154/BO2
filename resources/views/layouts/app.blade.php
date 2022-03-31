@@ -375,8 +375,10 @@
         $("#valor").unmask();
     });
 
-    $("#editarcontatoform").submit(function() {
+    $("#editarclienteform").submit(function() {
         $("#fone").unmask();
+        $("#cep").unmask();
+        $("#cadastro_nacional").unmask();
     });
 </script>
 
@@ -393,7 +395,7 @@
 
         
 
-        $("#cadastro_nacional").keydown(function(){
+        $("#cadastro_nacional").ready(function(){
             try {
                 $("#cadastro_nacional").unmask();
             } catch (e) {}

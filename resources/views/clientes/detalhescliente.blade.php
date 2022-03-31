@@ -2,8 +2,6 @@
 @section('content')
 
 <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.1.60/inputmask/jquery.inputmask.js"></script>
 
 <div id="content-wrapper" class="d-flex flex-column" style="background-color: #f4f5f8;">
     <h1 class="container-fluid">Editar cliente</h1>
@@ -16,7 +14,7 @@
         </div>
     @endif
     <div class="container-fluid">
-        <form class="row g-3" action="{{"/clientes/atualizar/$cliente->id"}}">
+        <form id="editarclienteform" class="row g-3" action="{{"/clientes/atualizar/$cliente->id"}}">
             @method('PUT')
             @csrf
             <div class="col-md-7">
