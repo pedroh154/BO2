@@ -122,45 +122,48 @@
             <a class="btn btn-primary" href="/despesas/novadespesa" role="button">Cadastrar despesa</a>
         </div>
 
-        <div class="row">
-            <div class="col-sm-3">
-                <label for="data" class="form-label"> </label>
-                <div class="input-group">
-                    <!--VER IDS-->
-                    <label class="input-group-text" for="inputGroupSelect01">Categoria</label>
-                    <select class="form-select" id="categoria" name="categoria">
-                        <option value="Todos" selected>Todos</option>
-                        <option value="Água">Água</option>
-                        <option value="Aluguel">Aluguel</option>
-                        <option value="Luz">Luz</option>
-                        <option value="Manutenção">Manutenção</option>
-                        <option value="Outros">Outros</option>
-                    </select>
+        <form action="/despesas/pesquisar" method="POST">
+            @csrf
+            <div class="row">
+                <div class="col-sm-3">
+                    <label for="data" class="form-label"> </label>
+                    <div class="input-group">
+                        <!--VER IDS-->
+                        <label class="input-group-text" for="inputGroupSelect01">Categoria</label>
+                        <select class="form-select" id="categoria" name="categoria">
+                            <option value="Todos" selected>Todos</option>
+                            <option value="Água">Água</option>
+                            <option value="Aluguel">Aluguel</option>
+                            <option value="Luz">Luz</option>
+                            <option value="Manutenção">Manutenção</option>
+                            <option value="Outros">Outros</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-            <div class="col-sm-2">
-                <label for="data" class="form-label">Data</label>
-                <input type="date" class="form-control" id="data" name="data">
-                <!--value="<?php echo date('Y-m-d'); ?>" -->
-            </div>
-            <div class="col-sm-3">
-                <div class="hstack gap-3">
-                    <div class="col-md-12">
-                        <label for="pesquisa" class="form-label">Pesquisa</label>
-                        <input id="search" name="search" type="text" class="form-control me-auto" placeholder="Digite aqui...">
-                    </div>
-                    <div class="col-md-2">
-                        <label> </label>
-                        <button type="submit" class="btn btn-primary">Filtrar</button>
-                    </div>
-                    <div class="vr"></div>
-                    <div class="col-md-2">
+                <div class="col-sm-2">
+                    <label for="data" class="form-label">Data</label>
+                    <input type="date" class="form-control" id="data" name="data">
+                    <!--value="<?php echo date('Y-m-d'); ?>" -->
+                </div>
+                <div class="col-sm-3">
+                    <div class="hstack gap-3">
+                        <div class="col-md-12">
+                            <label for="pesquisa" class="form-label">Pesquisa</label>
+                            <input id="search" name="search" type="text" class="form-control me-auto" placeholder="Digite aqui...">
+                        </div>
+                        <div class="col-md-2">
+                            <label> </label>
+                            <button type="submit" class="btn btn-primary">Filtrar</button>
+                        </div>
+                        <div class="vr"></div>
+                        <div class="col-md-2">
 
-                        <label> </label>
-                        <a href="/despesas"> <button type="button" class="btn btn-outline-danger me-md-2">Resetar</button></a>
+                            <label> </label>
+                            <a href="/despesas"> <button type="button" class="btn btn-outline-danger me-md-2">Resetar</button></a>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
 
         <br>

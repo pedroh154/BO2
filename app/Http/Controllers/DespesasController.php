@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\DespesasRequest;
 use App\Models\Despesa;
+use Illuminate\Http\Request;
 
 class DespesasController extends Controller
 {
@@ -93,5 +94,24 @@ class DespesasController extends Controller
         $this->objDespesa->destroy($id);
 
         return redirect('/despesas')->withInput()->withMessage('Despesa deletada com sucesso!');
+    }
+
+    //destroy   
+    public function search(Request $request)
+    {
+        $listDespesas = array();
+
+        $categoria = $request->input('categoria');
+        $data = $request->input('data');
+        $search = $request->input('search');
+
+        $listDespesas = Despesa::where('user_id', auth()->id())
+            ->where('categoria', 'LIKE', $categoria)
+            //->where('data', 'LIKE', $data)
+            ->paginate(15);
+
+        $filters = $request->all();
+
+        return view('despesas.index', compact('listDespesas', 'filters'));
     }
 }
