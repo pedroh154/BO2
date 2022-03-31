@@ -52,7 +52,7 @@
             </div>
 
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button type="submit" class="btn btn-secondary">Confirmar</button>
+                <button type="submit" class="btn btn-primary">Confirmar</button>
             </div>
 
         </form>

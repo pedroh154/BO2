@@ -26,23 +26,23 @@
             @csrf
             <div class="col-md-4">
                 <label for="numcte" class="form-label">Número CT-e</label>
-                <input type="number" class="form-control" name="numero_cte" id="numero_cte" value="{{$cte->numero_cte}}">
+                <input type="text" class="form-control" name="numero_cte" id="numero_cte" value="{{$cte->numero_cte}}">
             </div>
             <div class="col-md-4">
                 <label for="valorcte" class="form-label">Valor CT-e</label>
-                <input type="number" class="form-control" name="valor_cte" id="valor_cte" placeholder="R$" value="{{($cte->valor_cte)}}">
+                <input type="text" class="form-control" name="valor_cte" id="valor_cte" placeholder="R$" value="{{($cte->valor_cte)}}">
             </div>
             <div class="col-md-4">
                 <label for="qtdevol" class="form-label">Quantidade de volumes</label>
-                <input type="number" class="form-control" name="volume" id="volume" value="{{$cte->volume}}">
+                <input type="text" class="form-control" name="volume" id="volume" value="{{$cte->volume}}">
             </div>
             <div class="col-md-4">
                 <label for="numnf" class="form-label">Número NF</label>
-                <input type="number" class="form-control" name="numero_nf" id="numero_nf" value="{{$cte->numero_nf}}">
+                <input type="text" class="form-control" name="numero_nf" id="numero_nf" value="{{$cte->numero_nf}}">
             </div>
             <div class="col-md-4">
                 <label for="valornf" class="form-label">Valor NF</label>
-                <input type="number" class="form-control" name="valor_nf" id="valor_nf" value="{{$cte->valor_nf}}">
+                <input type="text" class="form-control" name="valor_nf" id="valor_nf" value="{{$cte->valor_nf}}">
             </div>
             <div class="col-md-4">
                 <label for="data" class="form-label">Data de chegada</label>
