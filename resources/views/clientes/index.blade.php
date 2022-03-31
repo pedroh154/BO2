@@ -113,7 +113,7 @@
                     </td>
                     <td style="text-align: left; max-width: 150px" class="text-truncate">{{$cliente->endereco}}</td>
                     </td>
-                    <td style="text-align: left; max-width: 150px" class="text-truncate">{{ $cliente->cidade->name }}</td>
+                    <td style="text-align: left; max-width: 150px" class="text-truncate">{{ $cliente->cidade->name }} - {{ $cliente->cidade->estado->abbr }}</td>
                     </td>
                     <td class="col-md-1" style="text-align: center;">
                         <div class="action-buttons hstack gap-2">
