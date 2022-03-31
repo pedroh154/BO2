@@ -100,7 +100,7 @@
             </div>
 
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button type="submit" class="btn btn-secondary">@if($editavel == false)Fechar @else Confirmar @endif</button>
+                <button type="submit" class="btn btn-primary">@if($editavel == false)Fechar @else Confirmar @endif</button>
             </div>
 
         </form>
@@ -153,7 +153,7 @@
             <div class="col-md-4">
                 <label for="cidade_remetente_id" class="form-label">Cidade remetente</label>
                 <br>
-                <select id="cidade_remetente_id" name="cidade_remetente_id" style='width: 300px;'>
+                <select id="cidade_remetente_id" name="cidade_remetente_id" class="col-md-12 form-select">
                     <option value='0'>Selecione a cidade remetente</option>
                 </select>
             </div>
@@ -161,7 +161,7 @@
             <div class="col-md-4">
                 <label for="cidade_destinataria_id" class="form-label">Cidade destinatária</label>
                 <br>
-                <select id="cidade_destinataria_id" name="cidade_destinataria_id" style='width: 300px;'>
+                <select id="cidade_destinataria_id" name="cidade_destinataria_id" class="col-md-12 form-select">
                     <option value='0'>Selecione a cidade destinatária</option>
                 </select>
             </div>
@@ -178,7 +178,7 @@
             <div class="col-md-4">
                 <label for="remetente_id" class="form-label">Cliente remetente</label>
                 <br>
-                <select id="remetente_id" name="remetente_id" style='width: 300px;'>
+                <select id="remetente_id" name="remetente_id" class="col-md-12 form-select">
                     <option value='0'>Selecione o cliente remetente</option>
                 </select>
             </div>
@@ -186,13 +186,13 @@
             <div class="col-md-4">
                 <label for="destinatario_id" class="form-label">Cliente destinatário</label>
                 <br>
-                <select id="destinatario_id" name="destinatario_id" style='width: 300px;'>
+                <select id="destinatario_id" name="destinatario_id"  class="col-md-12 form-select">
                     <option value='0'>Selecione o cliente destinatário</option>
                 </select>
             </div>
 
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button type="submit" class="btn btn-secondary">@if($editavel == false)Fechar @else Confirmar @endif</button>
+                <button type="submit" class="btn btn-primary">@if($editavel == false)Fechar @else Confirmar @endif</button>
             </div>
 
         </form>
