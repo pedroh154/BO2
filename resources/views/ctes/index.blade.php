@@ -47,7 +47,6 @@
                                     <hr class="sidebar-divider">
                                     <h4>Tabela</h4>
                                     <div class="container-fluid">
-                                        <p><strong>✓</strong> - campo para determinar se o CT-e já foi finalizado (entregue).</p>
                                         <!--        <p><strong>BOTÕES DA ÚLTIMA COLUNA</strong></p> -->
                                         <p><button class="btn btn-info"><i class="fa-solid fa-file-pdf"></i></button> - download do arquivo PDF do CT-e (quando disponível).</p>
                                         <p><button class="btn btn-info"><i class="fa-solid fa-file-lines"></i></button> - gerar comprovante de entrega (quando disponível).</p>
@@ -152,8 +151,8 @@
                 <label for="filtropagamento" class="form-label">Situação</label>
                 <select id="filtropagamento" class="form-select">
                     <option selected>Todos</option>
-                    <option>Entregue</option>
-                    <option>Não entregue</option>
+                    <option>Aberto</option>
+                    <option>Concluído</option>
                 </select>
             </div>
             <div class=" col-md-2">
