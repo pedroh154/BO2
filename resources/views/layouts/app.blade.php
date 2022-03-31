@@ -378,28 +378,28 @@
         $('.mixed').mask('AAA 000-S0S');
         $('#cadastro_nacional').mask('000.000.000-00', {reverse: true}, {removeMaskOnSubmit: true});
         $('.cnpj').mask('00.000.000/0000-00', {reverse: true}, {removeMaskOnSubmit: true});
-        $('#valor_nf').mask('000.000.000.000.000,00', {reverse: true}, {removeMaskOnSubmit: true});
-        $('#valor_cte').mask('000.000.000.000.000,00', {reverse: true}, {removeMaskOnSubmit: true});
+        $('#valor_nf').mask('000.000,00', {reverse: true}, {removeMaskOnSubmit: true});
+        $('#valor_cte').mask('000.000,00', {reverse: true}, {removeMaskOnSubmit: true});
 
-                //i = numero do paginate
+             //i = numero do paginate
         for( i =0; i< 15 ; i++){ 
-            $('#valor_nf'+i).mask('000.000.000.000.000,00', {reverse: true}, {removeMaskOnSubmit: true});
+            $('#valor_nf'+i).mask('000.000,00', {reverse: true}, {removeMaskOnSubmit: true});
         }
        
         //i = numero do paginate
         for( i =0; i< 15 ; i++){ 
-            $('#valor_nf'+i).mask('000.000.000.000.000,00', {reverse: true}, {removeMaskOnSubmit: true});
+            $('#valor_nf'+i).mask('000.000,00', {reverse: true}, {removeMaskOnSubmit: true});
         }
 
         //i = numero do paginate
         for( i =0; i< 15 ; i++){ 
-            $('#valor_cte'+i).mask('000.000.000.000.000,00', {reverse: true}, {removeMaskOnSubmit: true});
+            $('#valor_cte'+i).mask('000.000,00', {reverse: true}, {removeMaskOnSubmit: true});
         }
 
 
         //i = numero do paginate
         for( i =0; i< 15 ; i++){ 
-            $('#valor_despesa'+i).mask('000.000.000.000.000,00', {reverse: true}, {removeMaskOnSubmit: true});
+            $('#valor_despesa'+i).mask('000.000,00', {reverse: true}, {removeMaskOnSubmit: true});
         }
 
                 //i = numero do paginate
@@ -407,7 +407,7 @@
             $('#fone'+i).mask('(99) 99999-9999');
         }
             
-        $('#valor').mask('000.000.000.000.000,00', {reverse: true}, {removeMaskOnSubmit: true});
+        $('#valor').mask('000.000.000,00', {reverse: true}, {removeMaskOnSubmit: true});
         $('.money2').mask("#.##0,00", {reverse: true});
         $('.ip_address').mask('0ZZ.0ZZ.0ZZ.0ZZ', {
             translation: {
