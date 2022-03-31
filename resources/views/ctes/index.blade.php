@@ -38,10 +38,10 @@
                                     <div class="container-fluid">
                                         <!--        <p><strong>OPÇÕES DE FILTROS DA TABELA</strong></p>-->
                                         <p><strong>Empresa: </strong>selecione a empresa desejada.</p>
-                                        <p><strong>Datas: </strong>selecione duas datas para determinar um período para o filtro.</p>
                                         <p><strong>Método de pagamento: </strong>selecione o método de pagamento.</p>
                                         <p><strong>Situação: </strong>selecione a situação do CT-e.</p>
                                         <p><strong>Pesquisa: </strong>digite qualquer dado para filtro (cidade, número de CT-e, destinatário, etc.).</p>
+                                        <p><strong>Resetar: </strong>apagar os filtros.</p>
                                         <p><strong>Botão "Atualizar informações": </strong>atualiza automaticamente o estado de entrega do CT-e caso o sistema SSW esteja disponível.</p>
                                     </div>
                                     <hr class="sidebar-divider">

@@ -46,13 +46,10 @@
                                     <h4>Filtros</h4>
                                     <div class="container-fluid">
                                         <p><strong>Categoria: </strong>selecione a categoria desejada.</p>
-                                        <p><strong>Data: </strong>selecione a data desejada.</p>
-                                        <p><strong>Pesquisa: </strong>digite valor ou descrição para filtro.</p>
                                         <p><strong>Resetar: </strong>apagar os filtros.</p>
                                     </div>
                                     <h4>Tabela</h4>
                                     <div class="container-fluid">
-                                        <p><button class="btn btn-info"><i class="fa-solid fa-magnifying-glass"></i></button> - detalhes da despesa.</p>
                                         <p><button class="btn btn-info"><i class="fa-solid fa-pen"></i></button> - editar informações da despesa.</p>
                                         <p><button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button> - deletar despesa.</p>
                                     </div>
@@ -138,16 +135,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="col-sm-2">
-                    <label for="data" class="form-label">De</label>
-                    <input type="date" class="form-control" id="data_inicial" name="data_inicial">
-                    <!--value="<?php echo date('Y-m-d'); ?>" -->
-                </div>
-                <div class="col-sm-2">
-                    <label for="data" class="form-label">Até</label>
-                    <input type="date" class="form-control" id="data_final" name="data">
-                    <!--value="<?php echo date('Y-m-d'); ?>" -->
-                </div>
+
                 <div class="col-sm-3">
                     <div class="hstack gap-3">
                         <div class="col-md-12">
