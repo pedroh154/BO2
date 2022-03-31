@@ -152,9 +152,9 @@
                         </select>
                     </div>
                     <div class="vr"></div>
-                    <div class="col-md-12">
+                    <div style="padding-top:27px" class="col-md-12">
                         <label> </label>
-                        <button type="submit" class="btn btn-primary">Filtrar</button>
+                        <button style="margin-right:17px" type="submit" class="btn btn-primary">Filtrar</button>
                         <a href="/ctes"> <button type="button" class="btn btn-outline-danger me-md-2">Limpar</button></a>
                     </div>
                 </div>
