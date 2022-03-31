@@ -34,7 +34,7 @@
                                     <h4>Tabela</h4>
                                     <div class="container-fluid">
 
-                                        <p><button class="btn btn-info"><i class="fa-solid fa-magnifying-glass"></i></button> - detalhes do contato.</p>
+                                        
                                         <p><button class="btn btn-info"><i class="fa-solid fa-pen"></i></button> - editar informações do contato.</p>
                                         <p><button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button> - deletar contato.</p>
                                     </div>
