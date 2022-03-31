@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\DespesasRequest;
 use App\Models\Despesa;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
+
 
 class DespesasController extends Controller
 {
@@ -96,29 +98,26 @@ class DespesasController extends Controller
         return redirect('/despesas')->withInput()->withMessage('Despesa deletada com sucesso!');
     }
 
-    //destroy   
     public function search(Request $request)
     {
-        if ($request->has('categoria'))
-        {
-            $listDespesas->where('user_id', auth()->id())->where('categoria', 'LIKE', $request->input('categoria'));
+        $listDespesas = Despesa::where('user_id', auth()->id());
+
+        if ($request->has('categoria') && $request->categoria != 'Todos') {
+            $listDespesas->where('categoria', 'LIKE', $request->categoria);
         }
 
-        if ($request->has('data'))
-        {
-            $listDespesas->where('data', 'LIKE', $request->input('data'));
+        if ($request->data_inicial != null) {
+            $date = new Carbon($request->data_inicial);
+            $listDespesas->where('data', '<', $date);
         }
 
-        // if ($request->has('search'))
-        // {
-        //     $listDespesas->where(function ($q) use ($request)
-        //     {
-        //         return $q->where('desc', 'LIKE', $request->input('search') . '%');
-        //     });
-        // }
+        if ($request->data_final != null) {
+            $date = new Carbon($request->data_final);
+            $listDespesas->where('data', '>', $date);
+        }
 
-        //$listDespesas;
         $filters = $request->all();
+        $listDespesas = $listDespesas->paginate(15);
 
         return view('despesas.index', compact('listDespesas', 'filters'));
     }

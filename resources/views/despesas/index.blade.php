@@ -141,15 +141,18 @@
                     </div>
                 </div>
                 <div class="col-sm-2">
-                    <label for="data" class="form-label">Data</label>
-                    <input type="date" class="form-control" id="data" name="data">
+                    <label for="data" class="form-label">Antes de</label>
+                    <input type="date" class="form-control" id="data_inicial" name="data_inicial">
+                    <!--value="<?php echo date('Y-m-d'); ?>" -->
+                </div>
+                <div class="col-sm-2">
+                    <label for="data" class="form-label">Depois de</label>
+                    <input type="date" class="form-control" id="data_final" name="data">
                     <!--value="<?php echo date('Y-m-d'); ?>" -->
                 </div>
                 <div class="col-sm-3">
                     <div class="hstack gap-3">
                         <div class="col-md-12">
-                            <label for="pesquisa" class="form-label">Pesquisa</label>
-                            <input id="search" name="search" type="text" class="form-control me-auto" placeholder="Digite aqui...">
                         </div>
                         <div class="col-md-2">
                             <label> </label>
