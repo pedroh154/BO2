@@ -177,7 +177,7 @@
                     <select id="remetente_id" name="remetente_id" class="col-md-11 form-control">
                         <option value='0'>Selecione o cliente remetente</option>
                     </select>
-                    <a href="/clientes/novocliente" target="_blank">
+                    <a href="/clientes/novoclientepop" target="_blank">
                         <button class="btn btn-outline-secondary" type="button"><i class="fa-solid fa-plus"></i></button></a>
                  <!--   <div class="modal fade text-center" id="criarcliente">
                         <div class="modal-dialog">
@@ -193,7 +193,7 @@
                     <select id="destinatario_id" name="destinatario_id" class="col-md-11 form-control">
                         <option value='0'>Selecione o cliente destinatário</option>
                     </select>
-                    <a href="/clientes/novocliente" target="_blank">
+                    <a href="/clientes/novoclientepop" target="_blank">
                         <button class="btn btn-outline-secondary" type="button"><i class="fa-solid fa-plus"></i></button></a>
                     <!--<div class="modal fade text-center" id="criarcliente">
                         <div class="modal-dialog">

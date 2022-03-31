@@ -67,7 +67,7 @@
             </div>
             <div class="mb-3">
                 <label for="valor" class="form-label">Valor</label>
-                <input type="number" step="0.01"  class="form-control" id="valor" required name="valor" value="{{number_format($despesa->valor, 2)}}">
+                <input type="text" step="0.01"  class="form-control" id="valor" required name="valor" value="{{$despesa->valor}}">
             </div>
             <div class="mb-3">
                 <label for="desc" class="form-label">Descrição</label>
