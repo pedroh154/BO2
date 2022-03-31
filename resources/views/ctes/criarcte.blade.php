@@ -174,7 +174,7 @@
                 <div class="col-md-4">
                     <label for="remetente_id" class="form-label">Cliente remetente</label>
                     <br>
-                    <select id="remetente_id" name="remetente_id" class="col-md-11 form-control">
+                    <select id="remetente_id" name="remetente_id" class="col-md-10 form-control">
                         <option value=''>Selecione o cliente remetente</option>
                     </select>
                     <a href="/clientes/novoclientepop" target="_blank">
@@ -190,7 +190,7 @@
                 <div class="col-md-4">
                     <label for="destinatario_id" class="form-label">Cliente destinatário</label>
                     <br>
-                    <select id="destinatario_id" name="destinatario_id" class="col-md-11 form-control">
+                    <select id="destinatario_id" name="destinatario_id" class="col-md-10 form-control">
                         <option value=''>Selecione o cliente destinatário</option>
                     </select>
                     <a href="/clientes/novoclientepop" target="_blank">
