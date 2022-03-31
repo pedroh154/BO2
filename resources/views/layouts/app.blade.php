@@ -374,6 +374,10 @@
     $("#editardespesaform").submit(function() {
         $("#valor").unmask();
     });
+
+    $("#editarcontatoform").submit(function() {
+        $("#fone").unmask();
+    });
 </script>
 
 <script type="text/javascript">

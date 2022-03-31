@@ -42,7 +42,7 @@
 
     <!-- FORMULÁRIO DE EDIT -->
     @else
-        <form class="container-fluid" action={{ "/contatos/atualizar/$contato->id" }}>
+        <form id="editarcontatoform" class="container-fluid" action={{ "/contatos/atualizar/$contato->id" }}>
             @method('PUT')
             @csrf
             <div class="mb-3">
@@ -51,7 +51,7 @@
             </div>
             <div class="mb-3">
                 <label for="telefonecontato" class="form-label">Telefone</label>
-                <input type="number" class="form-control" id="fone" required name="fone" value="{{$contato->fone}}">
+                <input type="text" class="form-control" id="fone" required name="fone" value="{{$contato->fone}}">
             </div>
             <div class="mb-3">
                 <label for="enderecocontato" class="form-label">Endereço</label>
