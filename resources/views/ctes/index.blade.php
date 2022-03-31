@@ -131,14 +131,6 @@
                 </select>
             </div>
 
-            <div class="col-md-2">
-                <label for="datainicial" class="form-label">Data inicial</label>
-                <input type="date" class="form-control" id="datainicial">
-            </div>
-            <div class="col-md-2">
-                <label for="datafinal" class="form-label">Data final</label>
-                <input type="date" class="form-control" id="datafinal" value="<?php echo date('Y-m-d'); ?>">
-            </div>
             <div class="col-md-1">
                 <label for="filtropagamento" class="form-label">Pagamento</label>
                 <select id="filtropagamento" class="form-select">
@@ -160,12 +152,23 @@
                 <input id="search-input" type="search" class="form-control" placeholder="Digite aqui...">
             </div>
 
+            <div class="col-md-2">
+                            <label> </label>
+                            <button type="submit" class="btn btn-primary">Filtrar</button>
+                        </div>
+                       <div class="col-md-2">
+
+                            <label> </label>
+                           <a href="/contatos"> <button type="button" class="btn btn-outline-danger me-md-2">Resetar</button></a>
+                        </div>
+
             <div class="col-md-1">
                 <label for="datafinal" class="form-label"></label>
                 <form>
                     <button class="btn btn-sm btn-primary shadow-sm" type="submit" disabled><i class="fas fa-sync"></i> Atualizar informações</button>
                 </form>
             </div>
+            
         </div>
         <div>
             <br>
