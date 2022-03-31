@@ -235,10 +235,23 @@ class CtesController extends Controller
     //destroy   
     public function search(Request $request)
     {
-        $listContatos = Cte::where('nome', 'LIKE', "%{$request->search}%")->orWhere('fone', 'LIKE', "%{$request->search}%")->paginate(15);
+        $listCtes = Cte::where('user_id', auth()->id());
+
+        if ($request->has('empresa') && $request->empresa != 'Todas') {
+            $listCtes->where('transportadora_id', 'LIKE', $request->empresa);
+        }
+
+        if ($request->has('pagamento') && $request->pagamento != 'Ambos') {
+            $listCtes->where('tipo_pagamento', 'LIKE', $request->pagamento);
+        }
+
+        if ($request->has('situacao') && $request->situacao != 'TODOS') {
+            $listCtes->where('finalizado', 'LIKE', $request->situacao);
+        }
+
         $filters = $request->all();
-        //dd($request->search); die;
-        return view('contatos.index', compact('listContatos', 'filters'));
-        //return redirect('/contatos')->withInput()->withMessage('contato deletado com sucesso!');
+        $listCtes = $listCtes->paginate(15);
+
+        return view('ctes.index', compact('listCtes', 'filters'));
     }
 }

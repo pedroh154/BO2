@@ -86,7 +86,7 @@
                        <div class="col-md-2">
 
                             <label> </label>
-                           <a href="/contatos"> <button type="button" class="btn btn-outline-danger me-md-2">Resetar</button></a>
+                           <a href="/contatos"> <button type="button" class="btn btn-outline-danger me-md-2">Limpar</button></a>
                         </div>
                     </div>
                 </form>

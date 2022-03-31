@@ -120,53 +120,49 @@
         <div class="d-flex flex-column">
             <h5>Filtros</h5>
         </div>
-        <div class="hstack gap-4 ">
-            <div class="col-1">
-                <!--d-sm-flex justify-content-between mb-4 container-->
-                <label for="filtroempresa" class="form-label">Empresa</label>
-                <select id="filtroempresa" class="form-select col-md-12">
-                    <option selected value="TODAS">Todas</option>
-                    <option  value="UNIAO">União</option>
-                    <option value="TEX">TEX</option>
-                </select>
-            </div>
 
-            <div class="col-md-1">
-                <label for="filtropagamento" class="form-label">Pagamento</label>
-                <select id="filtropagamento" class="form-select">
-                    <option selected>Ambos</option>
-                    <option>CIF</option>
-                    <option>FOB</option>
-                </select>
-            </div>
-            <div class="col-md-2">
-                <label for="filtropagamento" class="form-label">Situação</label>
-                <select id="filtropagamento" class="form-select">
-                    <option selected>Todos</option>
-                    <option>Aberto</option>
-                    <option>Concluído</option>
-                </select>
-            </div>
-            <div class=" col-md-2">
-                <label for="datafinal" class="form-label">Pesquisa</label>
-                <input id="search-input" type="search" class="form-control" placeholder="Digite aqui...">
-            </div>
+        <form action="/ctes/pesquisar" method="POST">
+            @csrf
+            <div class="hstack gap-4 ">
+                <div class="col-1">
+                    <!--d-sm-flex justify-content-between mb-4 container-->
+                    <label for="empresa" class="form-label">Empresa</label>
+                    <select id="empresa" name="empresa" class="form-select col-md-12">
+                        <option selected value="Todas">Todas</option>
+                        <option value="2">União</option>
+                        <option value="1">TEX</option>
+                    </select>
+                </div>
 
-            <div class="col-md-2">
-                            <label> </label>
-                            <button type="submit" class="btn btn-primary">Filtrar</button>
-                        </div>
-                       <div class="col-md-2">
+                <div class="col-md-1">
+                    <label for="pagamento" class="form-label">Pagamento</label>
+                    <select id="pagamento" name="pagamento" class="form-select col-md-12">
+                        <option selected value="Ambos">Ambos</option>
+                        <option value="CIF">CIF</option>
+                        <option value="FOB">FOB</option>
+                    </select>
+                </div>
 
-                            <label> </label>
-                           <a href="/contatos"> <button type="button" class="btn btn-outline-danger me-md-2">Resetar</button></a>
-                        </div>
+                <div class="col-md-2">
+                    <label for="situacao" class="form-label">Situação</label>
+                    <select id="situacao" name="situacao" class="form-select">
+                        <option selected value="TODOS">Todos</option>
+                        <option value="ABERTO">Aberto</option>
+                        <option value="CONCLUÍDO">Concluído</option>
+                    </select>
+                </div>
+
+                <div class="col-md-12">
+                    <label> </label>
+                    <button type="submit" class="btn btn-primary">Filtrar</button>
+                    <a href="/ctes"> <button type="button" class="btn btn-outline-danger me-md-2">Limpar</button></a>
+                </div>
+            </div>
+        </form>
 
             <div class="col-md-1">
                 <label for="datafinal" class="form-label"></label>
-                <form>
                     <button class="btn btn-sm btn-primary shadow-sm" type="submit" disabled><i class="fas fa-sync"></i> Atualizar informações</button>
-                </form>
             </div>
             
         </div>
