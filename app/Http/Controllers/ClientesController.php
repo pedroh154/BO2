@@ -94,6 +94,7 @@ class ClientesController extends Controller
             'cadastro_nacional' => $request->cadastro_nacional,
             'fone' => $request->fone,
             'obs' => $request->obs,
+            'cidade_id' => $request->cidade_id,
         ]);
 
         return redirect('/clientes')->withInput()->withMessage('Cliente editado com sucesso!');
