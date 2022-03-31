@@ -82,7 +82,7 @@
         @endif
         @csrf
         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#relatorio">
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#relatorio" disabled>
                 Relatório
             </button>
             <!-- Modal -->
@@ -102,9 +102,7 @@
                                     <select class="form-select" id="periodo" name="periodo" required>
                                         <option value="1" selected>1 dia</option>
                                         <option value="7">7 dias</option>
-                                        <option value="15">15 dias</option>
                                         <option value="30">30 dias</option>
-                                        <option value="90">3 meses</option>
                                         <option value="180">6 meses</option>
                                         <option value="365">1 ano</option>
 
