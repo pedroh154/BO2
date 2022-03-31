@@ -364,6 +364,12 @@
     $("#criardespesaform").submit(function() {
         $("#valor").unmask();
     });
+
+    $("#editarcte").submit(function() {
+        $("#valor_cte").unmask();
+        $("#valor_nf").unmask();
+        $("#valor").unmask();
+    });
 </script>
 
 <script type="text/javascript">

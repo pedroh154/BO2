@@ -3,13 +3,7 @@
 
 <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-<script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+
 
 <div id="content-wrapper" class="d-flex flex-column" style="background-color: #f4f5f8;">
     <h1 class="container-fluid">Editar CT-e</h1>
@@ -21,7 +15,7 @@
     </div>
     @endif
     <div class="container-fluid">
-        <form class="row g-3" action={{ "/ctes/atualizar/$cte->id" }}>
+        <form id="editarcte" class="row g-3" action={{ "/ctes/atualizar/$cte->id" }}>
             @method('PUT')
             @csrf
             <div class="col-md-4">
