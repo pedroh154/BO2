@@ -26,7 +26,11 @@
                             </div>
                             <div class="modal-body">
                                 <div>
+                                <h4>Filtros</h4>
+                                <div class="container-fluid">
                                     <p><strong>Pesquisa: </strong>digite qualquer dado para filtro (nome, telefone, endereço, etc.).</p>
+                                    <p><strong>Resetar: </strong>apagar os filtros.</p>
+                                </div>
                                     <h4>Tabela</h4>
                                     <div class="container-fluid">
 
@@ -48,32 +52,47 @@
 
         <!-- checar por ERROS -->
         @if(isset($errors) && count($errors)>0)
-            <div class="text-center mt-4 mb-4 p-2 alert-danger">
-                @foreach($errors->all() as $erro)
-                    {{$erro}}<br>
-                @endforeach
-            </div>
+        <div class="text-center mt-4 mb-4 p-2 alert-danger">
+            @foreach($errors->all() as $erro)
+            {{$erro}}<br>
+            @endforeach
+        </div>
         @endif
         <!-- checar por SUCESSO -->
         @if(session()->has('message'))
-            <div class="alert alert-success">
-                {{ session()->get('message') }}
-            </div>
+        <div class="alert alert-success">
+            {{ session()->get('message') }}
+        </div>
         @endif
 
         <!-- <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <a class="btn btn-primary" href="/contatos/novocontato" role="button">Cadastrar contato</a>
         </div> -->
-        
+        <hr class="sidebar-divider">
         <div class="row">
             <div class="col-md-2">
+
                 <form action="/contatos/pesquisar" method="POST">
                     @csrf
-                    <label for="datafinal" class="form-label">Pesquisa</label>
-                    <input id="search" name="search" type="text" class="form-control" placeholder="Digite aqui...">
-                    <button type="submit" class="btn btn-primary">filtrar</button>
+                    <div class="hstack gap-3">
+                        <div class="col-md-12">
+                            <label for="datafinal" class="form-label">Pesquisa</label>
+                            <input id="search" name="search" type="text" class="form-control me-auto" placeholder="Digite aqui...">
+                        </div>
+                        <div class="col-md-2">
+                            <label> </label>
+                            <button type="submit" class="btn btn-primary">Filtrar</button>
+                        </div>
+                        <div class="vr"></div>
+                       <div class="col-md-2">
+
+                            <label> </label>
+                           <a href="/contatos"> <button type="button" class="btn btn-outline-danger me-md-2">Resetar</button></a>
+                        </div>
+                    </div>
                 </form>
             </div>
+
             <div class="col-md-2 offset-md-8">
                 <label for="datafinal" class="form-label">                                                   </label>
                 <a class="btn btn-primary" href="/contatos/novocontato" role="button">Cadastrar contato</a>
@@ -92,25 +111,26 @@
             <tbody>
                 @foreach ($listContatos as $contato)
                 <tr>
-                    <td style="text-align: left;">{{ $contato->nome }}</td>
+                    <td style="text-align: left; max-width: 150px;" class="text-truncate">{{ $contato->nome }}</td>
                     </td>
 
-                    <td id="fone{{$loop->index}}" style="text-align: left;">{{ $contato->fone }}</td>
-                    </td>
-
-
-                    <td style="text-align: left;">{{$contato->endereco}}</td>
+                    <td id="fone{{$loop->index}}" style="text-align: left; max-width: 70px;" class="text-truncate">{{ $contato->fone }}</td>
                     </td>
 
 
-                    <td style="text-align: left;">{{ $contato->desc }}</td>
+                    <td style="text-align: left; max-width: 100px;" class="text-truncate">{{$contato->endereco}}</td>
+                    </td>
+
+
+                    <td style="text-align: left; max-width: 75px;" class="text-truncate">{{ $contato->desc }}</td>
                     </td>
                     <td class="col-md-1" style="text-align: center;">
                         <div class="action-buttons hstack gap-2">
-                            <!-- criar botão visualizar -->
+                            <!-- criar botão visualizar 
                             <a href="{{url("contatos/$contato->id")}}" class="" data-rel="" title="" data-original-title="">
                                 <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                             </a>
+                            -->
                             <!-- criar botão editar -->
                             <a href="{{"/contatos/editar/$contato->id"}}" data-toggle="" class="" style="" data-original-title="" title="">
                                 <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-pen"></i></button>
@@ -135,9 +155,9 @@
 
         <div class="d-flex justify-content-center">
             @if(isset($filters))
-                {{ $listContatos->appends($filters)->links("pagination::bootstrap-4") }}
+            {{ $listContatos->appends($filters)->links("pagination::bootstrap-4") }}
             @else
-                {{ $listContatos->links("pagination::bootstrap-4") }}
+            {{ $listContatos->links("pagination::bootstrap-4") }}
             @endif
         </div>
     </div>

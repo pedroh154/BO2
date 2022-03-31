@@ -126,9 +126,9 @@
                 <!--d-sm-flex justify-content-between mb-4 container-->
                 <label for="filtroempresa" class="form-label">Empresa</label>
                 <select id="filtroempresa" class="form-select col-md-12">
-                    <option selected value="UNIAO">União</option>
+                    <option selected value="TODAS">Todas</option>
+                    <option  value="UNIAO">União</option>
                     <option value="TEX">TEX</option>
-                    <option value="TODAS">Todas</option>
                 </select>
             </div>
 
@@ -143,7 +143,7 @@
             <div class="col-md-1">
                 <label for="filtropagamento" class="form-label">Pagamento</label>
                 <select id="filtropagamento" class="form-select">
-                    <option selected>Todos</option>
+                    <option selected>Ambos</option>
                     <option>CIF</option>
                     <option>FOB</option>
                 </select>
@@ -187,16 +187,16 @@
                 <tbody>
                     @foreach ($listCtes as $cte)
                     <tr onclick='trclick();'>
-                        <td style="text-align: left;" onclick='tdclick();'>{{ $cte->cidade_remetente->name }}</td>
-                        <td style="text-align: right;">{{ $cte->numero_cte }}</td>
-                        <td id="valor_cte{{$loop->index}}" style="text-align: right;">{{ $cte->valor_cte }}</td>
+                        <td style="text-align: left; max-width: 150px" class="text-truncate" onclick='tdclick();'>{{ $cte->cidade_remetente->name }}</td>
+                        <td style="text-align: right; max-width: 70px" class="text-truncate"> {{ $cte->numero_cte }}</td>
+                        <td id="valor_cte{{$loop->index}}" style="text-align: right; max-width: 100px" class="text-truncate">{{ $cte->valor_cte }}</td>
                         @if ($cte->tipo_pagamento == "CIF")
-                        <td style="text-align: center;">CIF</td>
+                        <td style="text-align: center; max-width: 100px" class="text-truncate">CIF</td>
                         @else
-                        <td style="text-align: center;">FOB</td>
+                        <td style="text-align: center; max-width: 100px" class="text-truncate">FOB</td>
                         @endif
-                        <td style="text-align: right;">{{ $cte->volume }}</td>
-                        <td style="text-align: center;">{{ $cte->destinatario->nome }}</td>
+                        <td style="text-align: right; max-width: 90px" class="text-truncate">{{ $cte->volume }}</td>
+                        <td style="text-align: center; max-width: 400px" class="text-truncate">{{ $cte->destinatario->nome }}</td>
                         <td>
                             <div class="custom-control custom-checkbox" style="text-align: center;">
                                 @if ($cte->finalizado)
@@ -213,21 +213,15 @@
                                 <a href="{{url("ctes/$cte->id")}}" class="" data-rel="" title="" data-original-title="">
                                     <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-pdf"></i></button>
                                 </a>
-                                @if ($cte->finalizado == true)
-                                <!-- criar botão gerar comprovante -->
-                                <a href="{{url("gerarcomprovante/$cte->id")}}" class="" data-rel="" title="" data-original-title="">
-                                    <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-lines"></i></button>
-                                </a>
-                                @else
-                                <!-- criar botão gerar comprovante -->
-                                <a href="{{url("gerarcomprovante/$cte->id")}}" class="" data-rel="" title="" data-original-title="">
-                                    <button disabled class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-lines"></i></button>
-                                </a>
-                                @endif
-                                <!-- criar botão visualizar -->
-                                <a href="{{url("ctes/$cte->id")}}" class="" data-rel="" title="" data-original-title="">
-                                    <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-                                </a>
+                                <form method="get" action="{{url("gerarcomprovante/$cte->id")}}">
+                                    @if ($cte->finalizado == true)
+                                    <!-- criar botão gerar comprovante -->
+                                        <button href="" class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-lines"></i></button>
+                                    @else
+                                    <!-- criar botão gerar comprovante -->
+                                        <button href="{{url("gerarcomprovante/$cte->id")}}" disabled class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-file-lines"></i></button>
+                                    @endif
+                                </form>
                                 <!-- criar botão editar -->
                                 <a href="{{"/ctes/editar/$cte->id"}}" data-toggle="" class="" style="" data-original-title="" title="">
                                     <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-pen"></i></button>

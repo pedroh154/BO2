@@ -48,6 +48,7 @@
                                         <p><strong>Categoria: </strong>selecione a categoria desejada.</p>
                                         <p><strong>Data: </strong>selecione a data desejada.</p>
                                         <p><strong>Pesquisa: </strong>digite valor ou descrição para filtro.</p>
+                                        <p><strong>Resetar: </strong>apagar os filtros.</p>
                                     </div>
                                     <h4>Tabela</h4>
                                     <div class="container-fluid">
@@ -65,6 +66,7 @@
                 </div>
             </div>
         </div>
+        <hr class="sidebar-divider">
         @if(isset($errors) && count($errors)>0)
         <div class="text-center mt-4 mb-4 p-2 alert-danger">
             @foreach($errors->all() as $erro)
@@ -138,11 +140,26 @@
             </div>
             <div class="col-sm-2">
                 <label for="data" class="form-label">Data</label>
-                <input type="date" class="form-control" id="data" name="data"> <!--value="<?php echo date('Y-m-d'); ?>" -->
+                <input type="date" class="form-control" id="data" name="data">
+                <!--value="<?php echo date('Y-m-d'); ?>" -->
             </div>
             <div class="col-sm-3">
-                <label for="pesquisa" class="form-label">Pesquisa</label>
-                <input type="text" class="form-control" id="pesquisa" required placeholder="Digite aqui..." name="pesquisa">
+                <div class="hstack gap-3">
+                    <div class="col-md-12">
+                        <label for="pesquisa" class="form-label">Pesquisa</label>
+                        <input id="search" name="search" type="text" class="form-control me-auto" placeholder="Digite aqui...">
+                    </div>
+                    <div class="col-md-2">
+                        <label> </label>
+                        <button type="submit" class="btn btn-primary">Filtrar</button>
+                    </div>
+                    <div class="vr"></div>
+                    <div class="col-md-2">
+
+                        <label> </label>
+                        <a href="/despesas"> <button type="button" class="btn btn-outline-danger me-md-2">Resetar</button></a>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -150,10 +167,10 @@
         <table class="table table-striped table-hover table-bordered table-sm">
             <thead>
                 <tr style="text-align: center;">
-                    <th style="width: 150px;" scope="col">Categoria</th>
-                    <th style="width: 70px;" scope="col">Data</th>
+                    <th style="width: 15px;" scope="col">Categoria</th>
+                    <th style="width: 50px;" scope="col">Data</th>
                     <th style="width: 100px;" scope="col">Valor</th>
-                    <th style="width: 75px;" scope="col">Descrição</th>
+                    <th style="width: 200px;" scope="col">Descrição</th>
                     <th></th>
                 </tr>
             </thead>
@@ -163,18 +180,19 @@
                 @foreach ($listDespesas as $despesa)
                 <tr>
                     <!-- exibir dados da despesa.. -->
-                    <td style="text-align: left;" class="col-md-3">{{ $despesa->categoria }}</td>
-                    <td style="text-align: center;" class="col-md-2">{{ $despesa->data }}</td>
-                    <td id="valor_despesa{{$loop->index}}" style="text-align: right;" class="col-md-2">R$ {{ $despesa->valor }}</td>
-                    <td style="text-align: left;" class="col-md-4">{{ $despesa->desc }}</td>
+                    <td style="text-align: left; max-width: 15px;" class=" text-truncate">{{ $despesa->categoria }}</td>
+                    <td style="text-align: center; max-width: 50px;" class=" text-truncate">{{ $despesa->data }}</td>
+                    <td id="valor_despesa{{$loop->index}}" style="text-align: right; max-width: 100px " class="text-truncate">R$ {{ $despesa->valor }}</td>
+                    <td style="text-align: left; max-width: 200px" class=" text-truncate" >{{ $despesa->desc }}</td>
 
                     <!-- criar botoes de CRUD -->
                     <td class="col-md-1" style="text-align: center;">
                         <div class="action-buttons hstack gap-2">
-                            <!-- criar botão visualizar -->
+                            <!-- criar botão visualizar 
                             <a href="{{url("despesas/$despesa->id")}}" class="" data-rel="" title="" data-original-title="">
                                 <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
                             </a>
+                            -->
                             <!-- criar botão editar -->
                             <a href="{{"/despesas/editar/$despesa->id"}}" data-toggle="" class="" style="" data-original-title="" title="">
                                 <button class="btn btn-info btn-sm" type="submit"><i class="fa-solid fa-pen"></i></button>
