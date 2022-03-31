@@ -28,7 +28,7 @@ class DespesasController extends Controller
     /* VIEWS */
     public function index()
     {
-        $listDespesas = Despesa::where('user_id', auth()->id())->sortable()->paginate(2);
+        $listDespesas = Despesa::where('user_id', auth()->id())->sortable()->paginate(15);
         return view('despesas.index', compact('listDespesas'));
     }
 

@@ -100,10 +100,10 @@
         <table class="table table-striped table-hover table-bordered table-sm">
             <thead>
                 <tr style="text-align: center;">
-                    <th style="width: 150px;" scope="col">Nome</th>
-                    <th style="width: 70px;" scope="col">Telefone</th>
-                    <th style="width: 100px;" scope="col">Endereço</th>
-                    <th style="width: 75px;" scope="col">Descrição</th>
+                    <th style="width: 150px;" scope="col">@sortablelink('nome', 'nome')</th>
+                    <th style="width: 70px;" scope="col">@sortablelink('telefone', 'fone')</th>
+                    <th style="width: 100px;" scope="col">@sortablelink('endereco', 'endereço')</th>
+                    <th style="width: 75px;" scope="col">@sortablelink('desc', 'descrição')</th>
                     <th></Th>
                 </tr>
             </thead>
@@ -148,11 +148,8 @@
         </table>
 
         <div class="d-flex justify-content-center">
-            @if(isset($filters))
-            {{ $listContatos->appends($filters)->links("pagination::bootstrap-4") }}
-            @else
             {{ $listContatos->links("pagination::bootstrap-4") }}
-            @endif
+            
         </div>
     </div>
 </div>

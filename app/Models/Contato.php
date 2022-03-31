@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Kyslik\ColumnSortable\Sortable;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
@@ -11,7 +12,7 @@ use Illuminate\Http\Request;
 class Contato extends Model
 {
     use HasFactory;
-
+    use Sortable;
      /**
      * The attributes that are mass assignable.
      *
@@ -24,6 +25,8 @@ class Contato extends Model
         'endereco',
         'user_id',
     ];
+
+    protected $sortable = ['fone', 'nome', 'desc', 'endereco'];
 
     /**
      * The attributes that should be hidden for serialization.

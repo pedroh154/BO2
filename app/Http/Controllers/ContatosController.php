@@ -18,7 +18,7 @@ class ContatosController extends Controller
     /* VIEWS */
     public function index()
     {
-        $listContatos = Contato::where('user_id', auth()->id())->orderBy('nome')->paginate(15);
+        $listContatos = Contato::where('user_id', auth()->id())->sortable()->paginate(15);
         return view('contatos.index', compact('listContatos'));
     }
 
