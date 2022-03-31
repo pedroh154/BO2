@@ -141,12 +141,12 @@
                     </div>
                 </div>
                 <div class="col-sm-2">
-                    <label for="data" class="form-label">Antes de</label>
+                    <label for="data" class="form-label">De</label>
                     <input type="date" class="form-control" id="data_inicial" name="data_inicial">
                     <!--value="<?php echo date('Y-m-d'); ?>" -->
                 </div>
                 <div class="col-sm-2">
-                    <label for="data" class="form-label">Depois de</label>
+                    <label for="data" class="form-label">Até</label>
                     <input type="date" class="form-control" id="data_final" name="data">
                     <!--value="<?php echo date('Y-m-d'); ?>" -->
                 </div>
@@ -176,7 +176,7 @@
                     <th style="width: 15px;" scope="col">@sortablelink('categoria', 'categoria')</th>
                     <th style="width: 50px;" scope="col">@sortablelink('data', 'data')</th>
                     <th style="width: 50px;" scope="col">@sortablelink('valor', 'valor')</th>
-                    <th style="width: 200px;" scope="col">@sortablelink('desc', 'desc')</th>
+                    <th style="width: 200px;" scope="col">@sortablelink('desc', 'descrição')</th>
                     <th></th>
                 </tr>
             </thead>
