@@ -31,12 +31,7 @@ class CtesController extends Controller
     /* VIEWS */
     public function index()
     {
-        if (request()->has('tipo_pagamento')) {
-            $listCtes = Cte::where('tipo_pagamento', request('tipo_pagamento'))->paginate(10)
-            ->appends('tipo_pagamento', request('tipo_pagamento'));
-        } else {
-            $listCtes = Cte::where('user_id', auth()->id())->orderBy('id', 'DESC')->paginate(10);
-        }
+        $listCtes = Cte::where('user_id', auth()->id())->sortable()->paginate(15);
 
         $date = Carbon::now();
 

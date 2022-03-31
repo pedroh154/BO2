@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Kyslik\ColumnSortable\Sortable;
 
 class Cte extends Model
 {
     use HasFactory;
-
+    use Sortable;
     protected $fillable = [
         'numero_nf',
         'valor_cte',
@@ -26,6 +27,9 @@ class Cte extends Model
         'cidade_destinataria_id',
         'user_id',
     ];
+
+    protected $sortable = ['numero_nf', 'valor_cte', 'volume', 'obs', 'data_chegada', 'numero_cte', 'finalizado', 'data_entrega',
+                           'tipo_pagamento', 'valor_nf', 'remetente_id', 'destinatario_id', 'cidade_remetente_id', 'cidade_destinataria_id'];
 
     public function destinatario(){
         return $this->belongsTo(Cliente::class);

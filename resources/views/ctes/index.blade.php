@@ -174,13 +174,13 @@
             <table class="table table-striped table-hover table-bordered table-sm">
                 <thead>
                     <tr style="text-align: center;">
-                        <th style="width: 150px;" scope="col">Cidade</th>
-                        <th style="width: 70px;" scope="col">CT-e</th>
-                        <th style="width: 100px;" scope="col">Valor</th>
-                        <th style="width: 75px;" scope="col">CIF/FOB</th>
-                        <th style="width: 90px;" scope="col">Volumes</th>
-                        <th style="width: 400px;" scope="col">Destinatário</th>
-                        <th style="width: 60px;" scope="col">✓</th>
+                        <th style="width: 250px;" scope="col">@sortablelink('cidade_destinataria_id', 'cidade')</th>
+                        <th style="width: 300px;" scope="col">@sortablelink('numero_cte', 'CT-e')</th>
+                        <th style="width: 100px;" scope="col">@sortablelink('valor_cte', 'Valor')</th>
+                        <th style="width: 100px;" scope="col">@sortablelink('tipo_pagamento', 'CIF/FOB')</th>
+                        <th style="width: 110px;" scope="col">@sortablelink('volume', 'volume')</th>
+                        <th style="width: 400px;" scope="col">@sortablelink('destinatario_id', 'Destinatário')</th>
+                        <th style="width: 130px;" scope="col">@sortablelink('finalizado', 'Entregue')</th>
                         <th></th>
                     </tr>
                 </thead>
